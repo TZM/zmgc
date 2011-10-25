@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<stl:block xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:stl="http://www.hforge.org/xml-namespaces/stl">
+
+  <!-- Edit industries -->
+  <fieldset>
+    <legend>Edit the active industry</legend>
+    <form action="" method="post" id="browse-list">
+      <table summary="Industry settings">
+        <thead>
+          <tr>
+            <th>Default</th>
+            <th>Code</th>
+            <th>Name</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr stl:repeat="industry active_industry"
+            class="${repeat/industry/even}">
+            <td stl:if="industry/isdefault">Yes</td>
+	    <td stl:if="not industry/isdefault" align="center">
+	      <input class="radio" type="radio" name="codes"
+		value="${industry/name}" />
+            </td>
+            <td>${industry/name}</td>
+            <td>${industry/value}</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>
+        <button type="submit" name="action" value="change_default_industry" class="button-ok">Change default</button>
+        <button type="submit" name="action" value="remove_industry" class="button-delete">Remove</button>
+      </p>
+    </form>
+  </fieldset>
+
+  <br/>
+
+   Add additional industry 
+  <fieldset>
+    <legend>Add additional industry</legend>
+    <form action="" method="post">
+      <select name="code" id="new-industry">
+        <option value="">Choose an industry</option>
+        <option stl:repeat="industry not_active_industry"
+          value="${industry/name}">${industry/value}</option>
+      </select>
+      <button type="submit" name="action" value="add_industry" class="button-ok">Add</button>	
+     </form>
+  </fieldset>
+</stl:block>

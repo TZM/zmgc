@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="${language}"
+  xmlns:stl="http://www.hforge.org/xml-namespaces/stl">
+  <head>
+    <title>${title} ZZZZ</title>
+    <base href="${base_uri}" />
+    <!-- Meta -->
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta stl:repeat="meta meta_tags" name="${meta/name}" lang="${meta/lang}"
+      content="${meta/content}" />
+
+    <!-- CSS -->
+    <link type="text/css" rel="stylesheet" stl:repeat="style styles"
+      href="${style}" />
+
+    <!-- JavaScript -->
+    <script type="text/javascript" stl:repeat="script scripts" src="${script}"
+      />
+
+    <!-- Icon -->
+    <link rel="shortcut icon" href="${favicon_href}" type="${favicon_type}" />
+  </head>
+
+  <body>
+
+    <!-- Header -->
+    <div id="header">
+      ${languages}
+      <div id="top-menu">
+        <stl:block stl:if="not user/info">
+          <a href="${login}" id="top-menu-login">Log in</a>
+          <a href="/;register" id="top-menu-register"
+            stl:if="user/joinisopen">Register</a>
+        </stl:block>
+        <stl:block stl:if="user/info">
+          <a href="${base_uri/../;new_resource" id="top-menu-new">Add
+            content</a>
+          <a href="${user/info/home}" id="top-menu-profile">My Profile</a>
+          <a href="${logout}" id="top-menu-logout">Log out</a>
+        </stl:block>
+        <a href="/;site_search" id="top-menu-search">Search</a>
+        <a href="/;contact" id="top-menu-contact">Contact</a>
+      </div>
+    </div>
+
+    <!-- Location & Views-->
+    ${location}
+
+    <!-- Body -->
+    <div id="body">
+      <h1 stl:if="page_title">${page_title}</h1>
+      ${message}
+      <table cellpadding="0" cellspacing="0" border="0" width="100%">
+        <tr>
+          <td id="content" valign="top">
+            ${body}
+          </td>
+          <td id="right" valign="top">
+            <stl:block stl:repeat="menu context_menus">${menu}<br/></stl:block>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- Footer -->
+    <div id="footer">
+      <a href="/;about">About</a>
+      <a href="/;credits">Credits</a>
+      <a href="/;license">License</a>
+    </div>
+  </body>
+</html>

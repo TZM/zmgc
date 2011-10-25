@@ -1,0 +1,869 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2009-07-21 07:07+GMT\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../root.py:35
+msgid "Abakuc Application Server"
+msgstr ""
+
+#: ../access.py:160
+msgid "Active"
+msgstr ""
+
+#: ../access.py:222
+msgid "Add New Member"
+msgstr ""
+
+#: ../website.py:41
+msgid "Adds the core Abakuc website."
+msgstr ""
+
+#: ../access.py:374
+msgid "Admin"
+msgstr ""
+
+#: ../datatypes.py:12
+#: ../datatypes.py:23
+msgid "Africa"
+msgstr ""
+
+#: ../datatypes.py:44
+msgid "Airlines"
+msgstr ""
+
+#: ../access.py:73
+msgid "All Fields"
+msgstr ""
+
+#: ../datatypes.py:13
+#: ../datatypes.py:24
+msgid "Americas"
+msgstr ""
+
+#: ../datatypes.py:14
+#: ../datatypes.py:25
+msgid "Asia"
+msgstr ""
+
+#: ../datatypes.py:69
+msgid "Assistant Manager"
+msgstr ""
+
+#: ../utils.py:72
+msgid "Basque"
+msgstr ""
+
+#: ../access.py:376
+#: ../expert/expert_travel.py:26
+#: ../company/company.py:25
+msgid "Branch Manager"
+msgstr ""
+
+#: ../access.py:377
+#: ../expert/expert_travel.py:27
+#: ../company/company.py:26
+msgid "Branch Member"
+msgstr ""
+
+#: ../access.py:57
+msgid "Browse Members"
+msgstr ""
+
+#: ../datatypes.py:45
+msgid "Business Travel"
+msgstr ""
+
+#: ../datatypes.py:46
+msgid "Call Centre/Telesales"
+msgstr ""
+
+#: ../datatypes.py:47
+msgid "Car Hire"
+msgstr ""
+
+#: ../utils.py:73
+msgid "Catalan"
+msgstr ""
+
+#: ../root.py:59
+#: ../company/company.py:49
+msgid "Companies"
+msgstr ""
+
+#: ../company/company.py:50
+msgid "Companies folder."
+msgstr ""
+
+#: ../company/company.py:19
+msgid "Company"
+msgstr ""
+
+#: ../company/company.py:20
+msgid "Company website root."
+msgstr ""
+
+#: ../datatypes.py:48
+msgid "Conference/Incentives/Events"
+msgstr ""
+
+#: ../root.py:73
+msgid "Countries"
+msgstr ""
+
+#: ../datatypes.py:49
+msgid "Cruises"
+msgstr ""
+
+#: ../datatypes.py:36
+msgid "Deluxe"
+msgstr ""
+
+#: ../root.py:64
+msgid "Destinations Guide"
+msgstr ""
+
+#: ../root.py:67
+msgid "Destinations guide, part of the Abakuc Application Server information system."
+msgstr ""
+
+#: ../user_views.py:25
+msgid "Email"
+msgstr ""
+
+#: ../utils.py:74
+msgid "English"
+msgstr ""
+
+#: ../datatypes.py:15
+#: ../datatypes.py:26
+msgid "Europe"
+msgstr ""
+
+#: ../datatypes.py:35
+msgid "Executive"
+msgstr ""
+
+#: ../datatypes.py:50
+msgid "Executive/Management"
+msgstr ""
+
+#: ../root.py:49
+#: ../expert/expert_travel.py:19
+msgid "Expert Travel"
+msgstr ""
+
+#: ../root.py:60
+msgid "Expert.Travel companies folder"
+msgstr ""
+
+#: ../root.py:74
+msgid "Expert.Travel countries folder"
+msgstr ""
+
+#: ../root.py:99
+msgid "Expert.Travel folder containing river objects, to be listed in the riverguides."
+msgstr ""
+
+#: ../root.py:86
+msgid "Expert.Travel folder containing training applications based on business function."
+msgstr ""
+
+#: ../datatypes.py:37
+msgid "Family"
+msgstr ""
+
+#: ../access.py:76
+#: ../access.py:131
+msgid "First Name"
+msgstr ""
+
+#: ../user_views.py:27
+msgid "Firstname"
+msgstr ""
+
+#: ../datatypes.py:51
+msgid "Foreign Exchange"
+msgstr ""
+
+#: ../utils.py:75
+msgid "French"
+msgstr ""
+
+#: ../utils.py:76
+msgid "German"
+msgstr ""
+
+#: ../access.py:224
+msgid "Grant access to a new user."
+msgstr ""
+
+#: ../access.py:379
+msgid "Guest"
+msgstr ""
+
+#: ../datatypes.py:52
+msgid "Hotel/Leisure"
+msgstr ""
+
+#: ../utils.py:77
+msgid "Hungarian"
+msgstr ""
+
+#: ../datatypes.py:61
+msgid "IT"
+msgstr ""
+
+#: ../utils.py:78
+msgid "Italian"
+msgstr ""
+
+#: ../utils.py:79
+msgid "Japanese"
+msgstr ""
+
+#: ../user_views.py:26
+msgid "Job Function"
+msgstr ""
+
+#: ../access.py:75
+#: ../access.py:132
+msgid "Last Name"
+msgstr ""
+
+#: ../user_views.py:28
+msgid "Lastname"
+msgstr ""
+
+#: ../website.py:170
+msgid "License"
+msgstr ""
+
+#: ../access.py:74
+#: ../access.py:130
+msgid "Login"
+msgstr ""
+
+#: ../datatypes.py:68
+msgid "Manager"
+msgstr ""
+
+#: ../datatypes.py:71
+msgid "Managing Director"
+msgstr ""
+
+#: ../datatypes.py:75
+msgid "Marketing Assistant"
+msgstr ""
+
+#: ../datatypes.py:73
+msgid "Marketing Director"
+msgstr ""
+
+#: ../datatypes.py:74
+msgid "Marketing Manager"
+msgstr ""
+
+#: ../access.py:380
+msgid "Member"
+msgstr ""
+
+#: ../access.py:177
+msgid "Members deleted."
+msgstr ""
+
+#: ../user_views.py:30
+msgid "Mobile"
+msgstr ""
+
+#: ../datatypes.py:16
+#: ../datatypes.py:27
+msgid "Oceania"
+msgstr ""
+
+#: ../root.py:36
+#: ../root.py:52
+msgid "One back-office to bring them all and in the darkness bind them, in an anarchically scalable information system."
+msgstr ""
+
+#: ../datatypes.py:53
+#: ../datatypes.py:79
+msgid "Other"
+msgstr ""
+
+#: ../datatypes.py:59
+msgid "Overseas"
+msgstr ""
+
+#: ../datatypes.py:67
+msgid "Owner/Director"
+msgstr ""
+
+#: ../access.py:378
+#: ../expert/expert_travel.py:28
+#: ../company/company.py:27
+msgid "Partner"
+msgstr ""
+
+#: ../user_views.py:29
+msgid "Phone number"
+msgstr ""
+
+#: ../utils.py:80
+msgid "Portuguese"
+msgstr ""
+
+#: ../datatypes.py:38
+msgid "Presidential"
+msgstr ""
+
+#: ../datatypes.py:76
+msgid "Product Manager"
+msgstr ""
+
+#: ../datatypes.py:54
+msgid "Rail"
+msgstr ""
+
+#: ../access.py:159
+msgid "Resend Confirmation"
+msgstr ""
+
+#: ../datatypes.py:77
+msgid "Reservation Staff"
+msgstr ""
+
+#: ../datatypes.py:60
+msgid "Reservations/Ticketing"
+msgstr ""
+
+#: ../datatypes.py:55
+msgid "Retail"
+msgstr ""
+
+#: ../access.py:381
+msgid "Reviewer"
+msgstr ""
+
+#: ../root.py:91
+msgid "River Guides"
+msgstr ""
+
+#: ../root.py:94
+msgid "River guides, part of the Abakuc Application Server information system."
+msgstr ""
+
+#: ../root.py:98
+msgid "Rivers Folder"
+msgstr ""
+
+#: ../access.py:133
+msgid "Role"
+msgstr ""
+
+#: ../access.py:215
+msgid "Role updated."
+msgstr ""
+
+#: ../datatypes.py:72
+msgid "Sales Director"
+msgstr ""
+
+#: ../datatypes.py:62
+msgid "Sales/Marketing"
+msgstr ""
+
+#: ../access.py:59
+msgid "See the users and their roles."
+msgstr ""
+
+#: ../website.py:40
+msgid "Site Root"
+msgstr ""
+
+#: ../utils.py:81
+msgid "Spanish"
+msgstr ""
+
+#: ../datatypes.py:34
+msgid "Standard"
+msgstr ""
+
+#: ../access.py:134
+msgid "State"
+msgstr ""
+
+#: ../datatypes.py:63
+#: ../datatypes.py:78
+msgid "Student"
+msgstr ""
+
+#: ../datatypes.py:56
+msgid "Support Staff"
+msgstr ""
+
+#: ../datatypes.py:57
+msgid "Temporary"
+msgstr ""
+
+#: ../access.py:280
+msgid "The user is already here."
+msgstr ""
+
+#: ../expert/expert_travel.py:20
+msgid "This is a news item"
+msgstr ""
+
+#: ../datatypes.py:58
+msgid "Tour Operations"
+msgstr ""
+
+#: ../root.py:85
+msgid "Training Folder"
+msgstr ""
+
+#: ../access.py:375
+#: ../expert/expert_travel.py:25
+msgid "Training Manager"
+msgstr ""
+
+#: ../datatypes.py:70
+msgid "Travel Consultant"
+msgstr ""
+
+#: ../root.py:78
+msgid "Travel University"
+msgstr ""
+
+#: ../root.py:81
+msgid "Travel University, part of the Abakuc Application Server information system."
+msgstr ""
+
+#: ../datatypes.py:84
+msgid "Under £15K"
+msgstr ""
+
+#: ../access.py:129
+msgid "User ID"
+msgstr ""
+
+#: ../access.py:292
+msgid "User added."
+msgstr ""
+
+#: ../website_views.py:16
+msgid "Welcome"
+msgstr ""
+
+#: ../access.py:208
+msgid "You cannot degrade your own role."
+msgstr ""
+
+#: ../access.py:170
+msgid "You cannot remove yourself."
+msgstr ""
+
+#: ../datatypes.py:94
+msgid "£100K+"
+msgstr ""
+
+#: ../datatypes.py:85
+msgid "£15K-£20K"
+msgstr ""
+
+#: ../datatypes.py:86
+msgid "£20K-£25K"
+msgstr ""
+
+#: ../datatypes.py:87
+msgid "£25K-£30K"
+msgstr ""
+
+#: ../datatypes.py:88
+msgid "£30K-£35K"
+msgstr ""
+
+#: ../datatypes.py:89
+msgid "£35K-£40K"
+msgstr ""
+
+#: ../datatypes.py:90
+msgid "£40K-£45K"
+msgstr ""
+
+#: ../datatypes.py:91
+msgid "£45K-£50K"
+msgstr ""
+
+#: ../datatypes.py:92
+msgid "£50K-£70K"
+msgstr ""
+
+#: ../datatypes.py:93
+msgid "£70K-£100K"
+msgstr ""
+
+#: ../utils.py:93
+msgid "…"
+msgstr ""
+
+#: ../ui/expert-travel/template.xhtml.en:130
+msgctxt "body"
+msgid "${languages}"
+msgstr ""
+
+#: ../ui/abakuc/template.xhtml.en:49
+msgctxt "body"
+msgid "${location}"
+msgstr ""
+
+#: ../ui/expert-travel/template.xhtml.en:106
+msgctxt "div"
+msgid "${body}"
+msgstr ""
+
+#: ../ui/abakuc/template.xhtml.en:30
+msgctxt "div"
+msgid "${languages}"
+msgstr ""
+
+#: ../ui/abakuc/template.xhtml.en:54
+#: ../ui/expert-travel/template.xhtml.en:105
+msgctxt "div"
+msgid "${message}"
+msgstr ""
+
+#: ../ui/expert-travel/home.xml.en:24
+msgctxt "div"
+msgid "${tabs}"
+msgstr ""
+
+#: ../ui/expert-travel/home.xml.en:52
+msgctxt "div"
+msgid "{company}"
+msgstr ""
+
+#: ../ui/abakuc/tabs.xml.en:33
+msgctxt "div"
+msgid "{forum}"
+msgstr ""
+
+#: ../ui/abakuc/tabs.xml.en:24
+msgctxt "div"
+msgid "{jobs}"
+msgstr ""
+
+#: ../ui/expert-travel/home.xml.en:41
+msgctxt "div"
+msgid "{login}"
+msgstr ""
+
+#: ../ui/abakuc/tabs.xml.en:21
+msgctxt "div"
+msgid "{news}"
+msgstr ""
+
+#: ../ui/abakuc/tabs.xml.en:27
+msgctxt "div"
+msgid "{products}"
+msgstr ""
+
+#: ../ui/expert-travel/home.xml.en:49
+msgctxt "div"
+msgid "{profile}"
+msgstr ""
+
+#: ../ui/expert-travel/home.xml.en:44
+msgctxt "div"
+msgid "{register}"
+msgstr ""
+
+#: ../ui/abakuc/tabs.xml.en:30
+msgctxt "div"
+msgid "{training}"
+msgstr ""
+
+#: ../ui/abakuc/languages.xml.en:8
+msgctxt "div"
+msgid " "
+msgstr ""
+
+#: ../ui/abakuc/template.xhtml.en:53
+msgctxt "heading"
+msgid "${page_title}"
+msgstr ""
+
+#: ../ui/expert-travel/home.xml.en:7
+msgctxt "heading"
+msgid "Welcome <g id='1'>${info/title}</g> to the UK.Expert.Travel on-line portal!"
+msgstr ""
+
+#: ../ui/expert-travel/template.xhtml.en:93
+msgctxt "label"
+msgid "location » ${location}"
+msgstr ""
+
+#: ../ui/abakuc/languages.xml.en:11
+msgctxt "link"
+msgid "${lang/value}"
+msgstr ""
+
+#: ../ui/expert-travel/template.xhtml.en:125
+msgctxt "link"
+msgid "${user/info/title}"
+msgstr ""
+
+#: ../ui/expert-travel/template.xhtml.en:121
+msgctxt "link"
+msgid "(not logged in)"
+msgstr ""
+
+#: ../ui/expert-travel/template.xhtml.en:115
+msgctxt "link"
+msgid ".tarvel member since 2005"
+msgstr ""
+
+#: ../ui/abakuc/template.xhtml.en:43
+msgctxt "link"
+msgid "<g id='12'>Search</g>  <g id='13'>Contact</g>"
+msgstr ""
+
+#: ../ui/abakuc/template.xhtml.en:69
+msgctxt "link"
+msgid "<g id='16'>About</g>  <g id='17'>Credits</g>  <g id='18'>License</g>"
+msgstr ""
+
+#: ../ui/abakuc/template.xhtml.en:33
+msgctxt "link"
+msgid "<g id='7'>Log in</g>  <g id='8'>Register</g>"
+msgstr ""
+
+#: ../ui/abakuc/template.xhtml.en:38
+msgctxt "link"
+msgid "<g id='9'>Add content</g>  <g id='10'>My Profile</g>  <g id='11'>Log out</g>"
+msgstr ""
+
+#: ../ui/expert-travel/template.xhtml.en:30
+msgctxt "link"
+msgid "Abakuc Expert.Travel"
+msgstr ""
+
+#: ../ui/expert-travel/template.xhtml.en:117
+msgctxt "link"
+msgid "About"
+msgstr ""
+
+#: ../ui/expert-travel/template.xhtml.en:67
+msgctxt "link"
+msgid "Advanced search"
+msgstr ""
+
+#: ../ui/expert-travel/template.xhtml.en:118
+msgctxt "link"
+msgid "Conditions"
+msgstr ""
+
+#: ../ui/expert-travel/template.xhtml.en:54
+msgctxt "link"
+msgid "Contact"
+msgstr ""
+
+#: ../ui/expert-travel/template.xhtml.en:37
+msgctxt "link"
+msgid "Forum"
+msgstr ""
+
+#: ../ui/expert-travel/template.xhtml.en:53
+msgctxt "link"
+msgid "Help"
+msgstr ""
+
+#: ../ui/expert-travel/template.xhtml.en:34
+msgctxt "link"
+msgid "Home"
+msgstr ""
+
+#: ../ui/expert-travel/template.xhtml.en:36
+msgctxt "link"
+msgid "Jobs"
+msgstr ""
+
+#: ../ui/expert-travel/template.xhtml.en:44
+msgctxt "link"
+msgid "Log in"
+msgstr ""
+
+#: ../ui/expert-travel/template.xhtml.en:51
+msgctxt "link"
+msgid "Log out"
+msgstr ""
+
+#: ../ui/expert-travel/template.xhtml.en:119
+msgctxt "link"
+msgid "More"
+msgstr ""
+
+#: ../ui/expert-travel/template.xhtml.en:38
+msgctxt "link"
+msgid "More »"
+msgstr ""
+
+#: ../ui/expert-travel/template.xhtml.en:50
+msgctxt "link"
+msgid "My profile"
+msgstr ""
+
+#: ../ui/expert-travel/template.xhtml.en:35
+msgctxt "link"
+msgid "News"
+msgstr ""
+
+#: ../ui/expert-travel/template.xhtml.en:46
+msgctxt "link"
+msgid "Register"
+msgstr ""
+
+#: ../ui/expert-travel/template.xhtml.en:118
+msgctxt "link"
+msgid "Terms &amp;"
+msgstr ""
+
+#: ../ui/expert-travel/home.xml.en:9
+msgctxt "paragraph"
+msgid "An on-line directory of the UK Travel market covers:"
+msgstr ""
+
+#: ../ui/expert-travel/home.xml.en:19
+msgctxt "paragraph"
+msgid "If your entry is incorrect please login or re-register."
+msgstr ""
+
+#: ../ui/expert-travel/home.xml.en:17
+msgctxt "paragraph"
+msgid "Listing within this site is <g id='2'>FREE of Charge</g>, should you find that your company is not listed, please go to <g id='3'><g id='4'>'Register'</g></g> and register."
+msgstr ""
+
+#: ../ui/expert-travel/home.xml.en:10
+msgctxt "paragraph"
+msgid "air travel;"
+msgstr ""
+
+#: ../ui/expert-travel/home.xml.en:10
+msgctxt "paragraph"
+msgid "land and sea travel;"
+msgstr ""
+
+#: ../ui/expert-travel/home.xml.en:11
+msgctxt "paragraph"
+msgid "national tourist offices;"
+msgstr ""
+
+#: ../ui/expert-travel/home.xml.en:11
+msgctxt "paragraph"
+msgid "tour operators;"
+msgstr ""
+
+#: ../ui/expert-travel/home.xml.en:11
+msgctxt "paragraph"
+msgid "travel agents and provides travel professionals and site visitors with comprehensive and up to date contact information about the UK travel industry."
+msgstr ""
+
+#: ../ui/expert-travel/home.xml.en:10
+msgctxt "paragraph"
+msgid "travel trade information;"
+msgstr ""
+
+#: ../ui/expert-travel/home.xml.en:9
+msgctxt "paragraph"
+msgid "travel trade services;"
+msgstr ""
+
+#: ../ui/abakuc/tabs.xml.en:18
+msgctxt "span"
+msgid "Forum"
+msgstr ""
+
+#: ../ui/abakuc/tabs.xml.en:15
+msgctxt "span"
+msgid "Jobs"
+msgstr ""
+
+#: ../ui/expert-travel/home.xml.en:31
+msgctxt "span"
+msgid "Login"
+msgstr ""
+
+#: ../ui/expert-travel/home.xml.en:36
+msgctxt "span"
+msgid "Manage"
+msgstr ""
+
+#: ../ui/abakuc/tabs.xml.en:16
+msgctxt "span"
+msgid "Marketplace"
+msgstr ""
+
+#: ../ui/expert-travel/home.xml.en:35
+msgctxt "span"
+msgid "My Profile"
+msgstr ""
+
+#: ../ui/abakuc/tabs.xml.en:14
+msgctxt "span"
+msgid "News"
+msgstr ""
+
+#: ../ui/expert-travel/home.xml.en:32
+msgctxt "span"
+msgid "Registration"
+msgstr ""
+
+#: ../ui/abakuc/tabs.xml.en:17
+msgctxt "span"
+msgid "Training"
+msgstr ""
+
+#: ../ui/abakuc/template.xhtml.en:58
+msgctxt "table cell"
+msgid "${body}"
+msgstr ""
+
+#: ../ui/abakuc/template.xhtml.en:61
+msgctxt "table cell"
+msgid "${menu}"
+msgstr ""
+
+#: ../ui/abakuc/template.xhtml.en:7
+#: ../ui/expert-travel/template.xhtml.en:7
+msgctxt "title"
+msgid "${title}"
+msgstr ""
+
+#: ../ui/expert-travel/template.xhtml.en:113
+msgctxt "title attribute"
+msgid ".tarvel member since 2005"
+msgstr ""
+
+#: ../ui/expert-travel/template.xhtml.en:29
+#: ../ui/expert-travel/template.xhtml.en:30
+#: ../ui/expert-travel/template.xhtml.en:114
+msgctxt "title attribute"
+msgid "Abakuc Expert.Travel"
+msgstr ""
+
+#: ../ui/expert-travel/template.xhtml.en:58
+msgctxt "title attribute"
+msgid "Search this site…"
+msgstr ""

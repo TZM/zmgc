@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<stl:block xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:stl="http://www.hforge.org/xml-namespaces/stl">
+
+<script language="javascript">
+  $(document).ready(function(){
+    $('#no_password').change(function(){
+      if ($(this).attr('checked')) {
+        $('#show-if-password, #captcha-table').hide();
+        $('#show-if-no-password').show();
+        $('#captcha-placeholder').html('<p><img src="/ui/abakuc/images/spinner.gif" /></p>');
+        $('#captcha-placeholder').load("/;captcha");
+      } else {
+        $('#show-if-no-password').hide();
+        $('#show-if-password').show();
+      }
+    }).change();
+  });
+  function dialog() {
+        $("#terms").dialog({ modal: true, width: 600 }).load("/;company");
+        return false;
+    }
+   // Dialog Link
+      $('#terms_link').click(function(){
+              $('#terms').dialog('open');
+      return false;
+      });
+</script>
+
+<form id="loginform" name="loginform" method="post" action=";login">
+  <fieldset>
+    <legend>Sign in for Expert Travel</legend>
+    <dl id="username">
+        <dt><label for="username">E-mail Address</label>
+        <span class="field-is-missing" title="This field is required">*
+        </span>
+        <br/><span stl:if="username/error" class="field-error">${username/error}
+                <br/></span></dt>
+        <dd><input type="text" name="username"
+                    value="${username/value}" size="40" /></dd>
+    </dl>
+    <div id="show-if-password">
+        <dl id="password">
+            <dt><label for="password">Password</label>
+            <span stl:if="password/error" class="field-error">${password/error}</span>
+            <br/></dt>
+            <dd><input type="password" name="password" size="40" /></dd>
+        </dl>
+    </div>
+    <div id="show-if-no-password">
+        <dl id="captcha">
+            <dt><label for="captcha">Captcha</label>
+                <span stl:if="password/error" class="field-error">${password/error}</span>
+                <br/></dt>
+                <dd>
+                    <span id="captcha-placeholder"></span>
+                      <table id="captcha-table">
+                          <tr>
+                            <td>
+                                <img src="${captcha/captcha}" alt="captcha" title="captcha" /><br />
+                            </td>
+                          </tr>
+                          <tr>
+                              <td><embed height="16" autoplay="false" src="${captcha/sound_captcha}" type="audio/wav" /></td>
+                          </tr>
+                          <tr>
+                               <td colspan="2">
+                                   <label for="captcha">Please type in the word from the image above:</label>
+                               </td>
+                          </tr> 
+                          <tr>
+                               <td colspan="2">
+                                   <input type="text" name="captcha" value="" />
+                               </td>
+                          </tr>
+                    </table>
+                </dd>
+        </dl>            
+        <dl id="terms">
+            <dt><label for="terms">Terms &amp; Conditions</label></dt>
+            <dd>
+                I confirm that I have read and accepted the
+                <a href=";/terms">Terms &amp; Conditions</a>
+            </dd>
+        </dl>
+    </div>
+    <dl id="reset">
+        <dt><label for="terms">Register/Reset Password</label></dt>
+        <dd>
+            <input type="checkbox" id="no_password" name="no_password" value="1" /> 
+            Check this box if you don't have a password or you forgot it.
+        </dd>
+    </dl>
+    <dl>
+        <button type="submit" id="submit" class="button-ok">Continue</button>
+        <input stl:if="captcha/crypt_imgtext" name="crypt_imgtext" type="hidden" id="crypt_imgtext" value="${captcha/crypt_imgtext}"/>
+    </dl>
+  </fieldset>
+
+  <script language="javascript">
+    <stl:inline stl:if="not username/value">$("#username").focus();</stl:inline>
+    <stl:inline stl:if="username/value">$("#password").focus();</stl:inline>
+  </script>
+  
+</form>
+</stl:block>

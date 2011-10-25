@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<stl:block xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:stl="http://www.hforge.org/xml-namespaces/stl">
+  
+  <stl:block stl:if='not display'>
+      <p>We DON'T display the search form. As the user has an Address</p>
+      <p>Show the Company Name and address</p>
+      <form action=";company" method="get" style="margin-left: 2em">
+        <dl id="change_company">
+            <dt><label for="change_company">Change Company</label></dt>
+            <dd>
+                <input type="checkbox" id="change_company" name="change_company" value="1" /> 
+                Check this box if you want to switch another company.
+            </dd>
+            <dd>
+              <input type="submit" value="Change company" />
+            </dd>
+        </dl>
+      </form>
+  </stl:block> <!-- end no display -->
+  <stl:block stl:if='display'>
+    <p>Please first search whether your company information is already in the database.</p>
+    <form action=";company" method="get" style="margin-left: 2em">
+      <fieldset class="search">
+        <p>Type the name of your company: </p>
+        <input id="companies" type="text" name="company" value="" size="40" />
+        <button id="button-search" type="submit" class="button-search">Search</button>
+      </fieldset>
+      <div id="new-company-form"></div>
+      <div id="address"></div>
+    </form>
+    <script language="javascript">
+    companyName = '';
+    $(function() {
+        $('#items,#button-search').hide();
+        $("#companies").click(function() {
+            $(this).attr("value", "");
+            $('#address,#new-company-form').empty();
+        });
+        // we click on a select value .change(function () {
+        $("#address").change(function() {
+            var id = $(":selected", this).val();
+            if (id == "zzzzz99999-create-new-address") {
+                // we need to remove the address option list
+                $('#address').hide();
+                $('#new-company-form').load(';address_form?company='+companyName+' #autoform');
+            } 
+            else if (id == "aaaaa11111") {
+              return;
+            }
+            else {
+                alert('Request completed' + id);
+                //  pass the id value to the application
+            }
+        }) // end click event
+        $("#companies").autocomplete({
+            source: ";companies",
+            minLength: 2,
+            select: function(event, ui) {
+                companyName = ui.item.id;
+                $('#address').show();
+                if (ui.item.id == "create-new-company") {
+                    // call the new company form
+                    $('#address').empty();
+                    $('#new-company-form').load(';company_form #autoform');
+                } // end 'if'
+                else {
+                    $('#new-company-form').empty();
+                    $.ajax({
+                        type: 'GET',
+                        url: ';addresses?company=' + ui.item.id,
+                        dataType: 'json',
+                        // process the addresses
+                        success: function(json) {
+                            var opts = '';
+                            $.each(json, function(k, v) {
+                                opts += '<option value="' + k + '">' + v + '</option>';
+                            });
+                            $('#address').html('<select>' + opts + '</select>');
+                        }
+                    }); //end ajax call to address
+                } // end else
+            } // end select address
+        }); // end autocomplete
+    }); // end function
+    </script>
+
+    <div id="items">
+    <stl:block stl:if="items">
+      <stl:block stl:if="found">
+        <p>${n_found} ${n_found_msg} found. Select one:</p>
+        <form action=";setup_address_form" method="get" style="margin-left: 2em">
+          <select name="company">
+            <option value=""></option>
+            <option stl:repeat="item found" value="${item/name}"
+              >${item/title}</option>
+          </select>
+          <input type="submit" value="Select" />
+        </form>
+      </stl:block> <!-- found -->
+      <stl:block stl:if="not found">
+        <div id="new_company_form">
+          <p>${message}</p>
+          ${new_company_form}
+        </div> 
+      </stl:block> <!-- not found -->
+    </stl:block> <!-- items -->
+    </div>
+  </stl:block> <!-- end display --> 
+</stl:block>

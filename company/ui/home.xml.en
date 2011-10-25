@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<stl:block xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:stl="http://www.hforge.org/xml-namespaces/stl">
+
+    <h1>Welcome <span stl:if="info">${info/title}</span> to the <b><u>${company_title}</u></b> part of the UK.Expert.Travel on-line portal!</h1>
+    <p>${company_description}</p>
+
+    <p stl:if="not info">
+    Listing within this site is <b>FREE of Charge</b>, should you find
+    that your company is not listed, please go to
+    <a href=";register_form"><i>'Register'</i></a> and register. If your entry
+    is incorrect please login or re-register.
+    </p>
+
+<div class="yui-gc">
+    <div class="yui-u first">
+      ${tabs}
+    </div> <!-- yui-u first -->
+    <!-- 1/3 column -->
+    <div class="yui-u">
+      <script type="text/javascript">
+          $(function() {
+            $('#container-2').tabs({ cookie: { expires: 365 }});
+              $("#subtabs > ul").tabs({ 
+                navClass: "ui-tabs-sub-nav",
+                selectedClass: 'ui-tabs-sub-selected',
+                unselectClass: 'ui-tabs-sub-unselect',
+                disabledClass: 'ui-tabs-sub-disabled',
+                panelClass: 'ui-tabs-sub-panel',
+                loadingClass: 'ui-tabs-sub-loading'
+              });
+          });
+      </script>
+        <div id="container-2">
+            <ul>
+                <li><a href="#fragment-6"><span>Login</span></a></li>
+                <li><a href="#fragment-7"><span>Registration</span></a></li>
+                <li><a href="#fragment-8"><span>My Profile</span></a></li>
+                <li class="manage-tab"><a href="#fragment-9"><span>Manage</span></a></li>
+            </ul>
+        <div id="fragment-6">
+          <div id="subtabs">
+            <ul>
+              <li><a href="#subfragment-1"><span>Sub 1</span></a></li>
+              <li><a href="#subfragment-2"><span>Sub 2</span></a></li>
+            </ul>
+            <div id="subfragment-1">
+                subfragment-1
+            </div>
+            <div id="subfragment-2">
+                subfragment-2
+            </div>
+          </div> 
+        </div>
+        <div id="fragment-7">
+          {register}
+        </div>
+        <div id="fragment-8">
+          <stl:block stl:repeat="address addresses">
+            <dl class="ListItem" onmouseover="this.className='ListItem_Hover';"
+              onmouseout="this.className='ListItem';">  
+              <dt>
+                <a href="${address/path}">${address/name}</a>
+              </dt>
+              <dd stl:if="address/description">
+                ${address/description}
+              </dd>
+              <dd class="info">
+                Tags: ${address/subject}             
+              </dd>
+              <dd class="info">
+                External URL: 
+                <stl:block stl:repeat="vhost address/vhosts">
+                  <a href="${vhost}">${vhost}</a><br />
+                </stl:block>           
+              </dd>
+              <dd class="info">
+                Last time modified: ${address/mtime}             
+              </dd>
+            </dl>
+          </stl:block> <!-- stl:repeat="address addresses" -->
+        </div>
+        <div id="fragment-9">
+          {company}
+        </div>
+        </div> <!-- container-2 -->
+    </div> <!-- yui-u -->
+</div> <!-- yui-g -->
+
+</stl:block>

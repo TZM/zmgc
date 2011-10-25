@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<stl:block xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:stl="http://www.hforge.org/xml-namespaces/stl">
+
+  <!-- Edit industries -->
+  <fieldset>
+    <legend>Edit the active business</legend>
+    <form action="" method="post" id="browse-list">
+<!--
+      <dt>
+        <label for="type">Industry settings</label>
+      </dt>
+      <dd>
+        <stl:block stl:repeat="industry industries">
+          <input type="radio" name="type" value="${industry/code}"
+            checked="${industry/isdefault}" />${industry/name} 
+        </stl:block>
+      </dd>
+-->
+      <table summary="Business settings">
+        <thead>
+          <tr>
+            <th>Default</th>
+            <th>Name</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr stl:repeat="business active_business"
+            class="${repeat/business/even}">
+            <td stl:if="business/isdefault">Yes</td>
+	    <td stl:if="not business/isdefault" align="center">
+	      <input class="radio" type="radio" name="codes"
+		value="${business/name}" />
+            </td>
+            <td>${business/value}</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>
+        <button type="submit" name="action" value="change_default_business" class="button-ok">Change default</button>
+        <button type="submit" name="action" value="remove_business" class="button-delete">Remove</button>
+      </p>
+    </form>
+  </fieldset>
+
+  <br/>
+
+   Add additional business 
+  <fieldset>
+    <legend>Add additional business</legend>
+    <form action="" method="post">
+      <select name="code" id="new-industry">
+        <option value="">Choose a business</option>
+        <option stl:repeat="business not_active_business"
+          value="${business/name}">${business/value}</option>
+      </select>
+      <button type="submit" name="action" value="add_business" class="button-ok">Add business</button> 
+    </form>
+  </fieldset>
+</stl:block>

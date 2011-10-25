@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<stl:block xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:stl="http://www.hforge.org/xml-namespaces/stl">
+
+    <h1>Welcome <span stl:if="info">${info/title}</span> to the Training Portal</h1>
+    <p>
+  This is Traveluniversity.net site root 
+    </p>
+
+    <p stl:if="not info">
+    Listing within this site is <b>FREE of Charge</b>, should you find
+    that your company is not listed, please go to
+    <a href=";register_form"><i>'Register'</i></a> and register. If your entry
+    is incorrect please login or re-register.
+    </p>
+<div class="yui-gc">
+    <div class="yui-u first">
+    ${tabs}
+    </div> <!-- yui-u first -->
+    <!-- 1/3 column -->
+    <div class="yui-u">
+        <div id="container-2">
+            <ul>
+    <stl:block stl:if="not info">
+                <li><a href="#fragment-6"><span>Login</span></a></li>
+                <li><a href="#fragment-7"><span>Registration</span></a></li>
+    <stl:block stl:if="info">
+    </stl:block>
+                <li><a href="#fragment-8"><span>My Profile</span></a></li>
+                <li><a href="#fragment-9"><span>Manage</span></a></li>
+    </stl:block>
+            </ul>
+    <stl:block stl:if="not info">
+        <div id="fragment-6">
+           {login} 
+        </div>
+        <div id="fragment-7">
+          {register}
+        </div>
+    </stl:block>
+    <stl:block stl:if="info">
+        <div id="fragment-8">
+          {profile}
+        </div>
+        <div id="fragment-9">
+        {company}
+        </div>
+    </stl:block>
+        </div> <!-- container-2 -->
+    </div> <!-- yui-u -->
+</div> <!-- yui-g -->
+
+</stl:block>

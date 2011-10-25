@@ -1,0 +1,117 @@
+README for $package_name
+
+abakuc portal has been built on top of itools' (http://ikaaro.org) python
+framework and is a project designed to implement the internal workings of a
+business-to-business magazine publisher.
+
+Requirements
+============
+
+Software    Version   Used by         Home
+---------   -------   -------------   ----------------------------------------
+Python        2.6.6   itools          http://www.python.org/
+iTools	      0.60.2  abakuc  	      http://www.hforge.org/	
+SoX	      14.2.0  abakuc	      http://sox.sourceforge.net/
+SWFTools      0.8.1+  abakuc	      http://www.swftools.org/		
+
+
+Sound files
+===========
+These were generated from the IBM Text-to-Speech: Unconstrained U.S. English Text Demo http://www.research.ibm.com/tts/coredemo.shtml
+
+
+Install
+=======
+
+i18n
+----
+$ /Users/khine/usr/local/python2.6/bin/python setup.py install
+$ /Users/khine/usr/local/python2.6/bin/ipkg-update-locale.py
+this will update all the locals and generate the xx.po files
+* Extract text strings................
+* Update PO template 
+* Update PO files:
+  en.po ................. done.
+  fr.po (new)
+
+$ /Users/khine/usr/local/python2.6/bin/ipkg-build.py
+* Version: 0.60-200907171253
+* Compile message catalogs: en fr
+* Build XHTML files***
+* Build MANIFEST file (list of files to install)
+
+
+
+The basics:
+===========
+
+We have 3 entities, Advertisers, Enquiries, Users; all of these are mangled into
+the publication which in turn has: Aricles, Images (media objects).
+
+The core of the application is based on the Users class and the Company class.
+
+Virtual hosts:
+==============
+127.0.0.1	expert_travel
+127.0.0.1	uk.expert_travel
+127.0.0.1	fr.expert_travel
+127.0.0.1	us.expert_travel
+
+127.0.0.1	abakuc_com
+127.0.0.1	268.abakuc_com
+127.0.0.1	destinationsguide_info
+127.0.0.1	onecaribbean_org
+127.0.0.1	zambiatourism_com
+
+127.0.0.1	traveluniversity_net	
+127.0.0.1	tp1.traveluniversity_net
+
+httpd-vhosts
+============
+
+<VirtualHost *:80>
+    ServerAdmin me@arooweelo
+    #DocumentRoot "/usr/local/apache2/htdocs"
+    ServerName uk.expert_travel
+    ServerAlias fr.expert_travel
+    ServerAlias us.expert_travel
+    # Traveluniversity and Travel Trade
+    ServerAlias traveluniversity_net
+    ServerAlias tp1.traveluniversity_net
+    ServerAlias onecaribbean_org
+    ServerAlias zambiatourism_com
+    # Individual company
+    ServerAlias abakuc_com
+    ServerAlias 268.abakuc_com
+    # Destinations Guide
+    ServerAlias destinationsguide_info
+    ServerAlias zambia.destinationsguide_info
+   <Directory "/usr/local/apache2/htdocs">
+   	Options Indexes FollowSymLinks
+   	AllowOverride None
+   	Order allow,deny
+   	Allow from all
+   </Directory>
+  <IfModule mod_rewrite.c>
+     RewriteEngine On
+     RewriteRule ^/(.*) http://localhost:7080/$1 [P]
+     RequestHeader set X-Base-Path /
+  </IfModule>
+    RewriteLogLevel 9
+    RewriteLog "logs/expert.travel_rewrite"
+    ErrorLog "logs/expert.travel-error_log"
+    CustomLog "logs/expert.travel-access_log" common
+</VirtualHost>
+
+
+Resetting itools and ikaaro
+---------------------------
+
+rm -rf /Users/khine/usr/local/python2.6/lib/python2.6/site-packages/itools*
+rm -rf /Users/khine/usr/local/python2.6/lib/python2.6/site-packages/ikaaro*
+rm /Users/khine/usr/local/python2.6/bin/iodf-greek.py 
+rm /Users/khine/usr/local/python2.6/bin/igettext-*
+rm /Users/khine/usr/local/python2.6/bin/icms-*
+rm /Users/khine/usr/local/python2.6/bin/ipkg-*
+
+python26 setup.py install
