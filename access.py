@@ -25,8 +25,7 @@ class SiteRoleAware(RoleAware):
     __roles__ = [
         {'name': 'admins', 'title': MSG(u'Admin')},
         {'name': 'chapter_manager', 'title':  MSG(u'Chapter Manager')},
-        {'name': 'branch_manager', 'title':  MSG(u'Branch Manager')},
-        {'name': 'branch_member', 'title':  MSG(u'Branch Member')},
+        {'name': 'chapter_member', 'title':  MSG(u'Chapter Member')},
         {'name': 'partners', 'title':  MSG(u'Partner')},
         {'name': 'reviewers', 'title': MSG(u"Reviewer")},
         {'name': 'members', 'title': MSG(u"Member")},

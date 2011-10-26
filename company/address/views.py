@@ -25,7 +25,7 @@ from ikaaro.user import User
 # Import from here
 from tzm.buttons import RegionButton
 from tzm.datatypes import Industry, BusinessSector, BusinessType
-from tzm.messages import MSG_EXISTANT_COMPANY, MSG_CHOOSE_REGION
+from tzm.messages import MSG_EXISTANT_CHAPTER, MSG_CHOOSE_REGION
 from tzm.skins_views import TabsTemplate
 from tzm.resource_views import RegionSelect, get_host_prefix
 from tzm.datatypes import getCountries, getRegions, sort_key, getCounties
@@ -84,7 +84,7 @@ class Address_NewInstance(NewInstance):
         if resource.get_resource(name, soft=True) is not None:
             address = resource.get_resource(name, soft=True)
             # List addresses for this company
-            return context.come_back(MSG_EXISTANT_COMPANY)
+            return context.come_back(MSG_EXISTANT_CHAPTER)
         # we get the region or county
         county = form['county']
         if county is not None:

@@ -17,5 +17,4 @@ import user
 __version__ = get_version()
 
 # Register skins
-#register_skin('zeitgeist', get_abspath('ui/zeitgeist'))
 register_skin('core', get_abspath('ui/core'))

@@ -25,7 +25,7 @@ from ikaaro.folder import Folder
 from ikaaro.website import WebSite
 
 # Import from here
-from tzm.messages import MSG_EXISTANT_COMPANY
+from tzm.messages import MSG_EXISTANT_CHAPTER
 from tzm.skins_views import TabsTemplate
 from tzm.datatypes import World, getCountries, getRegions, getCounties
 from tzm.resource_views import RegionSelect
@@ -70,7 +70,7 @@ class Country_NewInstance(NewInstance):
         if container.get_resource(name, soft=True) is not None:
             item = container.get_resource(name, soft=True)
             # List addresses for this company
-            return context.come_back(MSG_EXISTANT_COMPANY)
+            return context.come_back(MSG_EXISTANT_CHAPTER)
         item = container.make_resource(name, cls)
         # The metadata
         metadata = item.metadata

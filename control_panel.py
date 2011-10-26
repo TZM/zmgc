@@ -16,7 +16,7 @@ class CPEditIndustry(STLForm):
 
     access = 'is_admin'
     title = MSG(u'Industry')
-    description = MSG(u'Define the Web Site industry.')
+    description = MSG(u"Define the site's' industry.")
     icon_path = '/ui/core/icons/48x48/Booking48.png'
     template = '/ui/core/templates/forms/edit_industry.xml'
     schema = {

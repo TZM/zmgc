@@ -28,7 +28,7 @@ from ikaaro.folder_views import Folder_BrowseContent
 
 # Import from here
 from tzm.datatypes import Industry, BusinessSector, BusinessType
-from tzm.messages import MSG_EXISTANT_COMPANY, MSG_CHOOSE_REGION
+from tzm.messages import MSG_EXISTANT_CHAPTER, MSG_CHOOSE_REGION
 from tzm.skins_views import TabsTemplate
 from tzm.utils import fix_website_url
 from tzm.company.address.views import Address_NewInstance
@@ -95,7 +95,7 @@ class Company_NewInstance(NewInstance):
         if container.get_resource(name, soft=True) is not None:
             company = container.get_resource(name, soft=True)
             # List addresses for this company
-            return context.come_back(MSG_EXISTANT_COMPANY)
+            return context.come_back(MSG_EXISTANT_CHAPTER)
         # what if the form is all field, but thu user decides to change to different region?
         county = form['county']
         if county is not None:
@@ -135,11 +135,11 @@ class Company_NewInstance(NewInstance):
         address_title = [ x for x in address_title if x ]
         address_name = checkid(address_title[0])
         if address_name is None:
-            return context.come_back(MSG_EXISTANT_COMPANY) # FIXME
+            return context.come_back(MSG_EXISTANT_CHAPTER) # FIXME
         address_class_id = 'address'
         address_cls = get_resource_class(address_class_id)
         if company.get_resource(address_name, soft=True) is not None:
-            return context.come_back(MSG_EXISTANT_COMPANY)
+            return context.come_back(MSG_EXISTANT_CHAPTER)
         address = company.make_resource(address_name, address_cls)
         address_vhosts = []
         # We add the default vhost entry for the address

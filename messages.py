@@ -5,11 +5,11 @@ from itools.gettext import MSG
 from itools.web import INFO, ERROR
 
 
-MSG_EXISTANT_COMPANY = ERROR(
-    u'A company with this name is already in the database!')
+MSG_EXISTANT_CHAPTER = ERROR(
+    u'A chapter with this name is already in the database!')
 
-MSG_NON_EXISTANT_COMPANY = ERROR(
-    u'There is no company with this name on the database, please first create a company!')
+MSG_NON_EXISTANT_CHAPTER = ERROR(
+    u'There is no chapter with this name on the database, please first create a chapter!')
 
 MSG_EXISTANT_ADDRESS = ERROR(
     u'An address with this name already exists in the database!')
