@@ -1,5 +1,5 @@
 # -*- coding: UTF-8 -*-
-# Copyright (C) 2007 Norman Khine <norman@abakuc.com>
+# Copyright (C) 2007 Norman Khine <norman@khine.net>
 
 # Import from itools
 from itools.gettext import MSG
@@ -9,9 +9,9 @@ from ikaaro.folder import Folder
 from ikaaro.registry import register_resource_class, register_document_type
 from ikaaro.skins import UI, ui_path
 
-# Import from abakuc
-from abakuc.website import SiteRoot 
-#from abakuc.skins import TrainingSkin 
+# Import from tzm
+from tzm.website import SiteRoot 
+#from tzm.skins import TrainingSkin 
 #
 # Import from here
 from views import View

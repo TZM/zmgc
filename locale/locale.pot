@@ -524,7 +524,7 @@ msgctxt "body"
 msgid "${languages}"
 msgstr ""
 
-#: ../ui/abakuc/template.xhtml.en:49
+#: ../ui/zeitgeist/template.xhtml.en:49
 msgctxt "body"
 msgid "${location}"
 msgstr ""
@@ -534,12 +534,12 @@ msgctxt "div"
 msgid "${body}"
 msgstr ""
 
-#: ../ui/abakuc/template.xhtml.en:30
+#: ../ui/zeitgeist/template.xhtml.en:30
 msgctxt "div"
 msgid "${languages}"
 msgstr ""
 
-#: ../ui/abakuc/template.xhtml.en:54
+#: ../ui/zeitgeist/template.xhtml.en:54
 #: ../ui/expert-travel/template.xhtml.en:105
 msgctxt "div"
 msgid "${message}"
@@ -555,12 +555,12 @@ msgctxt "div"
 msgid "{company}"
 msgstr ""
 
-#: ../ui/abakuc/tabs.xml.en:33
+#: ../ui/zeitgeist/tabs.xml.en:33
 msgctxt "div"
 msgid "{forum}"
 msgstr ""
 
-#: ../ui/abakuc/tabs.xml.en:24
+#: ../ui/zeitgeist/tabs.xml.en:24
 msgctxt "div"
 msgid "{jobs}"
 msgstr ""
@@ -570,12 +570,12 @@ msgctxt "div"
 msgid "{login}"
 msgstr ""
 
-#: ../ui/abakuc/tabs.xml.en:21
+#: ../ui/zeitgeist/tabs.xml.en:21
 msgctxt "div"
 msgid "{news}"
 msgstr ""
 
-#: ../ui/abakuc/tabs.xml.en:27
+#: ../ui/zeitgeist/tabs.xml.en:27
 msgctxt "div"
 msgid "{products}"
 msgstr ""
@@ -590,17 +590,17 @@ msgctxt "div"
 msgid "{register}"
 msgstr ""
 
-#: ../ui/abakuc/tabs.xml.en:30
+#: ../ui/zeitgeist/tabs.xml.en:30
 msgctxt "div"
 msgid "{training}"
 msgstr ""
 
-#: ../ui/abakuc/languages.xml.en:8
+#: ../ui/core/templates/widgets/languages.xml.en:8
 msgctxt "div"
 msgid " "
 msgstr ""
 
-#: ../ui/abakuc/template.xhtml.en:53
+#: ../ui/zeitgeist/template.xhtml.en:53
 msgctxt "heading"
 msgid "${page_title}"
 msgstr ""
@@ -615,7 +615,7 @@ msgctxt "label"
 msgid "location » ${location}"
 msgstr ""
 
-#: ../ui/abakuc/languages.xml.en:11
+#: ../ui/core/templates/widgets/languages.xml.en:11
 msgctxt "link"
 msgid "${lang/value}"
 msgstr ""
@@ -635,22 +635,22 @@ msgctxt "link"
 msgid ".tarvel member since 2005"
 msgstr ""
 
-#: ../ui/abakuc/template.xhtml.en:43
+#: ../ui/zeitgeist/template.xhtml.en:43
 msgctxt "link"
 msgid "<g id='12'>Search</g>  <g id='13'>Contact</g>"
 msgstr ""
 
-#: ../ui/abakuc/template.xhtml.en:69
+#: ../ui/zeitgeist/template.xhtml.en:69
 msgctxt "link"
 msgid "<g id='16'>About</g>  <g id='17'>Credits</g>  <g id='18'>License</g>"
 msgstr ""
 
-#: ../ui/abakuc/template.xhtml.en:33
+#: ../ui/zeitgeist/template.xhtml.en:33
 msgctxt "link"
 msgid "<g id='7'>Log in</g>  <g id='8'>Register</g>"
 msgstr ""
 
-#: ../ui/abakuc/template.xhtml.en:38
+#: ../ui/zeitgeist/template.xhtml.en:38
 msgctxt "link"
 msgid "<g id='9'>Add content</g>  <g id='10'>My Profile</g>  <g id='11'>Log out</g>"
 msgstr ""
@@ -790,12 +790,12 @@ msgctxt "paragraph"
 msgid "travel trade services;"
 msgstr ""
 
-#: ../ui/abakuc/tabs.xml.en:18
+#: ../ui/zeitgeist/tabs.xml.en:18
 msgctxt "span"
 msgid "Forum"
 msgstr ""
 
-#: ../ui/abakuc/tabs.xml.en:15
+#: ../ui/zeitgeist/tabs.xml.en:15
 msgctxt "span"
 msgid "Jobs"
 msgstr ""
@@ -810,7 +810,7 @@ msgctxt "span"
 msgid "Manage"
 msgstr ""
 
-#: ../ui/abakuc/tabs.xml.en:16
+#: ../ui/zeitgeist/tabs.xml.en:16
 msgctxt "span"
 msgid "Marketplace"
 msgstr ""
@@ -820,7 +820,7 @@ msgctxt "span"
 msgid "My Profile"
 msgstr ""
 
-#: ../ui/abakuc/tabs.xml.en:14
+#: ../ui/zeitgeist/tabs.xml.en:14
 msgctxt "span"
 msgid "News"
 msgstr ""
@@ -830,22 +830,22 @@ msgctxt "span"
 msgid "Registration"
 msgstr ""
 
-#: ../ui/abakuc/tabs.xml.en:17
+#: ../ui/zeitgeist/tabs.xml.en:17
 msgctxt "span"
 msgid "Training"
 msgstr ""
 
-#: ../ui/abakuc/template.xhtml.en:58
+#: ../ui/zeitgeist/template.xhtml.en:58
 msgctxt "table cell"
 msgid "${body}"
 msgstr ""
 
-#: ../ui/abakuc/template.xhtml.en:61
+#: ../ui/zeitgeist/template.xhtml.en:61
 msgctxt "table cell"
 msgid "${menu}"
 msgstr ""
 
-#: ../ui/abakuc/template.xhtml.en:7
+#: ../ui/zeitgeist/template.xhtml.en:7
 #: ../ui/expert-travel/template.xhtml.en:7
 msgctxt "title"
 msgid "${title}"

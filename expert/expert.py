@@ -1,5 +1,5 @@
 # -*- coding: UTF-8 -*-
-# Copyright (C) 2007 Norman Khine <norman@abakuc.com>
+# Copyright (C) 2007 Norman Khine <norman@khine.net>
 
 # Import from itools
 from itools.core import freeze, get_abspath, merge_dicts
@@ -13,12 +13,12 @@ from ikaaro.registry import register_resource_class, register_document_type
 from ikaaro.skins import register_skin, UI, ui_path
 from ikaaro.website import WebSite
 
-# Import from abakuc
-from abakuc.website import SiteRoot 
+# Import from tzm
+from tzm.website import SiteRoot 
  
 # Import from here
 from views import View
-from abakuc.resource_views import Captcha
+from tzm.resource_views import Captcha
 
 
 class Expert(SiteRoot):

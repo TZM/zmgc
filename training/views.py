@@ -1,5 +1,5 @@
 # -*- coding: UTF-8 -*-
-# Copyright (C) 2007 Norman Khine <norman@abakuc.com>
+# Copyright (C) 2007 Norman Khine <norman@khine.net>
 
 # Import from the Standard Library
 
@@ -8,7 +8,7 @@ from itools.gettext import MSG
 from itools.web import STLView
 
 # Import from here
-from abakuc.skins_views import TabsTemplate
+from tzm.skins_views import TabsTemplate
 
 class View(STLView):
     

@@ -1,5 +1,5 @@
 # -*- coding: UTF-8 -*-
-# Copyright (C) 2007 Norman Khine <norman@abakuc.com>
+# Copyright (C) 2007 Norman Khine <norman@khine.net>
 
 from json import dumps
 
@@ -176,7 +176,7 @@ class UserCompany(SearchForm):
     title = MSG(u'Company')
     description = MSG(u"User's company page.")
     icon = 'action_home.png'
-    template = '/ui/abakuc/company.xml'
+    template = '/ui/zeitgeist/company.xml'
     
     schema = merge_dicts(Company_NewInstance.schema)
 
@@ -194,7 +194,7 @@ class UserCompany(SearchForm):
             'name': String,
             'title': Unicode})
     
-    scripts = ['/ui/abakuc/js/jquery.ui.autocomplete.js']
+    scripts = ['/ui/zeitgeist/js/jquery.ui.autocomplete.js']
 
     def get_namespace(self, resource, context):
         display = None
@@ -347,4 +347,4 @@ class UserAddress(STLView):
     title = MSG(u'Address')
     description = MSG(u"User's address page.")
     icon = 'action_home.png'
-    template = '/ui/abakuc/address.xml'
+    template = '/ui/zeitgeist/address.xml'

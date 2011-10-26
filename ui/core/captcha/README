@@ -1,0 +1,2 @@
+Captcha tmp files, this folder will be emptied using cron
+it will contain both the .wav and .jpg files

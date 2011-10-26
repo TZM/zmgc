@@ -1,5 +1,5 @@
 # -*- coding: UTF-8 -*-
-# Copyright (C) 2007 Norman Khine <norman@abakuc.com>
+# Copyright (C) 2007 Norman Khine <norman@khine.net>
 # Import from itools
 from itools.gettext import MSG
 from itools.web import INFO, ERROR

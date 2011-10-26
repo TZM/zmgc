@@ -1,5 +1,5 @@
 # -*- coding: UTF-8 -*-
-# Copyright (C) 2007 Norman Khine <norman@abakuc.com>
+# Copyright (C) 2007 Norman Khine <norman@khine.net>
 
 # Import from the Standard Library
 
@@ -23,12 +23,12 @@ from ikaaro.views_new import NewInstance
 from ikaaro.user import User
 
 # Import from here
-from abakuc.buttons import RegionButton
-from abakuc.datatypes import Industry, BusinessSector, BusinessType
-from abakuc.messages import MSG_EXISTANT_COMPANY, MSG_CHOOSE_REGION
-from abakuc.skins_views import TabsTemplate
-from abakuc.resource_views import RegionSelect, get_host_prefix
-from abakuc.datatypes import getCountries, getRegions, sort_key, getCounties
+from tzm.buttons import RegionButton
+from tzm.datatypes import Industry, BusinessSector, BusinessType
+from tzm.messages import MSG_EXISTANT_COMPANY, MSG_CHOOSE_REGION
+from tzm.skins_views import TabsTemplate
+from tzm.resource_views import RegionSelect, get_host_prefix
+from tzm.datatypes import getCountries, getRegions, sort_key, getCounties
 
 
 class Address_NewInstance(NewInstance):

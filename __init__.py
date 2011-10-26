@@ -1,5 +1,5 @@
 # -*- coding: UTF-8 -*-
-# Copyright (C) 2007 Norman Khine <norman@abakuc.com>
+# Copyright (C) 2007 Norman Khine <norman@khine.net>
 
 # Import from itools
 from itools import get_version
@@ -16,6 +16,6 @@ import user
 # Make the product version available to Python code
 __version__ = get_version()
 
-# Register skin
-path = get_abspath('ui/zeitgeist')
-register_skin('zeitgeist', path)
+# Register skins
+#register_skin('zeitgeist', get_abspath('ui/zeitgeist'))
+register_skin('core', get_abspath('ui/core'))

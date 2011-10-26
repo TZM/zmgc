@@ -1,5 +1,5 @@
 # -*- coding: UTF-8 -*-
-# Copyright (C) 2007 Norman Khine <norman@abakuc.com>
+# Copyright (C) 2007 Norman Khine <norman@khine.net>
 
 # Import from the Standard Library
 
@@ -176,7 +176,7 @@ class Company_SearchForm(SearchForm):
     title = MSG(u'Company Search Form')
     description = MSG(u"Company search page.")
     icon = 'action_home.png'
-    template = '/ui/abakuc/company_search.xml'
+    template = '/ui/core/templates/forms/company_search.xml'
     
     search_schema = {'company': Unicode}
     

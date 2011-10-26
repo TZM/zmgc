@@ -1,5 +1,5 @@
 # -*- coding: UTF-8 -*-
-# Copyright (C) 2009 Norman Khine <norman@abakuc.com>
+# Copyright (C) 2009 Norman Khine <norman@khine.net>
 
 # Import from the Standard Library
 from random import sample

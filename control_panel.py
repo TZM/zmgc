@@ -1,5 +1,5 @@
 # -*- coding: UTF-8 -*-
-# Copyright (C) 2007 Norman Khine <norman@abakuc.com>
+# Copyright (C) 2007 Norman Khine <norman@khine.net>
 
 # Import from itools
 from itools.web import STLForm
@@ -17,8 +17,8 @@ class CPEditIndustry(STLForm):
     access = 'is_admin'
     title = MSG(u'Industry')
     description = MSG(u'Define the Web Site industry.')
-    icon_path = 'ui/abakuc/Booking48.png'
-    template = 'ui/abakuc/edit_industry.xml'
+    icon_path = '/ui/core/icons/48x48/Booking48.png'
+    template = '/ui/core/templates/forms/edit_industry.xml'
     schema = {
         'codes': String(multiple=True, mandatory=True)}
 
@@ -104,10 +104,9 @@ class CPEditBusinessSector(STLForm):
     access = 'is_admin'
     title = MSG(u'Business Sector')
     description = MSG(u"Define the Company's BusinessSector.")
-    #class_icon16 = 'ui/abakuc/icons/16x16/news_folder.png' 
-    add_icon = 'ui/abakuc/icons/48x48/news_folder.png'  
-    #icon = '/ui/abakuc/icons/industry.png' 
-    template = '/ui/abakuc/edit_business.xml'
+    add_icon = '/ui/core/icons/48x48/news_folder.png'  
+    #icon = '/ui/core/icons/48x48/industry48.png' 
+    template = '/ui/core/templates/forms/edit_business.xml'
     schema = {
         'codes': String(multiple=True, mandatory=True)}
 
@@ -187,10 +186,9 @@ class CPEditBusinessType(STLForm):
     access = 'is_admin'
     title = MSG(u'Business Type')
     description = MSG(u"Define the Company's Business Type.")
-    #class_icon16 = 'ui/abakuc/icons/16x16/news_folder.png' 
-    add_icon = 'ui/abakuc/icons/48x48/news_folder.png'  
-    #icon = '/ui/abakuc/icons/industry.png' 
-    template = '/ui/abakuc/edit_business.xml'
+    add_icon = '/ui/core/icons/48x48/news_folder.png'  
+    #icon = '/ui/core/icons/industry.png' 
+    template = '/ui/core/templates/forms/edit_business.xml'
     schema = {
         'codes': String(multiple=True, mandatory=True)}
 

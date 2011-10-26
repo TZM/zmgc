@@ -1,5 +1,5 @@
 # -*- coding: UTF-8 -*-
-# Copyright (C) 2007 Norman Khine <norman@abakuc.com>
+# Copyright (C) 2007 Norman Khine <norman@khine.net>
 
 # Import from the Standard Library
 
@@ -25,10 +25,10 @@ from ikaaro.folder import Folder
 from ikaaro.website import WebSite
 
 # Import from here
-from abakuc.messages import MSG_EXISTANT_COMPANY
-from abakuc.skins_views import TabsTemplate
-from abakuc.datatypes import World, getCountries, getRegions, getCounties
-from abakuc.resource_views import RegionSelect
+from tzm.messages import MSG_EXISTANT_COMPANY
+from tzm.skins_views import TabsTemplate
+from tzm.datatypes import World, getCountries, getRegions, getCounties
+from tzm.resource_views import RegionSelect
 
 
 class Country_NewInstance(NewInstance):
@@ -87,7 +87,7 @@ class Country_NewInstance(NewInstance):
 class ImportCountries(STLForm):
     access = 'is_admin'
     title = MSG(u'Import countries')
-    template = '/ui/abakuc/import.xml'
+    template = '/ui/core/templates/forms/import.xml'
 
     def get_namespace(self, resource, context):
         country = 'fr'

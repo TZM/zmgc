@@ -3,118 +3,117 @@
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="${language}"
   xmlns:stl="http://www.hforge.org/xml-namespaces/stl">
-  <head>
-    <title>${title} In the /expert/ui folder</title>
-    <base href="${base_uri}" />
-    <!-- Meta -->
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <meta stl:repeat="meta meta_tags" name="${meta/name}" lang="${meta/lang}"
+<head>
+  <title>${title}</title>
+  <base href="${base_uri}" />
+  <!-- Meta -->
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta stl:repeat="meta meta_tags" name="${meta/name}" lang="${meta/lang}"
       content="${meta/content}" />
-
-    <!-- CSS -->
-    <link type="text/css" rel="stylesheet" stl:repeat="style styles"
-      href="${style}" />
-
-    <!-- JavaScript -->
-    <script type="text/javascript" stl:repeat="script scripts" src="${script}"
-      />
-    <!-- Icon -->
-    <link rel="shortcut icon" href="${favicon_href}" type="${favicon_type}" />
-  </head>
-
-  <body>
-        <div id="doc3" class="yui-t1">
-            <div id="hd">
-              <h1 title="Abakuc Expert.Travel">
-                <a href="/" title="Abakuc Expert.Travel">Abakuc Expert.Travel</a>
-              </h1>
-              <div id="navbar"><!-- navbar -->
-                <ul>
-                  <li><a href="/">Home</a></li>
-                  <li><a href="/;news">News</a></li>
-                  <li><a href="/;jobs">Jobs</a></li>
-                  <li><a href="/;forum">Forum</a></li>
-                  <li><a href="/;more">More&nbsp;»</a></li>
-                </ul>
-              </div><!-- /navbar -->
-              <div id="bar"><!-- bar -->
-                <ul>
-                  <stl:block stl:if="not user">
-                    <li><a href="${login}">Log in</a></li>
-                  </stl:block>
-                  <stl:block stl:if="user">
-                    <li><a href="${user/home}">My profile</a></li>
-                    <li><a href="/;logout">Log out</a></li>
-                  </stl:block>
-                  <li><a href="/;contact">Help</a></li>
-                  <li><a href="/;contact">Contact</a></li>
-      <li><!-- search -->
-        <form action="/;search" method="get">
-            <div>
-            <input name="search" type="text" class="searchinput" 
-          value="" size="20" title="Search this site…"/>
+  <!-- Canonical URL for search engines -->
+  <link rel="canonical" href="${canonical_uri}" />
+  <!-- CSS -->
+  <link type="text/css" rel="stylesheet" stl:repeat="style styles"
+    href="${style}" />
+  <!-- JavaScript -->
+  <script type="text/javascript" stl:repeat="script scripts" src="${script}" />
+  <!-- Icon -->
+  <link rel="shortcut icon" href="${favicon_href}" type="${favicon_type}" />
+</head>
+<body>
+  <!-- Add YUI3 grids-->
+  <div class="yui3-g" id="hd">
+      <div class="yui3-u-1-3" id="logo">
+        <h1 title="${title}">
+          <a href="/" title="${title}">${title}</a>
+        </h1>
+      </div> <!-- /logo-->
+      <div class="yui3-u-2-3">
+        <div class="yui3-g">
+          <div class="yui3-u-1-5">
+            <stl:block stl:if="message">${message}</stl:block>
+          </div>
+          <div class="yui3-u-4-5" id="menu">
+            <ol>
+              <li><a href="/;more">More&nbsp;»</a></li>
+              <li><a href="/;forum">Forum</a></li>
+              <li><a href="/;actions">Actions</a></li>
+              <li><a href="/news">News</a></li>
+              <li><a href="/">Home</a></li>
+            </ol>
+          </div>
+          
+        </div>
+        <div class="yui3-g">
+          <div class="yui3-u" id="language">${languages}</div>
+        </div>
+      </div>
+    </div>
+  <!-- Bread crumbs and Activist's profile menu -->
+  <div class="yui3-g">
+    <div class="yui3-u-2-3">
+      <label>${location}</label>
+    </div><!-- /location-->
+    <div class="yui3-u-1-3">
+      <div class="yui3-g">
+        <div class="yui3-u-3-5" id="bar"><!-- profile menu 60%-->
+          <ul>
+            <stl:block stl:if="not user">
+              <li><a href="${login}">Log in</a></li>
+            </stl:block>
+            <stl:block stl:if="user">
+              <li><span></span></li>
+              <li><a href="${user/home}">My profile</a></li>
+              <li><a href="/;logout">Log out</a></li>
+            </stl:block>
+            <li><a href="/;contact">Help</a></li>
+            <li><a href="/;contact">Contact</a></li>
+          </ul>
+        </div><!-- /profile menu-->
+        <div class="yui3-u-2-5 topsearch"><!-- topsearch 40% -->
+          <form action="/;site_search" id="top-search-form "method="get">
+            <div class="yui3-g">
+              <div class="yui3-u-1-8">
+                <a href="/;site_search" class="advanced-search" title="Advanced Search">Advanced Search</a>
+              </div>
+            <div class="yui3-u-7-8 search placeholder-field">
+              <input type="text" class="search" name="search_text" />
+              <input type="submit" value="Search" class="button" />
             </div>
-        </form>
-      </li><!-- /search -->
-                </ul>
-              </div><!-- /bar -->
-            </div><!-- /hd -->
-              <div id="search"><!-- advanced search -->
-    <a href="#">Advanced search</a>
-              </div><!-- /advanced search -->
-            <div id="bd">
-                <div class="yui-b">
-                    <div id="left" class="ui-corner-all">
-    <!--  
-                    <div stl:repeat="menu left_menus">
-                            <stl:block if="level1">
-                                <ul stl:repeat="option level1">
-                                    <li>
-                                        <a href="/;search?level1=${option/id}">
-                                        ${option/title}</a>
-                                    </li>
-                                </ul>
-                            </stl:block>   
-                            <stl:block if="not level1">
-                                <label>${menu/title}</label>
-                                   ${menu/content}
-                            </stl:block>   
-                    </div>
-    -->
-                    </div>
-                </div><!-- yui-b -->
-                <div id="yui-main">
-                    <div class="yui-b">
-                        <div id="bread"><!-- breadcrumbs -->
-                            <label>${location}</label>
-                        </div><!-- /breadcrumbs -->
-                        <div id="message" stl:if="message">${message}</div>
-                        <div>${body}</div>
-                    </div><!-- /yui-b -->
-                 </div><!-- /yui-main -->   
-            </div><!-- /bd -->
-            <div id="ft">
-                <ul>
-                    <li class="space">
-                <h1 title=".tarvel member since 2005">
-                    <a href="/" title="Abakuc Expert.Travel">
-                        .tarvel member since 2005</a>
-                </h1></li>
-                    <li><a href="/;about">About</a></li>
-                    <li><a href="/;terms">Terms &amp; Conditions</a></li>
-                    <li><a href="/;more">More</a></li>
-                     <stl:block stl:if="not user">
-                        <li><a href="/;login_form">(not logged in)</a></li>
-                      </stl:block>
-                      <stl:block stl:if="user">
-                          <li><a href="${user/home}">
-                          ${user/title}</a></li>
-                      </stl:block>
-                </ul>
-            </div><!-- /ft -->
-        </div><!-- /doc -->
-  <!-- languages selector -->
-      ${languages}
-  <!-- /languages selector -->
-  </body>
+            </div><!-- /yui-g-->
+          </form>
+        </div><!-- /topsearch-->
+      </div>
+    </div><!-- /yui3-u-1-3-->
+  </div><!-- /yui-g-->
+  <!-- /Bread crumbs and Activist's profile menu -->
+  
+  <div class="yui-g"><!-- body -->
+    <!-- all other templates are here -->
+    ${body}
+  </div> <!-- /body -->
+<!-- /YUI3 grids-->
+
+<!-- footer -->
+<div id="footer">
+  <ul>
+    <li class="space">
+      <h1 title="${title}">
+        <a href="/" title="${title}">
+          bettering the future since 2008</a>
+        </h1>
+      </li>
+      <li><a href="/;about">About</a></li>
+      <li><a href="/;more">More</a></li>
+      <stl:block stl:if="not user">
+      <li><a href="/;login_form">(not logged in)</a></li>
+    </stl:block>
+    <stl:block stl:if="user">
+    <li><a href="${user/home}">
+      ${user/title}</a></li>
+    </stl:block>
+  </ul>
+</div>
+<!-- /footer -->
+</body>
 </html>

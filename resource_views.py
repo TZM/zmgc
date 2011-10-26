@@ -1,5 +1,5 @@
 # -*- coding: UTF-8 -*-
-# Copyright (C) 2010 Norman Khine <norman@abakuc.com>
+# Copyright (C) 2010 Norman Khine <norman@khine.net>
 
 # Import from the Standard Library
 import datetime, random, hashlib, subprocess
@@ -52,7 +52,7 @@ class Captcha(STLView):
     Ajax'ed driven widget.
     """
     access = True
-    template = 'ui/abakuc/captcha/captcha.xml'
+    template = 'ui/core/templates/widgets/captcha.xml'
 
     def get_captcha(self, resource, context):
         referrer = context.get_referrer()
@@ -85,22 +85,22 @@ class Captcha(STLView):
         # save as a temporary image
         # FIXME on page refresh the first file is not removed.
         im_name = generate_password(38)
-        SITE_IMAGES_DIR_PATH = get_abspath('ui/abakuc/captcha/images')
+        SITE_IMAGES_DIR_PATH = get_abspath('ui/core/captcha/images')
         tempname = '%s/%s' % (SITE_IMAGES_DIR_PATH, (im_name + '.jpg'))
         im.save(tempname, "JPEG")
         path = get_abspath(tempname)
         img = resource.get_handler()
         namespace['img'] = img
-        captcha = '/ui/abakuc/captcha/images/%s' % (im_name + '.jpg')
+        captcha = '/ui/core/captcha/images/%s' % (im_name + '.jpg')
         namespace['captcha'] = captcha
 
         # we need to pass this path as we can then delete the captcha file
         namespace['captcha_path'] = 'ui/images/captcha/%s' % (im_name + '.jpg')
         namespace['crypt_imgtext'] = encoded_imgtext
-        namespace['get-captcha'] = '/ui/abakuc/captcha/captcha.xml.en'
+        namespace['get-captcha'] = 'ui/core/captcha/captcha.xml.en'
         # Generate a sound file of the captcha
         sound_path = get_abspath('data/sound')
-        SOUND_OUTPUT_PATH = get_abspath('ui/abakuc/captcha/sounds')
+        SOUND_OUTPUT_PATH = get_abspath('ui/core/captcha/sounds')
         sox_filenames = []
         for x in imgtext:
             if x.isupper():
@@ -111,7 +111,7 @@ class Captcha(STLView):
         #
         subprocess.call(['sox'] + sox_filenames + \
                 ['%s/%s' % (SOUND_OUTPUT_PATH, (im_name + '.wav'))])
-        namespace['sound_captcha'] = '/ui/abakuc/captcha/sounds/%s' % (im_name + '.wav')
+        namespace['sound_captcha'] = '/ui/core/captcha/sounds/%s' % (im_name + '.wav')
         namespace['sound_path'] = 'ui/sound/%s' % (im_name + '.wav')
 
         return namespace
@@ -125,7 +125,7 @@ class Captcha(STLView):
 class LoginView(BaseLoginView):
     access = True
     title = MSG(u'Expert Travel Login')
-    template = 'ui/abakuc/login.xml'
+    template = 'ui/core/templates/forms/login.xml'
     schema = {
         'username': String(mandatory=True),
         'password': String,
