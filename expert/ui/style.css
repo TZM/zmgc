@@ -16,6 +16,7 @@ font-weight:bold;
  **************************************************************************/
 
 
+
 /**************************************************************************
  * MESSAGE
  * ***********************************************************************/
@@ -71,7 +72,7 @@ font-weight:bold;
 #logo h1 a{
     position:relative;
     top:-15px; 
-    font-size:208%;
+    font-size:108%;
     color:#511f88; 
     white-space: nowrap;
     line-height:72px;
@@ -87,15 +88,15 @@ font-weight:bold;
  * MENU
  * ***********************************************************************/
 #menu {
-  font-size: 108%;
+  font-size: 100%;
 }
 
-#menu ol {
+#menu ul {
   padding-left: 0;
   white-space: nowrap;
 }
 
-#menu ol li {
+#menu ul li {
   float: right;
   list-style-image: none;
   list-style-position: outside;
@@ -103,7 +104,7 @@ font-weight:bold;
   margin-right: 4px;
 }
 
-#menu ol li a {
+#menu ul li a {
   -moz-border-radius: 0 0 4px 4px;
   -webkit-border-radius: 0 0 4px 4px;
   border-radius: 0 0 4px 4px;
@@ -116,12 +117,12 @@ font-weight:bold;
   color: #fff;
 }
 
-#menu ol li a:hover {
+#menu ul li a:hover {
   background: #ccc;
   color: #000;
 }
 
-#menu ol li.in-path a {
+#menu ul li.in-path a {
   background: #fff;
   color: #333;
 }
@@ -130,8 +131,8 @@ font-weight:bold;
  * Bar 
  **************************************************************************/
 
-#bar{position:relative;right:15px;}
-#bar ul{float:right;list-style:none;margin:0;padding:0;}
+#bar{font-size: 100%;}
+#bar ul{list-style:none;margin:0 0 0 15px;padding:0;}
 #bar li{float:left;margin:0;padding:0;}
 #bar a{font-size: 108%;display:block;color:#333;text-decoration:none;border:1px solid #9B8748;border-top:none;background:#F9E9A9;margin:0 3px 0 0;padding:1px 8px;-moz-border-radius-bottomleft: 5px; -webkit-border-bottom-left-radius: 5px;-moz-border-radius-bottomright: 5px; -webkit-border-bottom-right-radius: 5px;}
 #bar a:hover {color:#333;padding-bottom:1px;background:#fff;}
@@ -139,14 +140,14 @@ font-weight:bold;
 /**************************************************************************
  * Search 
  **************************************************************************/
-.topsearch{
-    display: inline-block;
-    margin: 3px 0 0 0;
+.topsearch {
+    
 }
 
-.topsearch form .advanced-search {
+.advanced-search {
+    margin:5px 10px 5px 0;
+    float: right;
     display: inline-block;
-    margin:3px 0 0 0;
     width: 16px;
     height: 16px;
     text-indent: -9999px;
@@ -160,7 +161,7 @@ font-weight:bold;
 
 .topsearch form .search input {
     font-size: 12px;
-    width: 110px;
+    width: 10px;
     padding: 3px 3px 3px 23px;
     font-family: Helvetica,Arial,freesans,sans-serif;
     border: 1px solid #DDD;
@@ -180,7 +181,6 @@ font-weight:bold;
  * LOCATIONS
  * ***********************************************************************/
 #location {
-  width: auto; /* Fix IE6 */
 }
 
 #breadcrumbs a:hover,

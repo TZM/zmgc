@@ -1,7 +1,7 @@
 /* Sprite Flags
 ----------------------------------*/
-#language {float:right;list-style:none;margin: 10px 10px 0 0;}
-#language li {display:inline;}
+#language {list-style:none;padding-top:5px;}
+#language li {display:inline;float: right;}
 #language li a {display: block;width:20px;height:11px;text-indent:-9999px;background-image:url(/ui/core/resources/flags-sprite.png);float:left;}
 
 #language li a#lang-ad { background-position: 0 0; } 

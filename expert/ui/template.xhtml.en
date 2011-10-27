@@ -23,75 +23,73 @@
 <body>
   <!-- Add YUI3 grids-->
   <div class="yui3-g" id="hd">
-      <div class="yui3-u-1-3" id="logo">
+      <div class="yui3-u-1-3" id="logo"><!-- logo width: 33.33333%-->
         <h1 title="${title}">
           <a href="/" title="${title}">${title}</a>
         </h1>
       </div> <!-- /logo-->
-      <div class="yui3-u-2-3">
+      <div class="yui3-u-2-3"><!-- width: 66.6666%-->
         <div class="yui3-g">
-          <div class="yui3-u-1-5">
-            <stl:block stl:if="message">${message}</stl:block>
-          </div>
-          <div class="yui3-u-4-5" id="menu">
-            <ol>
-              <li><a href="/;more">More&nbsp;»</a></li>
-              <li><a href="/;forum">Forum</a></li>
-              <li><a href="/;actions">Actions</a></li>
+          <div class="yui3-u-1-24">&nbsp;</div><!-- FIXME empty block width: 4.1666%-->
+          <div class="yui3-u-23-24" id="menu"><!-- menu width: 95.8333%-->
+            <ul>
+              <li><a href="/more">More&nbsp;»</a></li>
+              <li><a href="/forums">Forums</a></li>
+              <li><a href="/events">Events</a></li>
+              <li><a href="/projects">Projects</a></li>
               <li><a href="/news">News</a></li>
-              <li><a href="/">Home</a></li>
-            </ol>
+            </ul>
           </div>
-          
         </div>
         <div class="yui3-g">
-          <div class="yui3-u" id="language">${languages}</div>
+           <div class="yui3-u-1-24">&nbsp;</div><!-- FIXME empty block width: 4.1666%-->
+            <div class="yui3-u-23-24" id="language">${languages}</div><!-- languages width: 95.8333%-->
         </div>
       </div>
     </div>
-  <!-- Bread crumbs and Activist's profile menu -->
+  <!-- Bread crumbs and Activist's profile menu 58.3333+29.16665+4.1666+8.3333 -->
   <div class="yui3-g">
-    <div class="yui3-u-2-3">
+    <div class="yui3-u-7-12" id="location"><!-- location width: 58.3333%-->
       <label>${location}</label>
     </div><!-- /location-->
-    <div class="yui3-u-1-3">
-      <div class="yui3-g">
-        <div class="yui3-u-3-5" id="bar"><!-- profile menu 60%-->
-          <ul>
-            <stl:block stl:if="not user">
-              <li><a href="${login}">Log in</a></li>
-            </stl:block>
-            <stl:block stl:if="user">
-              <li><span></span></li>
-              <li><a href="${user/home}">My profile</a></li>
-              <li><a href="/;logout">Log out</a></li>
-            </stl:block>
-            <li><a href="/;contact">Help</a></li>
-            <li><a href="/;contact">Contact</a></li>
-          </ul>
-        </div><!-- /profile menu-->
-        <div class="yui3-u-2-5 topsearch"><!-- topsearch 40% -->
-          <form action="/;site_search" id="top-search-form "method="get">
-            <div class="yui3-g">
-              <div class="yui3-u-1-8">
-                <a href="/;site_search" class="advanced-search" title="Advanced Search">Advanced Search</a>
-              </div>
-            <div class="yui3-u-7-8 search placeholder-field">
-              <input type="text" class="search" name="search_text" />
-              <input type="submit" value="Search" class="button" />
-            </div>
-            </div><!-- /yui-g-->
-          </form>
-        </div><!-- /topsearch-->
+    <div class="yui3-u-7-24" id="bar"><!-- bar width: 29.1666%-->
+      <ul>
+        <stl:block stl:if="not user">
+          <li><a href="${login}">Log in</a></li>
+        </stl:block>
+        <stl:block stl:if="user">
+          <li><a href="${user/home}">My profile</a></li>
+          <li><a href="/;logout">Log out</a></li>
+        </stl:block>
+        <li><a href="/;contact">Contact</a></li>
+        <li><a href="/help">Help</a></li>
+      </ul>
+    </div><!-- /bar-->
+    <div class="yui3-u-1-24"><!-- topsearch width: 4.1666% -->
+      <a href="/;site_search" class="advanced-search" title="Advanced Search">Advanced Search</a>
+    </div>
+    <div class="yui3-u-1-12"><!-- topsearch width: 8.3333% placeholder-field -->
+      <div class="search topsearch placeholder-field">
+      <form action="/;site_search" method="get">
+        <input type="text" class="search" name="search_text" />
+        <input type="submit" value="Search" class="button" />
+      </form>
       </div>
-    </div><!-- /yui3-u-1-3-->
+    </div>
   </div><!-- /yui-g-->
   <!-- /Bread crumbs and Activist's profile menu -->
-  
-  <div class="yui-g"><!-- body -->
-    <!-- all other templates are here -->
-    ${body}
-  </div> <!-- /body -->
+  <stl:block stl:if="message">
+   <div id="message">
+     ${message}
+    </div>
+  </stl:block>
+  <!-- body -->
+    <div class="yui-g">
+    <!-- all other templates go within this block -->
+      ${body}
+    <!-- /all other templates go within this block -->
+    </div>
+  <!-- /body -->
 <!-- /YUI3 grids-->
 
 <!-- footer -->
@@ -100,7 +98,7 @@
     <li class="space">
       <h1 title="${title}">
         <a href="/" title="${title}">
-          bettering the future since 2008</a>
+          striving for a better future since 2008</a>
         </h1>
       </li>
       <li><a href="/;about">About</a></li>
@@ -109,8 +107,8 @@
       <li><a href="/;login_form">(not logged in)</a></li>
     </stl:block>
     <stl:block stl:if="user">
-    <li><a href="${user/home}">
-      ${user/title}</a></li>
+      <li><a href="${user/home}">
+        ${user/title}</a></li>
     </stl:block>
   </ul>
 </div>

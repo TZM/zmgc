@@ -4,12 +4,43 @@
 <stl:block xmlns="http://www.w3.org/1999/xhtml"
   xmlns:stl="http://www.hforge.org/xml-namespaces/stl">
 
-    <h1>Welcome <stl:block stl:if="info">${info/title}</stl:block> to the Zeitgeist Movement portal!</h1>
-    <p>
-    Founded in 2008, The Zeitgeist Movement is a Sustainability Advocacy Organization which conducts community based activism and awareness actions through a network of Global/Regional Chapters, Project Teams, Annual Events, Media and Charity Work.
-    </p>
 
-    <p>
-    If you want to <a href=";register_form"><i>'Register'</i></a> and become part of the movement. 
-    </p>
+
+
+<div class="yui3-g"><!-- content -->
+  <div class="yui3-u-2-5"><!-- welcome block 40%-->
+    <div class="welcome">
+      <h1>Welcome <stl:block stl:if="info">${info/title}</stl:block> to the Zeitgeist Movement portal!</h1>
+      <p>
+        Founded in 2008, The Zeitgeist Movement is a Sustainability Advocacy Organization which conducts community based activism and awareness actions through a network of Global/Regional Chapters, Project Teams, Annual Events, Media and Charity Work.</p>
+      <p>
+        If you want to <a href=";register_form"><i>'Register'</i></a> and become part of the movement. 
+      </p>
+    </div>
+    <!-- tabs-->
+      ${tabs}
+    <!-- /tabs-->
+  </div><!-- /welcome block 40%-->
+  <div class="yui3-u-2-5"><!-- movies, radio and events block 40%-->
+    <div class="yui3-g">
+      <div class="yui3-u-2-3">
+        video
+      </div>
+      <div class="yui3-u-1-3">
+        small video
+      </div>
+    </div>
+    <div class="yui3-g">
+      <div class="yui3-u-1-3">
+        radio
+      </div>
+      <div class="yui3-u-2-3">
+        events table
+      </div>
+    </div>
+  </div><!-- /movies, radio and events block 40%-->
+  <div class="yui3-u-1-5"><!-- right side bar 20%-->
+    right side
+  </div><!-- /right side bar 20%-->
+</div><!-- /content -->
 </stl:block>

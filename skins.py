@@ -37,6 +37,7 @@ class Skin(BaseSkin):
         # Generic
         styles = [
             '/ui/core/css/yui/cssreset/reset-min.css',
+            '/ui/core/css/yui/cssgrids/grids-min.css',
             '/ui/core/css/jquery-custom-theme/jquery-ui-1.8.7.custom.css',
             '/ui/core/css/flags-sprite.css',
             

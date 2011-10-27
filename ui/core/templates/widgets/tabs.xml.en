@@ -6,33 +6,28 @@
     <script type="text/javascript">
         $(function() {
           $('#container-1').tabs({ cookie: { expires: 365 }});
-          $("#container-1").removeClass('ui-tabs-nav ui-corner-all');
         });
 
     </script>
-<div id="container-1">
-    <ul>
-        <li><a href="#news"><span>News</span></a></li>
-        <li><a href="#jobs"><span>Jobs</span></a></li>
-        <li><a href="#marketplace"><span>Marketplace</span></a></li>
-        <li><a href="#training"><span>Training</span></a></li>
-        <li class="manage-tab ui-corner-all"><a href="#forum"><span>Forum</span></a></li>
-    </ul>
-    <div id="news">
-      {news}
+    <div id="container-1">
+      <ul>
+        <li><a href="#action"><span>News</span></a></li>
+        <li><a href="#news"><span>Jobs</span></a></li>
+        <li><a href="#chapters"><span>Chapters</span></a></li>
+        <li><a href="#forum"><span>Forum</span></a></li>
+      </ul>
+      <div id="action">
+        {action}
+      </div>
+      <div id="news">
+        {news}
+      </div>
+      <div id="chapters">
+        {chapters}
+      </div>
+      <div id="forum">
+        {forum}
+      </div>
     </div>
-    <div id="jobs">
-      {jobs}
-    </div>
-    <div id="marketplace">
-      {products}
-    </div>
-    <div id="training">
-      {training}
-    </div>
-    <div id="forum">
-      {forum}
-    </div>
-</div>
 </stl:block>
 
