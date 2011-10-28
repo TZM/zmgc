@@ -131,51 +131,52 @@ font-weight:bold;
  * Bar 
  **************************************************************************/
 
-#bar{font-size: 100%;}
-#bar ul{list-style:none;margin:0 0 0 15px;padding:0;}
+#bar{}
+#bar ul{float:right;list-style:none;margin:0 0 0 15px;padding:0;}
 #bar li{float:left;margin:0;padding:0;}
-#bar a{font-size: 108%;display:block;color:#333;text-decoration:none;border:1px solid #9B8748;border-top:none;background:#F9E9A9;margin:0 3px 0 0;padding:1px 8px;-moz-border-radius-bottomleft: 5px; -webkit-border-bottom-left-radius: 5px;-moz-border-radius-bottomright: 5px; -webkit-border-bottom-right-radius: 5px;}
+#bar a{font-size: 100%;display:block;color:#333;text-decoration:none;border:1px solid #9B8748;border-top:none;background:#F9E9A9;margin:0 3px 0 0;padding:1px 8px;-moz-border-radius-bottomleft: 5px; -webkit-border-bottom-left-radius: 5px;-moz-border-radius-bottomright: 5px; -webkit-border-bottom-right-radius: 5px;}
 #bar a:hover {color:#333;padding-bottom:1px;background:#fff;}
 
 /**************************************************************************
  * Search 
  **************************************************************************/
-.topsearch {
-    
-}
+#topsearch {
+     display: inline-block;
+     margin: 3px 0 0 0;
+ }
 
 .advanced-search {
-    margin:5px 10px 5px 0;
-    float: right;
-    display: inline-block;
-    width: 16px;
-    height: 16px;
-    text-indent: -9999px;
-    background: url('/ui/core/resources/advanced_search_icon.png') 0 0 no-repeat;
-    opacity: .2;
-}
+     display: inline-block;
+     float:right;
+     margin:5px 3px 0 0;
+     width: 16px;
+     height: 16px;
+     text-indent: -9999px;
+     background: url('/ui/core/resources/advanced_search_icon.png') 0 0 no-repeat;
+     opacity: .2;
+ }
 
-.topsearch .placeholder-field {
-    left: 25px;
-}
+.placeholder-field {
+     left: 25px;
+ }
 
-.topsearch form .search input {
-    font-size: 12px;
-    width: 10px;
-    padding: 3px 3px 3px 23px;
-    font-family: Helvetica,Arial,freesans,sans-serif;
-    border: 1px solid #DDD;
-    border-top-color: #CCC;
-    border-bottom-color: #EAEAEA;
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    border-radius: 3px;
-    background: url('/ui/core/resources/search_icon.png') 5px 50% no-repeat white;
-}
- 
-.topsearch form input.button {
-    display: none;
-}
+#topsearch form input {
+     font-size: 12px;
+     width: 125px;
+     padding: 7px 0 0 0;
+     font-family: Helvetica,Arial,freesans,sans-serif;
+     border: 1px solid #DDD;
+     border-top-color: #CCC;
+     border-bottom-color: #EAEAEA;
+     -webkit-border-radius: 3px;
+     -moz-border-radius: 3px;
+     border-radius: 3px;
+     background: url('/ui/core/resources/search_icon.png') 5px 50% no-repeat white;
+ }
+
+#topsearch form input.button {
+     display: none;
+ }
 
 /**************************************************************************
  * LOCATIONS

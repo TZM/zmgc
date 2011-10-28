@@ -65,16 +65,14 @@
         <li><a href="/help">Help</a></li>
       </ul>
     </div><!-- /bar-->
-    <div class="yui3-u-1-24"><!-- topsearch width: 4.1666% -->
-      <a href="/;site_search" class="advanced-search" title="Advanced Search">Advanced Search</a>
-    </div>
-    <div class="yui3-u-1-12"><!-- topsearch width: 8.3333% placeholder-field -->
-      <div class="search topsearch placeholder-field">
+    <div id="topsearch" class="yui3-u-1-12"><!-- topsearch width: 8.3333% placeholder-field -->
       <form action="/;site_search" method="get">
         <input type="text" class="search" name="search_text" />
         <input type="submit" value="Search" class="button" />
       </form>
-      </div>
+    </div>
+    <div class="yui3-u-1-24"><!-- topsearch width: 4.1666% -->
+      <a href="/;site_search" class="advanced-search" title="Advanced Search">Advanced Search</a>
     </div>
   </div><!-- /yui-g-->
   <!-- /Bread crumbs and Activist's profile menu -->

@@ -63,7 +63,7 @@ class Expert(SiteRoot):
     ########################################################################
     view = View()
     captcha = Captcha()
-    site_search = Search_View()
+    #site_search = Search_View()
 
 #Register
 register_resource_class(Expert)
