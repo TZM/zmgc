@@ -21,15 +21,15 @@ from views import View
 from tzm.resource_views import Captcha
 
 
-class Expert(SiteRoot):
+class Phoenix(SiteRoot):
 
-    class_id = 'expert'
-    class_title = MSG(u'Expert Site')
-    class_description = MSG(u'Adds the core directory website.')
+    class_id = 'phoenix'
+    class_title = MSG(u'Phoenix Site')
+    class_description = MSG(u'Adds the core phoenix directory website.')
     class_icon16 = 'icons/16x16/website.png'
     class_icon48 = 'icons/48x48/website.png'
     class_views = Folder.class_views + ['control_panel']
-    class_skin = 'ui/expert'
+    class_skin = 'ui/phoenix'
     class_control_panel = ['browse_users', 'add_user', 'edit_virtual_hosts',
         'edit_security_policy', 'edit_languages',
         'edit_contact_options', 'broken_links', 'orphans', 'edit_industry'
@@ -66,5 +66,5 @@ class Expert(SiteRoot):
     #site_search = Search_View()
 
 #Register
-register_resource_class(Expert)
-register_document_type(Expert, Expert.class_id)
+register_resource_class(Phoenix)
+register_document_type(Phoenix, Phoenix.class_id)

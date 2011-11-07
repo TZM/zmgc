@@ -18,7 +18,7 @@ from ikaaro.text import CSV
 
 # Import from tzm
 from company.company import Companies
-from expert.expert import Expert
+from phoenix.phoenix import Phoenix
 #from training.training import Training
 from country.country import Countries
 
@@ -94,8 +94,8 @@ class Root(BaseRoot):
         world = self.make_resource('world', World)
         # Add the core website - http://lmz.fr
         hosts = ['lmz.fr', 'lmz_fr', 'partisansdumonde.org.aqoon.local']
-        expert = self.make_resource('zeitgeist', Expert,
-            title={'en': u'The Zeitgeist Movement'},
+        expert = self.make_resource('phoenix', Phoenix,
+            title={'en': u'The Zeitgeist Movement Phoenix project'},
             website_is_open='community',
             website_languages=('en', 'fr'),
             vhosts=hosts,

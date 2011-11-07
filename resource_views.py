@@ -193,7 +193,7 @@ class LoginView(BaseLoginView):
                 goto = get_reference('./')
             else:
                 goto = referrer
-        return context.come_back(INFO(u"Welcome to expert travel!"), goto)
+        return context.come_back(INFO(u"Welcome to the Phoenix Project!"), goto)
 
 
 class RegionSelect(Widget):

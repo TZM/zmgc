@@ -8,13 +8,13 @@ from itools.core import get_abspath
 from ikaaro.skins import register_skin 
 
 # Import from here
-from expert import Expert
+from phoenix import Phoenix
 from tzm.skins import Skin
 
 __all__ = [
-    'Expert'
+    'Phoenix'
     ]
 
 # Register skin
 path = get_abspath('ui')
-register_skin('expert', Skin(path))
+register_skin('phoenix', Skin(path))

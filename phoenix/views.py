@@ -14,7 +14,7 @@ class View(STLView):
 
     access = True
     title = MSG(u'Welcome')
-    template = 'ui/expert/home.xml'
+    template = 'ui/phoenix/home.xml'
 
 
     def get_namespace(self, resource, context):
