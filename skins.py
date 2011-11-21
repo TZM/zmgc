@@ -38,7 +38,7 @@ class Skin(BaseSkin):
         styles = [
             '/ui/core/css/yui/cssreset/reset-min.css',
             '/ui/core/css/yui/cssgrids/grids-min.css',
-            '/ui/core/css/jquery-custom-theme/jquery-ui-1.8.7.custom.css',
+            '/ui/core/css/jquery-custom-theme/jquery-ui-1.8.16.custom.css',
             '/ui/core/css/flags-sprite.css',
             
         ]
@@ -51,8 +51,8 @@ class Skin(BaseSkin):
     def get_scripts(self, context):
         #scripts = super(Skin, self).get_scripts(context) + [
         scripts = [
-            '/ui/core/js/jquery/jquery-1.4.4.min.js',
-            '/ui/core/js/jquery/jquery-ui-1.8.7.custom.min.js',
+            '/ui/core/js/jquery/jquery-1.6.2.min.js',
+            '/ui/core/js/jquery/jquery-ui-1.8.16.custom.min.js',
             ]
 
         get_scripts = getattr(context.view, 'get_scripts', None)
