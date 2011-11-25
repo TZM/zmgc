@@ -16,7 +16,6 @@ from tzm.website import SiteRoot
 
 # Import from here
 from views import Country_NewInstance, ImportCountries, View
-#from address.address import Address
 
 
 class Country(SiteRoot):
@@ -50,8 +49,6 @@ class Country(SiteRoot):
         # we need to get to the root
         root = self.get_root()
         if name in ('users', 'users.metadata'):
-            return root._get_resource(name)
-        if name in ('training', 'training.metadata'):
             return root._get_resource(name)
         return SiteRoot._get_resource(self, name)
 

@@ -24,8 +24,7 @@ from datatypes import Functions, getCountries, getRegions, getCounties
 
 
 # Import from here
-from company.views import Company_NewInstance
-from company.address.views import Address_NewInstance
+from chapter.views import Chapter_NewInstance
 
 class SiteUser_EditAccount(User_EditAccount):
     
@@ -87,24 +86,28 @@ class SiteUser_EditAccount(User_EditAccount):
                     u' try again.', email=email).gettext()
                 return
             # Check email address has an MX record
-            email_uri = 'mailto:'+email
-            r1 = get_reference(email_uri)
-            host = r1.host
-            import dns.resolver
-            from dns.exception import DNSException
-            # Here we check to see if email host has an MX record
-            try:
-                # This may take long
-                answers = dns.resolver.query(host, 'MX')
-                print answers
-            except DNSException, e:
-                answers = None
-            if not answers:
-                context.message = ERROR(
-                    u"The email supplied is invalid, your account"
-                    u" has not been changed!")
-                #return context.come_back(message, keep=keep)
-                return
+            # By pass this check if working on local machine
+            hostname = context.uri.authority
+            if hostname.split('.')[-1] != 'local':
+                email_uri = 'mailto:'+email
+                r1 = get_reference(email_uri)
+                host = r1.host
+                import dns.resolver
+                from dns.exception import DNSException
+                # Here we check to see if email host has an MX record
+                try:
+                    # This may take long
+                    answers = dns.resolver.query(host, 'MX')
+                    print answers
+                except DNSException, e:
+                    answers = None
+                    if not answers:
+                        context.message = ERROR(
+                        u"The email supplied is invalid, your account"
+                        u" has not been changed!")
+                        #return context.come_back(message, keep=keep)
+                        return
+
         # Save changes
         resource.set_property('firstname', firstname)
         resource.set_property('lastname', lastname)
@@ -123,7 +126,7 @@ class SiteUser_Profile(User_Profile):
         # The icons menu
         items = []
         for name in ['edit_account', 'edit_preferences', 'edit_password',
-                    'tasks', 'company', 'address']:
+                    'tasks', 'chapter']:
             # Get the view & check access rights
             view = resource.get_view(name)
             if view is None:
@@ -164,25 +167,25 @@ class SiteUser_ConfirmRegistration(User_ConfirmRegistration):
         # Set cookie
         resource.set_auth_cookie(context, password)
         # Ok
-        message = INFO(u'Operation successful! Welcome. Please setup your company details.')
-        return context.come_back(message, goto='./;company')
+        message = INFO(u'Operation successful! Welcome. Please setup your chapter details.')
+        return context.come_back(message, goto='./;chapter')
     
 
-class UserCompany(SearchForm):
+class UserChapter(SearchForm):
     """
-    Sets the user's company and address
+    Sets the user's chapter page
     """
     access = 'is_allowed_to_edit'
-    title = MSG(u'Company')
-    description = MSG(u"User's company page.")
+    title = MSG(u'Chapter')
+    description = MSG(u"User's chapter page.")
     icon = 'action_home.png'
-    template = '/ui/zeitgeist/company.xml'
+    template = '/ui/zeitgeist/chapter.xml'
     
-    schema = merge_dicts(Company_NewInstance.schema)
+    schema = merge_dicts(Chapter_NewInstance.schema)
 
     search_schema = {
-        'change_company': Boolean,
-        'company': Unicode,
+        'change_chapter': Boolean,
+        'chapter': Unicode,
         'country': Unicode,
         'region': Unicode,
         'n_found': Integer,
@@ -204,26 +207,26 @@ class UserCompany(SearchForm):
         n_found = None
         n_found_msg = None
         message = None
-        new_company_form = None
+        new_chapter_form = None
         root = context.root
         user = context.user
         # check if user wants to swich company?
-        change_company = context.query['change_company']
-        # check if user is a member of an address and company
-        companies = user.get_company()
-        if not user.get_company():
+        change_company = context.query['change_chapter']
+        # check if user is a member of a chapter
+        chapters = user.get_chapter()
+        if not user.get_chapter():
             display = True
-        # allow user to change their company
-        if change_company:
-            change_company = True
+        # allow user to change their chapter
+        if change_chapter:
+            change_chapter = True
             display = True
-        search_term = context.query['company'].strip()
+        search_term = context.query['chapter'].strip()
         if search_term:
             display = True
             items = True
             found = []
             # Search
-            search_query = PhraseQuery('format', 'company')
+            search_query = PhraseQuery('format', 'chapter')
             # TODO fix the search so that it is more full proof
             search_query = AndQuery(search_query,
                             StartQuery('name', search_term.split()[0]))
@@ -233,21 +236,20 @@ class UserCompany(SearchForm):
                     found.append({'name': item.name, 'title': item.title}) 
                 n_found = len(found)
                 if n_found == 1:
-                    n_found_msg = 'company'
+                    n_found_msg = 'cohapter'
                 else:
-                    n_found_msg = 'companies'
-                found.append({'name': 'create-new-company', 'title': 'Create new company'})
+                    n_found_msg = 'chapters'
+                found.append({'name': 'create-new-chapter', 'title': 'Create new chapter'})
             else:
                 found = None
-                # get the new company form and display it
-                new_company_form = Company_NewInstance().GET(resource, context)
-                message = 'No companies found. Create your own:'
-                #new_company_form = None
+                # get the new chapter form and display it
+                new_chapter_form = Chapter_NewInstance().GET(resource, context)
+                message = 'No chapters found. Create your own:'
         else:
-            if companies != ():
+            if chapters != ():
                 items = []
-                for company in companies:
-                    items.append(company.name)
+                for chapter in chapters:
+                    items.append(chapter.name)
             
         return {'display': display,
                 'items': items, 
@@ -256,15 +258,15 @@ class UserCompany(SearchForm):
                 'n_found': n_found,
                 'n_found_msg': n_found_msg,
                 'message': message,
-                'new_company_form': new_company_form}
+                'new_chapter_form': new_chapter_form}
 
     def action(self, resource, context, form):
-        return Company_NewInstance().action(resource, context, form)
+        return Chapter_NewInstance().action(resource, context, form)
 
-class ListCompanyNames(BaseView):
+class ListChapterNames(BaseView):
     '''
     Return a JSONP list for the autocomplete. As a minimum we must have, the option:
-    [{"id": "create-new-company", "value": "Create new company"}] 
+    [{"id": "create-new-chapter", "value": "Create new chapter"}] 
     '''
     access = 'is_allowed_to_view'
     query_schema = {'term': String(mandatory=True)}
@@ -272,54 +274,18 @@ class ListCompanyNames(BaseView):
     def GET(self, resource, context):
         # Return a blank page
         context.set_content_type('text/plain')
-        search_query = PhraseQuery('format', 'company')
+        search_query = PhraseQuery('format', 'chapter')
         # TODO fix the search so that it is more full proof
         q = AndQuery(search_query,
                         StartQuery('name', context.query['term']))
         #q = StartQuery('name', context.query['term'])
         results = context.root.search(q)
-        companies = []
+        chapters = []
         for result in results.get_documents():
             companies.append({'value': result.title, 'id': result.name})
-        companies.append({'value': 'Create new company', 'id': 'create-new-company'})
+        companies.append({'value': 'Create new chapter', 'id': 'create-new-chapter'})
 
-        return dumps(companies)
-
-
-class ListCompanyAddresses(BaseView):
-
-    access = 'is_allowed_to_view'
-    query_schema = {'company': String(mandatory=True)}
-
-    def GET(self, resource, context):
-        context.set_content_type('text/plain')
-        company = context.query['company']
-        if company:
-            # we need to get the company base root
-            container = resource.get_resource('/companies')
-            if container.get_resource(company, soft=True) is not None:
-                company_root = container.get_resource(company, soft=True)
-                query = []
-                query.append(PhraseQuery('format', 'address'))
-                abspath = str(company_root.get_canonical_path())
-                query.append(get_base_path_query(abspath))
-                query = AndQuery(*query)
-                results = get_context().root.search(query)
-                # FIXME options dictionary is not sorted!
-                norman = {}
-                norman['addresses'] = [
-                    {'name': x.name, 'title': x.title, 'postcode': x.postcode, 'county': x.county}
-                    for x in results.get_documents() ]
-                norman['addresses'].sort(key=lambda x: x['name'])
-                print norman, 'norman'
-                options = {}
-                addresses = []
-                for result in results.get_documents():
-                    options[result.name] = result.title
-                # we add a create new address option, this needs to be the last value
-                options['aaaaa11111'] = 'Please choose an address'
-                options['zzzzz99999-create-new-address'] = 'Create new address!'
-                return dumps(options)
+        return dumps(chapters)
 
 
 class ChooseRegion(BaseView):
@@ -338,13 +304,3 @@ class ChooseRegion(BaseView):
         elif iana_root_zone:
             counties = dumps(getRegions().get_options(iana_root_zone))
             return dumps(getRegions().get_options(iana_root_zone))
-    
-class UserAddress(STLView):
-    """
-    Sets the user's address
-    """
-    access = 'is_allowed_to_edit'
-    title = MSG(u'Address')
-    description = MSG(u"User's address page.")
-    icon = 'action_home.png'
-    template = '/ui/zeitgeist/address.xml'

@@ -28,6 +28,7 @@ from ikaaro.website_views import AboutView, ContactForm, CreditsView
 #from ikaaro.website_views import ForgottenPasswordForm, RegisterForm
 from ikaaro.website_views import NotFoundView, ForbiddenView
 from ikaaro.website import WebSite as BaseWebSite
+from ikaaro.views import SearchForm
 
 # Import from here 
 from access import RoleAware
@@ -125,6 +126,7 @@ class SiteRoot(BaseWebSite, RoleAware):
     #broken_links = CPBrokenLinks()
     #orphans = CPOrphans()
     # Register / Login
+    search = SearchForm()
     login = LoginView()
     captcha = Captcha()
     #register = RegisterForm()

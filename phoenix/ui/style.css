@@ -18,16 +18,33 @@ http://jqueryui.com/themeroller/#ffDefault=Lucida+Grande,+Lucida+Sans,+Arial,+sa
 *
 */
 body {
-  background: #eee;
-  font-family: "Verdana", "Bitstream Vera Sans", "DejaVu Sans", sans-serif;
-  margin:auto 10px;width:auto;
+    background: rgb(219,0,139); /* Old browsers */
+    background: -moz-linear-gradient(45deg,  rgba(219,0,139,1) 0%, rgba(254,252,234,1) 11%, rgba(254,252,234,1) 57%, rgba(232,174,0,1) 93%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,rgba(219,0,139,1)), color-stop(11%,rgba(254,252,234,1)), color-stop(57%,rgba(254,252,234,1)), color-stop(93%,rgba(232,174,0,1))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(45deg,  rgba(219,0,139,1) 0%,rgba(254,252,234,1) 11%,rgba(254,252,234,1) 57%,rgba(232,174,0,1) 93%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(45deg,  rgba(219,0,139,1) 0%,rgba(254,252,234,1) 11%,rgba(254,252,234,1) 57%,rgba(232,174,0,1) 93%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(45deg,  rgba(219,0,139,1) 0%,rgba(254,252,234,1) 11%,rgba(254,252,234,1) 57%,rgba(232,174,0,1) 93%); /* IE10+ */
+    background: linear-gradient(45deg,  rgba(219,0,139,1) 0%,rgba(254,252,234,1) 11%,rgba(254,252,234,1) 57%,rgba(232,174,0,1) 93%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#db008b', endColorstr='#e8ae00',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+    
+    font-family: "Verdana", "Bitstream Vera Sans", "DejaVu Sans", sans-serif;
+    margin:auto 5px;width:auto;height:auto;
 }
 
 h1, h2 {
-font-size:116%;
-font-weight:bold;
+    font-size:116%;
+    font-weight:bold;
 }
 
+input, input[type="password"], input[type="search"], isindex {
+    -webkit-appearance: textfield;
+    padding: 1px;
+    background-color: white;
+    border: 2px inset;
+    -webkit-rtl-ordering: logical;
+    -webkit-user-select: text;
+    cursor: auto;
+}
 /**************************************************************************
  * YUI overwrites 
  **************************************************************************/
@@ -53,6 +70,12 @@ font-weight:bold;
  * PAGE
  * ***********************************************************************/
 #page {
+  margin: 5px 10px;
+}
+/**************************************************************************
+ * PORTLET
+ * ***********************************************************************/
+#portlet {
   -moz-box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.6);
   -webkit-box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.6);
   box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.6);
@@ -65,36 +88,44 @@ font-weight:bold;
   border-style: none solid solid;
   border-width: medium 1px 1px;
   clear: both;
-  margin: 20px auto;
+  margin: 5px;
   position: relative;
   text-align: left;
-  width: 960px;
   background: #fff;
 }
-
 /**************************************************************************
  * HEADER
  * ***********************************************************************/
- #hd{background:#db008b;}
+ #hd{
+     background: rgb(219,0,139); /* Old browsers */
+     background: -moz-linear-gradient(45deg,  rgba(219,0,139,1) 13%, rgba(153,37,146,1) 29%, rgba(122,255,69,1) 45%, rgba(241,218,54,1) 58%, rgba(232,174,0,1) 100%); /* FF3.6+ */
+     background: -webkit-gradient(linear, left bottom, right top, color-stop(13%,rgba(219,0,139,1)), color-stop(29%,rgba(153,37,146,1)), color-stop(45%,rgba(122,255,69,1)), color-stop(58%,rgba(241,218,54,1)), color-stop(100%,rgba(232,174,0,1))); /* Chrome,Safari4+ */
+     background: -webkit-linear-gradient(45deg,  rgba(219,0,139,1) 13%,rgba(153,37,146,1) 29%,rgba(122,255,69,1) 45%,rgba(241,218,54,1) 58%,rgba(232,174,0,1) 100%); /* Chrome10+,Safari5.1+ */
+     background: -o-linear-gradient(45deg,  rgba(219,0,139,1) 13%,rgba(153,37,146,1) 29%,rgba(122,255,69,1) 45%,rgba(241,218,54,1) 58%,rgba(232,174,0,1) 100%); /* Opera 11.10+ */
+     background: -ms-linear-gradient(45deg,  rgba(219,0,139,1) 13%,rgba(153,37,146,1) 29%,rgba(122,255,69,1) 45%,rgba(241,218,54,1) 58%,rgba(232,174,0,1) 100%); /* IE10+ */
+     background: linear-gradient(45deg,  rgba(219,0,139,1) 13%,rgba(153,37,146,1) 29%,rgba(122,255,69,1) 45%,rgba(241,218,54,1) 58%,rgba(232,174,0,1) 100%); /* W3C */
+     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#db008b', endColorstr='#e8ae00',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+     
+     }
 
 /**************************************************************************
 * LOGO
 * ***********************************************************************/
 #logo h1 {
-     background:url(/ui/core/resources/lmz-logo-160x62.png) top left no-repeat;
-     width:160px;
-     height:62px;
+     background:url(/ui/core/resources/lmz-logo-190x62.png) top left no-repeat;
+     width:215px;
+     height:73px;
      }
 
 #logo h1 a{
     position:relative;
     top:-15px; 
-    font-size:108%;
+    font-size:118%;
     color:#511f88; 
     white-space: nowrap;
-    line-height:72px;
+    line-height:92px;
     display:block;
-    text-indent:80px;
+    text-indent:110px;
     text-decoration:none;
     border:none;
     background:none;}
@@ -148,10 +179,23 @@ font-weight:bold;
  * Bar 
  **************************************************************************/
 
-#bar{}
+#bar{margin-top:7px;}
 #bar ul{float:right;list-style:none;margin:0 0 0 15px;padding:0;}
 #bar li{float:left;margin:0;padding:0;}
-#bar a{font-size: 100%;display:block;color:#333;text-decoration:none;border:1px solid #9B8748;border-top:none;background:#F9E9A9;margin:0 3px 0 0;padding:1px 8px;-moz-border-radius-bottomleft: 5px; -webkit-border-bottom-left-radius: 5px;-moz-border-radius-bottomright: 5px; -webkit-border-bottom-right-radius: 5px;}
+#bar a {
+    font-size: 100%;
+    display:block;
+    color:#333;
+    text-decoration:none;
+    border:1px solid #9B8748;
+    border-top:none;
+    background:#F9E9A9;
+    margin:0 3px 0 0;
+    padding:1px 8px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+ }
+
 #bar a:hover {color:#333;padding-bottom:1px;background:#fff;}
 
 /**************************************************************************
@@ -162,10 +206,10 @@ font-weight:bold;
      margin: 3px 0 0 0;
  }
 
-.advanced-search {
+#topsearch .advanced-search {
      display: inline-block;
      float:right;
-     margin:5px 3px 0 0;
+     margin:0 3px 0 0;
      width: 16px;
      height: 16px;
      text-indent: -9999px;
@@ -173,15 +217,10 @@ font-weight:bold;
      opacity: .2;
  }
 
-.placeholder-field {
-     left: 25px;
- }
-
-#topsearch form input {
-     font-size: 12px;
-     width: 125px;
-     padding: 7px 0 0 0;
-     font-family: Helvetica,Arial,freesans,sans-serif;
+#topsearch .search input {
+     font-size: 100%;
+     width: 90%;
+     padding: 5px 2px;
      border: 1px solid #DDD;
      border-top-color: #CCC;
      border-bottom-color: #EAEAEA;
@@ -191,18 +230,24 @@ font-weight:bold;
      background: url('/ui/core/resources/search_icon.png') 5px 50% no-repeat white;
  }
 
+.placeholder-field {
+    left: 25px;
+}
 #topsearch form input.button {
      display: none;
  }
-
+ 
+#topsearch input[type="search"] {
+    padding: 10px 0 0 0;
+}
 /**************************************************************************
  * LOCATIONS
  * ***********************************************************************/
 #location {
+    margin-left: 10px;
 }
 
 #breadcrumbs a:hover,
-
 #tabs .menu a:hover {
   background-color: #333;
   color: #fff;

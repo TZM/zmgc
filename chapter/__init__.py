@@ -7,14 +7,15 @@ from itools.core import get_abspath
 # Import from ikaaro
 from ikaaro.skins import register_skin
 
+# Import from tzm
+from tzm.skins import ChapterSkin
+
 # Import from here
-from address import Address
+from chapter import Chapters, Chapter
 
 __all__ = [
-	'Address'
-	]
-
+    'Chapters',
+    'Chapter'
+    ]
 # Register skin
-path = get_abspath('ui')
-register_skin('address', path) 
-
+register_skin('chapter', ChapterSkin(get_abspath('ui')))

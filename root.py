@@ -17,7 +17,7 @@ from ikaaro.root import Root as BaseRoot
 from ikaaro.text import CSV
 
 # Import from tzm
-from company.company import Companies
+from chapter.chapter import Chapters
 from phoenix.phoenix import Phoenix
 #from training.training import Training
 from country.country import Countries
@@ -105,9 +105,9 @@ class Root(BaseRoot):
             industry=('social',)
             )
         # Add the companies folder - here we store the company objects
-        companies = self.make_resource('companies', Companies,
-                                        title={'en': u'Companies'},
-                                        description={'en': u'Companies folder'})
+        chapters = self.make_resource('chapters', Chapters,
+                                        title={'en': u'Chapters'},
+                                        description={'en': u'Chapters folder'})
         
         # Add the countries folder - here we store the country objects
         countries = self.make_resource('countries', Countries, title={'en': u'Countries'},

@@ -13,13 +13,12 @@ from ikaaro.user import User
 
 # Import from project
 from datatypes import Functions
-from user_views import UserAddress, UserCompany, SiteUser_Profile
-from user_views import ListCompanyNames, ListCompanyAddresses
+from user_views import UserChapter, SiteUser_Profile
+from user_views import ListChapterNames
 from user_views import SiteUser_ConfirmRegistration, SiteUser_EditAccount
 from user_views import ChooseRegion
-from company import Company
-from company.views import Company_NewInstance, Company_SearchForm
-from company.address.views import Address_NewInstance 
+from chapter import Chapter
+from chapter.views import Chapter_NewInstance, Chapter_SearchForm
 
 
 class SiteUser(User):
@@ -37,49 +36,23 @@ class SiteUser(User):
     edit_account = SiteUser_EditAccount()
     confirm_registration = SiteUser_ConfirmRegistration()
     my_threads = None
-    company = UserCompany()
-    address = UserAddress()
-    companies = ListCompanyNames()
-    addresses = ListCompanyAddresses()
-    # This needs to be called twice due to the AJAX form
-    company_form = Company_NewInstance()
-    address_form = Address_NewInstance()
-    company_search_form = Company_SearchForm()
+    chapters = ListChapterNames()
+    chapter_form = Chapter_NewInstance()
     unimatrix = ChooseRegion()
 
-    def get_companies(self):
+    def get_chapters(self):
         root = self.get_root()
         if root is None:
             return ()
-        results = root.search(format='company')
+        results = root.search(format='chapter')
         items = [ x for x in results.get_documents() ]
         return tuple(items)
 
-    def get_company(self):
-        # a user can only be a member of one company
-        # FIXME if a user is added manually to a Company or Address
+    def get_phoenix_site_root(self):
         root = self.get_root()
         if root is None:
             return ()
-        results = root.search(format='company', users=self.name)
-        items = [ x for x in results.get_documents() ]
-
-        return tuple(items)
-
-    def get_address(self):
-        root = self.get_root()
-        if root is None:
-            return ()
-        results = root.search(format='address', users=self.name)
-        items = [ x for x in results.get_documents() ]
-
-        return tuple(items)
-
-    def get_expert_site_root(self):
-        root = self.get_root()
-        if root is None:
-            return ()
-        results = root.search(format='expert')
+        results = root.search(format='phoenix')
         items = [ x for x in results.get_documents() ]
         return self.get_resource(items[0].abspath)
 

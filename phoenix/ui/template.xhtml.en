@@ -43,13 +43,13 @@
         </div>
         <div class="yui3-g">
            <div class="yui3-u-1-24">&nbsp;</div><!-- FIXME empty block width: 4.1666%-->
-            <div class="yui3-u-23-24" id="language">${languages}</div><!-- languages width: 95.8333%-->
+            <div class="yui3-u-23-24">${languages}</div><!-- languages width: 95.8333%-->
         </div>
       </div>
     </div>
-  <!-- Bread crumbs and Activist's profile menu 58.3333+29.16665+4.1666+8.3333 -->
+  <!-- Bread crumbs and Activist's profile menu 58.3333+29.16665+12.5 -->
   <div class="yui3-g">
-    <div class="yui3-u-7-12" id="location"><!-- location width: 58.3333%-->
+    <div class="yui3-u-7-12"><!-- location width: 58.3333%-->
       <label>${location}</label>
     </div><!-- /location-->
     <div class="yui3-u-7-24" id="bar"><!-- bar width: 29.1666%-->
@@ -65,16 +65,18 @@
         <li><a href="/help">Help</a></li>
       </ul>
     </div><!-- /bar-->
-    <div id="topsearch" class="yui3-u-1-8"><!-- topsearch width: 12.5% placeholder-field -->
+    <div class="yui3-u-1-8" id="topsearch"><!-- topsearch width: 12.5% placeholder-field -->
       <table>
         <tr>
           <td>
-            <a href="/;site_search" class="advanced-search" title="Advanced Search">Advanced Search</a>
+            <a href="/;advanced_search" class="advanced-search" title="Advanced Search">Advanced Search</a>
           </td>
           <td>
             <form action=";browse_content" method="get">
-              <input type="text" class="search" name="search_text" />
-              <input type="submit" value="Search" class="button" />
+              <div class="search placeholder-field">
+                <input type="text" name="search_text" />
+                <input type="submit" class="submit-button" value="Search" class="button" />
+              </div>
             </form>
           </td>
         </tr>
@@ -82,6 +84,7 @@
     </div>
   </div><!-- /yui-g-->
   <!-- /Bread crumbs and Activist's profile menu -->
+  <div id="page">
   <stl:block stl:if="message">
    <div id="message">
      ${message}
@@ -94,8 +97,8 @@
     <!-- /all other templates go within this block -->
     </div>
   <!-- /body -->
+  </div>
 <!-- /YUI3 grids-->
-
 <!-- footer -->
 <div id="footer">
   <ul>
