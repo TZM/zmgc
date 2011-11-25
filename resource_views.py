@@ -18,14 +18,13 @@ from itools.handlers import checkid
 from itools.stl import stl
 from itools.uri import get_reference, get_uri_path
 from itools.web import STLView, INFO, ERROR, STLForm, get_context
-from itools.web import Password, generate_password
 from itools.xml import XMLParser
 
 # Import from ikaaro
 from ikaaro.autoform import Widget, make_stl_template
-#from ikaaro.datatypes import Password
+from ikaaro.datatypes import Password
 from ikaaro.resource_views import LoginView as BaseLoginView
-#from ikaaro.utils import generate_password
+from ikaaro.utils import generate_password
 from ikaaro.views import CompositeForm
 from ikaaro.views import IconsView, SearchForm, ContextMenu
 
