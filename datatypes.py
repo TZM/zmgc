@@ -51,7 +51,7 @@ class World(CSVFile):
             'region': Unicode,
             'county': Unicode}
 
-world = ro_database.get_handler(get_abspath('/Users/khinester/Sites/itools/aqoon/lib/python2.6/site-packages/tzm/data/countries.csv'), World)
+world = ro_database.get_handler(get_abspath('/home/khine/sites/ztm/lib/python2.6/site-packages/tzm/data/countries.csv'), World)
 
 class getCountries(Enumerate):
 
