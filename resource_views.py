@@ -215,7 +215,8 @@ class RegionSelect(Widget):
         selected = True
         context = get_context()
         ids_form_value =  context.get_form_value('county') or context.get_form_value('region') \
-                            or context.get_form_value('country') or get_host_prefix(context)
+                            or context.get_form_value('country')
+
         if ids_form_value:
             ids_form_value = ids_form_value.rsplit('#')
             if len(ids_form_value) == 1:

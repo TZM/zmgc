@@ -29,7 +29,7 @@ from ikaaro.folder_views import Folder_BrowseContent
 # Import from here
 from tzm.datatypes import Industry, BusinessSector, BusinessType
 from tzm.messages import MSG_EXISTANT_CHAPTER, MSG_CHOOSE_REGION
-from tzm.resource_views import RegionSelect, get_host_prefix
+from tzm.resource_views import RegionSelect
 from tzm.skins_views import TabsTemplate
 from tzm.utils import fix_website_url
 
@@ -51,10 +51,10 @@ class Chapter_NewInstance(NewInstance):
             },)
     
     widgets = [
-        TextWidget('title', title=MSG(u'Company Name'), default=''),
-        TextWidget('vhosts', title=MSG(u'Company URL Address')),
-        SelectWidget('business', title=MSG(u'Business Sector'), has_empty_option=False, size=4),
-        RadioWidget('business_type', title=MSG(u'Business Type'), oneline=True, has_empty_option=False),
+        TextWidget('title', title=MSG(u'Chapter Name'), default=''),
+        TextWidget('vhosts', title=MSG(u'Chapter URL Address')),
+        SelectWidget('business', title=MSG(u'Chapter Sector'), has_empty_option=False, size=4),
+        RadioWidget('business_type', title=MSG(u'Chapter Type'), oneline=True, has_empty_option=False),
         RegionSelect('county', title=MSG(u'Country/Region/County'), has_empty_option = True),
         ]
 
@@ -97,7 +97,7 @@ class Chapter_NewInstance(NewInstance):
         # We are now ready to make the company resource
         chapter = container.make_resource(name, cls)
         # The metadata
-        metadata = company.metadata
+        metadata = chapter.metadata
         language = resource.get_edit_languages(context)[0]
         metadata.set_property('title', Property(title, lang=language))
         metadata.set_property('vhosts', vhosts)
@@ -109,15 +109,15 @@ class Chapter_NewInstance(NewInstance):
         # User id
         user = context.user
         # Remove user from old chapter
-        chapters = user.get_chapter()
+        chapters = user.get_chapters()
         if chapters:
-            for x in companies:
+            for x in chapters:
                 resource.get_resource(x.abspath).set_user_role(user.name, None)
         # Link the User to the newly created Chapter
-        default_role = company.class_roles[0]
-        company.set_user_role(user.name, default_role)
-        # Add the user to the expert.travel site as a 'Member'
-        root = user.get_expert_site_root()
+        default_role = chapter.class_roles[0]
+        chapter.set_user_role(user.name, default_role)
+        # Add the user to the Phoenix Main site as a 'Member'
+        root = user.get_phoenix_site_root()
         if root:
             root.set_user_role(user.name, root.class_roles[1])
         # Split the Country, Region and County

@@ -70,6 +70,7 @@ class World(CSV):
     
     class_id = 'world'
     class_csv_guess = True
+
     def init_resource(self):
         super(World, self).init_resource()
         path =  get_abspath('data/countries.csv')
@@ -84,6 +85,7 @@ class Root(BaseRoot):
     class_description = MSG(u'One back-office to bring them all and in the'
                             u' darkness bind them, in an'
                             u' anarchically scalable information system.')
+
     def init_resource(self, email, password, admins=('0',)):
         super(Root, self).init_resource(email, password, admins=admins)
         affiliations = self.make_resource('affiliations', Affiliations)
@@ -94,7 +96,7 @@ class Root(BaseRoot):
         world = self.make_resource('world', World)
         # Add the core website - http://lmz.fr
         hosts = ['lmz.fr', 'lmz_fr', 'partisansdumonde.org.aqoon.local']
-        expert = self.make_resource('phoenix', Phoenix,
+        phoenix = self.make_resource('phoenix', Phoenix,
             title={'en': u'The Zeitgeist Movement Phoenix project'},
             website_is_open='community',
             website_languages=('en', 'fr'),

@@ -13,30 +13,13 @@ from itools.gettext import MSG
 from itools.handlers import RWDatabase, ro_database, checkid
 from itools.web import get_context
 
-
 # Geographical datatypes
 def sort_key(option):
     return "other" in option.itervalues(), option["name"]
-    
-def country_name(iana_root_zone):
-    if iana_root_zone:
-        rows = [
-           x for x in world.get_rows() if x.get_value('iana_root_zone') == iana_root_zone ]
-        for row in rows:
-            return row.get_value('country')
 
-        return None
-    
-def county_name(iana_root_zone):
-    rows = [
-       x for x in world.get_rows() if x.get_value('iana_root_zone')]
-    for row in rows:
-        county = row.get_value('county')
-    return county
 
-class World(CSVFile):
-    
-    class_id = 'world'
+class WorldSchema(CSVFile):
+    class_csv_guess = True
     
     columns = ['id', 'continent', 'sub_id', 'sub_continent', 'country_id',
                 'iana_root_zone', 'country', 'region', 'county']
@@ -51,7 +34,13 @@ class World(CSVFile):
             'region': Unicode,
             'county': Unicode}
 
-world = ro_database.get_handler(get_abspath('/home/khine/sites/ztm/lib/python2.6/site-packages/tzm/data/countries.csv'), World)
+def get_world():
+    context = get_context()
+    root = context.resource.get_root().handler
+    world = root.get_handler('world.csv', WorldSchema)
+    rows = [
+       x for x in world.get_rows() if x.get_value('region') != u"" ]
+    return rows
 
 class getCountries(Enumerate):
 
@@ -60,10 +49,8 @@ class getCountries(Enumerate):
         '''
             return JSON ser
         '''
-        rows = [
-           x for x in world.get_rows() if x.get_value('region') != u"" ]
         list_countries = set()
-        for row in rows:
+        for row in get_world():
             country = row.get_value('country')
             iana_root_zone = row.get_value('iana_root_zone')
             list_countries.add((iana_root_zone, country))
@@ -77,17 +64,20 @@ class getRegions(Enumerate):
 
     @classmethod
     def get_options(cls, iana_root_zone):
-        rows = [
-           x for x in world.get_rows() if x.get_value('iana_root_zone') == iana_root_zone ]
+
         list_regions = set()
-        for row in rows:
-            list_regions.add(row.get_value('region'))
+        country_name = []
+        for row in get_world():
+            if row.get_value('iana_root_zone') == iana_root_zone:
+                list_regions.add(row.get_value('region'))
+                if country_name == []:
+                    country_name.append(row.get_value('country'))
         options = []
         for index, row in enumerate(list_regions):
             name = '%s#%s' % (iana_root_zone, checkid(row))
             options.append({'name': name, 'value': row, 'selected': False})
         options.sort(key=sort_key)
-        options.insert(0, {'name': 'switch', 'value': '* not from ' + country_name(iana_root_zone) + ' *', 'selected': False})
+        options.insert(0, {'name': 'switch', 'value': '* not from ' + country_name[0] + ' *', 'selected': False})
 
         return options
 
@@ -96,10 +86,8 @@ class getCounties(Enumerate):
 
     @classmethod
     def get_options(cls, iana_root_zone, region, county_name=None):
-        rows = [
-           x for x in world.get_rows() if x.get_value('iana_root_zone') == iana_root_zone ]
         options = []
-        for row in rows:
+        for row in get_world():
             if region == checkid(row.get_value('region')):
                 county = row.get_value('county')
                 name = '%s#%s#%s' % (iana_root_zone, region, checkid(county))

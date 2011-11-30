@@ -27,7 +27,7 @@ from ikaaro.website import WebSite
 # Import from here
 from tzm.messages import MSG_EXISTANT_CHAPTER
 from tzm.skins_views import TabsTemplate
-from tzm.datatypes import World, getCountries, getRegions, getCounties
+from tzm.datatypes import get_world, getCountries, getRegions, getCounties
 from tzm.resource_views import RegionSelect
 
 
@@ -100,12 +100,9 @@ class ImportCountries(STLForm):
     def action(self, resource, context, form):
         # For each country, region and county we create a website
         country_class_id = 'country'
-        rw_database = RWDatabase()
-        csv = rw_database.get_handler(get_abspath('/Users/khinester/lib/python2.6/site-packages/abakuc/data/countries_austria_full.csv'), World)
-        rows = csv.get_rows()
         list_countries = set()
         # List countries and its regions
-        for row in rows:
+        for row in get_world():
             country = row.get_value('country')
             iana_root_zone = row.get_value('iana_root_zone')
             name = checkid(country)
