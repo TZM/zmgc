@@ -15,6 +15,8 @@ class View(STLView):
     access = True
     title = MSG(u'Welcome')
     template = 'ui/phoenix/home.xml'
+    styles = ['ui/phoenix/jquery/custom-theme/jquery-ui-1.8.16.custom.css']
+    scripts = ['ui/phoenix/jquery/jquery-ui-1.8.16.custom.min.js']
 
 
     def get_namespace(self, resource, context):

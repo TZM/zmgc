@@ -38,43 +38,67 @@ class Skin(BaseSkin):
         styles = [
             '/ui/core/css/yui/cssreset/reset-min.css',
             '/ui/core/css/yui/cssgrids/grids-min.css',
-            '/ui/core/css/jquery-custom-theme/jquery-ui-1.8.16.custom.css',
             '/ui/core/css/flags-sprite.css',
-            
         ]
-        # Load the site specific styles
-        if self.has_handler('style.css'):
+
+        # Skin styles
+        if self.get_handler('style.css',
+                            cls=self.get_resource_cls('style.css'),
+                            soft=True) is not None:
             styles.append('%s/style.css' % self.get_canonical_path())
+
+        # View styles
+        get_styles = getattr(context.view, 'get_styles', None)
+        if get_styles is None:
+            extra = getattr(context.view, 'styles', [])
+        else:
+            extra = get_styles(context)
+        styles.extend(extra)
+        
+        # Database style
+        db_style = context.site_root.get_resource('theme/style')
+        ac = db_style.get_access_control()
+        if ac.is_allowed_to_view(context.user, db_style):
+            styles.append('%s/;download' % context.get_link(db_style))
 
         return styles
     
     def get_scripts(self, context):
-        #scripts = super(Skin, self).get_scripts(context) + [
         scripts = [
             '/ui/core/js/jquery/jquery-1.6.2.min.js',
-            '/ui/core/js/jquery/jquery-ui-1.8.16.custom.min.js',
             ]
 
+        # View scripts
         get_scripts = getattr(context.view, 'get_scripts', None)
         if get_scripts is None:
             extra = getattr(context.view, 'scripts', [])
         else:
             extra = get_scripts(context)
         scripts.extend(extra)
+        
         return scripts
 
 class ChapterSkin(Skin):
     """
-        This is the Chapter skin, this allows us to have different navigation setup
-        and skin.
-        For now this is just a copy of the main site.
+        Returns a list of get_styles and get_scripts
+        
+        This allows us to have different navigation setup and skin.
+        
+        We have 3 layers:
+        1/. The YUI3 reset and grids, plus the flags-sprite.css
+        2/. The basic layout which is located in the chapter/ui/style.css
+        3/. The overwirites db_style where each chapter can modify the style.css in the database
+        
+        Currently the get_scripts uses the core js scripts, this can be extended so that each indivudual
+        chapter could extend the list. Similiar to the way the db_styles works.
     """
     
     def get_styles(self, context):
         styles = Skin.get_styles(self, context)
-        if self.has_handler('style'):
-            styles.append('/style/;download')
-        else:
-            styles.append('/ui/zeitgeist/style.css')
 
         return styles
+        
+    def get_scripts(self, context):
+        scripts = Skin.get_scripts(self, context)
+        
+        return scripts

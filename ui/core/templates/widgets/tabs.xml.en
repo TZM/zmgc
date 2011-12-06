@@ -6,6 +6,14 @@
     <script type="text/javascript">
         $(function() {
           $('#container-1').tabs();
+          $("#container-2 > ul").tabs({ 
+              navClass: "ui-tabs-sub-nav",
+              selectedClass: 'ui-tabs-sub-selected',
+              unselectClass: 'ui-tabs-sub-unselect',
+              disabledClass: 'ui-tabs-sub-disabled',
+              panelClass: 'ui-tabs-sub-panel',
+              loadingClass: 'ui-tabs-sub-loading'
+            });
         });
 
     </script>
@@ -23,7 +31,26 @@
         {news}
       </div>
       <div id="chapters">
-        {chapters}
+        <div id="container-2">
+          <ul>
+            <li><a href="#chapter-1"><span>Africa</span></a></li>
+            <li><a href="#chapter-2"><span>Americas</span></a></li>
+            <li><a href="#chapter-3"><span>Asia</span></a></li>
+            <li><a href="#chapter-4"><span>Europe</span></a></li>
+          </ul>
+          <div id="chapter-1">
+              Africa
+          </div>
+          <div id="chapter-2">
+              Americas
+          </div>
+          <div id="chapter-3">
+              Asia
+          </div>
+          <div id="chapter-4">
+              Europe
+          </div>
+        </div>
       </div>
       <div id="forums">
         {forums}

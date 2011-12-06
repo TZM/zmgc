@@ -42,9 +42,6 @@ class Chapter_NewInstance(NewInstance):
     schema = merge_dicts(NewInstance.schema,
             {'title': Unicode(mandatory=True),
             'vhosts': String,
-            'industry': Tokens,
-            'business': BusinessSector(multiple=True, mandatory=True),
-            'business_type': BusinessType(multiple=True, mandatory=True, selected=False),
             'country': Unicode(mandatory=False),
             'region': Unicode(mandatory=False),
             'county': Unicode(mandatory=True),
@@ -53,8 +50,6 @@ class Chapter_NewInstance(NewInstance):
     widgets = [
         TextWidget('title', title=MSG(u'Chapter Name'), default=''),
         TextWidget('vhosts', title=MSG(u'Chapter URL Address')),
-        SelectWidget('business', title=MSG(u'Chapter Sector'), has_empty_option=False, size=4),
-        RadioWidget('business_type', title=MSG(u'Chapter Type'), oneline=True, has_empty_option=False),
         RegionSelect('county', title=MSG(u'Country/Region/County'), has_empty_option = True),
         ]
 
@@ -102,10 +97,6 @@ class Chapter_NewInstance(NewInstance):
         metadata.set_property('title', Property(title, lang=language))
         metadata.set_property('vhosts', vhosts)
         metadata.set_property('website_is_open', 'community')
-        # TODO we need to make this based on the URL of the
-        metadata.set_property('industry', ('travel',))
-        metadata.set_property('business', tuple(form['business']))
-        metadata.set_property('business_type', tuple(form['business_type']))
         # User id
         user = context.user
         # Remove user from old chapter
@@ -170,40 +161,18 @@ class View(STLView):
     
     def get_max_items_number(self, resource, context):
         return self.max_items_number
-    
-    def get_items(self, resource, context):
-        from tzm.company.address.address import Address
-        addresses = []
-        for _address in resource.search_resources(cls=Address):
-            hosts = [fix_website_url(x) for x in _address.get_property('vhosts')]
-            address = {'name': _address.get_title(),
-                        'path': resource.get_pathto(_address),
-                        'mtime': _address.get_property('mtime'),
-                        'description': _address.get_property('description'),
-                        'vhosts': hosts,
-                        'subject': _address.get_property('subject'),
-                      }
-            addresses.append(address)
-        return addresses
 
     def sort_and_batch(self, resource, context, items):
         size = self.get_max_items_number(resource, context)
         return items
     
     def get_items_namespace(self, resource, context):
-    
-        industry = resource.get_property('industry')
         vhosts = resource.get_property('vhosts')
         
         items = {}
-        # Company addresses
-        addresses = self.get_items(resource, context)
-
         items['chapter_title'] = resource.get_property('title')
         items['chapter_description'] = resource.get_property('description')
         items['vhosts'] = resource.get_property('vhosts')
-        items['industry'] = resource.get_property('industry')
-        items['business_type'] = resource.get_property('business_type')
         
         return items
         
@@ -222,17 +191,5 @@ class View(STLView):
         table = None
         # Batch
         chapters = self.get_items_namespace(resource, context)
-        #if self.batch_template is not None:
-        #    template = self.get_template(self.batch_template)
-        #    namespace = self.get_batch_namespace(resource, context, items)
-        #    batch = stl(template, namespace)
-    
-        # Content
-        #items = self.sort_and_batch(resource, context, items)
-        #if self.items_template is not None:
-        #    template = self.get_template(context, self.items_template)
-        #    namespace = self.get_item_namespace(resource, context, items)
-        #    table = stl(template, namespace)
-        #items = merge_dicts(addresses, {'batch': batch, 'info': info, 'tabs': tabs})
 
         return merge_dicts(chapters, {'batch': batch, 'info': info, 'tabs': tabs})

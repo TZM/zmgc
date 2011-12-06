@@ -42,17 +42,9 @@ class SiteRoot(BaseWebSite, RoleAware):
         business=Tokens(source='metadata', default=('', ),indexed=True, stored=True),
         business_type=Tokens(source='metadata', default=('',),indexed=True, stored=True),
         )
+    class_control_panel = BaseWebSite.class_control_panel
+    class_theme = BaseWebSite.class_theme
 
-    @staticmethod
-    def _make_resource(cls, folder, name, **kw):
-        BaseWebSite._make_resource(cls, folder, name, **kw)
-
-        # Add CSS
-        CSS._make_resource(CSS, folder, '%s/style' % name, extension='css',
-                        body='/* CSS */', title={'en': u'Style'},
-                        state='public')
-        # Add 404 WebPage
-        WebPage._make_resource(WebPage, folder, '%s/404' % name)
 
     def _get_resource(self, name):
         if name == 'ui':

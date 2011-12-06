@@ -11,6 +11,7 @@ from ikaaro.folder import Folder
 from ikaaro.registry import register_resource_class, register_document_type
 from ikaaro.root import Root
 from ikaaro.skins import UI, ui_path
+from ikaaro.webpage import WebPage
 
 # Import from tzm
 from tzm.website import SiteRoot
@@ -27,12 +28,10 @@ class Chapter(SiteRoot):
     class_icon16 = 'icons/16x16/website.png'
     class_icon48 = 'icons/48x48/website.png'
     class_views = Folder.class_views + ['control_panel']
-    class_skin = 'ui/company'
-    class_control_panel = ['browse_users', 'add_user', 'edit_virtual_hosts',
-                            'edit_security_policy', 'edit_languages',
-                            'edit_contact_options', 'broken_links', 'orphans',
-                            'edit_industry', 'edit_business', 'edit_business_type']
-                            
+    class_skin = 'ui/chapter'
+    class_control_panel = SiteRoot.class_control_panel + [
+                        'edit_industry', 'edit_business', 'edit_business_type']
+
     class_roles = freeze(['chapter_admin', 'chapter_member'])
     class_schema = merge_dicts(
         SiteRoot.class_schema,
@@ -57,7 +56,7 @@ class Chapter(SiteRoot):
         return SiteRoot._get_resource(self, name)
 
     def get_document_types(self):
-        return []
+        return [WebPage]
 
     ########################################################################
     ## UI
