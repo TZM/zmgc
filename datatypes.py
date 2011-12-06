@@ -40,6 +40,7 @@ def get_world():
     world = root.get_handler('world.csv', WorldSchema)
     rows = [
        x for x in world.get_rows() if x.get_value('region') != u"" ]
+
     return rows
 
 class getCountries(Enumerate):

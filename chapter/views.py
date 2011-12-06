@@ -42,9 +42,9 @@ class Chapter_NewInstance(NewInstance):
     schema = merge_dicts(NewInstance.schema,
             {'title': Unicode(mandatory=True),
             'vhosts': String,
-            'country': Unicode(mandatory=False),
-            'region': Unicode(mandatory=False),
-            'county': Unicode(mandatory=True),
+            'country': String(mandatory=False),
+            'region': String(mandatory=False),
+            'county': String(mandatory=True),
             },)
     
     widgets = [
@@ -97,6 +97,12 @@ class Chapter_NewInstance(NewInstance):
         metadata.set_property('title', Property(title, lang=language))
         metadata.set_property('vhosts', vhosts)
         metadata.set_property('website_is_open', 'community')
+        county = context.get_form_value('county').split('#')
+        # set chapter location
+        selected_region = context.get_form_value('county').split('#')
+        metadata.set_property('country', selected_region[0])
+        metadata.set_property('region', selected_region[1])
+        metadata.set_property('county', selected_region[2])
         # User id
         user = context.user
         # Remove user from old chapter

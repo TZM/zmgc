@@ -3,7 +3,7 @@
 
 # Import from itools
 from itools.core import freeze, merge_dicts
-from itools.datatypes import Tokens, Unicode
+from itools.datatypes import Tokens, Unicode, String
 from itools.gettext import MSG
 
 # Import form ikaaro
@@ -39,9 +39,9 @@ class Chapter(SiteRoot):
                                     title=MSG(u"Chapter Administrator"))},
             {'chapter_member': Tokens(source='metadata',
                                     title=MSG(u"Chapter Member"))},
-            {'country': Unicode(source='metadata',indexed=True, stored=True)},
-            {'region': Unicode(source='metadata',indexed=True, stored=True)},
-            {'county': Unicode(source='metadata',indexed=True, stored=True)},
+            {'country': String(source='metadata',indexed=True, stored=True)},
+            {'region': String(source='metadata',indexed=True, stored=True)},
+            {'county': String(source='metadata',indexed=True, stored=True)},
         )
 
     def _get_resource(self, name):
