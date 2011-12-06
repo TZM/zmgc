@@ -252,19 +252,41 @@ h1, h2 {
 /**************************************************************************
  * FOOTER
  * ***********************************************************************/
-#footer { 
+#footer {
+    background: url("images/bg_footer_top.png") repeat-x scroll 0 0 #F8F8F8;
+    min-height: 160px;
+    overflow: hidden;
+  }
+  
+#footer .upper_footer ul.footer_nav {
+    float: left;
+    margin: 20px 10px;
+    position: relative;
+    width: 164px;
+}
+
+#footer #tzm {
+    background: url("/ui/core/resources/tzm-logo.png") no-repeat scroll 0 0 transparent;
+    float: left;
+    height: 130px;
+    margin: 15px 20px 0 15px;
+    text-indent: -5000px;
+    width: 164px;
+}
+
+#footer .lower_footer { 
     -moz-border-radius: 0 0 5px 5px;
     -webkit-border-radius: 0 0 5px 5px;
     border-radius: 0 0 5px 5px;
     font-size: 85%;
     margin-top: 15px;
 } 
-#footer h1 {position:relative;top:-25px;background:url(/ui/core/resources/lmz-logo-60.png) top left no-repeat;width:60px;height:60px; }
-#footer h1 a { width:60px;line-height:60px;display:block;text-indent:-5000px;text-decoration:none;border:none;background:none;}
-#footer ul {list-style:none;margin:0;padding:0;}
-#footer li {float:left;margin-top:5px;padding:0;}
-#footer a {margin-left: 1em; margin-right: 1em; margin-right: 1em;text-decoration: none;}
-#footer a:hover {text-decoration: underline;}
+#footer .lower_footer h1 {position:relative;top:-25px;background:url(/ui/core/resources/phx-logo-60x69.png) top left no-repeat;width:60px;height:60px; }
+#footer .lower_footer h1 a { width:60px;line-height:60px;display:block;text-indent:-5000px;text-decoration:none;border:none;background:none;}
+#footer .lower_footer ul {list-style:none;margin:0;padding:0;}
+#footer .lower_footer li {float:left;margin-top:5px;padding:0;}
+#footer .lower_footer a {margin-left: 1em; margin-right: 1em; margin-right: 1em;text-decoration: none;}
+#footer .lower_footer a:hover {text-decoration: underline;}
 
 .space { width:65px; }
 
