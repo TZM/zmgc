@@ -27,14 +27,6 @@ http://jqueryui.com/themeroller/?ctl=themeroller&ctl=themeroller&#ffDefault=Luci
 body {
     font-family: Lucida Grande, Lucida Sans, Arial, sans-serif;
     margin:auto 5px;width:auto;height:auto;
-    background: rgb(219,0,139); /* Old browsers */
-    background: -moz-linear-gradient(45deg,  rgba(219,0,139,1) 0%, rgba(254,252,234,1) 11%, rgba(254,252,234,1) 57%, rgba(232,174,0,1) 93%); /* FF3.6+ */
-    background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,rgba(219,0,139,1)), color-stop(11%,rgba(254,252,234,1)), color-stop(57%,rgba(254,252,234,1)), color-stop(93%,rgba(232,174,0,1))); /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(45deg,  rgba(219,0,139,1) 0%,rgba(254,252,234,1) 11%,rgba(254,252,234,1) 57%,rgba(232,174,0,1) 93%); /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(45deg,  rgba(219,0,139,1) 0%,rgba(254,252,234,1) 11%,rgba(254,252,234,1) 57%,rgba(232,174,0,1) 93%); /* Opera 11.10+ */
-    background: -ms-linear-gradient(45deg,  rgba(219,0,139,1) 0%,rgba(254,252,234,1) 11%,rgba(254,252,234,1) 57%,rgba(232,174,0,1) 93%); /* IE10+ */
-    background: linear-gradient(45deg,  rgba(219,0,139,1) 0%,rgba(254,252,234,1) 11%,rgba(254,252,234,1) 57%,rgba(232,174,0,1) 93%); /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e8ae00', endColorstr='#fefcea',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
     }
 
 h1, h2 {
@@ -69,6 +61,7 @@ h1, h2 {
 #page {
   margin: 5px 10px;
 }
+
 /**************************************************************************
  * PORTLET
  * ***********************************************************************/
@@ -172,13 +165,25 @@ h1, h2 {
 }
 
 /**************************************************************************
- * Bar 
+ * Profile 
  **************************************************************************/
 
-#bar{margin-top:7px;}
-#bar ul{float:right;list-style:none;margin:0 0 0 15px;padding:0;}
-#bar li{float:left;margin:0;padding:0;}
-#bar a {
+#lower-menu {
+    background: rgb(219,0,139); /* Old browsers */
+    background: -moz-linear-gradient(45deg,  rgba(219,0,139,1) 0%, rgba(254,252,234,1) 11%, rgba(254,252,234,1) 57%, rgba(232,174,0,1) 93%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,rgba(219,0,139,1)), color-stop(11%,rgba(254,252,234,1)), color-stop(57%,rgba(254,252,234,1)), color-stop(93%,rgba(232,174,0,1))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(45deg,  rgba(219,0,139,1) 0%,rgba(254,252,234,1) 11%,rgba(254,252,234,1) 57%,rgba(232,174,0,1) 93%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(45deg,  rgba(219,0,139,1) 0%,rgba(254,252,234,1) 11%,rgba(254,252,234,1) 57%,rgba(232,174,0,1) 93%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(45deg,  rgba(219,0,139,1) 0%,rgba(254,252,234,1) 11%,rgba(254,252,234,1) 57%,rgba(232,174,0,1) 93%); /* IE10+ */
+    background: linear-gradient(45deg,  rgba(219,0,139,1) 0%,rgba(254,252,234,1) 11%,rgba(254,252,234,1) 57%,rgba(232,174,0,1) 93%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e8ae00', endColorstr='#fefcea',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+    padding-bottom: 5px;
+}
+
+#lower-menu #user-menu {margin-top:7px;}
+#lower-menu #user-menu ul{float:right;list-style:none;margin:0 0 0 15px;padding:0;}
+#lower-menu #user-menu li{float:left;margin:0;padding:0;}
+#lower-menu #user-menu a {
     font-size: 100%;
     display:block;
     color:#333;
@@ -192,7 +197,7 @@ h1, h2 {
     -webkit-border-radius: 5px;
  }
 
-#bar a:hover {color:#333;padding-bottom:1px;background:#fff;}
+#lower-menu #user-menu a:hover {color:#333;padding-bottom:1px;background:#fff;}
 
 /**************************************************************************
  * Search 
@@ -250,22 +255,30 @@ h1, h2 {
 }
 
 /**************************************************************************
- * FOOTER
+ * UPPER FOOTER
  * ***********************************************************************/
-#footer {
+#upper-footer {
     background: url("images/bg_footer_top.png") repeat-x scroll 0 0 #F8F8F8;
     min-height: 160px;
     overflow: hidden;
+    text-align: center;
   }
-  
-#footer .upper_footer ul.footer_nav {
+
+#upper-footer .upper_footer {
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#upper-footer .upper_footer ul.footer_nav {
+    text-align: left;
     float: left;
     margin: 20px 10px;
     position: relative;
     width: 164px;
 }
 
-#footer #tzm {
+#upper-footer #tzm {
     background: url("/ui/core/resources/tzm-logo.png") no-repeat scroll 0 0 transparent;
     float: left;
     height: 130px;
@@ -274,19 +287,25 @@ h1, h2 {
     width: 164px;
 }
 
-#footer .lower_footer { 
-    -moz-border-radius: 0 0 5px 5px;
-    -webkit-border-radius: 0 0 5px 5px;
-    border-radius: 0 0 5px 5px;
+/**************************************************************************
+ * LOWER FOOTER
+ * ***********************************************************************/
+#lower-footer {
+    text-align: center;
+  }
+  
+#lower-footer .lower_footer {
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
     font-size: 85%;
-    margin-top: 15px;
 } 
-#footer .lower_footer h1 {position:relative;top:-25px;background:url(/ui/core/resources/phx-logo-60x69.png) top left no-repeat;width:60px;height:60px; }
-#footer .lower_footer h1 a { width:60px;line-height:60px;display:block;text-indent:-5000px;text-decoration:none;border:none;background:none;}
-#footer .lower_footer ul {list-style:none;margin:0;padding:0;}
-#footer .lower_footer li {float:left;margin-top:5px;padding:0;}
-#footer .lower_footer a {margin-left: 1em; margin-right: 1em; margin-right: 1em;text-decoration: none;}
-#footer .lower_footer a:hover {text-decoration: underline;}
+#lower-footer .lower_footer h1 {position:relative;top:-25px;background:url(/ui/core/resources/phx-logo-60x69.png) top left no-repeat;width:60px;height:60px; }
+#lower-footer .lower_footer h1 a { width:60px;line-height:60px;display:block;text-indent:-5000px;text-decoration:none;border:none;background:none;}
+#lower-footer .lower_footer ul {list-style:none;margin:0;padding:0;}
+#lower-footer .lower_footer li {float:left;margin-top:5px;padding:0;}
+#lower-footer .lower_footer a {margin-left: 1em; margin-right: 1em; margin-right: 1em;text-decoration: none;}
+#lower-footer .lower_footer a:hover {text-decoration: underline;}
 
 .space { width:65px; }
 
