@@ -3,29 +3,20 @@
  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <stl:block xmlns="http://www.w3.org/1999/xhtml"
     xmlns:stl="http://www.hforge.org/xml-namespaces/stl">
-    <script language="javascript">
-        $('#captcha-table').find("input[type='text']").focus();
-    </script>
    <script language="javascript">
    function captcha_request() {
-       $('#captcha').html('<p><img src="/ui/abakuc/images/spinner.gif" /></p>');
+       $('#captcha').html('<p><img src="/ui/core/resources/spinner.gif" /></p>');
        $('#captcha').load("/;captcha");
-   
    }
-   
    </script>
     <table id="captcha" class="show-if-no-password">
         <tr>
-          <th rowspan="2"><img src="${captcha}" alt="captcha" title="captcha" /></th>
-          <td><a href="#" onclick="play('${sound_captcha}')">Listen</a></td>
-        </tr>
-        <tr>
-          <td><a href="#" onclick="captcha()">Refresh</a></td>
+          <td><img src="${captcha}" alt="captcha" title="captcha" /></td>
         </tr>  
         <tr>
-             <td colspan="2">
-                 <label for="captcha">Please type in the word from the image above:</label>
-             </td>
+          <td>
+            <label for="captcha">Please type in the word from the image above:</label>
+          </td>
         </tr> 
         <tr>
              <td colspan="2">

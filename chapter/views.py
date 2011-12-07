@@ -18,6 +18,8 @@ from itools.stl import stl
 # Import from ikaaro
 from ikaaro.autoform import RadioWidget, SelectWidget, TextWidget
 from ikaaro.autoform import AutoForm, MultilineWidget
+from ikaaro.blog import Blog
+from ikaaro.calendar import Calendar
 from ikaaro.messages import MSG_CHANGES_SAVED, MSG_NEW_RESOURCE
 from ikaaro.messages import MSG_BAD_NAME
 from ikaaro.registry import get_resource_class
@@ -25,6 +27,9 @@ from ikaaro.views import ContextMenu, CompositeForm, SearchForm, BrowseForm
 from ikaaro.views_new import NewInstance
 from ikaaro.folder import Folder
 from ikaaro.folder_views import Folder_BrowseContent
+
+# Import from Wiki
+from wiki import WikiFolder
 
 # Import from here
 from tzm.datatypes import Industry, BusinessSector, BusinessType
@@ -119,6 +124,10 @@ class Chapter_NewInstance(NewInstance):
             root.set_user_role(user.name, root.class_roles[1])
         # Split the Country, Region and County
         iana_root_zone, region, county = form['county'].rsplit('#', 2)
+        # we can now add the forum, wiki specific for chapter
+        blog = chapter.make_resource('blog', Blog)
+        calendar = chapter.make_resource('calendar', Calendar)
+        wiki = chapter.make_resource('wiki', WikiFolder)
         # go to the user's profile page
         goto = '/users/%s' % user.name
         return context.come_back(MSG_NEW_RESOURCE, goto=goto)

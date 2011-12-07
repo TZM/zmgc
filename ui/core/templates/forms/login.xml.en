@@ -10,7 +10,7 @@
       if ($(this).attr('checked')) {
         $('#show-if-password, #captcha-table').hide();
         $('#show-if-no-password').show();
-        $('#captcha-placeholder').html('<p><img src="/ui/zeitgeist/images/spinner.gif" /></p>');
+        $('#captcha-placeholder').html('<p><img src="/ui/core/resources/spinner.gif" /></p>');
         $('#captcha-placeholder').load("/;captcha");
       } else {
         $('#show-if-no-password').hide();
@@ -18,15 +18,6 @@
       }
     }).change();
   });
-  function dialog() {
-        $("#terms").dialog({ modal: true, width: 600 }).load("/;company");
-        return false;
-    }
-   // Dialog Link
-      $('#terms_link').click(function(){
-              $('#terms').dialog('open');
-      return false;
-      });
 </script>
 
 <form id="loginform" name="loginform" method="post" action=";login">
@@ -77,14 +68,7 @@
                           </tr>
                     </table>
                 </dd>
-        </dl>            
-        <dl id="terms">
-            <dt><label for="terms">Terms &amp; Conditions</label></dt>
-            <dd>
-                I confirm that I have read and accepted the
-                <a href=";/terms">Terms &amp; Conditions</a>
-            </dd>
-        </dl>
+        </dl> 
     </div>
     <dl id="reset">
         <dt><label for="terms">Register/Reset Password</label></dt>

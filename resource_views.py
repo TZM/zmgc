@@ -132,6 +132,8 @@ class LoginView(BaseLoginView):
         'crypt_imgtext': String,
         'no_password': Boolean}
 
+    scripts = ['/ui/core/js/jquery/jquery.jplayer.min.js']
+    
     def get_namespace(self, resource, context):
         namespace = super(LoginView, self).get_namespace(resource, context)
         namespace['register'] = context.site_root.is_allowed_to_register()
