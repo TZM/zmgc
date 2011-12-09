@@ -63,8 +63,8 @@ class Chapter_NewInstance(NewInstance):
         if county is not None:
              if 'switch' in county.rsplit('#'):
                  context.message = MSG_CHOOSE_REGION
-        return NewInstance.GET(self, resource, context)
 
+        return NewInstance.GET(self, resource, context)
 
     def action(self, resource, context, form):
         title = form['title'].strip()
@@ -129,7 +129,7 @@ class Chapter_NewInstance(NewInstance):
         calendar = chapter.make_resource('calendar', Calendar)
         wiki = chapter.make_resource('wiki', WikiFolder)
         # go to the user's profile page
-        goto = '/users/%s' % user.name
+        goto = '/chapters/%s/;control_panel' % chapter.name
         return context.come_back(MSG_NEW_RESOURCE, goto=goto)
 
 

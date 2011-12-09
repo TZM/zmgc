@@ -32,7 +32,7 @@ from ikaaro.views import SearchForm
 
 # Import from here 
 from access import RoleAware
-from control_panel import CPEditIndustry
+from control_panel import TZM_ControlPanel, CPEditIndustry
 from resource_views import Captcha, LoginView
 
 class SiteRoot(BaseWebSite, RoleAware):
@@ -107,7 +107,7 @@ class SiteRoot(BaseWebSite, RoleAware):
     #######################################################################
     new_instance = NewInstance()
     # Control Panel
-    #control_panel = ControlPanel()
+    control_panel = TZM_ControlPanel()
     #browse_users = CPBrowseUsers()
     #add_user = CPAddUser()
     #edit_membership = CPEditMembership()

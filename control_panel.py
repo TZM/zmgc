@@ -7,17 +7,41 @@ from itools.gettext import MSG
 from itools.datatypes import Boolean, String
 from itools.web import INFO, ERROR
 
+from ikaaro.control_panel import ControlPanelMenu, ControlPanel
+
 # Import from here
 from datatypes import Industry, BusinessSector, BusinessType
 #from utils import get_industry_name, get_industry
 
+class TZM_ControlPanel(ControlPanel):
+
+    title = MSG(u'Advanced')
+
+
+    def get_namespace(self, resource, context):
+        # XXX We override get_namespace just to fix problem
+        # with icons uri
+        proxy = super(TZM_ControlPanel, self)
+        namespace = proxy.get_namespace(resource, context)
+        items = namespace['items']
+        # Hook icons
+        for item in items:
+            name = item['url'][1:] # remove ';'
+            view = resource.get_view(name)
+            if hasattr(view, 'tzm_icon'):
+                icon = '/ui/core/icons/48x48/%s/' % view.tzm_icon
+                item['icon'] = icon
+
+        namespace['batch'] = None
+        namespace['title'] = MSG(u'Control Panel')
+        return namespace
 
 class CPEditIndustry(STLForm):
 
     access = 'is_admin'
     title = MSG(u'Industry')
     description = MSG(u"Define the site's' industry.")
-    icon_path = '/ui/core/icons/48x48/Booking48.png'
+    tzm_icon = 'new.png'
     template = '/ui/core/templates/forms/edit_industry.xml'
     schema = {
         'codes': String(multiple=True, mandatory=True)}
@@ -104,8 +128,7 @@ class CPEditBusinessSector(STLForm):
     access = 'is_admin'
     title = MSG(u'Business Sector')
     description = MSG(u"Define the Company's BusinessSector.")
-    add_icon = '/ui/core/icons/48x48/news_folder.png'  
-    #icon = '/ui/core/icons/48x48/industry48.png' 
+    tzm_icon = 'new.png'
     template = '/ui/core/templates/forms/edit_business.xml'
     schema = {
         'codes': String(multiple=True, mandatory=True)}
@@ -186,8 +209,7 @@ class CPEditBusinessType(STLForm):
     access = 'is_admin'
     title = MSG(u'Business Type')
     description = MSG(u"Define the Company's Business Type.")
-    add_icon = '/ui/core/icons/48x48/news_folder.png'  
-    #icon = '/ui/core/icons/industry.png' 
+    tzm_icon = 'new.png'
     template = '/ui/core/templates/forms/edit_business.xml'
     schema = {
         'codes': String(multiple=True, mandatory=True)}

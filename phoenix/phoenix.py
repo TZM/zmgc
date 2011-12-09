@@ -17,7 +17,7 @@ from ikaaro.website import WebSite
 from tzm.website import SiteRoot 
  
 # Import from here
-from views import View
+from views import View, ChapterGenerator
 from tzm.resource_views import Captcha
 
 
@@ -47,11 +47,9 @@ class Phoenix(SiteRoot):
         root = self.get_root()
         if name in ('users', 'users.metadata'):
             return root._get_resource(name)
-        if name in ('companies', 'companies.metadata'):
+        if name in ('chapters', 'chapters.metadata'):
             return root._get_resource(name)
         if name in ('countries', 'countries.metadata'):
-            return root._get_resource(name)
-        if name in ('training', 'training.metadata'):
             return root._get_resource(name)
         return SiteRoot._get_resource(self, name)
 
@@ -64,6 +62,7 @@ class Phoenix(SiteRoot):
     ########################################################################
     view = View()
     captcha = Captcha()
+    create = ChapterGenerator()
     #site_search = Search_View()
 
 #Register

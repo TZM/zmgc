@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<stl:block xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:stl="http://www.hforge.org/xml-namespaces/stl">
+
+<div class="yui3-g"><!-- content -->
+  <div class="yui3-u-3-5"><!-- form block 60%-->
+    <stl:block stl:if="not info">
+      <p>Only members can create chapters. Please <a href="${login}">log in</a></p>
+      ${form}
+    </stl:block>
+    <stl:block stl:if="info">
+      <h1>Create your chapter</h1>
+      <p>
+        Please follow this <a href="/chapters/;new_resource?type=chapter">link</a> to create your chapter.
+      </p>
+    </stl:block>
+  </div><!-- /form block 60%-->
+  
+  <div class="yui3-u-2-5"><!-- help 40%-->
+    <p>The Zeitgeist Global Connect is made up of individual chapter sites where each chapter site
+      has a full blown web platform that members of the chapter can configure, manage and extend 
+      to suit the chapters local needs.</p>
+    <h1>Current modules</h1>
+    <ul>
+      <li>
+        <b><u>Your own URL</u></b>: simply point this to our load balancer IP, if you need help
+        to set this up, get in touch with us. In the mean time you also get
+        a sub-domain automatically created for you, such as http://chapter.zmgc.net
+      </li>
+      <li>
+        <b><u>Forum</u></b>: you will get a full featured forum where posts are also linked back 
+        to the global http://zmgc.net/forum
+      </li>
+      <li>
+        <b><u>Blog</u></b>: ability for your chapter members to add blog entries or content
+      </li>
+      <li>
+        <b><u>Calendar</u></b>: ability to add events and manage event subscriptions.
+      </li>
+      <li>
+        <b><u>Issue/Actions Tracker</u></b>: ability for chapter members to post projects and/or
+        items that needs the collaboration of other ether global or local chapter
+        members. This again will be listed in the global Actions list, thus
+        increasing the Issue/Action awareness. (This is optional)
+      </li>
+    </ul>
+  </div><!-- /help 40%-->
+</div><!-- /content -->
+</stl:block>

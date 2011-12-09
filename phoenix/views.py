@@ -4,11 +4,21 @@
 # Import from the Standard Library
 
 # Import from itools
+from itools.core import merge_dicts
+from itools.datatypes import String
 from itools.gettext import MSG
 from itools.web import STLView
 
-# Import from here
+# Import from ikaaro
+from ikaaro.views_new import NewInstance
+
+# Import from tzm
 from tzm.skins_views import TabsTemplate
+from tzm.resource_views import LoginView
+
+# Import from chapter
+from tzm.chapter import Chapter
+from tzm.chapter.views import Chapter_NewInstance
 
 class View(STLView):
 
@@ -30,6 +40,29 @@ class View(STLView):
         home = '/users/%s' % user.name
         info = {'name': user.name, 'title': user.get_title(),
                 'home': home}
-        print {'info': info, 'tabs': tabs}
+
         return {'info': info, 'tabs': tabs}
 
+
+class ChapterGenerator(STLView):
+    """
+        Form which allows members to be able to add chapter sites that will be included
+        in the main ZGC site.
+    """
+    access = True
+    title = MSG(u'Create your chapter')
+    template = 'ui/phoenix/chapter-generator.xml'
+    query_schema = {'username': String, 'name': String, 'title': String}
+
+    def get_namespace(self, resource, context):
+        # options would be based on user's permissions
+        username = context.user
+
+        if username is None:
+            form = LoginView().GET(resource, context)
+            return {'info': None, 'login': '/;login', 'form': form}
+        
+        form = None
+        info = {'name': username.name, 'title': username.get_title(), 'form': form}
+
+        return {'info': info}

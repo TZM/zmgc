@@ -12,6 +12,7 @@ from ikaaro.registry import register_resource_class, register_document_type
 from ikaaro.root import Root
 from ikaaro.skins import UI, ui_path
 from ikaaro.webpage import WebPage
+from ikaaro.website import WebSite
 
 # Import from tzm
 from tzm.website import SiteRoot
@@ -44,17 +45,6 @@ class Chapter(SiteRoot):
             {'county': String(source='metadata',indexed=True, stored=True)},
         )
 
-    def _get_resource(self, name):
-        if name == 'ui':
-            ui = UI(ui_path)
-            ui.database = self.metadata.database
-            return ui
-        # we need to get to the root
-        root = self.get_root()
-        if name in ('users', 'users.metadata'):
-            return root._get_resource(name)
-        return SiteRoot._get_resource(self, name)
-
     def get_document_types(self):
         return [WebPage]
 
@@ -78,7 +68,7 @@ class Chapters(Folder):
                    'last_changes']
 
     def get_document_types(self):
-        return [Chapter]
+        return [Chapter, WebSite]
 
 # Register
 register_document_type(Chapter, Root.class_id)
