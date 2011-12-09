@@ -95,9 +95,9 @@ class Root(BaseRoot):
         functions = self.make_resource('functions', Functions)
         world = self.make_resource('world', World)
         # Add the core website - http://lmz.fr
-        hosts = ['lmz.fr', 'lmz_fr', 'partisansdumonde.org.aqoon.local']
+        hosts = ['zmgc.net', 'www.zmgc.net', 'zmgc.aqoon.local']
         phoenix = self.make_resource('phoenix', Phoenix,
-            title={'en': u'The Zeitgeist Movement Phoenix project'},
+            title={'en': u'Zeitgeist Movement Global Connect'},
             website_is_open='community',
             website_languages=('en', 'fr'),
             vhosts=hosts,

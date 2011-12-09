@@ -128,7 +128,7 @@ class Chapter_NewInstance(NewInstance):
         blog = chapter.make_resource('blog', Blog)
         calendar = chapter.make_resource('calendar', Calendar)
         wiki = chapter.make_resource('wiki', WikiFolder)
-        # go to the user's profile page
+        # TODO send an email with details
         goto = '/chapters/%s/;control_panel' % chapter.name
         return context.come_back(MSG_NEW_RESOURCE, goto=goto)
 
