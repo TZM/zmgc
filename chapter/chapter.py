@@ -45,6 +45,15 @@ class Chapter(SiteRoot):
             {'county': String(source='metadata',indexed=True, stored=True)},
         )
 
+    def _get_resource(self, name):
+        if name == 'ui':
+            ui = UI(ui_path)
+            ui.database = self.metadata.database
+            return ui
+        if name in ('users', 'users.metadata'):
+            return self.parent._get_resource(name)
+        return BaseWebSite._get_resource(self, name)
+
     def get_document_types(self):
         return [WebPage]
 
