@@ -52,7 +52,7 @@ class Chapter(SiteRoot):
             return ui
         if name in ('users', 'users.metadata'):
             return self.parent._get_resource(name)
-        return BaseWebSite._get_resource(self, name)
+        return SiteRoot._get_resource(self, name)
 
     def get_document_types(self):
         return [WebPage]
