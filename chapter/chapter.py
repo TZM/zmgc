@@ -50,8 +50,10 @@ class Chapter(SiteRoot):
             ui = UI(ui_path)
             ui.database = self.metadata.database
             return ui
+        # we need to get to the root
+        root = self.get_root()
         if name in ('users', 'users.metadata'):
-            return self.parent._get_resource(name)
+            return root.parent._get_resource(name)
         return SiteRoot._get_resource(self, name)
 
     def get_document_types(self):
