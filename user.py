@@ -71,7 +71,7 @@ class SiteUser(User):
                            u"\n"
                            u"Phoenix Team")
 
-    def send_confirmation(self, context, email, chapter):
+    def send_chapter_confirmation(self, context, email, chapter):
         site_name = chapter.get_title()
         uri = context.uri
         vhosts = chapter.get_property('vhosts')

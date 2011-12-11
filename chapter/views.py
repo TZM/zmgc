@@ -133,7 +133,7 @@ class Chapter_NewInstance(NewInstance):
         wiki = chapter.make_resource('wiki', WikiFolder)
         # TODO send an email with details
         email = user.get_property('email')
-        user.send_confirmation(context, email, chapter)
+        user.send_chapter_confirmation(context, email, chapter)
         goto = '/chapters/%s/;control_panel' % chapter.name
         return context.come_back(MSG_NEW_CHAPTER, goto=goto)
 
