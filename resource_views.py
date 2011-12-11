@@ -123,7 +123,7 @@ class Captcha(STLView):
 
 class LoginView(BaseLoginView):
     access = True
-    title = MSG(u'Expert Travel Login')
+    title = MSG(u'Zeitgeist Global Connect Login')
     template = 'ui/core/templates/forms/login.xml'
     schema = {
         'username': String(mandatory=True),
@@ -140,6 +140,25 @@ class LoginView(BaseLoginView):
         namespace['captcha'] = Captcha().get_captcha(resource, context)
 
         return namespace
+
+    #
+    def _register(self, resource, context, email):
+        site_root = context.site_root
+        # Add the user
+        users = site_root.get_resource('users')
+        user = users.set_user(email, None)
+        # Set the role to 'Member'
+        default_role = site_root.class_roles[1]
+        site_root.set_user_role(user.name, default_role)
+
+        # Send confirmation email
+        user.send_confirmation(context, email)
+
+        # Bring the user to the login form
+        message = MSG(
+            u"An email has been sent to you, to finish the registration "
+            u"process follow the instructions detailed in it.")
+        return message.gettext().encode('utf-8')
 
     def action(self, resource, context, form):
         # Get the user

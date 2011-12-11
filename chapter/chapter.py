@@ -54,6 +54,8 @@ class Chapter(SiteRoot):
         root = self.get_root()
         if name in ('users', 'users.metadata'):
             return root._get_resource(name)
+        if name in ('chapters', 'chapters.metadata'):
+            return root._get_resource(name)
         return SiteRoot._get_resource(self, name)
 
     def get_document_types(self):

@@ -5,6 +5,7 @@
 from itools.core import freeze, merge_dicts
 from itools.datatypes import String, Tokens, Unicode
 from itools.gettext import MSG
+from itools.uri import Reference
 
 # Import from ikaaro
 from ikaaro.folder_views import GoToSpecificDocument
@@ -19,6 +20,7 @@ from user_views import SiteUser_ConfirmRegistration, SiteUser_EditAccount
 from user_views import ChooseRegion
 from chapter import Chapter
 from chapter.views import Chapter_NewInstance, Chapter_SearchForm
+from utils import fix_website_url
 
 
 class SiteUser(User):
@@ -55,5 +57,31 @@ class SiteUser(User):
         results = root.search(format='phoenix')
         items = [ x for x in results.get_documents() ]
         return self.get_resource(items[0].abspath)
+
+    ########################################################################
+    # Email: Chapter Creation
+    ########################################################################
+    
+    confirmation_subject = MSG(u"Chapter {site_name} has been created.")
+    confirmation_txt = MSG(u"This email confirms that your chapter {site_name} has been created."
+                           u"\n"
+                           u"\nPlease visit the documentation link. {site_uri}docs/chapter"
+                           u"\nWe have created a domain URL for you {zgc_uri} in addition to your own URL"
+                           u" {chapter_uri}"
+                           u"\n"
+                           u"Phoenix Team")
+
+    def send_confirmation(self, context, email, chapter):
+        site_name = chapter.get_title()
+        uri = context.uri
+        vhosts = chapter.get_property('vhosts')
+        site_uri = Reference(uri.scheme, uri.authority, '/', {}, None)
+        text = self.confirmation_txt.gettext(site_name=site_name,
+                                             site_uri=site_uri,
+                                             zgc_uri=fix_website_url(vhosts[0]),
+                                             chapter_uri=fix_website_url(vhosts[1]))
+
+        context.root.send_email(email, self.confirmation_subject.gettext(),
+                                text=text)
 
 register_resource_class(SiteUser)

@@ -15,6 +15,7 @@ from datatypes import Industry, BusinessSector, BusinessType
 
 class TZM_ControlPanel(ControlPanel):
 
+    access = 'is_allowed_to_view'
     title = MSG(u'Advanced')
 
 

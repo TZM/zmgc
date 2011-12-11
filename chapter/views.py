@@ -34,6 +34,7 @@ from wiki import WikiFolder
 # Import from here
 from tzm.datatypes import Industry, BusinessSector, BusinessType
 from tzm.messages import MSG_EXISTANT_CHAPTER, MSG_CHOOSE_REGION
+from tzm.messages import MSG_NEW_CHAPTER
 from tzm.resource_views import RegionSelect
 from tzm.skins_views import TabsTemplate
 from tzm.utils import fix_website_url
@@ -80,11 +81,12 @@ class Chapter_NewInstance(NewInstance):
         # XXX We need to check the domain name is valid
         vhosts.append(url)
         vhosts = [ x for x in vhosts if x ]
-        
+        print vhosts
         # Create the resource
         class_id = 'chapter'
         cls = get_resource_class(class_id)
         container = resource.get_resource('/chapters')
+        print container, 'we are here'
         # check if name is taken
         if container.get_resource(name, soft=True) is not None:
             chapter = container.get_resource(name, soft=True)
@@ -96,6 +98,7 @@ class Chapter_NewInstance(NewInstance):
                 return self.GET
         # We are now ready to make the company resource
         chapter = container.make_resource(name, cls)
+        print 'chapter make ...'
         # The metadata
         metadata = chapter.metadata
         language = resource.get_edit_languages(context)[0]
@@ -129,8 +132,10 @@ class Chapter_NewInstance(NewInstance):
         calendar = chapter.make_resource('calendar', Calendar)
         wiki = chapter.make_resource('wiki', WikiFolder)
         # TODO send an email with details
+        email = user.get_property('email')
+        user.send_confirmation(context, email, chapter)
         goto = '/chapters/%s/;control_panel' % chapter.name
-        return context.come_back(MSG_NEW_RESOURCE, goto=goto)
+        return context.come_back(MSG_NEW_CHAPTER, goto=goto)
 
 
 class Chapter_SearchForm(SearchForm):

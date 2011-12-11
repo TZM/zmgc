@@ -16,3 +16,6 @@ MSG_EXISTANT_ADDRESS = ERROR(
 
 MSG_CHOOSE_REGION = ERROR(
     u'Please choose your region!')
+    
+MSG_NEW_CHAPTER = INFO(
+    u'Your chapter site has been created and you will receive an email with further details.')
