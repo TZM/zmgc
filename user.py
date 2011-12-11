@@ -62,8 +62,8 @@ class SiteUser(User):
     # Email: Chapter Creation
     ########################################################################
     
-    confirmation_subject = MSG(u"Chapter {site_name} has been created.")
-    confirmation_txt = MSG(u"This email confirms that your chapter {site_name} has been created."
+    chapter_confirmation_subject = MSG(u"Chapter {site_name} has been created.")
+    chapter_confirmation_txt = MSG(u"This email confirms that your chapter {site_name} has been created."
                            u"\n"
                            u"\nPlease visit the documentation link. {site_uri}docs/chapter"
                            u"\nWe have created a domain URL for you {zgc_uri} in addition to your own URL"
@@ -76,12 +76,12 @@ class SiteUser(User):
         uri = context.uri
         vhosts = chapter.get_property('vhosts')
         site_uri = Reference(uri.scheme, uri.authority, '/', {}, None)
-        text = self.confirmation_txt.gettext(site_name=site_name,
+        text = self.chapter_confirmation_txt.gettext(site_name=site_name,
                                              site_uri=site_uri,
                                              zgc_uri=fix_website_url(vhosts[0]),
                                              chapter_uri=fix_website_url(vhosts[1]))
 
-        context.root.send_email(email, self.confirmation_subject.gettext(),
+        context.root.send_email(email, self.chapter_confirmation_subject.gettext(site_name=site_name),
                                 text=text)
 
 register_resource_class(SiteUser)
