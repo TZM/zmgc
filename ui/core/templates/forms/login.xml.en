@@ -22,7 +22,7 @@
 
 <form id="loginform" name="loginform" method="post" action=";login">
   <fieldset>
-    <legend>Sign in for Expert Travel</legend>
+    <legend>Sign in to Zeitgeist Global Connect</legend>
     <dl id="username">
         <dt><label for="username">E-mail Address</label>
         <span class="field-is-missing" title="This field is required">*
