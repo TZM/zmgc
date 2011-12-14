@@ -48,8 +48,9 @@ class ChapterGenerator(STLView):
     """
     access = True
     title = MSG(u'Create your chapter')
+    description = 'Create new chapter'
     template = 'ui/phoenix/chapter-generator.xml'
-    query_schema = {'name': String, 'title': String, 'type': String}
+    query_schema = {'name': String, 'title': String, 'type': String, 'username': String}
 
     def get_namespace(self, resource, context):
         # options would be based on user's permissions
