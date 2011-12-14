@@ -9,9 +9,6 @@ from itools.datatypes import String
 from itools.gettext import MSG
 from itools.web import STLView
 
-# Import from ikaaro
-from ikaaro.views_new import NewInstance
-
 # Import from tzm
 from tzm.skins_views import TabsTemplate
 from tzm.resource_views import LoginView
@@ -52,17 +49,18 @@ class ChapterGenerator(STLView):
     access = True
     title = MSG(u'Create your chapter')
     template = 'ui/phoenix/chapter-generator.xml'
-    query_schema = {'username': String, 'name': String, 'title': String}
+    query_schema = {'name': String, 'title': String, 'type': String}
 
     def get_namespace(self, resource, context):
         # options would be based on user's permissions
-        username = context.user
-
-        if username is None:
+        user = context.user
+        if user is None:
             form = LoginView().GET(resource, context)
-            return {'info': None, 'login': '/;login', 'form': form}
-        
-        form = None
-        info = {'name': username.name, 'title': username.get_title(), 'form': form}
+            return {'name': None, 'login': '/;login', 'form': form}
 
-        return {'info': info}
+        context.method = 'POST'
+        form = Chapter_NewInstance().GET(resource, context)
+        firstname = user.get_property('firstname')
+        if firstname:
+            return {'name': firstname, 'form': form}
+        return {'name': user.get_title(), 'form': form}

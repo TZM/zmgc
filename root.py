@@ -15,6 +15,7 @@ from ikaaro.registry import register_resource_class
 from ikaaro.revisions_views import DBResource_CommitLog
 from ikaaro.root import Root as BaseRoot
 from ikaaro.text import CSV
+from ikaaro.tracker import Tracker
 
 # Import from tzm
 from chapter.chapter import Chapters
@@ -95,7 +96,7 @@ class Root(BaseRoot):
         functions = self.make_resource('functions', Functions)
         world = self.make_resource('world', World)
         # Add the core website - http://lmz.fr
-        hosts = ['zmgc.net', 'www.zmgc.net', 'zmgc.aqoon.local']
+        hosts = ['zmgc.net', 'zmgc.aqoon.local']
         phoenix = self.make_resource('phoenix', Phoenix,
             title={'en': u'Zeitgeist Movement Global Connect'},
             website_is_open='community',
@@ -106,6 +107,8 @@ class Root(BaseRoot):
                       u' anarchically scalable information system.'},
             industry=('social',)
             )
+        print phoenix
+        tracker = phoenix.make_resource('tracker', Tracker)
         # Add the companies folder - here we store the company objects
         chapters = self.make_resource('chapters', Chapters,
                                         title={'en': u'Chapters'},

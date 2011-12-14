@@ -27,6 +27,7 @@ from ikaaro.views import ContextMenu, CompositeForm, SearchForm, BrowseForm
 from ikaaro.views_new import NewInstance
 from ikaaro.folder import Folder
 from ikaaro.folder_views import Folder_BrowseContent
+from ikaaro.tracker import Tracker
 
 # Import from Wiki
 from wiki import WikiFolder
@@ -131,6 +132,7 @@ class Chapter_NewInstance(NewInstance):
         blog = chapter.make_resource('blog', Blog)
         calendar = chapter.make_resource('calendar', Calendar)
         wiki = chapter.make_resource('wiki', WikiFolder)
+        tracker = chapter.make_resource('tracker', Tracker)
         # TODO send an email with details
         email = user.get_property('email')
         user.send_chapter_confirmation(context, email, chapter)

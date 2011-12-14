@@ -33,7 +33,8 @@ class Phoenix(SiteRoot):
     class_control_panel = ['browse_users', 'add_user', 'edit_virtual_hosts',
         'edit_security_policy', 'edit_languages',
         'edit_contact_options', 'broken_links', 'orphans',
-        'edit_seo', 'edit_theme', 'edit_industry'
+        'edit_seo', 'edit_theme', 'edit_industry',
+        'create'
         ]
 
     __fixed_handlers__ = SiteRoot.__fixed_handlers__[:0] + ['404']

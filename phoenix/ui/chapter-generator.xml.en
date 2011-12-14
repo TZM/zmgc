@@ -6,16 +6,13 @@
 
 <div class="yui3-g"><!-- content -->
   <div class="yui3-u-3-5"><!-- form block 60%-->
-    <stl:block stl:if="not info">
-      <p>Only members can create chapters. Please <a href="${login}">log in</a></p>
+    <stl:block stl:if="not name">
+      <p>Only members can create chapters. Please log in</p>
+    </stl:block>
+    <stl:block stl:if="name">
+      <h1>Hi, ${name}, you can now create your chapter site</h1>
+    </stl:block>
       ${form}
-    </stl:block>
-    <stl:block stl:if="info">
-      <h1>Create your chapter</h1>
-      <p>
-        Please follow this <a href="/chapters/;new_resource?type=chapter">link</a> to create your chapter.
-      </p>
-    </stl:block>
   </div><!-- /form block 60%-->
   
   <div class="yui3-u-2-5"><!-- help 40%-->
