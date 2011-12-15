@@ -57,8 +57,8 @@ class ChapterGenerator(STLView):
         user = context.user
         if user is None:
             form = LoginView().GET(resource, context)
-            return {'name': None, 'login': '/;login', 'form': form}
-
+            return {'name': None, 'form': form}
+        
         context.method = 'POST'
         form = Chapter_NewInstance().GET(resource, context)
         firstname = user.get_property('firstname')

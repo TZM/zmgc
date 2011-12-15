@@ -141,7 +141,6 @@ class LoginView(BaseLoginView):
 
         return namespace
 
-    #
     def _register(self, resource, context, email):
         site_root = context.site_root
         # Add the user
