@@ -72,9 +72,6 @@ class Chapter(SiteRoot):
             return root._get_resource(name)
         return SiteRoot._get_resource(self, name)
 
-    def get_document_types(self):
-        return [WebPage]
-
     ########################################################################
     ## UI
     ########################################################################

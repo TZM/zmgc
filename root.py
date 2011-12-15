@@ -135,11 +135,6 @@ class Root(BaseRoot):
     ########################################################################
     # API
     ########################################################################
-    def get_page_title(self):
-        return None
-    
-    def get_document_types(self):
-        return BaseRoot.get_document_types(self) + [BaseRoot]
     
     # Restrict access to the folder's views
     browse_content = Folder_BrowseContent(access='is_allowed_to_edit')

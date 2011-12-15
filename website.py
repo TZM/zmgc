@@ -36,7 +36,7 @@ from ikaaro.registry import register_resource_class, register_document_type
 #from ikaaro.resource_views import LoginView as BaseLoginView
 from ikaaro.skins import UI, ui_path
 from ikaaro.text import CSS
-from ikaaro.views_new import NewInstance
+#from ikaaro.views_new import NewInstance
 from ikaaro.webpage import WebPage
 from ikaaro.website_views import AboutView, ContactForm, CreditsView
 #from ikaaro.website_views import ForgottenPasswordForm, RegisterForm
@@ -48,6 +48,7 @@ from ikaaro.views import SearchForm
 from access import RoleAware
 from control_panel import TZM_ControlPanel, CPEditIndustry
 from resource_views import Captcha, LoginView
+
 
 class SiteRoot(BaseWebSite, RoleAware):
     class_schema = merge_dicts(
@@ -119,7 +120,7 @@ class SiteRoot(BaseWebSite, RoleAware):
     #######################################################################
     # UI
     #######################################################################
-    new_instance = NewInstance()
+    #new_instance = Folder_NewResource()
     # Control Panel
     control_panel = TZM_ControlPanel()
     #browse_users = CPBrowseUsers()
