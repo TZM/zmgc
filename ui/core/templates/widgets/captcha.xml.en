@@ -3,15 +3,12 @@
  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <stl:block xmlns="http://www.w3.org/1999/xhtml"
     xmlns:stl="http://www.hforge.org/xml-namespaces/stl">
-   <script language="javascript">
-   function captcha_request() {
-       $('#captcha').html('<p><img src="/ui/core/resources/spinner.gif" /></p>');
-       $('#captcha').load("/;captcha");
-   }
-   </script>
     <table id="captcha" class="show-if-no-password">
         <tr>
           <td><img src="${captcha}" alt="captcha" title="captcha" /></td>
+          <td id="sound_captcha">
+            <a href="${sound_captcha}" class="track track-default">Listen</a>
+          </td>
         </tr>  
         <tr>
           <td>
@@ -24,5 +21,9 @@
              </td>
         </tr>
   </table>
+  <script src="/ui/core/js/jquery/jquery-1.6.2.min.js" type="text/javascript"></script>
+  <script src="/ui/core/js/jPlayer/jquery.jplayer.min.js" type="text/javascript"></script>
+  <script src="/ui/core/js/captcha.sound.js" type="text/javascript"></script>
+  <div id="jquery_jplayer"></div>
   <input stl:if="crypt_imgtext" name="crypt_imgtext" type="hidden" id="crypt_imgtext" value="${crypt_imgtext}"/>
 </stl:block>

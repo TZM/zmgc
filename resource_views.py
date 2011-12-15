@@ -109,9 +109,9 @@ class Captcha(STLView):
                 sox_filenames.append('%s/%s.wav' % (sound_path, x))
         #
         subprocess.call(['sox'] + sox_filenames + \
-                ['%s/%s' % (SOUND_OUTPUT_PATH, (im_name + '.wav'))])
-        namespace['sound_captcha'] = '/ui/core/captcha/sounds/%s' % (im_name + '.wav')
-        namespace['sound_path'] = 'ui/sound/%s' % (im_name + '.wav')
+                ['%s/%s' % (SOUND_OUTPUT_PATH, (im_name + '.mp3'))])
+        namespace['sound_captcha'] = '/ui/core/captcha/sounds/%s' % (im_name + '.mp3')
+        namespace['sound_path'] = 'ui/sound/%s' % (im_name + '.mp3')
 
         return namespace
         
