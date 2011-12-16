@@ -26,6 +26,7 @@ from itools.web import STLView
 # Import from tzm
 from tzm.skins_views import TabsTemplate
 from tzm.resource_views import LoginView
+from ikaaro.autoform import make_stl_template
 
 # Import from chapter
 from tzm.chapter import Chapter
@@ -60,7 +61,7 @@ class ChapterGenerator(STLView):
         Form which allows members to be able to add chapter sites that will be included
         in the main ZGC site.
     """
-    access = True
+    access = 'is_allowed_to_view'
     title = MSG(u'Create your chapter')
     description = 'Create new chapter'
     template = 'ui/phoenix/chapter-generator.xml'
@@ -73,8 +74,10 @@ class ChapterGenerator(STLView):
             form = LoginView().GET(resource, context)
             return {'name': None, 'form': form}
         
-        context.method = 'POST'
-        form = Chapter_NewInstance().GET(resource, context)
+        #context.method = 'POST'
+        #form = Chapter_NewInstance().GET(resource, context)
+        form = make_stl_template("""Please follow this <a href="/chapters/;new_resource?type=chapter">
+                                link</a> to create your chapter.""")
         firstname = user.get_property('firstname')
         if firstname:
             return {'name': firstname, 'form': form}
