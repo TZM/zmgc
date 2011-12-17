@@ -310,16 +310,6 @@ h1, h2 {
   min-height: 5px;
   background: url('/ui/common/images/admin-background-up.png') top left repeat-x #b8b8b8;
 }
-
-div.jp-video-145p {
-	width:auto;
-}
-
-
-div.jp-video-145p div.jp-video-play {
-	height:145px;
-}
-
-div.jp-controls-holder {
-	width:310px;
+.youtube {
+    width:330px;
 }

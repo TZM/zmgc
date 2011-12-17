@@ -20,24 +20,83 @@
   </div><!-- /welcome block 40%-->
   <div class="yui3-u-2-5"><!-- movies, radio and events block 40%-->
     <div class="yui3-g">
-      <div class="yui3-u-2-3">
+      <div class="yui3-u-2-3 youtube">
         <iframe width="325px"height="245" src="http://www.youtube.com/embed/QYLLFpNn4lM" frameborder="0"></iframe>
       </div>
-      <div class="yui3-u-1-3">
-        small video
-      </div>
-    </div>
+      <div class="yui3-u-1-3" id="watch-related-container">
+          <ul id="watch-related" class="video-list">
+            <!-- video-list-item -->
+            <li class="video-list-item">
+              <a href="videos/video-item" class="video-list-item-link">
+                <span class="ux-thumb-wrap contains-addto">
+                  <span class="video-thumb">
+                    <span class="clip">
+                      <img src="/ui/core/resources/default.jpg" alt="clip-title" />
+                      <span class="uix-button-content">
+                        <span class="addto-label">Add to</span>
+                      </span>
+                    </span><!-- /clip-->
+                    <span class="video-time">14:30</span>
+                    <button type="button" class="addto-button video-actions">
+                      <img class="uix-addto-button" src="/ui/core/resources/pixel.gif" />
+                    </button>
+                    <span dir="ltr" class="title" title="Video Title">Video Title</span>
+                    <span class="stat">
+                      by <span class="yt-user-name " dir="ltr">username</span>
+                    </span><!-- /stat-->
+                  </span><!-- /video-thumb-->
+                </span><!-- /ux-thumb-wrap contains-addto-->
+              </a>
+            </li>
+            <!-- /video-list-item -->
+          </ul><!-- /watch-related .video-list-->
+      </div><!-- /watch-related-container-->
+    </div><!-- /yui3-g-->
     <div class="yui3-g">
       <div class="yui3-u-1-3">
-        radio
-      </div>
+        <!-- radio widget FIXME move to own class widget-->
+        <div id="jquery_jplayer"></div>                  
+        <div class="jp-playlist-player"> 
+          <div class="jp-interface"> 
+            <ul class="jp-controls"> 
+              <li><a href="#" id="jplayer_play" class="jp-play" tabindex="1">play</a></li> 
+              <li><a href="#" id="jplayer_pause" class="jp-pause" tabindex="2">pause</a></li> 
+              <li><a href="#" id="jplayer_stop" class="jp-stop" tabindex="3">stop</a></li> 
+              <li><a href="#" id="jplayer_volume_min" class="jp-volume-min" tabindex="4">min volume</a></li> 
+              <li><a href="#" id="jplayer_volume_max" class="jp-volume-max" tabindex="5">max volume</a></li> 
+              <li><a href="#" id="jplayer_previous" class="jp-previous" tabindex="6">previous</a></li> 
+              <li><a href="#" id="jplayer_next" class="jp-next" tabindex="7">next</a></li> 
+            </ul> 
+            <div class="jp-progress"> 
+              <div id="jplayer_load_bar" class="jp-load-bar"> 
+                <div id="jplayer_play_bar" class="jp-play-bar"></div> 
+              </div> 
+            </div> 
+            <div id="jplayer_volume_bar" class="jp-volume-bar"> 
+              <div id="jplayer_volume_bar_value" class="jp-volume-bar-value"></div> 
+            </div> 
+            <div id="jplayer_play_time" class="jp-play-time"></div> 
+            <div id="jplayer_total_time" class="jp-total-time"></div> 
+          </div><!-- /jp-interfac-->
+        </div><!-- /jp-playlist-player-->
+        <!-- radio widget FIXME move to own class widget-->
+        <!-- play list -->
+        <div id="sound"> 
+        <ul> 
+        <li><a href="http://vasya-lozhkin.ru/files/music/gm/03 Vasya Lozhkin - Volki.mp3" class="track 
+        track-default">Cherish the Day</a></li> 
+        <li><a href="http://vasya-lozhkin.ru/files/music/gm/01 Vasya Lozhkin - Homyachok-Mutant.mp3" class="track">Here 
+        With Me</a></li> 
+        </ul>
+        </div>
+        <!-- /play list -->
+      </div><!-- /yui3-u-1-3-->
       <div class="yui3-u-2-3">
         events table
-      </div>
-    </div>
+      </div><!-- /yui3-u-2-3-->
+    </div><!-- /yui3-g-->
   </div><!-- /movies, radio and events block 40%-->
   <div class="yui3-u-1-5"><!-- right side bar 20%-->
-    right side
   </div><!-- /right side bar 20%-->
 </div><!-- /content -->
 </stl:block>

@@ -37,8 +37,8 @@ class View(STLView):
     access = True
     title = MSG(u'Welcome')
     template = 'ui/phoenix/home.xml'
-    styles = ['ui/phoenix/jquery/custom-theme/jquery-ui-1.8.16.custom.css']
-    scripts = ['ui/phoenix/jquery/jquery-ui-1.8.16.custom.min.js', '/ui/core/js/jPlayer/jquery.jplayer.min.js', '/ui/core/js/jPlayer/add-on/haiku-player.js']
+    styles = ['ui/phoenix/jquery/custom-theme/jquery-ui-1.8.16.custom.css', '/ui/core/css/jPlayer/jplayer.pink.flag.css']
+    scripts = ['ui/phoenix/jquery/jquery-ui-1.8.16.custom.min.js', '/ui/core/js/jPlayer/jquery.jplayer.min.js', '/ui/core/js/jplayer.controls.js', ]
 
 
     def get_namespace(self, resource, context):

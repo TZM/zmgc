@@ -6,8 +6,17 @@
     <table id="captcha" class="show-if-no-password">
         <tr>
           <td><img src="${captcha}" alt="captcha" title="captcha" /></td>
-          <td id="sound_captcha">
-            <a href="${sound_captcha}" class="track track-default">Listen</a>
+          <td id="sound">
+            <a href="${sound_captcha}" class="track track-default" />
+            <ul> 
+              <li><a class="jp-play" style='opacity:0.5; filter:alpha(Opacity=5)' 
+                href="#"><img 
+                src="/ui/core/icons/16x16/new.png" 
+                width="16" height="16" alt="HTML5 Audio" /></a></li> 
+                <li><a class="jp-pause" href="#"><img 
+                  src="/ui/core/icons/16x16/new.png" 
+                  width="16" height="16" alt="HTML5 Audio" /></a></li> 
+            </ul>
           </td>
         </tr>  
         <tr>
@@ -23,7 +32,7 @@
   </table>
   <script src="/ui/core/js/jquery/jquery-1.6.2.min.js" type="text/javascript"></script>
   <script src="/ui/core/js/jPlayer/jquery.jplayer.min.js" type="text/javascript"></script>
-  <script src="/ui/core/js/captcha.sound.js" type="text/javascript"></script>
+  <script src="/ui/core/js/jplayer.controls.js" type="text/javascript"></script>
   <div id="jquery_jplayer"></div>
   <input stl:if="crypt_imgtext" name="crypt_imgtext" type="hidden" id="crypt_imgtext" value="${crypt_imgtext}"/>
 </stl:block>

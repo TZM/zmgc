@@ -53,7 +53,6 @@ class Skin(BaseSkin):
             '/ui/core/css/yui/cssreset/reset-min.css',
             '/ui/core/css/yui/cssgrids/grids-min.css',
             '/ui/core/css/flags-sprite.css',
-            '/ui/core/css/jPlayer/jplayer.pink.flag.css',
         ]
 
         # Skin styles

@@ -54,7 +54,7 @@
                             </td>
                           </tr>
                           <tr>
-                              <td><embed height="16" autoplay="false" src="${captcha/sound_captcha}" type="audio/wav" /></td>
+                              <td><embed height="16" autoplay="false" src="${captcha/sound_captcha}" type="audio/mp3" /></td>
                           </tr>
                           <tr>
                                <td colspan="2">

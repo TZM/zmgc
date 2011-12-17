@@ -47,13 +47,9 @@ class Chapter(SiteRoot):
     class_control_panel = SiteRoot.class_control_panel + [
                         'edit_industry', 'edit_business', 'edit_business_type']
 
-    class_roles = freeze(['chapter_admin', 'chapter_member'])
+    class_roles = freeze(['admin', 'member', 'guest'])
     class_schema = merge_dicts(
         SiteRoot.class_schema,
-            {'chapter_admin': Tokens(source='metadata',
-                                    title=MSG(u"Chapter Administrator"))},
-            {'chapter_member': Tokens(source='metadata',
-                                    title=MSG(u"Chapter Member"))},
             {'country': String(source='metadata',indexed=True, stored=True)},
             {'region': String(source='metadata',indexed=True, stored=True)},
             {'county': String(source='metadata',indexed=True, stored=True)},

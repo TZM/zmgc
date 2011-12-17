@@ -3,7 +3,7 @@
 
 # Import from the Standard Library
 import datetime, random, hashlib, subprocess
-from random import choice
+from random import choice, sample
 from operator import itemgetter
 
 # Import from PIL
@@ -24,7 +24,7 @@ from itools.xml import XMLParser
 from ikaaro.autoform import Widget, make_stl_template
 from ikaaro.datatypes import Password
 from ikaaro.resource_views import LoginView as BaseLoginView
-from ikaaro.utils import generate_password
+#from ikaaro.utils import generate_password
 from ikaaro.views import CompositeForm
 from ikaaro.views import IconsView, SearchForm, ContextMenu
 
@@ -37,14 +37,17 @@ fonts = ['data/fonts/tesox.ttf', 'data/fonts/SHERWOOD.TTF']
 def crypt_captcha(captcha):
     return hashlib.sha224(captcha).hexdigest()
 
-
 def get_host_prefix(context):
     hostname = context.uri.authority
     tab = hostname.split('.', 1)
     if len(tab)>1:
         return tab[0]
     return None
-
+#
+# ASCII letters and digits, except the characters: 0, O, 1, l, w, W
+tokens = 'abcdefghijkmnopqrstuvxyzABCDEFGHIJKLMNPQRSTUVXYZ23456789'
+def generate_password(length=5):
+    return ''.join(sample(tokens, length))
 
 class Captcha(STLView):
     """
@@ -126,7 +129,6 @@ class LoginView(BaseLoginView):
     title = MSG(u'Zeitgeist Global Connect Login')
     template = 'ui/core/templates/forms/login.xml'
     meta = [('robots', 'noindex, follow', None)]
-    scripts = ['/ui/core/js/jquery/jquery.jplayer.min.js']
 
     schema = {
         'username': String(mandatory=True),
