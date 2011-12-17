@@ -55,30 +55,89 @@
     <div class="yui3-g">
       <div class="yui3-u-1-3">
         <!-- radio widget FIXME move to own class widget-->
-        <div id="jquery_jplayer"></div>                  
-        <div class="jp-playlist-player"> 
-          <div class="jp-interface"> 
-            <ul class="jp-controls"> 
-              <li><a href="#" id="jplayer_play" class="jp-play" tabindex="1">play</a></li> 
-              <li><a href="#" id="jplayer_pause" class="jp-pause" tabindex="2">pause</a></li> 
-              <li><a href="#" id="jplayer_stop" class="jp-stop" tabindex="3">stop</a></li> 
-              <li><a href="#" id="jplayer_volume_min" class="jp-volume-min" tabindex="4">min volume</a></li> 
-              <li><a href="#" id="jplayer_volume_max" class="jp-volume-max" tabindex="5">max volume</a></li> 
-              <li><a href="#" id="jplayer_previous" class="jp-previous" tabindex="6">previous</a></li> 
-              <li><a href="#" id="jplayer_next" class="jp-next" tabindex="7">next</a></li> 
-            </ul> 
-            <div class="jp-progress"> 
-              <div id="jplayer_load_bar" class="jp-load-bar"> 
-                <div id="jplayer_play_bar" class="jp-play-bar"></div> 
-              </div> 
-            </div> 
-            <div id="jplayer_volume_bar" class="jp-volume-bar"> 
-              <div id="jplayer_volume_bar_value" class="jp-volume-bar-value"></div> 
-            </div> 
-            <div id="jplayer_play_time" class="jp-play-time"></div> 
-            <div id="jplayer_total_time" class="jp-total-time"></div> 
-          </div><!-- /jp-interfac-->
-        </div><!-- /jp-playlist-player-->
+        <script type="text/javascript">
+        //<![CDATA[
+        $(document).ready(function(){
+
+        	$("#jquery_jplayer_1").jPlayer({
+        		ready: function () {
+        			$(this).jPlayer("setMedia", {
+        				m4a: "http://www.jplayer.org/audio/m4a/Miaow-08-Stirring-of-a-fool.m4a",
+        				oga: "http://www.jplayer.org/audio/ogg/Miaow-08-Stirring-of-a-fool.ogg"
+        			});
+        		},
+        		play: function() { // To avoid both jPlayers playing together.
+        			$(this).jPlayer("pauseOthers");
+        		},
+        		repeat: function(event) { // Override the default jPlayer repeat event handler
+        			if(event.jPlayer.options.loop) {
+        				$(this).unbind(".jPlayerRepeat").unbind(".jPlayerNext");
+        				$(this).bind($.jPlayer.event.ended + ".jPlayer.jPlayerRepeat", function() {
+        					$(this).jPlayer("play");
+        				});
+        			} else {
+        				$(this).unbind(".jPlayerRepeat").unbind(".jPlayerNext");
+        				$(this).bind($.jPlayer.event.ended + ".jPlayer.jPlayerNext", function() {
+        					$("#jquery_jplayer_2").jPlayer("play", 0);
+        				});
+        			}
+        		},
+        		swfPath: "/ui/core/js/jPlayer/",
+        		supplied: "m4a, oga",
+        		wmode: "window"
+        	});
+
+
+
+        	$("#jplayer_inspector_1").jPlayerInspector({jPlayer:$("#jquery_jplayer_1")});
+        });
+        //]]>
+        </script>
+
+
+    		<div id="jquery_jplayer_1" class="jp-jplayer"></div>
+
+    		<div id="jp_container_1" class="jp-audio">
+    			<div class="jp-type-single">
+    				<div class="jp-gui jp-interface">
+    					<ul class="jp-controls">
+    						<li><a href="javascript:;" class="jp-play" tabindex="1">play</a></li>
+    						<li><a href="javascript:;" class="jp-pause" tabindex="1">pause</a></li>
+    						<li><a href="javascript:;" class="jp-stop" tabindex="1">stop</a></li>
+    						<li><a href="javascript:;" class="jp-mute" tabindex="1" title="mute">mute</a></li>
+    						<li><a href="javascript:;" class="jp-unmute" tabindex="1" title="unmute">unmute</a></li>
+    						<li><a href="javascript:;" class="jp-volume-max" tabindex="1" title="max volume">max volume</a></li>
+    					</ul>
+    					<div class="jp-progress">
+    						<div class="jp-seek-bar">
+    							<div class="jp-play-bar"></div>
+
+    						</div>
+    					</div>
+    					<div class="jp-volume-bar">
+    						<div class="jp-volume-bar-value"></div>
+    					</div>
+    					<div class="jp-current-time"></div>
+    					<div class="jp-duration"></div>
+    					<ul class="jp-toggles">
+    						<li><a href="javascript:;" class="jp-repeat" tabindex="1" title="repeat">repeat</a></li>
+    						<li><a href="javascript:;" class="jp-repeat-off" tabindex="1" title="repeat off">repeat off</a></li>
+    					</ul>
+    				</div>
+    				<div class="jp-title">
+    					<ul>
+    						<li>Stirring of a fool</li>
+    					</ul>
+    				</div>
+    				<div class="jp-no-solution">
+    					<span>Update Required</span>
+    					To play the media you will need to either update your browser to a recent version or update your <a href="http://get.adobe.com/flashplayer/" target="_blank">Flash plugin</a>.
+    				</div>
+    			</div>
+    		</div>
+
+
+
         <!-- radio widget FIXME move to own class widget-->
         <!-- play list -->
         <div id="sound"> 
