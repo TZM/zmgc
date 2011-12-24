@@ -1,0 +1,63 @@
+1/. wire frame for main portal and chapter sites
+2/. questionare module - MCQ, MAQ and Free text input, so that it can be also used as a Poll
+3/. user profile, allow sites to control what data they want to store
+4/. video room - integrate nodejs using the python library to create a chat/video room see http://driv.in
+5/. enhance the existing style, perhaps use YUI2 grids, this way we can have a template that can be control by each individual users' preferences
+6/. right-to-left template for: 
+	Arabic alphabet - used for Arabic, Persian, Urdu and many other languages.
+	Hebrew alphabet - used for Hebrew, Yiddish and some other Jewish languages.
+	Syriac alphabet - used for varieties of the Syriac language.
+	Thaana - used for Dhivehi.
+	N'Ko script - used for several languages of Africa.
+8/. up-to-down template for Mandarin Cantonese Taiwanese Shanghainese Japanese languages
+9/. mobile
+10/. create import scripts for different forums, wikis and documents from drupal, joomla, phpboard, wordpress etc...
+	link these to the appropriate module, so if we are on the Forum, the user should have a tab 'Import'
+	
+11/. ikaaro.turk - this will be a separate module, similar to ikaaro.wiki, and is based on mTurk from Amazon Web Services, where 'work' is distributed across many persons, thus the result is achieved much faster. For example, if we have an Open Office document, written in English, then the ikaaro.turk module will: 
+a) create a 'clone' of the document in how ever many languages that the original document needs to be translated in
+b) each 'clone', will then be split into small sections, if the document is 1,000 words containing 25 paragraphs then it will be split in 5 paragraphs (~ 200 words per paragraph)
+c) we will then have a form, which will contain:
+
+original 200 word text
+----------------------
+
+[button ... (Translate)] - when clicked, an input form is created
+ 
+[input form for the translator to type into]
+
+[button ... (Submit)]
+
+Using this model, we can distribute the translation work to many members. And as we are using Git we can then automatically merge all the sections, back to the main translated document.
+
+We must build workflows that is related to the size of the document and split the content by the amount of volunteers who have accepted to work on this, so if 25 people volunteer to help to translate the document, then the 25 paragraphs will be one paragraph by a person.
+
+Extendability - the same workflow can apply to other media projects, for example if we need a sound file to be transcoded, we can calculate the length of the sound file (for this example, lets say it is 10 minutes), and the language is English.
+
+We have a button (Call for Action...) on a form that contains the file, when a volunteer clicks on this button, we register that this person wants to help in transcoding the sound file. At the end of a set period, hopefully we can have 10 people willing to transcode the sound file. The sound file is then pushed through Audacity and split into 10 chunks of 1 minute each.
+
+A form is then presented with the 1 minute file and an input form for the transcoder to type the text. When all 10 chunks have been transcoded the text can then be pushed into the translation workflow, as discussed in the first example. So we have also a translation of the transcoded file.
+
+Then this transcoded and translated piece of work can be sent to the voice over group for the specific language where a new recording can be made in that language. Or the subtitle group etc...
+
+core tools to use: audacity, python's NLMP library which will be used to process the raw text data. maybe even push this into an mechanical translation service, so that most of the work is done and then a human volunteer can simply verify that the text makes sense.
+ 
+12/. set workflow for images, where the raw file (.psd, .gimp etc...) is uploaded, and other artists can localize this. 
+
+13/. Search - create the autofill so that http://localhost:8080/;search?text=''&output=json so in my class if the output is json this can then be pushed into the autofill, otherwise on submit, we just return the results on the page.
+
+14/. for mass server processing create an army of clustered hardware and launch this using boto and ec2, each chapter co-ordinator should setup a AWS account and setup a user, who can use the resources. Then if we have 10 chapters with AWS accounts, we can launch 200 micro-instances to distribute the work load. so the overall cost will be much lower, then having one big instance or using the existing server to do the heavy work.
+
+15/. Video and Audio streaming - custom jPlayer widget, to link files uploaded or linked in the user's profile page/playlist
+use, see the http://code.google.com/apis/youtube/2.0/reference.html#youtube_data_api_tag_media:content
+
+here is the example for TZMOfficialChannel http://gdata.youtube.com/feeds/api/users/TZMOfficialChannel/uploads?v=2&alt=jsonc 
+
+also see this: http://code.google.com/apis/youtube/articles/view_youtube_jsonc_responses.html
+
+also look at the http://icant.co.uk/easy-youtube/ perhaps it can be integrated.
+
+16/. pipes.yahoo.com - to aggregate the content from different sites not on the Phoenix.
+
+example: http://pipes.yahoo.com/pipes/pipe.run?_id=26ca074a13d28a8ad64e154a76244d43&_callback=eYTp.getFeed&_render=json&s=TZMOfficialChannel
+

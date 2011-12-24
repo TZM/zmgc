@@ -1,116 +1,71 @@
-// JavaScript Document
 $(document).ready(function(){
 
-    var playItem = 0;
-
-    var i = 0;
-    var pl = $("#alt_pl dt");
-    var myPlayList = new Array();
-    for(i = 0; i < pl.length; i++)
-    {
-        myPlayList[i] = {name: pl.eq(i).children("a").text(), mp3: pl.eq(i).next().find(".download").attr("href")};
-    }
-
     // Local copy of jQuery selectors, for performance.
-    var jpPlayTime = $("#jplayer_play_time");
-    var jpTotalTime = $("#jplayer_total_time");
-    var jpStatus = $("#demo_status"); // For displaying information about jPlayer's status in the demo page
+    var	my_jPlayer = $("#jquery_jplayer"),
+    my_trackName = $("#jp_container .track-name"),
+    my_playState = $("#jp_container .play-state"),
+    my_extraPlayInfo = $("#jp_container .extra-play-info");
 
-    $("#jquery_jplayer").jPlayer({
-        ready: function() {
-            //displayPlayList();
-            playListInit(false); // Parameter is a boolean for autoplay.
-            //demoInstanceInfo(this.element, $("#demo_info")); // This displays information about jPlayer's configuration in the demo page
+    // Some options
+    var	opt_play_first = false, // If true, will attempt to auto-play the default track on page loads. No effect on mobile devices, like iOS.
+    opt_auto_play = true, // If true, when a track is selected, it will auto-play.
+    opt_text_playing = "Now playing", // Text when playing
+    opt_text_selected = "Track selected"; // Text when not playing
+
+    // A flag to capture the first track
+    var first_track = true;
+
+    // Change the time format
+    $.jPlayer.timeFormat.padMin = false;
+    $.jPlayer.timeFormat.padSec = false;
+    $.jPlayer.timeFormat.sepMin = " min ";
+    $.jPlayer.timeFormat.sepSec = " sec";
+
+    // Initialize the play state text
+    my_playState.text(opt_text_selected);
+
+    // Instance jPlayer
+    my_jPlayer.jPlayer({
+        ready: function () {
+            $("#jp_container .track-default").click();
+        },
+        timeupdate: function(event) {
+            my_extraPlayInfo.text(parseInt(event.jPlayer.status.currentPercentAbsolute, 10) + "%");
+        },
+        play: function(event) {
+            my_playState.text(opt_text_playing);
+        },
+        pause: function(event) {
+            my_playState.text(opt_text_selected);
+        },
+        ended: function(event) {
+            my_playState.text(opt_text_selected);
+        },
+        swfPath: "/ui/core/js/jPlayer",
+        cssSelectorAncestor: "#jp_container",
+        supplied: "webmv, ogv, m4v, oga, mp3",
+        wmode: "window",
+        size: {
+            width: "640px",
+            height: "360px",
+            cssClass: "jp-video-360p"
         }
-    })
-    .jPlayer("onProgressChange", function(loadPercent, playedPercentRelative, playedPercentAbsolute, playedTime, totalTime) {
-        jpPlayTime.text($.jPlayer.convertTime(playedTime));
-        jpTotalTime.text($.jPlayer.convertTime(totalTime));
 
-        //demoStatusInfo(this.element, jpStatus); // This displays information about jPlayer's status in the demo page
-    })
-    .jPlayer("onSoundComplete", function() {
-        playListNext();
     });
 
-    $("#jplayer_play").click(function(){
-        if(!$("#alt_pl .playing").length)
-        $("#alt_pl dt").eq(playItem).addClass("playing").next().addClass("playing");
-    });
-
-    $("#jplayer_previous").click( function() {
-        playListPrev();
+    // Create click handlers for the different tracks
+    $("#jp_container .track").click(function(e) {
+        my_trackName.text($(this).text());
+        my_jPlayer.jPlayer("setMedia", {
+            mp3: $(this).attr("href"),
+            ogg: $(this).attr("href")
+        });
+        if((opt_play_first && first_track) || (opt_auto_play && !first_track)) {
+            my_jPlayer.jPlayer("play");
+        }
+        first_track = false;
         $(this).blur();
         return false;
     });
-
-    $("#jplayer_next").click( function() {
-        playListNext();
-        $(this).blur();
-        return false;
-    });
-
-
-    function playListInit(autoplay) {
-        if(autoplay) {
-            playListChange( playItem );
-        } else {
-            playListConfig( playItem );
-        }
-    }
-
-    function playListConfig( index ) {
-        playItem = index;
-        $("#jquery_jplayer").jPlayer("setFile", myPlayList[playItem].mp3);
-    }
-
-    function playListChange( index ) {
-        playListConfig( index );
-        $("#jquery_jplayer").jPlayer("play");
-        $("#alt_pl .playing").removeClass("playing");
-        $("#alt_pl dt").eq(index).addClass("playing").next().addClass("playing");
-    }
-
-    function playListNext() {
-        var index = (playItem + 1 < myPlayList.length) ? playItem + 1 : 0;
-        playListChange( index );
-    }
-
-    function playListPrev() {
-        var index = (playItem-1 >= 0) ? playItem-1 : myPlayList.length-1;
-        playListChange( index );
-    }
-
-    //  лик по названию песни в списке
-    $("a.play").click(function(){
-        var index = $(this).closest("dt").index();
-        if(index > 1)
-        index /= 2;
-        playListChange(index);
-        return false;
-    });
-
-    // ѕри наведении на название песни
-    $("dl.playlist dt").mouseenter(function(){
-        $(this).siblings().removeClass('active').end().next('dd').andSelf().addClass('active');
-    });
-
-    // ѕоказать/скрыть текст песни
-    $(".show_text").click(function(){
-        var this_link = $(this);
-        var show_links = this_link.closest("dd").find(".show_text");
-        var text = this_link.closest("dd").find(".songtext");
-        if(text.is(":hidden"))
-        {
-            show_links.text("убрать текст");
-            text.slideDown("fast");
-        }
-        else
-        {
-            text.slideUp("fast");
-            show_links.text("показать текст");
-        }
-    });
-
-
+    
 });

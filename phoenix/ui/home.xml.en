@@ -21,7 +21,7 @@
   <div class="yui3-u-2-5"><!-- movies, radio and events block 40%-->
     <div class="yui3-g">
       <div class="yui3-u-2-3 youtube">
-        <iframe width="325px"height="245" src="http://www.youtube.com/embed/QYLLFpNn4lM" frameborder="0"></iframe>
+        <iframe width="300px"height="200" src="http://www.youtube.com/embed/QYLLFpNn4lM" frameborder="0"></iframe>
       </div>
       <div class="yui3-u-1-3" id="watch-related-container">
           <ul id="watch-related" class="video-list">
@@ -55,100 +55,67 @@
     <div class="yui3-g">
       <div class="yui3-u-1-3">
         <!-- radio widget FIXME move to own class widget-->
-        <script type="text/javascript">
-        //<![CDATA[
-        $(document).ready(function(){
-
-        	$("#jquery_jplayer_1").jPlayer({
-        		ready: function () {
-        			$(this).jPlayer("setMedia", {
-        				m4a: "http://www.jplayer.org/audio/m4a/Miaow-08-Stirring-of-a-fool.m4a",
-        				oga: "http://www.jplayer.org/audio/ogg/Miaow-08-Stirring-of-a-fool.ogg"
-        			});
-        		},
-        		play: function() { // To avoid both jPlayers playing together.
-        			$(this).jPlayer("pauseOthers");
-        		},
-        		repeat: function(event) { // Override the default jPlayer repeat event handler
-        			if(event.jPlayer.options.loop) {
-        				$(this).unbind(".jPlayerRepeat").unbind(".jPlayerNext");
-        				$(this).bind($.jPlayer.event.ended + ".jPlayer.jPlayerRepeat", function() {
-        					$(this).jPlayer("play");
-        				});
-        			} else {
-        				$(this).unbind(".jPlayerRepeat").unbind(".jPlayerNext");
-        				$(this).bind($.jPlayer.event.ended + ".jPlayer.jPlayerNext", function() {
-        					$("#jquery_jplayer_2").jPlayer("play", 0);
-        				});
-        			}
-        		},
-        		swfPath: "/ui/core/js/jPlayer/",
-        		supplied: "m4a, oga",
-        		wmode: "window"
-        	});
-
-
-
-        	$("#jplayer_inspector_1").jPlayerInspector({jPlayer:$("#jquery_jplayer_1")});
-        });
-        //]]>
-        </script>
-
-
-    		<div id="jquery_jplayer_1" class="jp-jplayer"></div>
-
-    		<div id="jp_container_1" class="jp-audio">
-    			<div class="jp-type-single">
-    				<div class="jp-gui jp-interface">
-    					<ul class="jp-controls">
-    						<li><a href="javascript:;" class="jp-play" tabindex="1">play</a></li>
-    						<li><a href="javascript:;" class="jp-pause" tabindex="1">pause</a></li>
-    						<li><a href="javascript:;" class="jp-stop" tabindex="1">stop</a></li>
-    						<li><a href="javascript:;" class="jp-mute" tabindex="1" title="mute">mute</a></li>
-    						<li><a href="javascript:;" class="jp-unmute" tabindex="1" title="unmute">unmute</a></li>
-    						<li><a href="javascript:;" class="jp-volume-max" tabindex="1" title="max volume">max volume</a></li>
-    					</ul>
-    					<div class="jp-progress">
-    						<div class="jp-seek-bar">
-    							<div class="jp-play-bar"></div>
-
-    						</div>
-    					</div>
-    					<div class="jp-volume-bar">
-    						<div class="jp-volume-bar-value"></div>
-    					</div>
-    					<div class="jp-current-time"></div>
-    					<div class="jp-duration"></div>
-    					<ul class="jp-toggles">
-    						<li><a href="javascript:;" class="jp-repeat" tabindex="1" title="repeat">repeat</a></li>
-    						<li><a href="javascript:;" class="jp-repeat-off" tabindex="1" title="repeat off">repeat off</a></li>
-    					</ul>
-    				</div>
-    				<div class="jp-title">
-    					<ul>
-    						<li>Stirring of a fool</li>
-    					</ul>
-    				</div>
-    				<div class="jp-no-solution">
-    					<span>Update Required</span>
-    					To play the media you will need to either update your browser to a recent version or update your <a href="http://get.adobe.com/flashplayer/" target="_blank">Flash plugin</a>.
-    				</div>
-    			</div>
-    		</div>
-
-
-
-        <!-- radio widget FIXME move to own class widget-->
-        <!-- play list -->
-        <div id="sound"> 
-        <ul> 
-        <li><a href="http://vasya-lozhkin.ru/files/music/gm/03 Vasya Lozhkin - Volki.mp3" class="track 
-        track-default">Cherish the Day</a></li> 
-        <li><a href="http://vasya-lozhkin.ru/files/music/gm/01 Vasya Lozhkin - Homyachok-Mutant.mp3" class="track">Here 
-        With Me</a></li> 
-        </ul>
+        <div id="jquery_jplayer" class="jp-jplayer"></div>
+        <div id="jp_container">
+          <p>
+            <span class="play-state"></span> :
+            <span class="track-name">nothing</span>
+            at <span class="extra-play-info"></span>
+            of <span class="jp-duration"></span>, which is
+            <span class="jp-current-time"></span>
+          </p>
+          <ul>
+            <li><a class="jp-play" href="#">Play</a></li>
+            <li><a class="jp-pause" href="#">Pause</a></li>
+            <li><a class="jp-stop" href="#">Stop</a></li>
+          </ul>
+          <ul>
+            <li>volume :</li>
+            <li><a class="jp-mute" href="#">Mute</a></li>
+            <li><a class="jp-unmute" href="#">Unmute</a></li>
+            <li> <a class="jp-volume-bar" href="#">|&lt;----------&gt;|</a></li>
+            <li><a class="jp-volume-max" href="#">Max</a></li>
+          </ul>
+          <!-- play list -->
+          <script type="text/javascript">
+              $(function() {
+                $('#container-3').tabs();
+              });
+          </script>
+          <div id="container-3">
+            <ul>
+              <li><a href="#video"><span>Video</span></a></li>
+              <li><a href="#radio"><span>Radio</span></a></li>
+              <li><a href="#talks"><span>Talks</span></a></li>
+              <li><a href="#music"><span>Music</span></a></li>
+            </ul>
+            <div id="video">
+              <ul>
+                <li><a href="http://www.jplayer.org/video/ogv/Big_Buck_Bunny_Trailer.ogv" class="track">Big Buck Bunny</a></li>
+              </ul>
+            </div>
+            <div id="radio">
+              radio playlist
+            </div>
+            <div id="talks">
+              <ul>
+                <li><a href="http://www.archive.org/download/TzmDevPhoenixMeeting12-04-2011/ts3_recording_11_12155E7A5.ogg" class="track track-default">TZM Phoenix Meeting 12-04-2011</a></li>
+                <li> | </li>
+                <li><a href="http://www.archive.org/download/TzmDevPhoenixMeeting12-11-2011/Tzm-dev-phx12-11-11.ogg" class="track">TZM Phoenix Meeting 11-11-2011</a></li>
+              </ul>
+          </div>
+          <div id="music">
+            <ul>
+              <li><a href="http://www.jplayer.org/audio/mp3/Miaow-04-Lismore.mp3" class="track">Lismore</a></li>
+              <li> | </li>
+              <li><a href="http://www.jplayer.org/audio/mp3/Miaow-10-Thin-ice.mp3" class="track">Thin Ice</a></li>
+            </ul>
+          </div>
+          </div>
+          <!-- /play list -->
         </div>
-        <!-- /play list -->
+        <!-- radio widget FIXME move to own class widget-->
+
       </div><!-- /yui3-u-1-3-->
       <div class="yui3-u-2-3">
         events table
