@@ -1,0 +1,127 @@
+:focus {
+    outline: none;
+}
+a.jp-video-play-icon {
+    left: 50%;
+    margin-left: -50px;
+    margin-top: -50px;
+    position: relative;
+    text-indent: -9999px;
+    top: -50%;
+    width: 112px;
+}
+
+.btn-slide {
+     display: inline-block;
+     float:right;
+     margin:5px 5px 0 0;
+     font-size: 38%;
+ }
+
+div.jp-audio, div.jp-video {
+    background-color: #3A2A45;
+    border: none;
+    color: #3A2A45;
+}
+
+.jp-video .jp-playlist ul {
+    margin: 0 20px;
+}
+
+.jp-title li, .jp-playlist li {
+    font-size: 100%;
+    border-bottom: none;
+    border-top: 1px solid #FFFFFF;
+}
+
+div.jp-type-playlist div.jp-playlist li.jp-playlist-current {
+    background-color: #682776;
+    border-bottom: none;
+    margin: 0 -20px;
+    padding: 0 10px;
+}
+.playinfor .exe_infor{
+    font-size: 88%;
+}
+
+.jp-title li, .jp-playlist li {
+    font-size: 88%;
+}
+.tabs {margin:0;padding:0;}
+
+.tabsBlock {margin-top:5px;}
+
+.tabsBlock ul.tabs,ul.am-ui-tab-strip {
+    height:10px;
+    list-style:none;
+    position:relative;
+    padding:1px 1px;
+    display:block;
+    font-size: 77%;
+    /* CSS3 Rounded Corners For Top Left/Top Right of Tabs */
+    -moz-border-radius-topleft:8px;
+    -moz-border-radius-topright:8px;
+    -webkit-border-radius-topleft:8px;
+    -webkit-border-radius-topright:8px;
+    -khtml-border-radius-topleft:8px;
+    -khtml-border-radius-topright:8px;
+
+}
+
+.tabsBlock ul.tabs li,ul.am-ui-tab-strip li,ul.am-ui-tab-strip li {
+    margin:2px 2px 0 0;
+    padding:1px 8px;
+    border:solid 1px transparent;
+    position:relative;
+    float:left;
+    text-decoration:none;
+    border-bottom-width:0 !important;
+    outline:none;
+    cursor:pointer;
+    width: 70px;
+}
+
+.tabsBlock	ul.tabs li.active,ul.am-ui-tab-strip li.am-ui-tab-selected {
+    border-bottom:solid 1px #fff !important;
+    border:solid 1px #ccc;
+    background-color:#682776;
+}
+
+.tabsBlock	ul.tabs li:hover,ul.tabs li.active:hover,ul.am-ui-tab-strip li:hover,ul.am-ui-tab-strip li.am-ui-tab-selected:hover  {
+    border-bottom:solid 1px #fff !important;
+    border:solid 1px #555;
+
+    color:#444;
+    background-color:#682776;
+}
+
+.tabsBlock	ul.tabs li a,ul.am-ui-tab-strip li a {
+    color:#fff;
+    font-weight:700;
+}
+
+.tabsBlock	ul.tabs li a:hover,ul.tabs li.active a,ul.am-ui-tab-strip li a:hover,ul.am-ui-tab-strip li.am-ui-tab-selected a {
+
+    color:#fff;
+}
+
+.tab_container {
+
+    border:solid 1px #ccc;
+    margin-bottom:2px;
+}
+
+.tab_content {
+    display:block;
+    padding:5px;
+    /* CSS3 Rounded Corners For the Box Outline */
+    -moz-border-radius:6px;
+    -webkit-border-radius:6px;
+    -khtml-border-radius:6px;
+}
+div#tabs .tab-item  ul li.list {
+    font-size:88%;
+    margin-left:10px;
+    width:30px;
+    height: 35px;
+}

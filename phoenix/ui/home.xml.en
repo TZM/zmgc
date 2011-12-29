@@ -20,11 +20,244 @@
   </div><!-- /welcome block 40%-->
   <div class="yui3-u-2-5"><!-- movies, radio and events block 40%-->
     <div class="yui3-g">
-      <div class="yui3-u-2-3 youtube">
-        <iframe width="300px"height="200" src="http://www.youtube.com/embed/QYLLFpNn4lM" frameborder="0"></iframe>
+      <div class="yui3-u-2-3">
+        
+        <!-- radio widget FIXME move to own class widget-->
+        <script type="text/javascript">
+        //<![CDATA[
+        $(document).ready(function(){
+          $("div#panel").slideUp(0);
+          ///init screen
+          var total_length=$(".jp-type-playlist .jp-playlist ul .list").length;
+          var init_point = new Array(3);
+          init_point[0]=0;
+          var list_length = new Array(3);
+          var title = new Array(3);
+          var mp = new Array(3);
+          var oga = new Array(3);
+          var m4v = new Array(3);
+          var ogv = new Array(3);
+          var webmv = new Array(3);
+          var init_flag = 0; 
+          for(i=1; i<4; i++)
+          {
+            list_length[i] = $(".jp-type-playlist .jp-playlist #tabs-"+i+" ul .list").length;
+            title[i] = new Array(list_length[i]);
+            mp[i] = new Array(list_length[i]);
+            oga[i] = new Array(list_length[i]);
+            m4v[i] = new Array(list_length[i]);
+            ogv[i] = new Array(list_length[i]);
+            webmv[i] = new Array(list_length[i]);
+            init_point[i-1]=init_flag; 
+
+            for(j=0; j< list_length[i] ; j++)
+            {
+              title[i][j] = $(".jp-type-playlist .jp-playlist #tabs-"+i+" ul .list").eq(j).text();
+              mp[i][j] = $(".jp-type-playlist .jp-playlist #tabs-"+i+" ul .list a").eq(j).attr("mp");
+              oga[i][j] = $(".jp-type-playlist .jp-playlist #tabs-"+i+" ul .list a").eq(j).attr("oga");
+              m4v[i][j] = $(".jp-type-playlist .jp-playlist #tabs-"+i+" ul .list a").eq(j).attr("m4v");
+              ogv[i][j] = $(".jp-type-playlist .jp-playlist #tabs-"+i+" ul .list a").eq(j).attr("ogv");
+              webmv[i][j] = $(".jp-type-playlist .jp-playlist #tabs-"+i+" ul .list a").eq(j).attr("webmv");
+              init_flag++;
+            }
+          }
+          ///initial player with empty playlist
+          var myPlaylist = new jPlayerPlaylist({
+            jPlayer: "#jquery_jplayer_1",
+            cssSelectorAncestor: "#jp_container_1"
+            }, [
+
+            ], {
+              swfPath: "/ui/core/js/jPlayer",
+              supplied: "oga, mp3,m4v,ogv,webmv",
+              wmode: "window"
+            }
+          );
+          ///add media list into the playlsit
+          for(i=1; i<4; i++)
+          {
+            for(j=0; j< list_length[i] ; j++)
+            {
+              myPlaylist.add({
+                title: title[i][j],
+                mp3: mp[i][j],
+                oga: oga[i][j],
+                m4v: m4v[i][j],
+                ogv: ogv[i][j],
+                webmv: webmv[i][j]
+              });
+            }
+          }
+          for(k=list_length[1]; k < total_length; k++) 
+          {
+            $(".jp-type-playlist .jp-playlist #tabs-1 ul li").eq(k).hide();
+          }
+          /// we don't want to display the player on load time
+          $("#jquery_jplayer_1").jPlayer("option","size",{width:320, height:270});
+
+          /// slide action for the control panel
+          $(".btn-slide").click(function(){
+            $("#panel").slideToggle("fast");
+            $(this).toggleClass("active"); return false;
+          });
+
+          //tab switch
+          $(".tabs li").click(function(){
+
+            var divname = $(this).children().attr("title");
+            var divindex = $(this).children().attr("index");
+
+            jQuery(this).parent().parent().find("ul.tabs li").removeClass("active"); //Remove any "active" class
+            jQuery(this).addClass("active"); 
+            //Add "active" class to selected tab
+
+            for(l = 0; l< init_point[divindex-1];l++)
+            {
+              $(".jp-type-playlist .jp-playlist #tabs-"+divindex+" ul li").eq(l).hide();
+            }	
+            for(m = init_point[divindex]; m< total_length; m++)
+            {
+              $(".jp-type-playlist .jp-playlist #tabs-"+divindex+" ul li").eq(m).hide();
+            }	
+
+            $(".tab-item").parent().css({ "display" : "none"});
+            $("#"+divname).parent().css({ "display" : "block"});
+          });
+
+        });
+        //]]>
+        </script>
+        <input id="tmp_duration" type="hidden" value="" />
+        <div id="jquery_jplayer_1" class="jp-jplayer">
+          <img id="jp_poster_0" />
+        </div>
+        <div id="jp_container_1" class="jp-video">
+          <div class="jp-video-play">
+            <a href="javascript:;" class="jp-video-play-icon" tabindex="1">play</a>
+          </div>
+          <div class="jp-type-playlist">
+            <div class="jp-gui jp-interface">
+                <div class="jp-progress">
+                  <div class="jp-seek-bar">
+                    <div class="jp-play-bar"></div>
+                  </div>
+                </div>
+                <div id="panel"><!-- /id="panel" -->
+                <div class="jp-current-time">00:05</div>
+                <div class="jp-duration">00:33</div>
+                <div class="jp-title"><ul><li>Item Title</li></ul>
+                </div>
+                <div class="jp-controls-holder"> <!-- class="jp-controls-holder" -->
+                  <ul class="jp-controls">
+                    <li><a href="javascript:;" class="jp-previous" tabindex="1">previous</a></li>
+                    <li><a href="javascript:;" class="jp-play" tabindex="1" style="display: block;">play</a></li>
+                    <li><a href="javascript:;" class="jp-pause" tabindex="1" style="display: none;">pause</a></li>
+                    <li><a href="javascript:;" class="jp-next" tabindex="1">next</a></li>
+                    <li><a href="javascript:;" class="jp-stop" tabindex="1">stop</a></li>
+                    <li><a href="javascript:;" class="jp-mute" tabindex="1" title="mute">mute</a></li>
+                    <li><a href="javascript:;" class="jp-unmute" tabindex="1" title="unmute" style="display: none;">unmute</a></li>
+                    <li><a href="javascript:;" class="jp-volume-max" tabindex="1" title="max volume">max volume</a></li>
+                  </ul>
+                  <div class="jp-volume-bar">
+                    <div class="jp-volume-bar-value" style="width: 80%; "></div>
+                  </div>
+                </div> <!-- /class="jp-controls-holder" -->
+              </div> <!-- /id="panel" -->
+            </div>
+            <a href="#" class="btn-slide">Slide bar</a>
+            <div id="tab" class="tabsBlock">
+              <ul class="tabs">
+                <li><a href="#tabs-1" title="tabs-1" index="1">Video</a></li>
+                <li><a href="#tabs-2" title="tabs-2" index="2">Audio</a></li>
+                <li><a href="#tabs-3" title="tabs-3" index="3">Both</a></li>
+              </ul>
+              <div class="jp-playlist" index="1">
+                <div id="tabs-1" class="tab-item default">
+                  <ul>
+                    <li class="list">
+                      <a title="unselect" href="javascript:;" 
+                      m4v="http://www.jplayer.org/video/m4v/Big_Buck_Bunny_Trailer.m4v" 
+                      ogv="http://www.jplayer.org/video/ogv/Big_Buck_Bunny_Trailer.ogv" 
+                      webmv="http://www.jplayer.org/video/webm/Big_Buck_Bunny_Trailer.webm" 
+                      poster="http://www.jplayer.org/video/poster/Big_Buck_Bunny_Trailer_480x270.png" 
+                      class="track">
+                      Big Buck Bunny Trailer</a>
+                    </li>
+                    <li class="list" ><a title="unselect" href="javascript:;" mp="http://www.jplayer.org/audio/mp3/TSP-01-Cro_magnon_man.mp3" oga="http://www.jplayer.org/audio/ogg/TSP-01-Cro_magnon_man.ogg" class="track">Cro Magnon Man</a></li> 
+                    <li class="list" ><a title="unselect" href="javascript:;" mp="http://www.jplayer.org/audio/mp3/TSP-01-Cro_magnon_man.mp3" oga="http://www.jplayer.org/audio/ogg/TSP-01-Cro_magnon_man.ogg" class="track">Cro Magnon Man</a></li> 
+                  </ul>
+                </div>
+              </div>
+              <div class="jp-playlist" index="2" style="display: none;">
+                <div id="tabs-2" class="tab-item" style="display: none;">
+                  <ul>
+                    <li class="list" ><a title="unselect" href="javascript:;" mp="http://www.jplayer.org/audio/mp3/TSP-01-Cro_magnon_man.mp3" oga="http://www.jplayer.org/audio/ogg/TSP-01-Cro_magnon_man.ogg" class="track">Cro Magnon Man</a></li> 
+                  </ul>
+                </div>
+              </div>	
+              <div class="jp-playlist" index="3" style="display: none;">	
+                <div id="tabs-3" class="tab-item" style="display: none;">
+                  <ul>
+                    <li class="list"><a title="unselect" href="javascript:;" m4v="http://www.jplayer.org/video/m4v/Big_Buck_Bunny_Trailer.m4v" ogv="http://www.jplayer.org/video/ogv/Big_Buck_Bunny_Trailer.ogv" webmv="http://www.jplayer.org/video/webm/Big_Buck_Bunny_Trailer.webm" poster="http://www.jplayer.org/video/poster/Big_Buck_Bunny_Trailer_480x270.png" class="track">Big Buck Bunny Trailer</a></li>
+                    <li class = "list"><a title="unselect" href="javascript:;" mp="http://www.jplayer.org/audio/mp3/TSP-01-Cro_magnon_man.mp3" oga="http://www.jplayer.org/audio/ogg/TSP-01-Cro_magnon_man.ogg" class="track">Cro Magnon Man</a></li> 
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- radio widget FIXME move to own class widget-->
       </div>
       <div class="yui3-u-1-3" id="watch-related-container">
           <ul id="watch-related" class="video-list">
+            <!-- video-list-item -->
+            <li class="video-list-item">
+              <a href="videos/video-item" class="video-list-item-link">
+                <span class="ux-thumb-wrap contains-addto">
+                  <span class="video-thumb">
+                    <span class="clip">
+                      <img src="/ui/core/resources/default.jpg" alt="clip-title" />
+                      <span class="uix-button-content">
+                        <span class="addto-label">Add to</span>
+                      </span>
+                    </span><!-- /clip-->
+                    <span class="video-time">14:30</span>
+                    <button type="button" class="addto-button video-actions">
+                      <img class="uix-addto-button" src="/ui/core/resources/pixel.gif" />
+                    </button>
+                    <span dir="ltr" class="title" title="Video Title">Video Title</span>
+                    <span class="stat">
+                      by <span class="yt-user-name " dir="ltr">username</span>
+                    </span><!-- /stat-->
+                  </span><!-- /video-thumb-->
+                </span><!-- /ux-thumb-wrap contains-addto-->
+              </a>
+            </li>
+            <!-- /video-list-item -->
+            <!-- video-list-item -->
+            <li class="video-list-item">
+              <a href="videos/video-item" class="video-list-item-link">
+                <span class="ux-thumb-wrap contains-addto">
+                  <span class="video-thumb">
+                    <span class="clip">
+                      <img src="/ui/core/resources/default.jpg" alt="clip-title" />
+                      <span class="uix-button-content">
+                        <span class="addto-label">Add to</span>
+                      </span>
+                    </span><!-- /clip-->
+                    <span class="video-time">14:30</span>
+                    <button type="button" class="addto-button video-actions">
+                      <img class="uix-addto-button" src="/ui/core/resources/pixel.gif" />
+                    </button>
+                    <span dir="ltr" class="title" title="Video Title">Video Title</span>
+                    <span class="stat">
+                      by <span class="yt-user-name " dir="ltr">username</span>
+                    </span><!-- /stat-->
+                  </span><!-- /video-thumb-->
+                </span><!-- /ux-thumb-wrap contains-addto-->
+              </a>
+            </li>
+            <!-- /video-list-item -->
             <!-- video-list-item -->
             <li class="video-list-item">
               <a href="videos/video-item" class="video-list-item-link">
@@ -53,96 +286,8 @@
       </div><!-- /watch-related-container-->
     </div><!-- /yui3-g-->
     <div class="yui3-g">
-      <div class="yui3-u-1-3">
-        <!-- radio widget FIXME move to own class widget-->
-        <div id="jquery_jplayer" class="jp-jplayer"></div>
-        <div id="jp_container">
-          <p>
-            <span class="play-state"></span> :
-            <span class="track-name">nothing</span>
-            at <span class="extra-play-info"></span>
-            of <span class="jp-duration"></span>, which is
-            <span class="jp-current-time"></span>
-          </p>
-          <ul>
-            <li><a class="jp-play" href="#">Play</a></li>
-            <li><a class="jp-pause" href="#">Pause</a></li>
-            <li><a class="jp-stop" href="#">Stop</a></li>
-          </ul>
-          <ul>
-            <li>volume :</li>
-            <li><a class="jp-mute" href="#">Mute</a></li>
-            <li><a class="jp-unmute" href="#">Unmute</a></li>
-            <li> <a class="jp-volume-bar" href="#">|&lt;----------&gt;|</a></li>
-            <li><a class="jp-volume-max" href="#">Max</a></li>
-          </ul>
-          <!-- play list -->
-          <script type="text/javascript">
-              $(function() {
-                $('#container-3').tabs();
-              });
-          </script>
-          <div id="container-3">
-            <ul>
-              <li><a href="#video"><span>Video</span></a></li>
-              <li><a href="#radio"><span>Radio</span></a></li>
-              <li><a href="#talks"><span>Talks</span></a></li>
-              <li><a href="#music"><span>Music</span></a></li>
-            </ul>
-            <div id="video">
-              <ul>
-                <li><a href="http://www.jplayer.org/video/ogv/Big_Buck_Bunny_Trailer.ogv" class="track">Big Buck Bunny</a></li>
-              </ul>
-            </div>
-            <div id="radio">
-              <ul>
-
-
-              		<!-- number -->
-              		<li>
-              			<input type="number" min="1" max="99" value="78" />
-              		</li>
-
-
-              		<!-- range -->
-              		<li>
-              			<input type="range" />
-              		</li>
-
-
-              		<!-- checkbox -->
-              		<li>
-              			<input type="checkbox" data-icon1="♀" data-icon2="♂" />
-              		</li>
-
-
-              		<!-- radio -->
-              		<li>
-              			<input type="radio" name="radio" data-icon="❮❮" /><input type="radio" name="radio" data-icon="►" /><input type="radio" name="radio" data-icon="❯❯" />
-              		</li>
-
-
-              	</ul>
-            </div>
-            <div id="talks">
-              <ul>
-                <li><a href="http://www.archive.org/download/TzmDevPhoenixMeeting12-04-2011/ts3_recording_11_12155E7A5.ogg" class="track track-default">TZM Phoenix Meeting 12-04-2011</a></li>
-                <li> | </li>
-                <li><a href="http://www.archive.org/download/TzmDevPhoenixMeeting12-11-2011/Tzm-dev-phx12-11-11.ogg" class="track">TZM Phoenix Meeting 11-11-2011</a></li>
-              </ul>
-          </div>
-          <div id="music">
-            <ul>
-              <li><a href="http://www.jplayer.org/audio/mp3/Miaow-04-Lismore.mp3" class="track">Lismore</a></li>
-              <li> | </li>
-              <li><a href="http://www.jplayer.org/audio/mp3/Miaow-10-Thin-ice.mp3" class="track">Thin Ice</a></li>
-            </ul>
-          </div>
-          </div>
-          <!-- /play list -->
-        </div>
-        <!-- radio widget FIXME move to own class widget-->
-
+      <div class="yui3-u-1-3  youtube">
+         <!--  <iframe width="300px"height="200" src="http://www.youtube.com/embed/QYLLFpNn4lM" frameborder="0"></iframe> -->
       </div><!-- /yui3-u-1-3-->
       <div class="yui3-u-2-3">
         events table

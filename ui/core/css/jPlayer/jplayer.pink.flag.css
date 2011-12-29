@@ -36,18 +36,19 @@ div.jp-video {
 div.jp-audio {
 	width:201px;
 	padding:20px;
+	padding-bottom:0px;
 }
 
 
 div.jp-video-270p {
-	width:480px;
+	width:320px;
 }
 div.jp-video-360p {
 	width:640px;
 }
 div.jp-video-full {
 	/* Rules for IE6 (full-screen) */
-	width:480px;
+	width:320px;
 	height:270px;
 	/* Rules for IE7 (full-screen) - Otherwise the relative container causes other page items that are not position:static (default) to appear over the video/gui. */
 	position:static !important; position:relative
@@ -486,10 +487,13 @@ div.jp-video .jp-volume-bar {
 .jp-title li,
 .jp-playlist li {
 	position: relative;
-	padding: 2px 0;
-	border-top:1px solid #554461;
-	border-bottom:1px solid #180a1f;
+	
+	border-bottom:5px solid #ffffff;
 	overflow: hidden;
+	margin: 0 -20px;
+	padding: 0 10px;
+	
+	font-size:18px;
 }
 
 .jp-title li{
@@ -503,12 +507,12 @@ div.jp-video .jp-volume-bar {
 /* Note that the first-child (IE6) and last-child (IE6/7/8) selectors do not work on IE */
 
 div.jp-type-playlist div.jp-playlist li:first-child {
-	border-top:none;
+
 	padding-top:3px;
 }
 
 div.jp-type-playlist div.jp-playlist li:last-child {
-	border-bottom:none;
+	border-bottom: 5px solid #FFFFFF;
 	padding-bottom:3px;
 }
 
@@ -521,12 +525,23 @@ div.jp-type-playlist div.jp-playlist a:hover {
 	color: #e892e9;
 }
 
+div.jp-type-playlist div.jp-playlist a .jp-title-span{
+	color: #fff;
+	text-decoration:none;
+	width: 145px;
+	max-width: 145px;
+
+}
+div.jp-type-playlist div.jp-playlist a .jp-title-span:hover {
+	color: #e892e9;
+}
+
 div.jp-type-playlist div.jp-playlist li.jp-playlist-current {
-	background-color: #26102e;
+	background-color:#682776;
 	margin: 0 -20px;
-	padding: 2px 20px;
-	border-top: 1px solid #26102e;
-	border-bottom: 1px solid #26102e;
+	padding: 0 10px;
+
+	border-bottom: 5px solid #ffffff;
 }
 
 div.jp-type-playlist div.jp-playlist li.jp-playlist-current a{
@@ -651,3 +666,41 @@ div.jp-jplayer {
 }
 
 /* @end */
+/*Raim*/
+.playinfor {	
+	float:right;
+	width:70px;
+}
+.player_btn {
+	background:url(bgr.jpg) no-repeat;
+	background-size:35px 35px;
+	width:35px;
+	height:35px;
+	cursor:pointer;
+	
+}
+.exe_infor {
+	color:#ffffff;
+	width:140px;
+	height:30px;
+	font-size:14px;	
+	margin-top: 8px;
+	line-height:13px;
+}
+.detail_infor {
+	font-size:9px;
+}
+.jp-playlist ul li a {
+	float:left;
+	width:220px;
+	line-height:18px;
+}
+.file_infor {
+	position:absolute;
+	float:left;
+	font-size:9px;
+	text-align:center;
+	width:150px;
+	white-space:nowrap;
+}
+/*end*/

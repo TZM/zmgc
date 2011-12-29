@@ -39,13 +39,31 @@ class View(STLView):
     template = 'ui/phoenix/home.xml'
     styles = ['ui/phoenix/jquery/custom-theme/jquery-ui-1.8.16.custom.css',
                 '/ui/core/css/jPlayer/jplayer.pink.flag.css',
-                '/ui/core/elements/checkbox.css',
-                'ui/core/elements/number.css',
-                'ui/core/elements/radio.css',
-                'ui/core/elements/range.css',
+                '/ui/core/css/jPlayer/zen.css',
+                '/ui/core/css/jPlayer/ui.css',
+                
                 ]
-    scripts = ['ui/phoenix/jquery/jquery-ui-1.8.16.custom.min.js', '/ui/core/js/jPlayer/jquery.jplayer.min.js', '/ui/core/js/jPlayer/radio.js' ]
+    scripts = ['ui/phoenix/jquery/jquery-ui-1.8.16.custom.min.js',
+                '/ui/core/js/jPlayer/jquery.jplayer.min.js',
+                '/ui/core/js/jPlayer/add-on/jplayer.playlist.min.js',
+                '/ui/core/js/jquery/add-on/jquery.rotate.js',
+                '/ui/core/js/tab.js',
+                #'/ui/core/js/jPlayer/radio.js',
+                ]
 
+    # <link href="./resource/jplayer.pink.flag.css" rel="stylesheet" type="text/css">
+    # <script type="text/javascript" src="./resource/jquery.min.js"></script>
+    # <script type="text/javascript" src="./resource/jquery.jplayer.min.js"></script>
+    # <script type="text/javascript" src="./resource/jplayer.playlist.min.js"></script>
+    # <script type="text/javascript" src="./resource/tab.js"></script>
+    # 
+    # <!--zend player-->
+    # <link href="css/zen.css" rel="stylesheet">
+    # <script src="js/jquery.rotate.js" type="text/javascript"></script>
+    # <!--end-->
+    # <link href="./resource/ui.css" rel="stylesheet" type="text/css">
+    
+    
 
     def get_namespace(self, resource, context):
         tabs = TabsTemplate(context)
