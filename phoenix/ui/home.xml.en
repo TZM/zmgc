@@ -95,7 +95,34 @@
               </ul>
             </div>
             <div id="radio">
-              radio playlist
+              <ul>
+
+
+              		<!-- number -->
+              		<li>
+              			<input type="number" min="1" max="99" value="78" />
+              		</li>
+
+
+              		<!-- range -->
+              		<li>
+              			<input type="range" />
+              		</li>
+
+
+              		<!-- checkbox -->
+              		<li>
+              			<input type="checkbox" data-icon1="♀" data-icon2="♂" />
+              		</li>
+
+
+              		<!-- radio -->
+              		<li>
+              			<input type="radio" name="radio" data-icon="❮❮" /><input type="radio" name="radio" data-icon="►" /><input type="radio" name="radio" data-icon="❯❯" />
+              		</li>
+
+
+              	</ul>
             </div>
             <div id="talks">
               <ul>

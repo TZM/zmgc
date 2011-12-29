@@ -37,7 +37,13 @@ class View(STLView):
     access = True
     title = MSG(u'Welcome')
     template = 'ui/phoenix/home.xml'
-    styles = ['ui/phoenix/jquery/custom-theme/jquery-ui-1.8.16.custom.css', '/ui/core/css/jPlayer/jplayer.pink.flag.css']
+    styles = ['ui/phoenix/jquery/custom-theme/jquery-ui-1.8.16.custom.css',
+                '/ui/core/css/jPlayer/jplayer.pink.flag.css',
+                '/ui/core/elements/checkbox.css',
+                'ui/core/elements/number.css',
+                'ui/core/elements/radio.css',
+                'ui/core/elements/range.css',
+                ]
     scripts = ['ui/phoenix/jquery/jquery-ui-1.8.16.custom.min.js', '/ui/core/js/jPlayer/jquery.jplayer.min.js', '/ui/core/js/jPlayer/radio.js' ]
 
 
