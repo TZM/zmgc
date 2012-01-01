@@ -48,7 +48,7 @@ class View(STLView):
                 '/ui/core/js/jPlayer/add-on/jplayer.playlist.min.js',
                 '/ui/core/js/jquery/add-on/jquery.rotate.js',
                 '/ui/core/js/tab.js',
-                #'/ui/core/js/jPlayer/radio.js',
+                '/ui/core/js/zplayer.js',
                 ]
 
     # <link href="./resource/jplayer.pink.flag.css" rel="stylesheet" type="text/css">
