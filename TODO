@@ -57,6 +57,19 @@ also see this: http://code.google.com/apis/youtube/articles/view_youtube_jsonc_r
 
 also look at the http://icant.co.uk/easy-youtube/ perhaps it can be integrated.
 
+Using jPlayer it is not possible (well i have not found a way yet) to stream the YouTube video, I will have to hack the zPlayer module and create a template so that if the user adds a link to a video such as YouTube/Vimeo this is correctly displayed in the zPlayer.
+
+Also create a new class so that we can pull the metadata values directly from the YouTube API, here is an example code:
+
+  import gdata.youtube
+  import gdata.youtube.service
+  yt_service = gdata.youtube.service.YouTubeService()
+  yt_service.ssl = True
+  yt_service.developer_key = '53cr3t'
+  yt_service.client_id = 'zeitgeist'
+
+and see http://code.google.com/apis/youtube/1.0/developers_guide_python.html#RetrievingVideoEntry
+
 16/. pipes.yahoo.com - to aggregate the content from different sites not on the Phoenix.
 
 example: http://pipes.yahoo.com/pipes/pipe.run?_id=26ca074a13d28a8ad64e154a76244d43&_callback=eYTp.getFeed&_render=json&s=TZMOfficialChannel
