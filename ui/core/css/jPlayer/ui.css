@@ -1,26 +1,24 @@
 :focus {
     outline: none;
 }
-a.jp-video-play-icon {
-    left: 50%;
-    margin-left: -50px;
-    margin-top: -50px;
-    position: relative;
-    text-indent: -9999px;
-    top: -50%;
-    width: 112px;
-}
-
 .btn-slide {
-     display: inline-block;
-     float:right;
-     margin:5px 5px 0 0;
-     font-size: 38%;
+	display: inline-block;
+	float:right;
+	margin:5px 5px 0 0;
+	font-size: 38%;
+	color:#0000FF;
  }
+.btn-slide:hover {
+	text-decoration:none;
+	
+}
+#panel {
+	display:none;
+}
 
 div.jp-audio, div.jp-video {
     background-color: #3A2A45;
-    border: none;
+    border:1px solid;
     color: #3A2A45;
 }
 
@@ -52,7 +50,8 @@ div.jp-type-playlist div.jp-playlist li.jp-playlist-current {
 .tabsBlock {margin-top:5px;}
 
 .tabsBlock ul.tabs,ul.am-ui-tab-strip {
-    height:10px;
+    height:39px;
+	width:270px;
     list-style:none;
     position:relative;
     padding:1px 1px;
@@ -70,7 +69,7 @@ div.jp-type-playlist div.jp-playlist li.jp-playlist-current {
 
 .tabsBlock ul.tabs li,ul.am-ui-tab-strip li,ul.am-ui-tab-strip li {
     margin:2px 2px 0 0;
-    padding:1px 8px;
+    padding:1px 8px 7px;
     border:solid 1px transparent;
     position:relative;
     float:left;
@@ -85,6 +84,7 @@ div.jp-type-playlist div.jp-playlist li.jp-playlist-current {
     border-bottom:solid 1px #fff !important;
     border:solid 1px #ccc;
     background-color:#682776;
+	display:inline-block;
 }
 
 .tabsBlock	ul.tabs li:hover,ul.tabs li.active:hover,ul.am-ui-tab-strip li:hover,ul.am-ui-tab-strip li.am-ui-tab-selected:hover  {

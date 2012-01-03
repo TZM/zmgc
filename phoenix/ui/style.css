@@ -38,8 +38,14 @@ h1, h2 {
  * YUI overwrites 
  **************************************************************************/
 
+.media {
+    margin: 0 5px 0 5px;
+    width: 26%;
+}
 
-
+.chat {
+    width: 24%;
+}
 /**************************************************************************
  * MESSAGE
  * ***********************************************************************/
@@ -245,6 +251,96 @@ h1, h2 {
 #tabs .menu a:hover {
   background-color: #333;
   color: #fff;
+}
+
+/**************************************************************************
+ * Activities box
+ * ***********************************************************************/
+ 
+.box-holder {
+    width: 100%;
+    overflow: hidden;
+    padding: 0 0 25px;
+    background: url(/ui/core/resources/bg-border2.png) repeat-x 0 100%;
+}
+
+.box {
+    background: url(/ui/core/resources/box-m.gif) repeat-y;
+    width: 620px;
+    height: 1%;
+    margin: 21px 0 0;
+}
+
+.box h3 {
+    margin: 10px 0 0;
+    color: #6C0;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.box .holder {
+    background: url(/ui/core/resources/box-t2.gif) no-repeat;
+}
+
+.box .holder .frame {
+    background: url(/ui/core/resources/box-b.gif) no-repeat 0 100%;
+    width: 620px;
+    padding: 18px 4px 42px 16px;
+}
+
+.box .holder .frame::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.box-content {
+    margin-top: -5px;
+    margin-bottom: -5px;
+    color: #6E7F8B;
+    font-size: 77%;
+}
+
+.box ul.supports-list {
+    list-style: none;
+    font-size: 11px;
+    margin: 7px 0 0;
+    padding: 0;
+}
+
+.box ul.supports-list li p {
+    font: 11px Verdana, Arial, Helvetica, sans-serif;
+    height: 1%;
+    overflow: hidden;
+    margin: 0;
+}
+
+.box ul.supports-list li {
+    float: left;
+    width: 209px;
+    display: list-item;
+    text-align: -webkit-match-parent;
+    outline-style: none;
+}
+
+.box ul.supports-list li.last {
+    width: 200px;
+    position: relative;
+    float: left;
+}
+
+.box ul.supports-list li img {
+    float: left;
+    margin: 0 8px 7px 0;
+}
+
+.box ul.supports-list li a {
+    float: left;
+    clear: both;
+    background: url(/ui/core/resources/bg-more.gif) no-repeat 0 center;
+    padding: 0 0 0 20px;
+    color: #333;
+    line-height: 16px;
 }
 
 /**************************************************************************

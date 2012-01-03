@@ -5,22 +5,52 @@
   xmlns:stl="http://www.hforge.org/xml-namespaces/stl">
 
 <div class="yui3-g"><!-- content -->
-  <div class="yui3-u-2-5"><!-- welcome block 40%-->
+  <div class="yui3-u-1-2"><!-- welcome block 40%-->
     <div class="welcome">
       <h1>Welcome <stl:block stl:if="info">${info/title}</stl:block> to the Zeitgeist Movement portal!</h1>
       <p>
         Founded in 2008, The Zeitgeist Movement is a Sustainability Advocacy Organization which conducts community based activism and awareness actions through a network of Global/Regional Chapters, Project Teams, Annual Events, Media and Charity Work.</p>
-      <p>
-        If you want to <a href=";login"><i>'Register'</i></a> and become part of the movement. 
-      </p>
-    </div>
+    </div> <!-- / welcome block 40%-->
+    <!-- latest activities-->
+    <div class="box-holder">
+      <div class="box">
+        <div class="holder">
+          <div class="frame">
+            <div class="box-content">
+              <h3>
+                <span>All the latest activities ...</span>
+              </h3>
+              <ul class="supports-list">
+                <li class="">
+                  <img src="/ui/core/resources/ico-wrote-petition.gif" alt="wrote-petition" />                                    
+                  <p>
+                    <strong>Katia</strong> signed up to help with the Z-Day Festival: London</p>
+                    <a title="Sign up to help" href="#">Sign up to help</a>
+                  </li>
+                  <li class="">
+                    <img src="/ui/core/resources/ico-wrote-petition.gif" alt="wrote-petition" />                                    
+                    <p>
+                      <strong>Luisa</strong> signed up to help with the Z-Day Festival: London</p>
+                      <a title="Sign up to help" href="#/">Sign up to help</a>
+                    </li>
+                    <li class="last">
+                      <img src="/ui/core/resources/ico-wrote-petition.gif" alt="wrote-petition" />                                    
+                      <p>
+                        <strong>Patricia</strong> signed up to help with the Z-Day Festival: London</p>
+                        <a title="Sign up to help" href="#/">Sign up to help</a>
+                      </li>
+                    </ul>
+                  </div> <!-- /box-content-->
+                </div> <!-- /frame-->
+              </div> <!-- /holder-->
+            </div> <!-- /box-->
+          </div> <!-- /box-holder-->
+          <!-- /latest activities-->
     <!-- tabs-->
       ${tabs}
     <!-- /tabs-->
   </div><!-- /welcome block 40%-->
-  <div class="yui3-u-2-5"><!-- movies, radio and events block 40%-->
-    <div class="yui3-g">
-      <div class="yui3-u-2-3">
+  <div class="yui3-u-1-4 media"><!-- movies, radio and events block 40%-->
         <!-- radio widget FIXME move to own class widget-->
         <input id="tmp_duration" type="hidden" value="" />
         <div id="jquery_jplayer_1" class="jp-jplayer">
@@ -73,75 +103,84 @@
                       <a title="unselect" href="javascript:;" 
                       m4v="http://www.jplayer.org/video/m4v/Big_Buck_Bunny_Trailer.m4v" 
                       ogv="http://www.jplayer.org/video/ogv/Big_Buck_Bunny_Trailer.ogv" 
-                      webmv="http://www.jplayer.org/video/webm/Big_Buck_Bunny_Trailer.webm" 
-                      poster="http://www.jplayer.org/video/poster/Big_Buck_Bunny_Trailer_480x270.png" 
+                      webmv="http://www.jplayer.org/video/webm/Big_Buck_Bunny_Trailer.webm"
+                      poster="/ui/core/resources/default.jpg"
                       class="track">
                       Big Buck Bunny Trailer</a>
                     </li>
-                    <li class="list" ><a title="unselect" href="javascript:;" mp="http://www.jplayer.org/audio/mp3/TSP-01-Cro_magnon_man.mp3" oga="http://www.jplayer.org/audio/ogg/TSP-01-Cro_magnon_man.ogg" class="track">Cro Magnon Man</a></li> 
-                    <li class="list" ><a title="unselect" href="javascript:;" mp="http://www.jplayer.org/audio/mp3/TSP-01-Cro_magnon_man.mp3" oga="http://www.jplayer.org/audio/ogg/TSP-01-Cro_magnon_man.ogg" class="track">Cro Magnon Man</a></li> 
+                    <li class="list" ><a title="unselect" href="javascript:;" mp="http://www.jplayer.org/audio/mp3/TSP-01-Cro_magnon_man.mp3" oga="http://www.jplayer.org/audio/ogg/TSP-01-Cro_magnon_man.ogg" poster="/ui/core/resources/default.jpg" class="track">Cro Magnon Man</a></li> 
+                    <li class="list" ><a title="unselect" href="javascript:;" mp="http://www.jplayer.org/audio/mp3/TSP-01-Cro_magnon_man.mp3" oga="http://www.jplayer.org/audio/ogg/TSP-01-Cro_magnon_man.ogg" poster="/ui/core/resources/default.jpg" class="track">Cro Magnon Man</a></li> 
                   </ul>
                 </div>
               </div>
               <div class="jp-playlist" index="2" style="display: none;">
                 <div id="tabs-2" class="tab-item" style="display: none;">
                   <ul>
-                    <li class="list" ><a title="unselect" href="javascript:;" mp="http://www.jplayer.org/audio/mp3/TSP-01-Cro_magnon_man.mp3" oga="http://www.jplayer.org/audio/ogg/TSP-01-Cro_magnon_man.ogg" class="track">Cro Magnon Man</a></li> 
+                    <li class="list" ><a title="unselect" href="javascript:;" m4a="rtsp://v6.cache2.c.youtube.com/CigLENy73wIaHwnzrvL4X1hYdBMYESARFEgGUgx1c2VyX3VwbG9hZHMM/0/0/0/video.3gp" poster="http://i.ytimg.com/vi/dFhYX_jyrvM/0.jpg" class="track">Cro Magnon Man</a></li> 
                   </ul>
                 </div>
               </div>	
               <div class="jp-playlist" index="3" style="display: none;">	
                 <div id="tabs-3" class="tab-item" style="display: none;">
                   <ul>
-                    <li class="list"><a title="unselect" href="javascript:;" m4v="http://www.jplayer.org/video/m4v/Big_Buck_Bunny_Trailer.m4v" ogv="http://www.jplayer.org/video/ogv/Big_Buck_Bunny_Trailer.ogv" webmv="http://www.jplayer.org/video/webm/Big_Buck_Bunny_Trailer.webm" poster="http://www.jplayer.org/video/poster/Big_Buck_Bunny_Trailer_480x270.png" class="track">Big Buck Bunny Trailer</a></li>
-                    <li class = "list"><a title="unselect" href="javascript:;" mp="http://www.jplayer.org/audio/mp3/TSP-01-Cro_magnon_man.mp3" oga="http://www.jplayer.org/audio/ogg/TSP-01-Cro_magnon_man.ogg" class="track">Cro Magnon Man</a></li> 
+                    <li class="list"><a title="unselect" href="javascript:;" m4v="http://www.jplayer.org/video/m4v/Big_Buck_Bunny_Trailer.m4v" ogv="http://www.jplayer.org/video/ogv/Big_Buck_Bunny_Trailer.ogv" webmv="http://www.jplayer.org/video/webm/Big_Buck_Bunny_Trailer.webm" class="track">Big Buck Bunny Trailer</a></li>
+                    <li class = "list"><a title="unselect" href="javascript:;" mp="http://www.jplayer.org/audio/mp3/TSP-01-Cro_magnon_man.mp3" oga="http://www.jplayer.org/audio/ogg/TSP-01-Cro_magnon_man.ogg" poster="/ui/core/resources/jplayer-default0.jpg" class="track">Cro Magnon Man</a></li> 
                   </ul>
                 </div>
               </div>
             </div>
           </div>
-        </div>
         <!-- radio widget FIXME move to own class widget-->
-      </div>
-      <div class="yui3-u-1-3" id="watch-related-container">
-          <ul id="watch-related" class="video-list">
-            <!-- video-list-item -->
-            <li class="video-list-item">
-              <a href="videos/video-item" class="video-list-item-link">
-                <span class="ux-thumb-wrap contains-addto">
-                  <span class="video-thumb">
-                    <span class="clip">
-                      <img src="/ui/core/resources/default.jpg" alt="clip-title" />
-                      <span class="uix-button-content">
-                        <span class="addto-label">Add to</span>
-                      </span>
-                    </span><!-- /clip-->
-                    <span class="video-time">14:30</span>
-                    <button type="button" class="addto-button video-actions">
-                      <img class="uix-addto-button" src="/ui/core/resources/pixel.gif" />
-                    </button>
-                    <span dir="ltr" class="title" title="Video Title">Video Title</span>
-                    <span class="stat">
-                      by <span class="yt-user-name " dir="ltr">username</span>
-                    </span><!-- /stat-->
-                  </span><!-- /video-thumb-->
-                </span><!-- /ux-thumb-wrap contains-addto-->
-              </a>
-            </li>
-            <!-- /video-list-item -->
-          </ul><!-- /watch-related .video-list-->
-      </div><!-- /watch-related-container-->
     </div><!-- /yui3-g-->
     <div class="yui3-g">
-      <div class="yui3-u-1-3  youtube">
+      <div class="yui3-u-1-3" id="watch-related-container">
          <!--  <iframe width="300px"height="200" src="http://www.youtube.com/embed/QYLLFpNn4lM" frameborder="0"></iframe> -->
-      </div><!-- /yui3-u-1-3-->
+             <ul id="watch-related" class="video-list">
+               <!-- video-list-item -->
+               <li class="video-list-item">
+                 <a href="videos/video-item" class="video-list-item-link">
+                   <span class="ux-thumb-wrap contains-addto">
+                     <span class="video-thumb">
+                       <span class="clip">
+                         <img src="/ui/core/resources/jplayer-default1.jpg" alt="clip-title" />
+                         <span class="uix-button-content">
+                           <span class="addto-label">Add to</span>
+                         </span>
+                       </span><!-- /clip-->
+                       <span class="video-time">14:30</span>
+                       <button type="button" class="addto-button video-actions">
+                         <img class="uix-addto-button" src="/ui/core/resources/pixel.gif" />
+                       </button>
+                       <span dir="ltr" class="title" title="Video Title">Video Title</span>
+                       <span class="stat">
+                         by <span class="yt-user-name " dir="ltr">username</span>
+                       </span><!-- /stat-->
+                     </span><!-- /video-thumb-->
+                   </span><!-- /ux-thumb-wrap contains-addto-->
+                 </a>
+               </li>
+               <!-- /video-list-item -->
+             </ul><!-- /watch-related .video-list-->
+         </div><!-- /watch-related-container-->
       <div class="yui3-u-2-3">
         events table
       </div><!-- /yui3-u-2-3-->
     </div><!-- /yui3-g-->
   </div><!-- /movies, radio and events block 40%-->
-  <div class="yui3-u-1-5"><!-- right side bar 20%-->
+  <div class="yui3-u-1-4 chat"><!-- right side bar 20%-->
+    <!-- START DYNAMIC CONTENT -->
+    <iframe src="//www.facebook.com/plugins/likebox.php?href=https%3A%2F%2Fwww.facebook.com%2FTheZeitgeistMovement&amp;width=290&amp;height=290&amp;colorscheme=light&amp;show_faces=true&amp;border_color&amp;stream=false&amp;header=true&amp;appId=119920878043766" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:290px; height:290px;" allowTransparency="true"></iframe>
+    <!-- <script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script>
+    <fb:like-box href="http://www.facebook.com/zeitgeist" width="300" connections="15"></fb:like-box> 
+     END DYNAMIC CONTENT -->
+    <div class="listings items">
+    <h3>Follow us on...</h3>
+    <a href="http://www.facebook.com/" target="_blank"><img src="/ui/core/resources/facebook.png" border="0" height="48" width="48" /></a>
+    <a href="http://twitter.com/Zeitgeist" target="_blank"><img src="/ui/core/resources/twitter.png" border="0" height="48" width="48" /></a>
+    <a href="http://feeds.feedburner.com/TheZeitgeistMovement" target="_blank"><img src="/ui/core/resources/rss_icon_48.jpg" border="0" height="48" width="48" /></a>
+    <a href="http://www.youtube.com/user/TZMOfficialChannel" target="_blank"><img src="/ui/core/resources/youtube.png" border="0" height="48" width="48" /></a> 
+    </div> <!-- END DYNAMIC CONTENT -->
+    
   </div><!-- /right side bar 20%-->
 </div><!-- /content -->
 </stl:block>

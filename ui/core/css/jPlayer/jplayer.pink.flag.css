@@ -24,7 +24,7 @@ div.jp-video {
 	font-size:1.25em; /* 1.25em for testing in site pages */ /* No parent CSS that can effect the size in the demos ZIP */
 
 	font-family:Verdana, Arial, sans-serif;
-	line-height:1.6;
+	
 	color: #fff;
 	border-top:1px solid #554461;
 	border-left:1px solid #554461;
@@ -82,7 +82,12 @@ div.jp-interface {
 	width:100%;
 	background-color:#3a2a45; /* Required for the full screen */
 }
-
+div.jp-interface-show {
+	position:absolute;
+	top:-80px;
+	right:0px;
+	
+}
 
 div.jp-audio .jp-interface {
 	height: 80px;
@@ -512,8 +517,7 @@ div.jp-type-playlist div.jp-playlist li:first-child {
 }
 
 div.jp-type-playlist div.jp-playlist li:last-child {
-	border-bottom: 5px solid #FFFFFF;
-	padding-bottom:3px;
+	/*border-bottom: 5px solid #FFFFFF;*/
 }
 
 div.jp-type-playlist div.jp-playlist a {
@@ -530,6 +534,8 @@ div.jp-type-playlist div.jp-playlist a .jp-title-span{
 	text-decoration:none;
 	width: 145px;
 	max-width: 145px;
+	font-size:13px;
+	font-weight:bold;
 
 }
 div.jp-type-playlist div.jp-playlist a .jp-title-span:hover {
@@ -541,7 +547,6 @@ div.jp-type-playlist div.jp-playlist li.jp-playlist-current {
 	margin: 0 -20px;
 	padding: 0 10px;
 
-	border-bottom: 5px solid #ffffff;
 }
 
 div.jp-type-playlist div.jp-playlist li.jp-playlist-current a{
@@ -584,7 +589,7 @@ span.jp-artist {
 
 div.jp-video div.jp-video-play {
 	position:absolute;
-	top:0;
+	top:-270px;
 	left:0;
 	width:100%;
 	cursor:pointer;
@@ -611,11 +616,11 @@ a.jp-video-play-icon {
 	left:50%;
 	top:50%;
 
-	background: url("jplayer.pink.flag.video.play.png") 0 0 no-repeat;
+	background: url("jplayer.pink.flag.video.play.png") no-repeat;
 	text-indent:-9999px;
 }
 div.jp-video-play:hover a.jp-video-play-icon {
-	background: url("jplayer.pink.flag.video.play.png") 0 -100px no-repeat;
+	background: url("jplayer.pink.flag.video.play-over.png") no-repeat;
 }
 
 
@@ -627,6 +632,7 @@ div.jp-jplayer {
 
 div.jp-jplayer {
 	background-color: #000000;
+	border:1px solid;
 }
 
 /* @group NO SOLUTION error feedback */
@@ -667,9 +673,8 @@ div.jp-jplayer {
 
 /* @end */
 /*Raim*/
-.playinfor {	
-	float:right;
-	width:70px;
+.playinfor {
+	width:36px;
 }
 .player_btn {
 	background:url(bgr.jpg) no-repeat;
@@ -682,25 +687,21 @@ div.jp-jplayer {
 .exe_infor {
 	color:#ffffff;
 	width:140px;
-	height:30px;
-	font-size:14px;	
-	margin-top: 8px;
-	line-height:13px;
+	font-size:10px;
+	font-weight:bold;
 }
 .detail_infor {
 	font-size:9px;
 }
 .jp-playlist ul li a {
-	float:left;
-	width:220px;
-	line-height:18px;
+	width:310px;
 }
 .file_infor {
-	position:absolute;
-	float:left;
+	
 	font-size:9px;
+	font-weight:bold;
 	text-align:center;
-	width:150px;
+	width:100px;
 	white-space:nowrap;
 }
 /*end*/
