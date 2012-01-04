@@ -94,37 +94,37 @@
               <ul class="tabs">
                 <li><a href="#tabs-1" title="tabs-1" index="1">Video</a></li>
                 <li><a href="#tabs-2" title="tabs-2" index="2">Audio</a></li>
-                <li><a href="#tabs-3" title="tabs-3" index="3">Both</a></li>
+                <li><a href="#tabs-3" title="tabs-3" index="3">Films</a></li>
               </ul>
               <div class="jp-playlist" index="1">
                 <div id="tabs-1" class="tab-item default">
                   <ul>
                     <li class="list">
-                      <a title="unselect" href="javascript:;" 
-                      m4v="http://www.jplayer.org/video/m4v/Big_Buck_Bunny_Trailer.m4v" 
-                      ogv="http://www.jplayer.org/video/ogv/Big_Buck_Bunny_Trailer.ogv" 
-                      webmv="http://www.jplayer.org/video/webm/Big_Buck_Bunny_Trailer.webm"
-                      poster="/ui/core/resources/default.jpg"
+                      <a title="unselect" href="javascript:;" m4v="http://www.archive.org/download/Zeitgeist.Addendum/Zeitgeist.Addendum_512kb.mp4" ogv="http://www.archive.org/download/Zeitgeist.Addendum/Zeitgeist.Addendum.ogv" poster="http://www.archive.org/download/Zeitgeist.Addendum/Zeitgeist.Addendum.thumbs/Zeitgeist.Addendum_000060.jpg"
                       class="track">
-                      Big Buck Bunny Trailer</a>
+                      Zeitgeist: Addendum (2008)</a>
                     </li>
-                    <li class="list" ><a title="unselect" href="javascript:;" mp="http://www.jplayer.org/audio/mp3/TSP-01-Cro_magnon_man.mp3" oga="http://www.jplayer.org/audio/ogg/TSP-01-Cro_magnon_man.ogg" poster="/ui/core/resources/default.jpg" class="track">Cro Magnon Man</a></li> 
-                    <li class="list" ><a title="unselect" href="javascript:;" mp="http://www.jplayer.org/audio/mp3/TSP-01-Cro_magnon_man.mp3" oga="http://www.jplayer.org/audio/ogg/TSP-01-Cro_magnon_man.ogg" poster="/ui/core/resources/default.jpg" class="track">Cro Magnon Man</a></li> 
                   </ul>
                 </div>
               </div>
               <div class="jp-playlist" index="2" style="display: none;">
                 <div id="tabs-2" class="tab-item" style="display: none;">
                   <ul>
-                    <li class="list" ><a title="unselect" href="javascript:;" m4a="rtsp://v6.cache2.c.youtube.com/CigLENy73wIaHwnzrvL4X1hYdBMYESARFEgGUgx1c2VyX3VwbG9hZHMM/0/0/0/video.3gp" poster="http://i.ytimg.com/vi/dFhYX_jyrvM/0.jpg" class="track">Cro Magnon Man</a></li> 
+                    <li class="list" ><a title="unselect" href="javascript:;" mp="http://www.archive.org/download/TzmDevPhoenixMeeting12-04-2011/ts3_recording_11_12155E7A5.mp3" oga="http://www.archive.org/download/TzmDevPhoenixMeeting12-04-2011/ts3_recording_11_12155E7A5.ogg" poster="/ui/core/resources/jplayer-default0.jpg" class="track">TZM Dev Phoenix Meeting 12-04-2011</a></li>
+                    <li class="list" ><a title="unselect" href="javascript:;" mp="http://www.archive.org/download/TzmDevPhoenixMeeting12-11-2011/Tzm-dev-phx12-11-11.mp3" oga="http://www.archive.org/download/TzmDevPhoenixMeeting12-11-2011/Tzm-dev-phx12-11-11.ogg" poster="/ui/core/resources/jplayer-default0.jpg" class="track">TZM Dev Phoenix Meeting 12-11-2011</a></li>
+                    <li class="list" ><a title="unselect" href="javascript:;" mp="http://www.archive.org/download/TzmDevPhoenixMeeting01-01-2012/ts3_recording_12_01.mp3" oga="http://www.archive.org/download/TzmDevPhoenixMeeting01-01-2012/ts3_recording_12_01.ogg" poster="/ui/core/resources/jplayer-default0.jpg" class="track">TZM Dev Phoenix Meeting 01-01-2012</a></li> 
                   </ul>
                 </div>
               </div>	
               <div class="jp-playlist" index="3" style="display: none;">	
                 <div id="tabs-3" class="tab-item" style="display: none;">
                   <ul>
-                    <li class="list"><a title="unselect" href="javascript:;" m4v="http://www.jplayer.org/video/m4v/Big_Buck_Bunny_Trailer.m4v" ogv="http://www.jplayer.org/video/ogv/Big_Buck_Bunny_Trailer.ogv" webmv="http://www.jplayer.org/video/webm/Big_Buck_Bunny_Trailer.webm" class="track">Big Buck Bunny Trailer</a></li>
-                    <li class = "list"><a title="unselect" href="javascript:;" mp="http://www.jplayer.org/audio/mp3/TSP-01-Cro_magnon_man.mp3" oga="http://www.jplayer.org/audio/ogg/TSP-01-Cro_magnon_man.ogg" poster="/ui/core/resources/jplayer-default0.jpg" class="track">Cro Magnon Man</a></li> 
+                    <li class="list"><a title="unselect" href="javascript:;" m4v="http://www.archive.org/download/ZeitgeistTheMovie/Zeitgeist_512kb.mp4" ogv="http://www.archive.org/download/ZeitgeistTheMovie/Zeitgeist.ogv" poster="http://www.archive.org/download/ZeitgeistTheMovie/Zeitgeist.gif" class="track">Zeitgeist</a></li>
+                    <li class="list">
+                      <a title="unselect" href="javascript:;" m4v="http://www.archive.org/download/Zeitgeist.Addendum/Zeitgeist.Addendum_512kb.mp4" ogv="http://www.archive.org/download/Zeitgeist.Addendum/Zeitgeist.Addendum.ogv" poster="http://www.archive.org/download/Zeitgeist.Addendum/Zeitgeist.Addendum.thumbs/Zeitgeist.Addendum_000060.jpg"
+                      class="track">
+                      Zeitgeist: Addendum (2008)</a>
+                    </li>
                   </ul>
                 </div>
               </div>
