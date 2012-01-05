@@ -1,0 +1,14 @@
+body {
+  padding: 8px;
+}
+
+body, td {
+  font-size: 90% !important; /* already include inside aruni css */
+  font-family: "Arial", "DejaVu Sans", sans-serif !important;
+}
+
+a { color: #3465a4; }
+a img { border: 0; }
+
+ol li { list-style-type: decimal; }
+ul li { list-style-type: square; }

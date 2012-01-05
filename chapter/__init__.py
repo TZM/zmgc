@@ -13,9 +13,8 @@ from tzm.skins import ChapterSkin
 # Import from here
 from chapter import Chapters, Chapter
 
-__all__ = [
-    'Chapters',
-    'Chapter'
-    ]
+# Silent pyflakes
+Chapters, Chapter
+
 # Register skin
 register_skin('chapter', ChapterSkin(get_abspath('ui')))

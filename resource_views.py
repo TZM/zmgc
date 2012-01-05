@@ -21,7 +21,7 @@ from itools.web import STLView, INFO, ERROR, STLForm, get_context
 from itools.xml import XMLParser
 
 # Import from ikaaro
-from ikaaro.autoform import Widget, make_stl_template
+from ikaaro.autoform import Widget, make_stl_template, ProgressBarWidget as BaseProgressBarWidget
 from ikaaro.datatypes import Password
 from ikaaro.resource_views import LoginView as BaseLoginView
 #from ikaaro.utils import generate_password
@@ -292,4 +292,28 @@ class RegionSelect(Widget):
                     return 'county'
         else:
             return 'country'
+
+class ProgressBarWidget(BaseProgressBarWidget):
+
+    template = make_stl_template("""
+    <div id ="progress-bar-widget">
+        <div id="attachment-file-infos">
+            <p id="file-name" />
+            <p id="file-size" />
+            <p id="file-type" />
+        </div>
+        <div id="progress-bar-box">
+            <span><div id="progress-bar"/></span><span id="percent"/>
+            <div id="upload-size" />
+        </div>
+    </div>
+    <script type="text/javascript">
+      $('head').append('<link rel="stylesheet" href="/ui/core/progressbar/jquery-progressbar.css" type="text/css" />');
+      var upload_id = ${upload_id};
+      $("INPUT:file").focus(function () {
+        attachmentSelected($(this));
+      });
+    </script>
+    <script  type="text/javascript" src="/ui/core/progressbar/jquery-progressbar.min.js"/>
+    """)
     

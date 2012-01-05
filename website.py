@@ -43,6 +43,7 @@ from ikaaro.website_views import AboutView, ContactForm, CreditsView
 from ikaaro.website_views import NotFoundView, ForbiddenView
 from ikaaro.website import WebSite as BaseWebSite
 from ikaaro.views import SearchForm
+from ikaaro.server import Server
 
 # Import from here 
 from access import RoleAware
@@ -60,10 +61,14 @@ class SiteRoot(BaseWebSite, RoleAware):
     class_control_panel = BaseWebSite.class_control_panel
     class_theme = BaseWebSite.class_theme
 
-
+    def _find_server_root(self, name):
+        return Server.find_site_root(self, name)
+        
     def _get_resource(self, name):
-        if name == 'ui':
+        if name == 'ui-here':
+            print name, 'd'
             ui = UI(ui_path)
+            #print ui
             ui.database = self.metadata.database
             return ui
         if name in ('users', 'users.metadata'):

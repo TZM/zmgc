@@ -18,6 +18,7 @@
 # Import from itools
 from itools import get_version
 from itools.core import get_abspath
+from itools.gettext import register_domain
 
 # Import from ikaaro
 from ikaaro.skins import register_skin
@@ -30,5 +31,14 @@ import user
 # Make the product version available to Python code
 __version__ = get_version()
 
-# Register skins
+# Register the tzm domain
+register_domain('tzm', get_abspath('locale'))
+
+# Register core skins
 register_skin('core', get_abspath('ui/core'))
+register_skin('icons', get_abspath('ui/icons'))
+register_skin('js_calendar', get_abspath('ui/js_calendar'))
+register_skin('progressbar', get_abspath('ui/progressbar'))
+register_skin('tiny_mce', get_abspath('ui/tiny_mce'))
+register_skin('wiki', get_abspath('ui/wiki'))
+

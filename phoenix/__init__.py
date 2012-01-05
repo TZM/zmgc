@@ -11,9 +11,8 @@ from ikaaro.skins import register_skin
 from phoenix import Phoenix
 from tzm.skins import Skin
 
-__all__ = [
-    'Phoenix'
-    ]
+# Silent pyflakes
+Phoenix
 
 # Register skin
 path = get_abspath('ui')

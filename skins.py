@@ -16,14 +16,14 @@
 
 
 # Import from itools
-from itools.core import get_abspath
+from itools.core import get_abspath, merge_dicts
 from itools.gettext import MSG
 
 # Import from ikaaro
 from ikaaro.skins import Skin as BaseSkin
 
 # Import from here
-from skins_views import SiteLanguagesTemplate, SiteLocationTemplate
+from skins_views import SiteLanguagesTemplate, SiteLocationTemplate, SiteMenuTemplate
 
 class Skin(BaseSkin):
     '''
@@ -43,6 +43,7 @@ class Skin(BaseSkin):
 
     languages_template = SiteLanguagesTemplate
     location_template = SiteLocationTemplate
+    tabs = SiteMenuTemplate
 
     #######################################################################
     # Styles and Scripts
@@ -53,6 +54,8 @@ class Skin(BaseSkin):
             '/ui/core/css/yui/cssreset/reset-min.css',
             '/ui/core/css/yui/cssgrids/grids-min.css',
             '/ui/core/css/flags-sprite.css',
+            '/ui/js_calendar/calendar-aruni.css',
+            '/ui/wiki/style.css',
         ]
 
         # Skin styles
@@ -80,8 +83,22 @@ class Skin(BaseSkin):
     def get_scripts(self, context):
         scripts = [
             '/ui/core/js/jquery/jquery-1.6.2.min.js',
+            '/ui/core/js/javascript.js',
             ]
 
+        #
+        # Calendar (http://code.google.com/p/dyndatetime/)
+        scripts.append('/ui/js_calendar/jquery.dynDateTime.pack.js')
+        languages = [
+            'af', 'al', 'bg', 'br', 'ca', 'da', 'de', 'du', 'el', 'en', 'es',
+            'fi', 'fr', 'hr', 'hu', 'it', 'jp', 'ko', 'lt', 'lv', 'nl', 'no',
+            'pl', 'pt', 'ro', 'ru', 'si', 'sk', 'sp', 'sv', 'tr', 'zh']
+        accept = context.accept_language
+        language = accept.select_language(languages)
+        if language is None:
+            language = 'en'
+        scripts.append('/ui/js_calendar/lang/calendar-%s.js' % language)
+        
         # View scripts
         get_scripts = getattr(context.view, 'get_scripts', None)
         if get_scripts is None:
@@ -91,7 +108,21 @@ class Skin(BaseSkin):
         scripts.extend(extra)
         
         return scripts
-
+    #
+    #######################################################################
+    # Main
+    #######################################################################
+    #def build_namespace(self, context):
+    #    namespace = merge_dicts(BaseSkin.build_namespace(self, context), {
+    #    'tabs': self.tabs(context=context),
+    #    })
+    #    for x in namespace:
+    #        print x
+    #    return namespace
+        
+        
+        
+        
 class ChapterSkin(Skin):
     """
         Returns a list of get_styles and get_scripts

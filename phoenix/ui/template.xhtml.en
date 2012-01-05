@@ -33,9 +33,9 @@
           <div class="yui3-u-1-24">&nbsp;</div><!-- FIXME empty block width: 4.1666%-->
           <div class="yui3-u-23-24" id="menu"><!-- menu width: 95.8333%-->
             <ul>
-              <li><a href="/more">More&nbsp;»</a></li>
+              <li><a href="/;more">More&nbsp;»</a></li>
               <li><a href="/forums">Forums</a></li>
-              <li><a href="/events">Events</a></li>
+              <li><a href="/calendar">Calendar</a></li>
               <li><a href="/projects">Projects</a></li>
               <li><a href="/news">News</a></li>
             </ul>
@@ -94,6 +94,9 @@
     <div class="yui-g">
     <!-- all other templates go within this block -->
       ${body}
+      <div stl:if="context_menus">
+        <stl:block stl:repeat="menu context_menus">${menu}</stl:block>
+      </div>
     <!-- /all other templates go within this block -->
     </div>
   <!-- /body -->
@@ -104,13 +107,13 @@
       <ul class="footer_nav">
         <h4>Zeigeist</h4>
         <li>
-          <a href="/about">About</a>
+          <a href="/;about">About</a>
         </li>
         <li>
           <a href="/blog">Blog</a>
         </li>
         <li>
-          <a href="/contact">Contact &amp; Support</a>
+          <a href="/;contact">Contact &amp; Support</a>
         </li>
         <li>
           <a href="/training">Training</a>

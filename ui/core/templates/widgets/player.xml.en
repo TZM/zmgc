@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<stl:block xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:stl="http://www.hforge.org/xml-namespaces/stl">
+        <!-- player widget-->
+        <input id="tmp_duration" type="hidden" value="" />
+        <div id="jquery_jplayer_1" class="jp-jplayer">
+          <img id="jp_poster_0" />
+        </div>
+        <div id="jp_container_1" class="jp-video">
+          <div class="jp-video-play">
+            <a href="javascript:;" class="jp-video-play-icon" tabindex="1">play</a>
+          </div>
+          <div class="jp-type-playlist">
+            <div class="jp-gui jp-interface">
+                <div class="jp-progress">
+                  <div class="jp-seek-bar">
+                    <div class="jp-play-bar"></div>
+                  </div>
+                </div>
+                <div id="panel"><!-- /id="panel" -->
+                <div class="jp-current-time">00:05</div>
+                <div class="jp-duration">00:33</div>
+                <div class="jp-title"><ul><li>Item Title</li></ul>
+                </div>
+                <div class="jp-controls-holder"> <!-- class="jp-controls-holder" -->
+                  <ul class="jp-controls">
+                    <li><a href="javascript:;" class="jp-previous" tabindex="1">previous</a></li>
+                    <li><a href="javascript:;" class="jp-play" tabindex="1" style="display: block;">play</a></li>
+                    <li><a href="javascript:;" class="jp-pause" tabindex="1" style="display: none;">pause</a></li>
+                    <li><a href="javascript:;" class="jp-next" tabindex="1">next</a></li>
+                    <li><a href="javascript:;" class="jp-stop" tabindex="1">stop</a></li>
+                    <li><a href="javascript:;" class="jp-mute" tabindex="1" title="mute">mute</a></li>
+                    <li><a href="javascript:;" class="jp-unmute" tabindex="1" title="unmute" style="display: none;">unmute</a></li>
+                    <li><a href="javascript:;" class="jp-volume-max" tabindex="1" title="max volume">max volume</a></li>
+                  </ul>
+                  <div class="jp-volume-bar">
+                    <div class="jp-volume-bar-value" style="width: 80%; "></div>
+                  </div>
+                </div> <!-- /class="jp-controls-holder" -->
+              </div> <!-- /id="panel" -->
+            </div>
+            <a href="#" class="btn-slide">Slide bar</a>
+            <div id="tab" class="tabsBlock">
+              <ul class="tabs">
+                <li><a href="#tabs-1" title="tabs-1" index="1">Video</a></li>
+                <li><a href="#tabs-2" title="tabs-2" index="2">Audio</a></li>
+                <li><a href="#tabs-3" title="tabs-3" index="3">Films</a></li>
+              </ul>
+              <div class="jp-playlist" index="1">
+                <div id="tabs-1" class="tab-item default">
+                  <ul>
+                    <li class="list">
+                      <a title="unselect" href="javascript:;" m4v="http://www.archive.org/download/Zeitgeist.Addendum/Zeitgeist.Addendum_512kb.mp4" ogv="http://www.archive.org/download/Zeitgeist.Addendum/Zeitgeist.Addendum.ogv" poster="http://www.archive.org/download/Zeitgeist.Addendum/Zeitgeist.Addendum.thumbs/Zeitgeist.Addendum_000060.jpg"
+                      class="track">
+                      Zeitgeist: Addendum (2008)</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="jp-playlist" index="2" style="display: none;">
+                <div id="tabs-2" class="tab-item" style="display: none;">
+                  <ul>
+                    <li class="list" ><a title="unselect" href="javascript:;" mp="http://www.archive.org/download/TzmDevPhoenixMeeting12-04-2011/ts3_recording_11_12155E7A5.mp3" oga="http://www.archive.org/download/TzmDevPhoenixMeeting12-04-2011/ts3_recording_11_12155E7A5.ogg" poster="/ui/core/resources/jplayer-default0.jpg" class="track">TZM Dev Phoenix Meeting 12-04-2011</a></li>
+                    <li class="list" ><a title="unselect" href="javascript:;" mp="http://www.archive.org/download/TzmDevPhoenixMeeting12-11-2011/Tzm-dev-phx12-11-11.mp3" oga="http://www.archive.org/download/TzmDevPhoenixMeeting12-11-2011/Tzm-dev-phx12-11-11.ogg" poster="/ui/core/resources/jplayer-default0.jpg" class="track">TZM Dev Phoenix Meeting 12-11-2011</a></li>
+                    <li class="list" ><a title="unselect" href="javascript:;" mp="http://www.archive.org/download/TzmDevPhoenixMeeting01-01-2012/ts3_recording_12_01.mp3" oga="http://www.archive.org/download/TzmDevPhoenixMeeting01-01-2012/ts3_recording_12_01.ogg" poster="/ui/core/resources/jplayer-default0.jpg" class="track">TZM Dev Phoenix Meeting 01-01-2012</a></li> 
+                  </ul>
+                </div>
+              </div>	
+              <div class="jp-playlist" index="3" style="display: none;">	
+                <div id="tabs-3" class="tab-item" style="display: none;">
+                  <ul>
+                    <li class="list"><a title="unselect" href="javascript:;" m4v="http://www.archive.org/download/ZeitgeistTheMovie/Zeitgeist_512kb.mp4" ogv="http://www.archive.org/download/ZeitgeistTheMovie/Zeitgeist.ogv" poster="http://www.archive.org/download/ZeitgeistTheMovie/Zeitgeist.gif" class="track">Zeitgeist</a></li>
+                    <li class="list">
+                      <a title="unselect" href="javascript:;" m4v="http://www.archive.org/download/Zeitgeist.Addendum/Zeitgeist.Addendum_512kb.mp4" ogv="http://www.archive.org/download/Zeitgeist.Addendum/Zeitgeist.Addendum.ogv" poster="http://www.archive.org/download/Zeitgeist.Addendum/Zeitgeist.Addendum.thumbs/Zeitgeist.Addendum_000060.jpg"
+                      class="track">
+                      Zeitgeist: Addendum (2008)</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+        </div>
+    </div>
+    <!-- /player widget-->
+    
+</stl:block>
+

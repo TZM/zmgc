@@ -24,7 +24,7 @@ from itools.gettext import MSG
 from itools.web import STLView
 
 # Import from tzm
-from tzm.skins_views import TabsTemplate
+from tzm.skins_views import TabsTemplate, PlayerTemplate
 from tzm.resource_views import LoginView
 from ikaaro.autoform import make_stl_template
 
@@ -51,33 +51,20 @@ class View(STLView):
                 '/ui/core/js/zplayer.js',
                 ]
 
-    # <link href="./resource/jplayer.pink.flag.css" rel="stylesheet" type="text/css">
-    # <script type="text/javascript" src="./resource/jquery.min.js"></script>
-    # <script type="text/javascript" src="./resource/jquery.jplayer.min.js"></script>
-    # <script type="text/javascript" src="./resource/jplayer.playlist.min.js"></script>
-    # <script type="text/javascript" src="./resource/tab.js"></script>
-    # 
-    # <!--zend player-->
-    # <link href="css/zen.css" rel="stylesheet">
-    # <script src="js/jquery.rotate.js" type="text/javascript"></script>
-    # <!--end-->
-    # <link href="./resource/ui.css" rel="stylesheet" type="text/css">
-    
-    
-
     def get_namespace(self, resource, context):
-        tabs = TabsTemplate(context)
+        maintabs = TabsTemplate(context)
+        player = PlayerTemplate(context)
         #tabs = None 
         user = context.user
 
         if user is None:
-            return {'info': None, 'tabs': tabs}
+            return {'info': None, 'maintabs': maintabs, 'player': player}
 
         home = '/users/%s' % user.name
         info = {'name': user.name, 'title': user.get_title(),
                 'home': home}
 
-        return {'info': info, 'tabs': tabs}
+        return {'info': info, 'maintabs': maintabs, 'player': player}
 
 
 class ChapterGenerator(STLView):
@@ -106,3 +93,10 @@ class ChapterGenerator(STLView):
         if firstname:
             return {'name': firstname, 'form': form}
         return {'name': user.get_title(), 'form': form}
+
+
+class More(STLView):
+
+    access = True
+    title = MSG(u'More')
+    template = 'ui/phoenix/more.xml'

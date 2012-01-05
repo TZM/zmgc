@@ -31,7 +31,7 @@ from ikaaro.website import WebSite
 from tzm.website import SiteRoot 
  
 # Import from here
-from views import View, ChapterGenerator
+from views import View, ChapterGenerator, More
 from tzm.resource_views import Captcha
 
 
@@ -78,8 +78,8 @@ class Phoenix(SiteRoot):
     view = View()
     captcha = Captcha()
     create = ChapterGenerator()
+    more = More()
     #site_search = Search_View()
 
 #Register
-register_resource_class(Phoenix)
 register_document_type(Phoenix, Phoenix.class_id)

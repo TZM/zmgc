@@ -25,17 +25,23 @@ from itools.datatypes import Integer, String, Unicode
 
 # Import from ikaaro
 from ikaaro.folder_views import Folder_BrowseContent
+from ikaaro.blog import Blog
+from ikaaro.calendar import Calendar
 from ikaaro.registry import register_resource_class
 from ikaaro.revisions_views import DBResource_CommitLog
 from ikaaro.root import Root as BaseRoot
 from ikaaro.text import CSV
 from ikaaro.tracker import Tracker
 
+# Import from wiki
+from wiki import WikiFolder
+
 # Import from tzm
 from chapter.chapter import Chapters
 from phoenix.phoenix import Phoenix
 #from training.training import Training
 from country.country import Countries
+from forums.forums import Forums
 
 ###########################################################################
 # Resource
@@ -121,8 +127,11 @@ class Root(BaseRoot):
                       u' anarchically scalable information system.'},
             industry=('social',)
             )
-        print phoenix
-        tracker = phoenix.make_resource('tracker', Tracker)
+        blog = phoenix.make_resource('blog', Blog, title={'en': u'ZMGC Blog'},)
+        calendar = phoenix.make_resource('calendar', Calendar, title={'en': u'ZMGC Calendar'},)
+        forums = phoenix.make_resource('forums', Forums, title={'en': u'ZMGC Forums'},)
+        tracker = phoenix.make_resource('tracker', Tracker, title={'en': u'ZMGC Issue Tracker'},)
+        wiki = phoenix.make_resource('wiki', WikiFolder, title={'en': u'ZMGC Wiki'})
         # Add the companies folder - here we store the company objects
         chapters = self.make_resource('chapters', Chapters,
                                         title={'en': u'Chapters'},

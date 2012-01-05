@@ -14,6 +14,8 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+# Import from itools
+from itools.core import thingy_lazy_property
 
 # Import from ikaaro
 from ikaaro.utils import reduce_string
@@ -29,8 +31,25 @@ class SiteLocationTemplate(LocationTemplate):
 
     template = 'ui/core/templates/widgets/location.xml'
 
+    @thingy_lazy_property
+    def location(self):
+        return bool(LocationTemplate.breadcrumb)
+
+class SiteMenuTemplate(CMSTemplate):
+
+    template = 'ui/core/templates/widgets/sitemenu.xml'
+    
+    @thingy_lazy_property
+    def tabs(self):
+        return bool(LocationTemplate.tabs)
+
 class TabsTemplate(CMSTemplate):
 
     template = 'ui/core/templates/widgets/tabs.xml'
 
+class PlayerTemplate(CMSTemplate):
+    """
+        jPlayer implementation
+    """
+    template = 'ui/core/templates/widgets/player.xml'
 

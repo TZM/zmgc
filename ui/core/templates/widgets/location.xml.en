@@ -11,8 +11,11 @@
         href="${item/url}" title="${item/name}">${item/short_name}</a
         ><stl:inline stl:if="not repeat/item/end">/</stl:inline></span>
     </div>
-
   </div>
-  <div class="clear"></div>
-
+  <div id="submenu" stl:if="tabs">
+    <span class="menu ${menu/class}" stl:repeat="menu tabs">
+      <a href="${menu/name}">${menu/label}</a>
+      <stl:inline stl:if="not repeat/menu/end">|</stl:inline>
+    </span>
+  </div>
 </stl:block>

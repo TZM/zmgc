@@ -67,6 +67,36 @@ function tabme() {
   }
 }
 
+/* Progress bar: startProgressBar() */
+function startProgressBar()
+{
+  $("#progress-bar-box").css("display", "block");
+  $("#progress-bar").progressbar();
+
+  var intervalId = setInterval(
+    function()
+    {
+      $.getJSON("/;upload_stats?upload_id=" + upload_id,
+        function(data)
+        {
+          if (data == null || !data.valid_id)
+          {
+            clearInterval(intervalId);
+            $("#progress-bar").progressbar("destroy");
+            $("#progress-bar-box").css("display", "none")
+            return;
+          }
+          var percent = Math.floor(data.percent);
+
+          $("#progress-bar").progressbar("option", "value", percent);
+          var toText = sizeToText(data.uploaded_size, data.total_size, percent);
+          $("#upload-size").html(toText.uploaded_size + "/" + toText.total_size);
+          $("#percent").html(toText.percent)
+        });
+    },
+    1500);
+}
+
 ///* Captcha reload */
 //function load_captcha(callback) {
 //  // Gets image and audio URLs by Ajax call
