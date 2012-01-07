@@ -26,6 +26,10 @@ MSG_EXISTANT_CHAPTER = ERROR(
 MSG_NON_EXISTANT_CHAPTER = ERROR(
     u'There is no chapter with this name on the database, please first create a chapter!')
 
+MSG_EXISTING_CHAPTER_ADMIN = MSG(u"You are already an Administrator for a chapter, \
+    you will need to manually allocate this role to \
+    to someone else!")
+
 MSG_EXISTANT_ADDRESS = ERROR(
     u'An address with this name already exists in the database!')
 

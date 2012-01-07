@@ -44,7 +44,7 @@ from country.country import Countries
 from forums.forums import Forums
 
 ###########################################################################
-# Resource
+# Resources
 ###########################################################################
 
 class Affiliations(CSV):
@@ -99,7 +99,15 @@ class World(CSV):
 
 
 class Root(BaseRoot):
-    
+    """
+        This is the root of the application and sets up the initial content.
+        We create zmgc site and all the supporting content.
+        The zmgc.net contains blog, calendar, forums, issue's tracker and wiki
+        These will change in the future as these will have to also include data
+        from other chapters and data sources.
+        
+        So simply this is your .ini file which sets up the application.
+    """
     class_id = 'tzm'
     class_version = '20111020'
     class_title = MSG(u'Zeitgeist Application Server')
@@ -108,14 +116,17 @@ class Root(BaseRoot):
                             u' anarchically scalable information system.')
 
     def init_resource(self, email, password, admins=('0',)):
+        # Create the root account
         super(Root, self).init_resource(email, password, admins=admins)
+        # Load the static data files into the database
         affiliations = self.make_resource('affiliations', Affiliations)
         industry = self.make_resource('industry', Industry)
         topics = self.make_resource('topics', Topics)
         types = self.make_resource('types', Types)
         functions = self.make_resource('functions', Functions)
         world = self.make_resource('world', World)
-        # Add the core website - http://lmz.fr
+        # Add the core website uri - http://zmgc.net, http://lmz.fr ...
+        # You can change this to suit your needs.
         hosts = ['zmgc.net', 'zmgc.aqoon.local']
         phoenix = self.make_resource('phoenix', Phoenix,
             title={'en': u'Zeitgeist Movement Global Connect'},
@@ -127,12 +138,13 @@ class Root(BaseRoot):
                       u' anarchically scalable information system.'},
             industry=('social',)
             )
+        # We now create the core modules
         blog = phoenix.make_resource('blog', Blog, title={'en': u'ZMGC Blog'},)
         calendar = phoenix.make_resource('calendar', Calendar, title={'en': u'ZMGC Calendar'},)
         forums = phoenix.make_resource('forums', Forums, title={'en': u'ZMGC Forums'},)
         tracker = phoenix.make_resource('tracker', Tracker, title={'en': u'ZMGC Issue Tracker'},)
         wiki = phoenix.make_resource('wiki', WikiFolder, title={'en': u'ZMGC Wiki'})
-        # Add the companies folder - here we store the company objects
+        # We now add the chapters folder within which exists all other sites
         chapters = self.make_resource('chapters', Chapters,
                                         title={'en': u'Chapters'},
                                         description={'en': u'Chapters folder'})
@@ -144,7 +156,6 @@ class Root(BaseRoot):
     ########################################################################
     # API
     ########################################################################
-    
     # Restrict access to the folder's views
     browse_content = Folder_BrowseContent(access='is_allowed_to_edit')
     last_changes = DBResource_CommitLog(access='is_allowed_to_edit')

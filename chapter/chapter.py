@@ -23,19 +23,16 @@ from itools.gettext import MSG
 # Import form ikaaro
 from ikaaro.folder import Folder
 from ikaaro.registry import register_resource_class, register_document_type
-from ikaaro.root import Root
 from ikaaro.skins import UI, ui_path
-from ikaaro.webpage import WebPage
-from ikaaro.website import WebSite
 
 # Import from tzm
-from tzm.website import SiteRoot
+from tzm.website import WebSite
 from tzm.control_panel import CPEditBusinessSector, CPEditBusinessType
 #
 # Import from here
 from views import Chapter_NewInstance, View
 
-class Chapter(SiteRoot):
+class Chapter(WebSite):
     
     class_id = 'chapter'
     class_title = MSG(u'Chapter virtual site')
@@ -44,29 +41,22 @@ class Chapter(SiteRoot):
     class_icon48 = 'icons/48x48/website.png'
     class_views = Folder.class_views + ['control_panel']
     class_skin = 'ui/chapter'
-    class_control_panel = SiteRoot.class_control_panel + [
+    class_control_panel = WebSite.class_control_panel + [
                         'edit_industry', 'edit_business', 'edit_business_type']
 
-    class_roles = freeze(['admin', 'member', 'guest'])
     class_schema = merge_dicts(
-        SiteRoot.class_schema,
+        WebSite.class_schema,
             {'country': String(source='metadata',indexed=True, stored=True)},
             {'region': String(source='metadata',indexed=True, stored=True)},
             {'county': String(source='metadata',indexed=True, stored=True)},
         )
 
     def _get_resource(self, name):
-        if name == 'ui':
-            ui = UI(ui_path)
-            ui.database = self.metadata.database
-            return ui
         # we need to get to the root
         root = self.get_root()
-        if name in ('users', 'users.metadata'):
-            return root._get_resource(name)
         if name in ('chapters', 'chapters.metadata'):
             return root._get_resource(name)
-        return SiteRoot._get_resource(self, name)
+        return WebSite._get_resource(self, name)
 
     ########################################################################
     ## UI
@@ -88,7 +78,7 @@ class Chapters(Folder):
                    'last_changes']
 
     def get_document_types(self):
-        return [Chapter, WebSite]
+        return [Chapter]
 
 # Register
-register_document_type(Chapter, Root.class_id)
+register_document_type(Chapter, Chapter.class_id)

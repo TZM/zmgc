@@ -50,7 +50,7 @@ from wiki import WikiFolder
 # Import from here
 from tzm.datatypes import Industry, BusinessSector, BusinessType
 from tzm.messages import MSG_EXISTANT_CHAPTER, MSG_CHOOSE_REGION
-from tzm.messages import MSG_NEW_CHAPTER
+from tzm.messages import MSG_NEW_CHAPTER, MSG_EXISTING_CHAPTER_ADMIN
 from tzm.resource_views import RegionSelect
 from tzm.skins_views import TabsTemplate
 from tzm.utils import fix_website_url
@@ -84,6 +84,20 @@ class Chapter_NewInstance(NewInstance):
         return NewInstance.GET(self, resource, context)
 
     def action(self, resource, context, form):
+        # User id
+        user = context.user
+        # Check to see if the user is an Administrator for another chapter.
+        user_get_chapters = user.get_chapters()
+        # this returns a document
+        # A user may be part of many chapters, we want to make sure
+        # they are only administrators for one chapter.
+        for x in user.get_chapters():
+            if user.name in x.get_members_classified_by_role()['admins']:
+                # Give admin rights to a new member then proceed
+                # otherwise the chapter may end up without an administrator
+                # so we take the user to the browse user's interface.
+                goto = '/chapters/%s/;browse_users' % x.name
+                return context.come_back(MSG_EXISTING_CHAPTER_ADMIN, goto=goto)      
         title = form['title'].strip()
         name = form['name']
         name = checkid(title)
@@ -97,12 +111,10 @@ class Chapter_NewInstance(NewInstance):
         # XXX We need to check the domain name is valid
         vhosts.append(url)
         vhosts = [ x for x in vhosts if x ]
-        print vhosts
         # Create the resource
         class_id = 'chapter'
         cls = get_resource_class(class_id)
         container = resource.get_resource('/chapters')
-        print container, 'we are here'
         # check if name is taken
         if container.get_resource(name, soft=True) is not None:
             chapter = container.get_resource(name, soft=True)
@@ -112,9 +124,8 @@ class Chapter_NewInstance(NewInstance):
         if county is not None:
             if 'switch' in county.rsplit('#'):
                 return self.GET
-        # We are now ready to make the company resource
+        # We are now ready to make the chapter resource
         chapter = container.make_resource(name, cls)
-        print 'chapter make ...'
         # The metadata
         metadata = chapter.metadata
         language = resource.get_edit_languages(context)[0]
@@ -127,30 +138,24 @@ class Chapter_NewInstance(NewInstance):
         metadata.set_property('country', selected_region[0])
         metadata.set_property('region', selected_region[1])
         metadata.set_property('county', selected_region[2])
-        # User id
-        user = context.user
-        # Remove user from old chapter
-        chapters = user.get_chapters()
-        if chapters:
-            for x in chapters:
-                resource.get_resource(x.abspath).set_user_role(user.name, None)
-        # Link the User to the newly created Chapter
-        default_role = chapter.class_roles[0]
-        chapter.set_user_role(user.name, default_role)
-        # Add the user to the Phoenix Main site as a 'Member'
-        root = user.get_phoenix_site_root()
-        if root:
-            root.set_user_role(user.name, root.class_roles[1])
-        # Split the Country, Region and County
-        iana_root_zone, region, county = form['county'].rsplit('#', 2)
-        # we can now add the forum, wiki specific for chapter
+        
+        # Link the User to the newly created Chapter and make them the Administrator
+        print chapter.class_roles[-1], 'chapter.class_roles[-1]'
+        chapter.set_user_role(user.name, chapter.class_roles[-1])
+        # Add the user to the Phoenix site as a 'Member'
+        phoenix_site_root = user.get_phoenix_site_root()
+        phoenix_site_root.set_user_role(user.name, phoenix_site_root.class_roles[1])
+        
+        # Now we add the forum, wiki specific for this chapter website.
         blog = chapter.make_resource('blog', Blog)
         calendar = chapter.make_resource('calendar', Calendar)
         wiki = chapter.make_resource('wiki', WikiFolder)
         tracker = chapter.make_resource('tracker', Tracker)
         # TODO send an email with details
         email = user.get_property('email')
-        user.send_chapter_confirmation(context, email, chapter)
+        print email
+        if email:
+            user.send_chapter_confirmation(context, email, chapter)
         goto = '/chapters/%s/;control_panel' % chapter.name
         return context.come_back(MSG_NEW_CHAPTER, goto=goto)
 

@@ -28,14 +28,14 @@ from ikaaro.skins import register_skin, UI, ui_path
 from ikaaro.website import WebSite
 
 # Import from tzm
-from tzm.website import SiteRoot 
+from tzm.website import WebSite 
  
 # Import from here
 from views import View, ChapterGenerator, More
 from tzm.resource_views import Captcha
 
 
-class Phoenix(SiteRoot):
+class Phoenix(WebSite):
 
     class_id = 'phoenix'
     class_title = MSG(u'Phoenix Site')
@@ -51,8 +51,6 @@ class Phoenix(SiteRoot):
         'create'
         ]
 
-    __fixed_handlers__ = SiteRoot.__fixed_handlers__[:0] + ['404']
-
     def _get_resource(self, name):
         if name == 'ui':
             ui = UI(ui_path)
@@ -66,7 +64,7 @@ class Phoenix(SiteRoot):
             return root._get_resource(name)
         if name in ('countries', 'countries.metadata'):
             return root._get_resource(name)
-        return SiteRoot._get_resource(self, name)
+        return WebSite._get_resource(self, name)
 
 
     def get_document_types(self):

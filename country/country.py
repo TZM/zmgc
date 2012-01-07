@@ -26,13 +26,13 @@ from ikaaro.registry import register_resource_class, register_document_type
 from ikaaro.skins import UI, ui_path
 
 # Import from tzm
-from tzm.website import SiteRoot
+from tzm.website import WebSite
 
 # Import from here
 from views import Country_NewInstance, ImportCountries, View
 
 
-class Country(SiteRoot):
+class Country(WebSite):
     
     class_id = 'country'
     class_title = MSG(u'Country virtual site')
@@ -48,7 +48,7 @@ class Country(SiteRoot):
                             
     class_roles = freeze(['country_manager', 'country_member'])
     class_schema = merge_dicts(
-        SiteRoot.class_schema,
+        WebSite.class_schema,
         {'country_manager': Tokens(source='metadata',
             title=MSG(u"Country Manager"))},
         {'country_member': Tokens(source='metadata',
@@ -64,7 +64,7 @@ class Country(SiteRoot):
         root = self.get_root()
         if name in ('users', 'users.metadata'):
             return root._get_resource(name)
-        return SiteRoot._get_resource(self, name)
+        return WebSite._get_resource(self, name)
 
     def get_document_types(self):
         return [Region]

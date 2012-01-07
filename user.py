@@ -57,12 +57,19 @@ class SiteUser(User):
     unimatrix = ChooseRegion()
 
     def get_chapters(self):
+        """
+            returns a tuple of the chapters that this user is a member of
+        """
         root = self.get_root()
         if root is None:
             return ()
-        results = root.search(format='chapter')
+        results = root.search(format='chapter',  users=self.name)
         items = [ x for x in results.get_documents() ]
-        return tuple(items)
+        chapters = []
+        for x in items:
+            chapters.append(self.get_resource(x.abspath))
+
+        return tuple(chapters)
 
     def get_phoenix_site_root(self):
         root = self.get_root()

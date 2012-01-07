@@ -20,7 +20,7 @@ from decimal import Decimal
 from types import GeneratorType
 
 # Import from itools
-from itools.core import merge_dicts
+from itools.core import freeze, merge_dicts
 from itools.datatypes import Tokens
 from itools.gettext import MSG
 from itools.html import stream_to_str_as_html, xhtml_doctype
@@ -51,28 +51,48 @@ from control_panel import TZM_ControlPanel, CPEditIndustry
 from resource_views import Captcha, LoginView
 
 
-class SiteRoot(BaseWebSite, RoleAware):
+class WebSite(BaseWebSite, RoleAware):
+    """
+        Appart form the BaseWebSite schema we want to also store and index other core data
+        that may be useful.
+        Also we need to fix the paths to the 'ui' and 'users' directory so that it is
+        available to all the other vhosts
+        From here we create two different sites, the Phoenix portal and the Chapter sites.
+    """
     class_schema = merge_dicts(
         BaseWebSite.class_schema,
         industry=Tokens(source='metadata', default=('',),indexed=True, stored=True),
         business=Tokens(source='metadata', default=('', ),indexed=True, stored=True),
         business_type=Tokens(source='metadata', default=('',),indexed=True, stored=True),
         )
+
     class_control_panel = BaseWebSite.class_control_panel
     class_theme = BaseWebSite.class_theme
 
+    __fixed_handlers__ = BaseWebSite.__fixed_handlers__[:0] + ['404']
+    
+    # FIXME this is not implemented, yet!
     def _find_server_root(self, name):
+        """
+            We need a way to access the resources from site-packages/ikaaro also
+            not just the tzm root.
+        """
         return Server.find_site_root(self, name)
         
     def _get_resource(self, name):
-        if name == 'ui-here':
-            print name, 'd'
+        if name == 'ui':
             ui = UI(ui_path)
-            #print ui
             ui.database = self.metadata.database
             return ui
+        root = self.get_root()
         if name in ('users', 'users.metadata'):
             return self.parent._get_resource(name)
+        if name in ('chapters', 'chapters.metadata'):
+            return root._get_resource(name)
+        if name in ('countries', 'countries.metadata'):
+            return root._get_resource(name)
+        if name in ('phoenix', 'phoenix.metadata'):
+            return root._get_resource(name)
         return BaseWebSite._get_resource(self, name)
 
     def _get_catalog_values(self):
@@ -109,11 +129,14 @@ class SiteRoot(BaseWebSite, RoleAware):
             accept.set(language, 2.5)
 
     def get_skin(self, context):
+        """
+            Each WebSite has it's own look and feel.
+        """
         # Back-Office
         hostname = context.uri.authority
         if hostname[:3] in ['bo.', 'bo-']:
             return self.get_resource('/ui/aruni')
-        # Fron-Office
+        # Front-Office
         return self.get_resource(self.class_skin)
 
     def get_default_language(self):
@@ -123,7 +146,7 @@ class SiteRoot(BaseWebSite, RoleAware):
         return self.get_property('industry')
 
     #######################################################################
-    # UI
+    # UI and Methods
     #######################################################################
     #new_instance = Folder_NewResource()
     # Control Panel
@@ -156,4 +179,4 @@ class SiteRoot(BaseWebSite, RoleAware):
     edit_industry = CPEditIndustry()
 
 # Register
-register_document_type(SiteRoot, SiteRoot.class_id)
+register_document_type(WebSite, WebSite.class_id)
