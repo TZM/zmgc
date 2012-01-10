@@ -28,10 +28,10 @@
                     <a title="Sign up to help" href="#">Sign up to help</a>
                   </li>
                   <li class="">
-                    <img src="/ui/core/resources/ico-wrote-petition.gif" alt="wrote-petition" />                                    
+                    <img src="/ui/core/resources/ico-donate.gif" alt="wrote-petition" />                                    
                     <p>
-                      <strong>Luisa</strong> signed up to help with the Z-Day Festival: London</p>
-                      <a title="Sign up to help" href="#/">Sign up to help</a>
+                      <strong>Luisa</strong> donated 5 € towards the Occupy London Fund </p>
+                      <a title="Wish to donate..." href="#/">Wish to donate...</a>
                     </li>
                     <li class="last">
                       <img src="/ui/core/resources/ico-wrote-petition.gif" alt="wrote-petition" />                                    
@@ -102,7 +102,28 @@
     <a href="http://feeds.feedburner.com/TheZeitgeistMovement" target="_blank"><img src="/ui/core/resources/rss_icon_48.jpg" border="0" height="48" width="48" /></a>
     <a href="http://www.youtube.com/user/TZMOfficialChannel" target="_blank"><img src="/ui/core/resources/youtube.png" border="0" height="48" width="48" /></a> 
     </div> <!-- END DYNAMIC CONTENT -->
-    
+    <!-- I LIKE IT -->
+    <div class="thumb-rating">
+        <form action="you-know-you-like-it" method="post" class="disabled">
+            <span class="thumbs-up">
+                <input type="submit" name="lovinit" value="Like" class="allowMultiSubmit like-button" disabled="disabled" alt="Please log in to rate this product" /></span>
+            <span class="thumbs-down">
+                <input type="submit" name="hatedit" value="Ugh" class="allowMultiSubmit dislike-button" disabled="disabled" /></span>
+        </form>
+        <div class="like-summary">
+            <span class="total-thumbs-up">
+                <span class="tally-total">0</span> likes,
+            </span>
+            <span class="total-thumbs-down">
+                <span class="tally-total">0</span> dislikes
+            </span>
+
+        </div>
+        <div class="discreet login-to-rate">
+            <a href="/;login" class="link-overlay">Log in</a> to rate.
+        </div>
+    </div>
+    <!-- /I LIKE IT -->
   </div><!-- /right side bar 20%-->
 </div><!-- /content -->
 </stl:block>

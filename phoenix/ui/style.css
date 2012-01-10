@@ -448,3 +448,30 @@ h1, h2 {
 .demo-container p span.track-name {
 	color: #CC0090;
 }
+
+.thumb-rating {
+    float: right;
+}
+input.like-button, input.dislike-button {
+    padding: 10px 5px;
+    background-color: inherit;
+    border: 1px solid #EEE;
+    cursor: pointer;
+    border-image: initial;
+}
+
+form input.like-button {
+    padding-left: 30px;
+    background-image: url(/ui/core/resources/thumbs-up-off.png);
+    background-repeat: no-repeat;
+    background-position: left center;
+}
+
+form input.dislike-button {
+    background-image: url(/ui/core/resources/thumbs-down-off.png);
+    background-repeat: no-repeat;
+    background-position: left center;
+    text-indent: -3000px;
+    white-space: nowrap;
+    width: 35px;
+}
