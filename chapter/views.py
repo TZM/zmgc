@@ -48,19 +48,21 @@ from ikaaro.tracker import Tracker
 from wiki import WikiFolder
 
 # Import from here
+from tzm.access import RoleAware
 from tzm.datatypes import Industry, BusinessSector, BusinessType
 from tzm.messages import MSG_EXISTANT_CHAPTER, MSG_CHOOSE_REGION
 from tzm.messages import MSG_NEW_CHAPTER, MSG_EXISTING_CHAPTER_ADMIN
 from tzm.resource_views import RegionSelect
 from tzm.skins_views import TabsTemplate
-from tzm.utils import fix_website_url
+from tzm.utils import fix_website_url, clean_website_url
+from tzm.forums.forums import Forums
 
 class Chapter_NewInstance(NewInstance):
     """
     Adding new Chapter site, check if User.id is not a manager of a chapter
     User.id can only manage one chapter, but can be a member of all.
     """
-    access = 'is_allowed_to_view'
+    access = 'is_allowed_to_create_chapter'
     schema = merge_dicts(NewInstance.schema,
             {'title': Unicode(mandatory=True),
             'vhosts': String,
@@ -91,13 +93,13 @@ class Chapter_NewInstance(NewInstance):
         # this returns a document
         # A user may be part of many chapters, we want to make sure
         # they are only administrators for one chapter.
-        for x in user.get_chapters():
-            if user.name in x.get_members_classified_by_role()['admins']:
-                # Give admin rights to a new member then proceed
-                # otherwise the chapter may end up without an administrator
-                # so we take the user to the browse user's interface.
-                goto = '/chapters/%s/;browse_users' % x.name
-                return context.come_back(MSG_EXISTING_CHAPTER_ADMIN, goto=goto)      
+        #for x in user.get_chapters():
+        #    if user.name in x.get_members_classified_by_role()['admins']:
+        #        # Give admin rights to a new member then proceed
+        #        # otherwise the chapter may end up without an administrator
+        #        # so we take the user to the browse user's interface.
+        #        goto = '/chapters/%s/;browse_users' % x.name
+        #        return context.come_back(MSG_EXISTING_CHAPTER_ADMIN, goto=goto)      
         title = form['title'].strip()
         name = form['name']
         name = checkid(title)
@@ -109,8 +111,9 @@ class Chapter_NewInstance(NewInstance):
         vhosts.append(site_url)
         url = ('%s' % form['vhosts'])
         # XXX We need to check the domain name is valid
-        vhosts.append(url)
+        vhosts.append(clean_website_url(url))
         vhosts = [ x for x in vhosts if x ]
+        print vhosts
         # Create the resource
         class_id = 'chapter'
         cls = get_resource_class(class_id)
@@ -149,13 +152,15 @@ class Chapter_NewInstance(NewInstance):
         # Now we add the forum, wiki specific for this chapter website.
         blog = chapter.make_resource('blog', Blog)
         calendar = chapter.make_resource('calendar', Calendar)
+        forums = chapter.make_resource('forums', Forums)
         wiki = chapter.make_resource('wiki', WikiFolder)
         tracker = chapter.make_resource('tracker', Tracker)
         # TODO send an email with details
         email = user.get_property('email')
         print email
-        if email:
-            user.send_chapter_confirmation(context, email, chapter)
+        #if email:
+        #    user.send_chapter_confirmation(context, email, chapter)
+        # FIXME: we want to take the member to the new site.
         goto = '/chapters/%s/;control_panel' % chapter.name
         return context.come_back(MSG_NEW_CHAPTER, goto=goto)
 
@@ -235,3 +240,9 @@ class View(STLView):
         chapters = self.get_items_namespace(resource, context)
 
         return merge_dicts(chapters, {'batch': batch, 'info': info, 'tabs': tabs})
+
+
+class ChaptersView(STLView):
+    access = True
+    title = MSG(u'Chapters')
+    template = '/ui/chapter/chapters.xml'

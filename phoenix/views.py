@@ -72,7 +72,7 @@ class ChapterGenerator(STLView):
         Form which allows members to be able to add chapter sites that will be included
         in the main ZGC site.
     """
-    access = 'is_allowed_to_view'
+    access = 'is_allowed_to_create_chapter'
     title = MSG(u'Create your chapter')
     description = 'Create new chapter'
     template = 'ui/phoenix/chapter-generator.xml'

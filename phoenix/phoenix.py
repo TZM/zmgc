@@ -16,16 +16,12 @@
 
 
 # Import from itools
-from itools.core import freeze, get_abspath, merge_dicts
 from itools.gettext import MSG
-from itools.datatypes import Boolean, Email, Tokens, Unicode, String
 
 # Import form ikaaro
-from ikaaro.access import RoleAware
 from ikaaro.folder import Folder
-from ikaaro.registry import register_resource_class, register_document_type
-from ikaaro.skins import register_skin, UI, ui_path
-from ikaaro.website import WebSite
+from ikaaro.registry import register_document_type
+from ikaaro.skins import UI, ui_path
 
 # Import from tzm
 from tzm.website import WebSite 
@@ -61,6 +57,8 @@ class Phoenix(WebSite):
         if name in ('users', 'users.metadata'):
             return root._get_resource(name)
         if name in ('chapters', 'chapters.metadata'):
+            return root._get_resource(name)
+        if name in ('projects', 'projects.metadata'):
             return root._get_resource(name)
         if name in ('countries', 'countries.metadata'):
             return root._get_resource(name)

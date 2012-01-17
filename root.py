@@ -39,8 +39,8 @@ from wiki import WikiFolder
 # Import from tzm
 from chapter.chapter import Chapters
 from phoenix.phoenix import Phoenix
+from project.project import Projects
 #from training.training import Training
-from country.country import Countries
 from forums.forums import Forums
 
 ###########################################################################
@@ -148,10 +148,10 @@ class Root(BaseRoot):
         chapters = self.make_resource('chapters', Chapters,
                                         title={'en': u'Chapters'},
                                         description={'en': u'Chapters folder'})
-        
-        # Add the countries folder - here we store the country objects
-        countries = self.make_resource('countries', Countries, title={'en': u'Countries'},
-            description={'en': u'Countries folder'})
+        # We create the projects folder within which we store all the projects
+        projects = self.make_resource('projects', Projects,
+                                        title={'en': u'Projects'},
+                                        description={'en': u'Projects folder'})
     
     ########################################################################
     # API

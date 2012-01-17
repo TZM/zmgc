@@ -1,0 +1,50 @@
+digraph G {
+        fontname = "Bitstream Vera Sans"
+        fontsize = 10
+        node [shape=box]; Forum; Wiki;
+        node [shape=polygon]; "Users Group";
+        "Schools\n42" [width="0.21", height="0.21", color="pink", fillcolor="pink", shape=circle, pos="10, 10"];
+        edge [
+                fontname = "Bitstream Vera Sans"
+                fontsize = 10
+        ]
+
+        Chapter [
+                label = "{Chapter|+ name : string\l+ members : int\l|+ die() : void\l}", pos="10, 10"
+        ]
+        Chapt [shape=box style=filled fillcolor=lightblue pos="15, -5"]
+        Hello [shape=box style=filled fillcolor=lightblue pos="10, 0"]
+        World [shape=box style=filled fillcolor=lightgrey pos="5, 5"]
+        subgraph clusterPhoenix {
+                label = "Phoenix Zeitgeist Movement Global Connect"
+                "Users Group" [sides=4, distortion="0.238792", orientation=11, color=deepskyblue, pos="10, 10"]
+
+                Wiki [
+                        label = "{Wiki||+ view() : void\l}", pos="10, 10"
+                ]
+
+                Forum [
+                        label = "{Forum||+ view() : void\l}", pos="10, 10"
+                ]
+                Calendar [
+                        label = "{Calendar||+ view() : void\l}", pos="10, 10"
+                ]
+                
+        }
+
+        edge [
+                arrowhead = "empty"
+        ]
+
+        Wiki -> Chapter
+        Forum -> Chapter
+
+        edge [
+                arrowhead = "none"
+
+                headlabel = "0..*"
+                taillabel = "0..*"
+        ]
+
+        Wiki -> Calendar
+}

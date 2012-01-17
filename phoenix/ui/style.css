@@ -475,3 +475,27 @@ form input.dislike-button {
     white-space: nowrap;
     width: 35px;
 }
+
+.button ul li a {
+background: transparent url(/ui/core/resources/all_buttons.png) no-repeat scroll 0 0;
+color: #646363;
+display: block;
+font-size: 12px;
+height: 41px;
+line-height: 38px;
+margin-right: 4px;
+padding: 0;
+text-align: center;
+text-indent: 30px;
+width: 152px;
+font-variant: small-caps;
+}
+
+.button ul li a:hover{text-decoration:none;}
+.button ul li.newsletter a{background-position:-155px 0;}
+.button ul li.forum a{background-position:-312px 0;}
+.button ul li.gallery a{background-position:-465px 0;}
+.button ul li.subscription a:hover{background-position:0px -60px;}
+.button ul li.newsletter a:hover{background-position:-155px -60px;}
+.button ul li.forum a:hover{background-position:-312px -60px;}
+.button ul li.gallery a:hover{background-position:-465px -60px;}

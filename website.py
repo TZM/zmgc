@@ -93,6 +93,8 @@ class WebSite(BaseWebSite, RoleAware):
             return root._get_resource(name)
         if name in ('phoenix', 'phoenix.metadata'):
             return root._get_resource(name)
+        if name in ('projects', 'cprojects.metadata'):
+            return root._get_resource(name)
         return BaseWebSite._get_resource(self, name)
 
     def _get_catalog_values(self):

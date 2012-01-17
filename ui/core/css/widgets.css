@@ -1,0 +1,49 @@
+.datebox
+{
+    float: left;
+    background-color: #2c7ad0;
+    border: 1px solid #000000;
+    color: #ffffff;
+    position: relative;
+    margin: 0 0 0 20px;
+}
+.datebox .month
+{
+    display: block;
+    text-align: center;
+    font-size: 30px;
+    line-height: 30px;
+    padding: 2px 0;
+    background-color: #1e528c;
+    text-transform: uppercase;
+}
+.datebox .day
+{
+    display: block;
+    text-align: center;
+    font-size: 80px;
+    line-height: 80px;
+    font-weight: bold;
+    padding: 2px 24px 2px 0;
+}
+.datebox .year
+{
+    display: block;
+    writing-mode: tb-rl;
+    -webkit-transform: rotate(90deg);	
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    transform: rotate(90deg);
+    position: absolute;
+    right: 0;
+    bottom: 9px;
+    font-size: 24px;
+}
+*:first-child+html .datebox .year { right: -28px; } /* IE7 positions element differently to IE6 & 8 */
+.datebox span:nth-child(3)
+{
+    right: -10px;
+    bottom: 32px;
+    writing-mode: lr-tb; 
+}

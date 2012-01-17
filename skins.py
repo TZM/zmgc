@@ -23,7 +23,9 @@ from itools.gettext import MSG
 from ikaaro.skins import Skin as BaseSkin
 
 # Import from here
-from skins_views import SiteLanguagesTemplate, SiteLocationTemplate, SiteMenuTemplate
+from skins_views import SiteLanguagesTemplate, SiteLocationTemplate
+from skins_views import FooterTemplate, SiteMenuTemplate
+
 
 class Skin(BaseSkin):
     '''
@@ -43,7 +45,8 @@ class Skin(BaseSkin):
 
     languages_template = SiteLanguagesTemplate
     location_template = SiteLocationTemplate
-    tabs = SiteMenuTemplate
+    site_menu_template = SiteMenuTemplate
+    upper_footer = FooterTemplate
 
     #######################################################################
     # Styles and Scripts
@@ -54,6 +57,7 @@ class Skin(BaseSkin):
             '/ui/core/css/yui/cssreset/reset-min.css',
             '/ui/core/css/yui/cssgrids/grids-min.css',
             '/ui/core/css/flags-sprite.css',
+            '/ui/core/css/widgets.css',
             '/ui/js_calendar/calendar-aruni.css',
             '/ui/wiki/style.css',
         ]
@@ -84,6 +88,8 @@ class Skin(BaseSkin):
         scripts = [
             '/ui/core/js/jquery/jquery-1.6.2.min.js',
             '/ui/core/js/javascript.js',
+            '/ui/core/js/raphaeljs/raphael-min.js',
+            '/ui/core/js/world.js'
             ]
 
         #
@@ -112,17 +118,14 @@ class Skin(BaseSkin):
     #######################################################################
     # Main
     #######################################################################
-    #def build_namespace(self, context):
-    #    namespace = merge_dicts(BaseSkin.build_namespace(self, context), {
-    #    'tabs': self.tabs(context=context),
-    #    })
-    #    for x in namespace:
-    #        print x
-    #    return namespace
-        
-        
-        
-        
+    def build_namespace(self, context):
+        namespace = merge_dicts(BaseSkin.build_namespace(self, context), {
+        'upper_footer': self.upper_footer(context=context),
+        })
+        #print namespace
+        return namespace
+
+
 class ChapterSkin(Skin):
     """
         Returns a list of get_styles and get_scripts
@@ -136,6 +139,21 @@ class ChapterSkin(Skin):
         
         Currently the get_scripts uses the core js scripts, this can be extended so that each indivudual
         chapter could extend the list. Similiar to the way the db_styles works.
+    """
+    
+    def get_styles(self, context):
+        styles = Skin.get_styles(self, context)
+
+        return styles
+        
+    def get_scripts(self, context):
+        scripts = Skin.get_scripts(self, context)
+        
+        return scripts
+#
+class ProjectSkin(Skin):
+    """
+        Each project can have its own specific skin.
     """
     
     def get_styles(self, context):

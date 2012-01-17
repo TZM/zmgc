@@ -221,3 +221,6 @@ def fix_website_url(url):
     if url.startswith('http://'):
         return url
     return 'http://' + url
+    
+def clean_website_url(url):
+    return url.lstrip('http://').rstrip('/')

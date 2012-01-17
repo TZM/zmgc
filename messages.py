@@ -23,6 +23,9 @@ from itools.web import INFO, ERROR
 MSG_EXISTANT_CHAPTER = ERROR(
     u'A chapter with this name is already in the database!')
 
+MSG_EXISTANT_PROJECT = ERROR(
+    u'A project with this name is already in the database!')
+    
 MSG_NON_EXISTANT_CHAPTER = ERROR(
     u'There is no chapter with this name on the database, please first create a chapter!')
 

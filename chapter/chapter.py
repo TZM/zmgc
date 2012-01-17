@@ -30,7 +30,7 @@ from tzm.website import WebSite
 from tzm.control_panel import CPEditBusinessSector, CPEditBusinessType
 #
 # Import from here
-from views import Chapter_NewInstance, View
+from views import Chapter_NewInstance, View, ChaptersView
 
 class Chapter(WebSite):
     
@@ -54,7 +54,10 @@ class Chapter(WebSite):
     def _get_resource(self, name):
         # we need to get to the root
         root = self.get_root()
+        print root.name
         if name in ('chapters', 'chapters.metadata'):
+            return root._get_resource(name)
+        if name in ('users', 'users.metadata'):
             return root._get_resource(name)
         return WebSite._get_resource(self, name)
 
@@ -72,6 +75,7 @@ class Chapters(Folder):
     class_version = '20111120'
     class_title = MSG(u'Chapters folder')
     class_description = MSG(u'Chapters container.')
+    class_skin = 'ui/chapter'
     class_icon16 = 'icons/16x16/folder.png'
     class_icon48 = 'icons/48x48/folder.png'
     class_views = ['view', 'browse_content', 'preview_content', 'edit',
@@ -80,5 +84,7 @@ class Chapters(Folder):
     def get_document_types(self):
         return [Chapter]
 
+    view = ChaptersView()
+    
 # Register
 register_document_type(Chapter, Chapter.class_id)

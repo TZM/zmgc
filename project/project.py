@@ -1,5 +1,5 @@
 # -*- coding: UTF-8 -*-
-# Copyright (C) 2011 Norman Khine <norman@khine.net>
+# Copyright (C) 2012 Norman Khine <norman@khine.net>
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -29,30 +29,23 @@ from ikaaro.skins import UI, ui_path
 from tzm.website import WebSite
 
 # Import from here
-from views import Country_NewInstance, ImportCountries, View
+from views import Project_NewInstance, View, ProjectsView
 
 
-class Country(WebSite):
+class Project(WebSite):
     
-    class_id = 'country'
-    class_title = MSG(u'Country virtual site')
-    class_description = MSG(u'Adds a core country website.')
+    class_id = 'project'
+    class_title = MSG(u'Project virtual site')
+    class_description = MSG(u'Adds a core project website.')
     class_icon16 = 'icons/16x16/website.png'
     class_icon48 = 'icons/48x48/website.png'
     class_views = Folder.class_views + ['control_panel']
-    class_skin = 'ui/country'
-    class_control_panel = ['browse_users', 'add_user', 'edit_virtual_hosts',
-                            'edit_security_policy', 'edit_languages',
-                            'edit_contact_options', 'broken_links', 'orphans',
-                            'edit_business_type']
+    class_skin = 'ui/project'
+    class_control_panel = WebSite.class_control_panel + [
+                        'edit_industry', 'edit_business', 'edit_business_type']
                             
-    class_roles = freeze(['country_manager', 'country_member'])
     class_schema = merge_dicts(
         WebSite.class_schema,
-        {'country_manager': Tokens(source='metadata',
-            title=MSG(u"Country Manager"))},
-        {'country_member': Tokens(source='metadata',
-            title=MSG(u"Country Member"))},
         )
 
     def _get_resource(self, name):
@@ -62,37 +55,38 @@ class Country(WebSite):
             return ui
         # we need to get to the root
         root = self.get_root()
+        if name in ('chapters', 'chapters.metadata'):
+            return root._get_resource(name)
+        if name in ('projects', 'projects.metadata'):
+            return root._get_resource(name)
         if name in ('users', 'users.metadata'):
             return root._get_resource(name)
         return WebSite._get_resource(self, name)
 
-    def get_document_types(self):
-        return [Region]
 
     ########################################################################
     ## UI
     ########################################################################
     view = View()
     # Industry view
-    new_instance = Country_NewInstance()
+    new_instance = Project_NewInstance()
 
-class Countries(Folder):
-    class_id = 'countries'
+class Projects(Folder):
+    class_id = 'projects'
     class_version = '20101112'
-    class_title = MSG(u'Countries folder')
-    class_description = MSG(u'Countries container.')
+    class_title = MSG(u'Projects folder')
+    class_description = MSG(u'Projects container.')
     class_icon16 = 'icons/16x16/folder.png'
     class_icon48 = 'icons/48x48/folder.png'
-    class_views = Folder.class_views + ['import_countries']
+    class_views = Folder.class_views
 
     def get_document_types(self):
-        return [Country]
-
-    
+        return [Project]
     ########################################################################
     ## UI
     ########################################################################
-    import_countries = ImportCountries() 
+    view = ProjectsView()
+
 # Register
-register_document_type(Country, Country.class_id)
+register_document_type(Project, Project.class_id)
 

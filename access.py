@@ -20,28 +20,53 @@ from itools.core import merge_dicts
 from itools.datatypes import Boolean, Email, Tokens, Unicode, String
 from itools.gettext import MSG
 from itools.web import AccessControl as BaseAccessControl, STLForm, INFO
-from itools.web import ERROR
+from itools.web import ERROR, get_context
 from itools.database import AndQuery, OrQuery, PhraseQuery, StartQuery
 
 # Import from ikaaro
-from ikaaro.access import RoleAware
+from ikaaro.access import RoleAware as SiteRoleAware
 from ikaaro.buttons import RemoveButton
 import ikaaro.messages
 from ikaaro.views import SearchForm
 from ikaaro.workflow import WorkflowAware
 
-class SiteRoleAware(RoleAware):
+# Import from here
+from tzm.messages import MSG_EXISTING_CHAPTER_ADMIN
+
+class RoleAware(SiteRoleAware):
     """This base class implements access control based on the concept of
     roles.  Includes a user interface.
     """
     
-    # To override
-    __roles__ = [
-        {'name': 'admins', 'title': MSG(u'Admin')},
-        {'name': 'chapter_manager', 'title':  MSG(u'Chapter Manager')},
-        {'name': 'chapter_member', 'title':  MSG(u'Chapter Member')},
-        {'name': 'partners', 'title':  MSG(u'Partner')},
-        {'name': 'reviewers', 'title': MSG(u"Reviewer")},
-        {'name': 'members', 'title': MSG(u"Member")},
-        {'name': 'guests', 'title': MSG(u"Guest")},
-    ]
+    def is_allowed_to_create_chapter(self, user, resource):
+        if user is None:
+            return False
+        if self.is_admin(user, resource):
+            return True
+        user_get_chapters = user.get_chapters()
+        if user_get_chapters:
+            context = get_context()
+            context.message = MSG_EXISTING_CHAPTER_ADMIN
+            return False 
+        #elif self.is_admin(user, resource):
+        #    role = 'admins'
+        #else:
+        #    role = self.get_user_role(user.name)
+        ## The state of the resource
+        #if isinstance(resource, WorkflowAware):
+        #    state = resource.workflow_state
+        #else:
+        #    state = 'public'
+        #
+        ## Case 1: Extranet or Community
+        #if security_policy in ('extranet', 'community'):
+        #    if state == 'public':
+        #        return True
+        #    return role is not None
+        #
+        ## Case 2: Intranet
+        #if role in ('admins', 'reviewers', 'members'):
+        #    return True
+        #elif role == 'guests':
+        #    return state == 'public'
+        return False

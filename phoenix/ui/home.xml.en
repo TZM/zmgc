@@ -123,6 +123,11 @@
             <a href="/;login" class="link-overlay">Log in</a> to rate.
         </div>
     </div>
+    <div class="button">
+    <ul>
+        <li class="forum"><a href="/forum">Forum</a></li>
+    </ul>
+    </div>
     <!-- /I LIKE IT -->
   </div><!-- /right side bar 20%-->
 </div><!-- /content -->

@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="${language}"
   xmlns:stl="http://www.hforge.org/xml-namespaces/stl">
   <head>
-    <title>${title} In the /company/ui folder</title>
+    <title>${title}</title>
     <base href="${base_uri}" />
     <!-- Meta -->
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -35,7 +35,7 @@
                   <ul>
                     <li><a href="/more">More&nbsp;»</a></li>
                     <li><a href="/forums">Forums</a></li>
-                    <li><a href="/events">Events</a></li>
+                    <li><a href="/calendar">Calendar</a></li>
                     <li><a href="/projects">Projects</a></li>
                     <li><a href="/news">News</a></li>
                   </ul>
