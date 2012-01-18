@@ -56,6 +56,7 @@ class Skin(BaseSkin):
         styles = [
             '/ui/core/css/yui/cssreset/reset-min.css',
             '/ui/core/css/yui/cssgrids/grids-min.css',
+            '/ui/core/css/core.css',
             '/ui/core/css/flags-sprite.css',
             '/ui/core/css/widgets.css',
             '/ui/js_calendar/calendar-aruni.css',
