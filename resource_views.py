@@ -27,6 +27,7 @@ from ikaaro.resource_views import LoginView as BaseLoginView
 #from ikaaro.utils import generate_password
 from ikaaro.views import CompositeForm
 from ikaaro.views import IconsView, SearchForm, ContextMenu
+from ikaaro.utils import CMSTemplate
 
 # Import from here
 from tzm.datatypes import getCountries, getRegions, getCounties
@@ -316,4 +317,41 @@ class ProgressBarWidget(BaseProgressBarWidget):
     </script>
     <script  type="text/javascript" src="/ui/core/progressbar/jquery-progressbar.min.js"/>
     """)
+
+
+class Chat(CMSTemplate):
+    """
+        Chat template, that links to a nodejs server running nowjs.
+        We check if the user is logged in, and we return the user's name
+        as a string which is then passed to the now.name object.
+    """
     
+    @classmethod
+    def name(self):
+        context = get_context()
+        user = context.user
+        if user:
+            return user.get_firstname()
+        return 'Annonymous'
+
+    template = make_stl_template("""
+    <script type="text/javascript" src="http://127.0.0.1:9080/nowjs/now.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        now.receiveMessage = function(name, message){
+          $("#messages").append("<br />" + name + ": " + message);
+        }
+
+        $("#send-button").click(function(){
+          now.distributeMessage($("#text-input").val());
+          $("#text-input").val("");
+        });
+        now.name = "${name}";
+
+      });
+    </script>
+    <div id="messages"></div>
+    <input type="text" id="text-input" />
+    <input type="button" value="Send" id="send-button" />
+    """)
+

@@ -159,7 +159,21 @@ class Root(BaseRoot):
     # Restrict access to the folder's views
     browse_content = Folder_BrowseContent(access='is_allowed_to_edit')
     last_changes = DBResource_CommitLog(access='is_allowed_to_edit')
-
+    
+    #######################################################################
+    # Access control
+    #######################################################################
+    def is_allowed_to_create_chapter(self, user, resource):
+        if user is None:
+            return False
+        if self.is_admin(user, resource):
+            return True
+        user_get_chapters = user.get_chapters()
+        if user_get_chapters:
+            context = get_context()
+            context.message = MSG_EXISTING_CHAPTER_ADMIN
+            return False
+        return True
 ###########################################################################
 # Register
 ###########################################################################

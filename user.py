@@ -79,6 +79,12 @@ class SiteUser(User):
         items = [ x for x in results.get_documents() ]
         return self.get_resource(items[0].abspath)
 
+    def get_firstname(self):
+        firstname = self.get_title().split()[0]
+        if firstname:
+            return firstname.decode('utf-8')
+        return self.get_login_name().decode('utf-8')
+    
     ########################################################################
     # Email: Chapter Creation
     ########################################################################

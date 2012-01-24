@@ -129,6 +129,7 @@
     </ul>
     </div>
     <!-- /I LIKE IT -->
+    ${chat}
   </div><!-- /right side bar 20%-->
 </div><!-- /content -->
 </stl:block>

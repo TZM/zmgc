@@ -25,7 +25,7 @@ from itools.web import STLView
 
 # Import from tzm
 from tzm.skins_views import TabsTemplate, PlayerTemplate
-from tzm.resource_views import LoginView
+from tzm.resource_views import LoginView, Chat
 from ikaaro.autoform import make_stl_template
 
 # Import from chapter
@@ -54,17 +54,16 @@ class View(STLView):
     def get_namespace(self, resource, context):
         maintabs = TabsTemplate(context)
         player = PlayerTemplate(context)
+        chat = Chat(context)
         #tabs = None 
         user = context.user
-
         if user is None:
-            return {'info': None, 'maintabs': maintabs, 'player': player}
-
+            return {'info': None, 'maintabs': maintabs, 'player': player, 'chat': chat}
         home = '/users/%s' % user.name
-        info = {'name': user.name, 'title': user.get_title(),
+        info = {'name': user.name, 'title': user.get_firstname(),
                 'home': home}
 
-        return {'info': info, 'maintabs': maintabs, 'player': player}
+        return {'info': info, 'maintabs': maintabs, 'player': player, 'chat': chat}
 
 
 class ChapterGenerator(STLView):

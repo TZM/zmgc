@@ -48,7 +48,7 @@ from ikaaro.tracker import Tracker
 from wiki import WikiFolder
 
 # Import from here
-from tzm.access import RoleAware
+#from tzm.access import RoleAware
 from tzm.datatypes import Industry, BusinessSector, BusinessType
 from tzm.messages import MSG_EXISTANT_CHAPTER, MSG_CHOOSE_REGION
 from tzm.messages import MSG_NEW_CHAPTER, MSG_EXISTING_CHAPTER_ADMIN

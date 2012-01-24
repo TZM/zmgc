@@ -69,4 +69,4 @@ class RoleAware(SiteRoleAware):
         #    return True
         #elif role == 'guests':
         #    return state == 'public'
-        return False
+        return True
