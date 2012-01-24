@@ -80,6 +80,18 @@ rm /Users/khine/usr/local/python2.6/bin/ipkg-*
 
 python26 setup.py install
 
+
+Node chat server
+----------------
+
+In order to run the chat server, you need to have installed nodejs and nowjs
+then execute from the root of the the directory
+
+$ node ui/core/js/node/chat.js
+
+TODO: when application is initialised check to see if nowjs is configured and
+running. If not disable the chat widget.
+
 Favicon
 -------
 

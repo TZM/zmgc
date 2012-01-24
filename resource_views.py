@@ -334,24 +334,33 @@ class Chat(CMSTemplate):
             return user.get_firstname()
         return 'Annonymous'
 
+    @classmethod
+    def path(self):
+        context = get_context()
+        user = context.user
+        if user:
+            return '/users/%s' % user.name
+        return '/'
+
     template = make_stl_template("""
     <script type="text/javascript" src="http://127.0.0.1:9080/nowjs/now.js"></script>
     <script type="text/javascript">
       $(document).ready(function(){
-        now.receiveMessage = function(name, message){
-          $("#messages").append("<br />" + name + ": " + message);
-        }
-
-        $("#send-button").click(function(){
+          now.receiveMessage = function(name, message){
+          $("#messages").append('<br />' + '<a href="${path}">' + name + '</a>' + ': ' + message);
+          }
+          $("#send-button").click(function(){
           now.distributeMessage($("#text-input").val());
           $("#text-input").val("");
-        });
+          });
         now.name = "${name}";
-
       });
     </script>
+    <div id="chat">
     <div id="messages"></div>
     <input type="text" id="text-input" />
     <input type="button" value="Send" id="send-button" />
+    </div>
     """)
 
+    # we need to store the messages so that on page refresh they are listed!

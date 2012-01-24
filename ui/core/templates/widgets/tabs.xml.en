@@ -17,26 +17,6 @@
         });
 
     </script>
-    <script type="text/javascript">
-      $(function(){
-
-        $('#launchButton').click(function(){
-          $('#testDialog').dialog('open');
-        });
-
-        $('<iframe src="http://chat.aqoon.local/" id="testDialog" />').dialog({
-          autoOpen: false,
-          title: 'iframe dialog',
-          buttons: {
-            Dismiss: function(){ $(this).dialog('close'); }
-          },
-          open: function(){
-            $(this).css('width','95%');
-          }
-        });
-
-      });
-    </script>
     <div id="container-1">
       <ul>
         <li><a href="#actions"><span>Actions</span></a></li>
