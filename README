@@ -45,24 +45,24 @@ Virtual hosts:
 ==============
 NGINX conf file
 
-server {
-        server_name  zmgc.aqoon.local;
-        # All R-ead URI's point to 19080 instance
-        location /
-                {
-                proxy_pass http://127.0.0.1:19080;
-                proxy_set_header        Host            $host;
-                proxy_set_header        X-Real-IP       $remote_addr;
-                proxy_set_header        X-Forwarded-For $proxy_add_x_forwarded_for;
-                }
-        # All W-rite point to 18080 instance
-        # TODO get a list of all actions
-        location ~* "(\;login|\;contact|\;edit|\;new_instance)" {
-                proxy_pass http://127.0.0.1:18080;
-                proxy_set_header        Host            $host;
-                proxy_set_header        X-Real-IP       $remote_addr;
-                proxy_set_header        X-Forwarded-For $proxy_add_x_forwarded_for;
-                }
+    server {
+            server_name  zmgc.aqoon.local;
+            # All R-ead URI's point to 19080 instance
+            location /
+                    {
+                    proxy_pass http://127.0.0.1:19080;
+                    proxy_set_header        Host            $host;
+                    proxy_set_header        X-Real-IP       $remote_addr;
+                    proxy_set_header        X-Forwarded-For $proxy_add_x_forwarded_for;
+                    }
+            # All W-rite point to 18080 instance
+            # TODO get a list of all actions
+            location ~* "(\;login|\;contact|\;edit|\;new_instance)" {
+                    proxy_pass http://127.0.0.1:18080;
+                    proxy_set_header        Host            $host;
+                    proxy_set_header        X-Real-IP       $remote_addr;
+                    proxy_set_header        X-Forwarded-For $proxy_add_x_forwarded_for;
+                    }
 
 httpd-vhosts
 ============
@@ -87,13 +87,36 @@ Node chat server
 In order to run the chat server, you need to have installed nodejs and nowjs
 then execute from the root of the the directory
 
-$ node ui/core/js/node/chat.js
+    $ node ui/core/js/node/chat.js
 
-TODO: when application is initialised check to see if nowjs is configured and
-running. If not disable the chat widget.
+TODO:
 
+create storage for the messages, so that when the page is refreshed or when the user
+has logged in, there is a list of all the messages that have been sent.
+
+user_id, users, message
+
+user_id - this is the user who sent the message
+users - tuple of all the users who got the message, this will allow us to filter by recipients
+message - lang;the actual message
+
+example code to put the data into postgre db:
+
+    everyone.now.sendGb = function(message) {
+        client.query(
+            'INSERT INTO messages SET owner_id = ?, user_id = ?, message = ?',
+            [message.id, message.user_id, sanitize(message.message).entityEncode().trim()],
+            function(err, info) {
+                if (!err) {
+                    everyone.now.pushMessage(message.message);
+                }
+            }
+        );
+    };
+
+
+perhaps 
 Favicon
 -------
 
 Generate it as a 32x32 desktop icon and upload this to the root of your folder.
-

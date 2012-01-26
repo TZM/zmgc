@@ -16,12 +16,14 @@
 
 
 # Import from the Standard Library
+import subprocess
 
 # Import from itools
-from itools.csv import CSVFile
+from itools.core import get_pipe
+from itools.csv import CSVFile, Table
 from itools.gettext import MSG
 from itools.core import get_abspath
-from itools.datatypes import Integer, String, Unicode
+from itools.datatypes import Date, Integer, String, Unicode, URI
 
 # Import from ikaaro
 from ikaaro.folder_views import Folder_BrowseContent
@@ -30,6 +32,8 @@ from ikaaro.calendar import Calendar
 from ikaaro.registry import register_resource_class
 from ikaaro.revisions_views import DBResource_CommitLog
 from ikaaro.root import Root as BaseRoot
+from ikaaro.table import OrderedTable, OrderedTableFile
+from ikaaro.table_views import OrderedTable_View, Table_EditRecord
 from ikaaro.text import CSV
 from ikaaro.tracker import Tracker
 
@@ -43,6 +47,8 @@ from project.project import Projects
 #from training.training import Training
 from forums.forums import Forums
 
+message_date = Date.decode('2003-10-23')
+MESSAGES_DATA = """0, 0, 120124, 'hello world'"""
 ###########################################################################
 # Resources
 ###########################################################################
@@ -97,6 +103,17 @@ class World(CSV):
         path =  get_abspath('data/countries.csv')
         self.handler.load_state_from_uri(path)
 
+class Messages(CSVFile):
+    
+    class_id = 'messages'
+    class_version = '20111020'
+    columns = ['user', 'users', 'timestamp', 'message']
+    
+    schema = {'user': Unicode,
+              'users': Unicode,
+              'timestamp': Unicode,
+              'message': Unicode}
+
 
 class Root(BaseRoot):
     """
@@ -125,6 +142,14 @@ class Root(BaseRoot):
         types = self.make_resource('types', Types)
         functions = self.make_resource('functions', Functions)
         world = self.make_resource('world', World)
+        csv = Messages()
+        #handler = Messages()
+        #handler.load_state_from_string(MESSAGES_DATA)
+        #rows = list(handler.get_rows())
+        #print rows
+        #load_state = handler.load_state_from_string
+        #print load_state
+        messages = self.make_resource('messages', CSV)
         # Add the core website uri - http://zmgc.net, http://lmz.fr ...
         # You can change this to suit your needs.
         hosts = ['zmgc.net', 'zmgc.aqoon.local']
@@ -160,6 +185,16 @@ class Root(BaseRoot):
     browse_content = Folder_BrowseContent(access='is_allowed_to_edit')
     last_changes = DBResource_CommitLog(access='is_allowed_to_edit')
     
+    def get_version_of_packages(self, context):
+        versions = BaseRoot.get_version_of_packages(self, context)
+        # check nodejs version
+        try:
+            nodejs = get_pipe(['node', '--version'])
+            versions['nodejs'] = nodejs
+        except OSError:
+            versions['nodejs'] = None
+
+        return versions
     #######################################################################
     # Access control
     #######################################################################

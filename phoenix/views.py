@@ -52,6 +52,8 @@ class View(STLView):
                 ]
 
     def get_namespace(self, resource, context):
+        #text_input = context.get_value('text-input')
+        #print text_input
         maintabs = TabsTemplate(context)
         player = PlayerTemplate(context)
         chat = Chat(context)

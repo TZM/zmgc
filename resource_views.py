@@ -21,13 +21,18 @@ from itools.web import STLView, INFO, ERROR, STLForm, get_context
 from itools.xml import XMLParser
 
 # Import from ikaaro
-from ikaaro.autoform import Widget, make_stl_template, ProgressBarWidget as BaseProgressBarWidget
-from ikaaro.datatypes import Password
+from ikaaro.autoform import Widget, ProgressBarWidget as BaseProgressBarWidget
+from ikaaro.autoform import title_widget, make_stl_template
+from ikaaro.datatypes import Password, Multilingual
 from ikaaro.resource_views import LoginView as BaseLoginView
 #from ikaaro.utils import generate_password
 from ikaaro.views import CompositeForm
 from ikaaro.views import IconsView, SearchForm, ContextMenu
 from ikaaro.utils import CMSTemplate
+
+
+from ikaaro.table import OrderedTable, OrderedTableFile
+from ikaaro.table_views import OrderedTable_View, Table_EditRecord
 
 # Import from here
 from tzm.datatypes import getCountries, getRegions, getCounties
@@ -327,40 +332,69 @@ class Chat(CMSTemplate):
     """
     
     @classmethod
-    def name(self):
+    def user(self):
         context = get_context()
         user = context.user
         if user:
             return user.get_firstname()
-        return 'Annonymous'
+        return None
 
     @classmethod
     def path(self):
         context = get_context()
         user = context.user
         if user:
+            # here we want to add a Private Message functionality
             return '/users/%s' % user.name
         return '/'
 
-    template = make_stl_template("""
-    <script type="text/javascript" src="http://127.0.0.1:9080/nowjs/now.js"></script>
-    <script type="text/javascript">
-      $(document).ready(function(){
-          now.receiveMessage = function(name, message){
-          $("#messages").append('<br />' + '<a href="${path}">' + name + '</a>' + ': ' + message);
-          }
-          $("#send-button").click(function(){
-          now.distributeMessage($("#text-input").val());
-          $("#text-input").val("");
-          });
-        now.name = "${name}";
-      });
-    </script>
-    <div id="chat">
-    <div id="messages"></div>
-    <input type="text" id="text-input" />
-    <input type="button" value="Send" id="send-button" />
-    </div>
-    """)
+    template = 'ui/core/templates/widgets/chat.xml'
 
     # we need to store the messages so that on page refresh they are listed!
+#
+class Message_TableHandler(OrderedTableFile):
+    
+    record_properties = {'title': Multilingual(mandatory=True)}
+ 
+ 
+class Messages_TableResource(OrderedTable):
+
+    class_id = 'messages_select_table'
+    class_title = MSG(u'Select Table')
+    class_handler = Message_TableHandler
+
+    # Hide in browse_content
+    is_content = False
+
+    form = [title_widget]
+
+
+    def get_options(self, value=None, sort=None):
+        # Find out the options
+        handler = self.handler
+        options = []
+        for id in handler.get_record_ids_in_order():
+            record = handler.get_record(id)
+            title = handler.get_record_value(record, 'title')
+            options.append({'id': id, 'title': title})
+
+        # Sort
+        if sort is not None:
+            options.sort(key=lambda x: x.get(sort))
+
+        # Set 'is_selected'
+        if value is None:
+            for option in options:
+                option['is_selected'] = False
+        elif isinstance(value, list):
+            for option in options:
+                option['is_selected'] = (option['id'] in value)
+        else:
+            for option in options:
+                option['is_selected'] = (option['id'] == value)
+
+        return options
+
+
+    #view = SelectTable_View()
+    #edit_record = SelectTable_EditRecord()
