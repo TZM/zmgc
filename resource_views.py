@@ -348,6 +348,13 @@ class Chat(CMSTemplate):
             return '/users/%s' % user.name
         return '/'
 
+    @classmethod
+    def server(self):
+        context = get_context()
+        hostname = context.uri.authority
+        print hostname
+        return hostname
+
     template = 'ui/core/templates/widgets/chat.xml'
 
     # we need to store the messages so that on page refresh they are listed!

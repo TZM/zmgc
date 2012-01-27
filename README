@@ -100,7 +100,7 @@ user_id - this is the user who sent the message
 users - tuple of all the users who got the message, this will allow us to filter by recipients
 message - lang;the actual message
 
-example code to put the data into postgre db:
+alternative solution is to put the data into postgre db, something:
 
     everyone.now.sendGb = function(message) {
         client.query(
@@ -115,7 +115,12 @@ example code to put the data into postgre db:
     };
 
 
-perhaps 
+into a riak cluster see http://riakjs.org/:
+
+    // npm install riak-js@latest
+    var db = require('riak-js').getClient({host: "riak.myhost", port: "8098" });
+    db.save('user', {users: ['user_id', 'user_id_n'...]}, 'message', 'timestamp'});
+
 Favicon
 -------
 

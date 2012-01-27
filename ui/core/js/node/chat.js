@@ -1,7 +1,7 @@
 var server = require('http').createServer(function(req, res){
   res.end(html);
 });
-server.listen(9080);
+server.listen(29080);
 console.log("This server's process pid is: " + process.pid);
 
 var nowjs = require("now");
@@ -41,8 +41,7 @@ var rss = updateRSS();
 everyone.now.distributeMessage = function(message){
     var messagetime = (new Date()).getTime();
     // var mem = process.memoryUsage();
-    console.log(mem);
-    console.log(rss);
+    console.log(mem.rss);
     console.log('User '+this.now.name+' added message ' +message + messagetime + ' ' + mem + ' mem: ' + rss);
     var str = sanitize(message).xss();
     everyone.now.receiveMessage(this.now.name, str, messagetime);

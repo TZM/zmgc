@@ -16,4 +16,5 @@ locale/*.mo
 *.xhtml.zh
 docs/*.png
 docs/*.pdf
+ui/core/js/node/messages
 

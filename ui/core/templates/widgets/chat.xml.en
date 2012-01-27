@@ -4,14 +4,13 @@
 <stl:block xmlns="http://www.w3.org/1999/xhtml"
   xmlns:stl="http://www.hforge.org/xml-namespaces/stl">
   <stl:block stl:if="user">
-    <script type="text/javascript" src="http://127.0.0.1:9080/nowjs/now.js"></script>
+    <script type="text/javascript" src="http://${server}:29080/nowjs/now.js"></script>
     <script type="text/javascript">
       $(function(){
         //submit new messages when the user hits enter if the message isnt blank
         
         now.receiveMessage = function(name, message, messagetime){
-          $("#messages").append('<br />' + '<a href="${path}">' + name + '</a>' + ': ' + message +messagetime);
-          $("#log").append(message);
+          $("#messages").append('<br />' + '<a href="${path}">' + name + '</a>' + ': ' + message + '<br />' + messagetime);
           }
           $("#text-input").keypress(function (e) {
               if (e.keyCode != 13 /* Return */) return;
