@@ -19,6 +19,47 @@ These were generated from the IBM Text-to-Speech: Unconstrained U.S. English Tex
 Install
 =======
 
+MacOSX
+------
+
+using Homebrew package manager
+
+	# install the base libraries and applications
+	# homebrew, see https://github.com/mxcl/homebrew/wiki/installation
+	/usr/bin/ruby -e "$(curl -fsSL https://raw.github.com/gist/323731)"
+	# follow this https://gist.github.com/1128998
+	# to get the pygobject, gtk+ installed
+	
+	# here is a list of the libraries that i use
+	☺  brew list
+                                                      
+	| library                   | library      | library    | library    |
+	|:--------------------------|:-------------|:-----------|:-----------|
+	| atk                       | imagemagick  | libsoup    | pixman     |
+	| cairo                     | intltool     | libtasn1   | pkg-config |
+	| cmake                     | jasper       | libtiff    | poppler    |
+	| flac                      | jpeg         | libvorbis  | python     |
+	| gd                        | lame         | libwmf     | readline   |
+	| gdbm                      | libao        | little-cms | sqlite     |
+	| gdk-pixbuf                | libcroco     | lua        | subversion |
+	| gettext                   | libffi       | mad        | wget       |
+	| git                       | libgcrypt    | mysql      | wv         |
+	| glib                      | libgpg-error | neon       | xapian     |
+	| glib-networking           | libgsf       | node       | xapian     |
+	| gnutls                    | libmagic     | pango      |            |
+	| gsettings-desktop-schemas | libogg       | pcre       |            |
+	| gtk+                      | libsndfile   | pidof      |            |
+
+	# PIL doesn't know OS X comes with freetype, we need to link this
+	ln -s /usr/X11/include/freetype2 /usr/local/include/ 
+	ln -s /usr/X11/include/ft2build.h /usr/local/include/ 
+	ln -s /usr/X11/lib/libfreetype.6.dylib /usr/local/lib/ 
+	ln -s /usr/X11/lib/libfreetype.6.dylib /usr/local/lib/libfreetype.dylib
+	
+	# install SOX, used for generating the sound files
+	brew install -dv sox
+
+
 i18n
 ----
 $ /Users/khine/usr/local/python2.6/bin/python setup.py install
@@ -36,6 +77,11 @@ $ /Users/khine/usr/local/python2.6/bin/ipkg-build.py
 * Build XHTML files***
 * Build MANIFEST file (list of files to install)
 
+
+Initialise the app
+==================
+
+./bin/icms-init.py -p19080 -ea -wa --modules=ikaaro.blog,ikaaro.calendar,wiki -r tzm tzm && ./bin/icms-start.py tzm
 
 
 The basics:
