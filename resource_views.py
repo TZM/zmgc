@@ -2,7 +2,7 @@
 # Copyright (C) 2010 Norman Khine <norman@khine.net>
 
 # Import from the Standard Library
-import datetime, random, hashlib, subprocess
+import datetime, random, hashlib, subprocess, urllib
 from random import choice, sample
 from operator import itemgetter
 
@@ -37,6 +37,7 @@ from ikaaro.table_views import OrderedTable_View, Table_EditRecord
 # Import from here
 from tzm.datatypes import getCountries, getRegions, getCounties
 from tzm.datatypes import sort_key
+from tzm.utils import gravatar_url
 
 fonts = ['data/fonts/tesox.ttf', 'data/fonts/SHERWOOD.TTF']
 
@@ -352,13 +353,23 @@ class Chat(CMSTemplate):
     def server(self):
         context = get_context()
         hostname = context.uri.authority
-        print hostname
+        
         return hostname
+
+    @classmethod
+    def gravatar(self):
+        gravatar_url
+        context = get_context()
+        user = context.user
+        if user:
+            email = user.get_property('email')
+            return gravatar_url(email)
+        return None
 
     template = 'ui/core/templates/widgets/chat.xml'
 
     # we need to store the messages so that on page refresh they are listed!
-#
+
 class Message_TableHandler(OrderedTableFile):
     
     record_properties = {'title': Multilingual(mandatory=True)}

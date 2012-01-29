@@ -2,6 +2,7 @@
 # Copyright (C) 2009 Norman Khine <norman@khine.net>
 
 # Import from the Standard Library
+import hashlib, urllib
 from random import sample
 from hashlib import sha1
 from sys import platform
@@ -224,3 +225,14 @@ def fix_website_url(url):
     
 def clean_website_url(url):
     return url.lstrip('http://').rstrip('/')
+    
+def gravatar_url(email):
+    default = "/ui/core/resources/no-gravatar.gif"
+    size = 40
+
+    # construct the url
+    gravatar_url = "http://www.gravatar.com/avatar/" + hashlib.md5(email.lower()).hexdigest() + "?"
+    gravatar_url += urllib.urlencode({'d':default, 's':str(size)})
+    
+    return gravatar_url
+    

@@ -10,7 +10,7 @@
         //submit new messages when the user hits enter if the message isnt blank
         
         now.receiveMessage = function(name, message, messagetime){
-          $("#messages").append('<br />' + '<a href="${path}">' + name + '</a>' + ': ' + message + '<br />' + messagetime);
+          $("#messages").append('<br />' +'<a href="${path}"><img src="${gravatar}" alt="name" />' + name + '</a>' + ': ' + message + '<br />' + messagetime);
           }
           $("#text-input").keypress(function (e) {
               if (e.keyCode != 13 /* Return */) return;
@@ -24,6 +24,7 @@
         now.name = "${user}";
       });
     </script>
+    
     <div id="chat">
         <div id="messages"></div>
         <div id="log"></div>
