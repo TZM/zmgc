@@ -1,5 +1,11 @@
-1/. wire frame for main portal and chapter sites
-2/. questionare module - MCQ, MAQ and Free text input, so that it can be also used as a Poll
+#The Phoenix project roadmap
+
+More info at [https://trello.com/zmgc](https://trello.com/zmgc)
+
+The following list is just for this prototype, but the ideas can be applied using any other framework, provided the libraries are supported by the language/application used to develop.
+
+1/. wireframes for main portal and chapter sites
+2/. questionnaire module - MCQ, MAQ and Free text input, so that it can be also used as a Poll
 3/. user profile, allow sites to control what data they want to store
 4/. video room - integrate nodejs using the python library to create a chat/video room see http://driv.in
 5/. enhance the existing style, perhaps use YUI2 grids, this way we can have a template that can be control by each individual users' preferences
@@ -113,5 +119,84 @@ This school is for children aged 3-18 years. The artists will be adults. I'm hop
 Now that we have the 'description' broken down by verbs, nouns etc... we can match against user profile data and suggest to the user possible members who may be able to help with the project.
 
 Obviously we can go deeper using the NLTK library and analyze the project description more accurately, but this is a further study, for more information see, Chapter 7: http://nltk.googlecode.com/svn/trunk/doc/book/ch07.html
+
+
+#Storage
+
+create storage for the messages, so that when the page is refreshed or when the user
+has logged in, there is a list of all the messages that have been sent.
+
+user_id, users, message
+
+user_id - this is the user who sent the message
+users - tuple of all the users who got the message, this will allow us to filter by recipients
+message - lang;the actual message
+
+alternative solution is to put the data into postgre db, something:
+
+    everyone.now.sendGb = function(message) {
+        client.query(
+            'INSERT INTO messages SET owner_id = ?, user_id = ?, message = ?',
+            [message.id, message.user_id, sanitize(message.message).entityEncode().trim()],
+            function(err, info) {
+                if (!err) {
+                    everyone.now.pushMessage(message.message);
+                }
+            }
+        );
+    };
+
+
+into a riak cluster see http://riakjs.org/:
+
+    // npm install riak-js@latest
+    var db = require('riak-js').getClient({host: "riak.myhost", port: "8098" });
+    db.save('user', {users: ['user_id', 'user_id_n'...]}, 'message', 'timestamp'});
     
-    
+Also we need to utilise the local storage, html5. 
+
+#Using nodejs within python
+
+`scraper.js`
+    var jsdom = require('jsdom');
+
+    var args = process.argv.slice(2),
+        html = unescape(args[0]),
+        parser = unescape(args[1]);
+
+    jsdom.env({
+        html: html,
+        scripts: ['./jquery.js']
+    }, function(err, window){
+        $ = window.jQuery;
+        try{
+            eval(parser);
+        }catch(e){console.log({error: e});}
+    });
+
+`foo.py`
+    import urllib2
+    import commands
+
+    html = urllib2.urlopen('http://google.com').read();
+    parser = """var title = $('#hplogo').attr('alt');
+    console.log({'title':title});
+    """
+    content = commands.getoutput('node ./scraper.js %s %s' % 
+                                 (urllib2.quote(html), urllib2.quote(parser)))
+
+>>> "{title: 'Google'}"
+
+#Update Tue 27 Mar 2012 10:14:00 CEST
+
+* the map.zmgc.net is functioning and needs to be integrated into this project
+* use redis to log data from the map stats and then push this into itools, it will be more efficient
+
+#Gitolite or Git lib
+
+use gitolite/gitlib to make communication between remote nodes more efficient
+use riak cluster to store the user sessions and then clone these across the nodes
+
+#Project.py
+
+A core project website has members

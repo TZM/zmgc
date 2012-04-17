@@ -4,6 +4,10 @@ var server = require('http').createServer(function(req, res){
 server.listen(29080);
 console.log("This server's process pid is: " + process.pid);
 
+
+// riak cluster
+var db = require('riak-js').getClient({host: "0.0.0.0", port: "8098" });
+
 var nowjs = require("now");
 var everyone = nowjs.initialize(server);
 var MESSAGE_BACKLOG = 200,
@@ -49,6 +53,7 @@ everyone.now.distributeMessage = function(message){
     var message = {user_id: this.now.name, message: str, timestamp: messagetime};
     console.log(message);
     // we write the messages to the filesystem or feed it into the database
+	
     fs.open(file, 'a+', 0666, function(err, fd) {
         if (!err) fs.write(fd, JSON.stringify(message) + '\n', null, 'utf8');
         })

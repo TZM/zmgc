@@ -16,6 +16,8 @@
 
 
 from json import dumps
+import dns.resolver
+from dns.exception import DNSException
 
 # Import from itools
 from itools.core import freeze
@@ -106,8 +108,7 @@ class SiteUser_EditAccount(User_EditAccount):
                 email_uri = 'mailto:'+email
                 r1 = get_reference(email_uri)
                 host = r1.host
-                import dns.resolver
-                from dns.exception import DNSException
+                
                 # Here we check to see if email host has an MX record
                 try:
                     # This may take long
