@@ -93,24 +93,26 @@ h1, h2 {
  * HEADER
  * ***********************************************************************/
  #hd{
-     background: rgb(219,0,139); /* Old browsers */
-     background: -moz-linear-gradient(45deg,  rgba(219,0,139,1) 0%, rgba(254,252,234,1) 11%, rgba(254,252,234,1) 57%, rgba(232,174,0,1) 93%); /* FF3.6+ */
-     background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,rgba(219,0,139,1)), color-stop(11%,rgba(254,252,234,1)), color-stop(57%,rgba(254,252,234,1)), color-stop(93%,rgba(232,174,0,1))); /* Chrome,Safari4+ */
-     background: -webkit-linear-gradient(45deg,  rgba(219,0,139,1) 0%,rgba(254,252,234,1) 11%,rgba(254,252,234,1) 57%,rgba(232,174,0,1) 93%); /* Chrome10+,Safari5.1+ */
-     background: -o-linear-gradient(45deg,  rgba(219,0,139,1) 0%,rgba(254,252,234,1) 11%,rgba(254,252,234,1) 57%,rgba(232,174,0,1) 93%); /* Opera 11.10+ */
-     background: -ms-linear-gradient(45deg,  rgba(219,0,139,1) 0%,rgba(254,252,234,1) 11%,rgba(254,252,234,1) 57%,rgba(232,174,0,1) 93%); /* IE10+ */
-     background: linear-gradient(45deg,  rgba(219,0,139,1) 0%,rgba(254,252,234,1) 11%,rgba(254,252,234,1) 57%,rgba(232,174,0,1) 93%); /* W3C */
-     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e8ae00', endColorstr='#fefcea',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
-     }
+	 background: rgb(14,14,14); /* Old browsers */
+	/* IE9 SVG, needs conditional override of 'filter' to 'none' */
+	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzBlMGUwZSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjU1JSIgc3RvcC1jb2xvcj0iIzdkN2U3ZCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgPC9saW5lYXJHcmFkaWVudD4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2dyYWQtdWNnZy1nZW5lcmF0ZWQpIiAvPgo8L3N2Zz4=);
+	background: -moz-linear-gradient(left,  rgba(14,14,14,1) 0%, rgba(125,126,125,1) 55%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(14,14,14,1)), color-stop(55%,rgba(125,126,125,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(left,  rgba(14,14,14,1) 0%,rgba(125,126,125,1) 55%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(left,  rgba(14,14,14,1) 0%,rgba(125,126,125,1) 55%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(left,  rgba(14,14,14,1) 0%,rgba(125,126,125,1) 55%); /* IE10+ */
+	background: linear-gradient(left,  rgba(14,14,14,1) 0%,rgba(125,126,125,1) 55%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0e0e0e', endColorstr='#7d7e7d',GradientType=1 ); /* IE6-8 */
+	}
 
 /**************************************************************************
 * LOGO
 * ***********************************************************************/
 #logo h1 {
-     background:url(/ui/core/resources/lmz-logo-190x62.png) top left no-repeat;
-     width:215px;
-     height:73px;
-     }
+	background:url(/ui/core/resources/tzm-logo-32.png) top left no-repeat;
+	width:83px;
+	height:37px;
+	}
 
 #logo h1 a{
     position:relative;
@@ -120,7 +122,7 @@ h1, h2 {
     white-space: nowrap;
     line-height:92px;
     display:block;
-    text-indent:110px;
+    text-indent: -5000px;
     text-decoration:none;
     border:none;
     background:none;}
@@ -140,7 +142,7 @@ h1, h2 {
 }
 
 #menu ul li {
-  float: right;
+  float: left;
   list-style-image: none;
   list-style-position: outside;
   list-style-type: none;
@@ -173,52 +175,66 @@ h1, h2 {
 /**************************************************************************
  * Profile 
  **************************************************************************/
+#user-menu {}
+#user-menu ul{float:right;list-style:none;margin:0 0 0 15px;padding:0;}
+#user-menu li{float:left;margin:3px;padding:0;}
 
-#lower-menu {
-    padding-bottom: 5px;
+#user-menu .profile {
+	display: inline-block;
+	text-indent: -9999px;
+	background:url(/ui/core/resources/profile.png) 0 0 no-repeat;
+	width:32px;
+	height:32px;
 }
 
-#lower-menu #user-menu {margin-top:7px;}
-#lower-menu #user-menu ul{float:right;list-style:none;margin:0 0 0 15px;padding:0;}
-#lower-menu #user-menu li{float:left;margin:0;padding:0;}
-#lower-menu #user-menu a {
-    font-size: 100%;
-    display:block;
-    color:#333;
-    text-decoration:none;
-    border:1px solid #9B8748;
-    border-top:none;
-    background:#F9E9A9;
-    margin:0 3px 0 0;
-    padding:1px 8px;
-    -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
- }
+#user-menu .login {
+	display: inline-block;
+	text-indent: -9999px;
+	background:url(/ui/core/resources/login.png) 0 0 no-repeat;
+	width:32px;
+	height:32px;
+	}
 
-#lower-menu #user-menu a:hover {color:#333;padding-bottom:1px;background:#fff;}
+#user-menu .logout {
+	display: inline-block;
+	text-indent: -9999px;
+	background:url(/ui/core/resources/logout.png) 0 0 no-repeat;
+	width:32px;
+	height:32px;
+}
+	
+#user-menu .help {
+	display: inline-block;
+	text-indent: -9999px;
+	background:url(/ui/core/resources/lightbulb.png) 0 0 no-repeat;
+	width:32px;
+	height:32px;
+}
+
+#user-menu .contact {
+	display: inline-block;
+	text-indent: -9999px;
+	background:url(/ui/core/resources/communication.png) 0 0 no-repeat;
+	width:32px;
+	height:32px;
+}
+
+#user-menu a:hover {}
 
 /**************************************************************************
  * Search 
  **************************************************************************/
-#topsearch {
+#user-menu .advanced-search {
      display: inline-block;
-     margin: 3px 0 0 0;
- }
-
-#topsearch .advanced-search {
-     display: inline-block;
-     float:right;
-     margin:0 3px 0 0;
-     width: 16px;
-     height: 16px;
      text-indent: -9999px;
      background: url('/ui/core/resources/advanced_search_icon.png') 0 0 no-repeat;
+	width:32px;
+	height:32px;
      opacity: .2;
  }
 
-#topsearch .search input {
+#user-menu .search input {
      font-size: 100%;
-     width: 75%;
      padding: 5px 2px 5px 25px;
      border: 1px solid #DDD;
      border-top-color: #CCC;
@@ -232,11 +248,11 @@ h1, h2 {
 .placeholder-field {
     left: 25px;
 }
-#topsearch form input.button {
+#user-menu form input.button {
      display: none;
  }
  
-#topsearch input[type="search"] {
+#user-menu input[type="search"] {
     padding: 10px 0 0 0;
 }
 /**************************************************************************

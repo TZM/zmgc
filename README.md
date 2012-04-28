@@ -162,3 +162,5 @@ Generate it as a 32x32 desktop icon and upload this to the root of your folder.
 3. Commit changes to this branch
 4. Send a pull request
 
+#Icons
+[http://findicons.com/pack/2357/dortmund/1](http://findicons.com/pack/2357/dortmund/1)
