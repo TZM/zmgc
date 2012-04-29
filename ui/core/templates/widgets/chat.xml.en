@@ -3,14 +3,15 @@
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <stl:block xmlns="http://www.w3.org/1999/xhtml"
   xmlns:stl="http://www.hforge.org/xml-namespaces/stl">
-  <stl:block stl:if="user">
+  <stl:block>
     <script type="text/javascript" src="http://${server}:29080/nowjs/now.js"></script>
     <script type="text/javascript">
       $(function(){
         //submit new messages when the user hits enter if the message isnt blank
         
         now.receiveMessage = function(name, message, messagetime){
-          $("#messages").append('<br />' +'<a href="${path}"><img src="${gravatar}" alt="name" />' + name + '</a>' + ': ' + message + '<br />' + messagetime);
+          $("#messages").append(
+						'<li class="message"><div class="sent"><a href="${path}"><img src="${gravatar}" alt="name" width="24px" height="24px" /></a><div class="display-name">'+messagetime+'<div class="body">'+ message +'</div></div></div></li>');
           }
           $("#text-input").keypress(function (e) {
               if (e.keyCode != 13 /* Return */) return;
@@ -19,22 +20,34 @@
             });
           $("#send-button").click(function(){
             now.distributeMessage($("#text-input").val());
-          $("#text-input").val("");
+						$("#chat").animate({ scrollTop: $("#chat").attr("scrollHeight") - $('#chat').height() }, 3000);
+          	$("#text-input").val("");
           });
+					
         now.name = "${user}";
       });
     </script>
-    
-    <div id="chat">
-        <div id="messages"></div>
-        <div id="log"></div>
-        <input type="text" id="text-input" />
-        <input type="button" value="Send" id="send-button" />
-    </div>
+
+		<div id="chat_window">
+			<div id="chat_title"><h2>Simple Chat</h2></div>
+			<div id="chat_container" style="display: block">
+				<div id="chat">
+					<ul id="messages">
+						<li class="message notice" id="no_one_there">
+							Fix me, if there are no users!
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div id="chat-form">
+				<input type="text" id="text-input" />
+      	<input type="button" value="Send" id="send-button" />
+			</div>
+		</div>
     <ul id="status">
       <li><a id="usersLink" href="#">5 users</a></li>
-      <li>uptime: <span id="uptime">?</span></li>
-      <li>memory: <span id="rss">?</span>mb RSS</li>
+      <li><a id="usersLink" href="#">uptime: <span id="uptime">?</span></a></li>
+      <li><a id="usersLink" href="#">memory: <span id="rss">?</span>mb RSS</a></li>
     </ul>
     </stl:block>
 </stl:block>

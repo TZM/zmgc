@@ -27,6 +27,13 @@
       </ul>
       <div id="actions">
         {actions}
+				<ul>
+	        <li><a href="#actions"><span>Actions</span></a></li>
+	        <li><a href="#news"><span>News</span></a></li>
+	        <li><a href="#events"><span>Events</span></a></li>
+	        <li><a href="#chapters"><span>Chapters</span></a></li>
+	        <li><a href="#forums"><span>Forums</span></a></li>
+	      </ul>
       </div>
       <div id="news">
         {news}
@@ -57,7 +64,6 @@
         </div>
       </div>
       <div id="forums">
-<iframe src="//webchat.freenode.net?channels=zmgc" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:580px; height:350px;" allowTransparency="true"></iframe>
         {forums}
       </div>
     </div>
