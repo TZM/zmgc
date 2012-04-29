@@ -20,7 +20,7 @@
             });
           $("#send-button").click(function(){
             now.distributeMessage($("#text-input").val());
-						$("#chat").animate({ scrollTop: $("#chat").attr("scrollHeight") - $('#chat').height() }, 3000);
+						$("#chat").scrollTo('100%');
           	$("#text-input").val("");
           });
 					
