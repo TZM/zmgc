@@ -10,7 +10,7 @@
         //submit new messages when the user hits enter if the message isnt blank
         
         now.receiveMessage = function(name, message, messagetime){
-          $("#messages").append(
+          $("#messages").prepend(
 						'<li class="message"><div class="sent"><a href="${path}"><img src="${gravatar}" alt="name" width="24px" height="24px" /></a><div class="display-name">'+messagetime+'<div class="body">'+ message +'</div></div></div></li>');
           }
           $("#text-input").keypress(function (e) {
@@ -20,7 +20,6 @@
             });
           $("#send-button").click(function(){
             now.distributeMessage($("#text-input").val());
-						$("#chat").scrollTo('100%');
           	$("#text-input").val("");
           });
 					
