@@ -21,7 +21,6 @@
   <link rel="shortcut icon" href="${favicon_href}" type="${favicon_type}" />
 </head>
 <body>
-	<div id="wrap">
   <!-- Add YUI3 grids-->
   <div class="yui3-g" id="hd">
       <div class="yui3-u-1-12" id="logo"><!-- logo width: 4.1666%-->
@@ -65,32 +64,34 @@
 			</div> <!-- /yui3-g  search and user profile-->
 		</div>
   </div><!-- /yui3-g id="hd"-->
-${languages}
+	<!-- ${languages} -->
+	
   <!-- Bread crumbs -->
   <div>
       <label>${location}</label>
   </div><!-- /location-->
+
   <!-- /Bread crumbs -->
-  <div id="page">
-  <stl:block stl:if="message">
-   <div id="message">
-     ${message}
-    </div>
-  </stl:block>
-  <!-- body -->
-    <div class="yui-g">
-    <!-- all other templates go within this block -->
-      ${body}
-    <!-- /all other templates go within this block -->
-    </div>
-  <!-- /body -->
-</div><!-- /YUI3 grids-->
-</div> <!-- /end of wrap-->
+  <div id="surface">
+	  <stl:block stl:if="message">
+	   <div id="message">
+	     ${message}
+	    </div>
+	  </stl:block>
+	  <!-- body -->
+	    <div class="yui-g">
+	    <!-- all other templates go within this block -->
+	      ${body}
+	    <!-- /all other templates go within this block -->
+	    </div>
+	  <!-- /body -->
+	</div><!-- /"surface"-->
+
 <div id="footer">
 	<div id="upper-footer" class="yui3-g"><!-- upper-footer -->
 		${upper_footer}
 	</div><!-- /upper-footer -->
-	<div id="lower-footer">
+	<!--<div id="lower-footer">
 		  <ul>
 		    <li class="space">
 		      <h1 title="${title}">
@@ -108,7 +109,7 @@ ${languages}
 		      ${user/title}</a></li>
 		    </stl:block>
 		  </ul>
-	</div><!-- /lower-footer -->
+	</div> /lower-footer -->
 </div><!-- /footer -->
 <!--[if !IE 7]>
 	<style type="text/css">
