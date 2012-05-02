@@ -47,7 +47,13 @@
           </div> <!-- /box-holder-->
           <!-- /latest activities-->
     <!-- tabs-->
-    {maintabs}
+    ${maintabs}
+		<p>
+      Founded in 2008, The Zeitgeist Movement is a Sustainability Advocacy Organization which conducts community based activism and awareness actions through a network of Global/Regional Chapters, Project Teams, Annual Events, Media and Charity Work.</p>
+			<p>
+        Founded in 2008, The Zeitgeist Movement is a Sustainability Advocacy Organization which conducts community based activism and awareness actions through a network of Global/Regional Chapters, Project Teams, Annual Events, Media and Charity Work.</p>
+				<p>
+	        Founded in 2008, The Zeitgeist Movement is a Sustainability Advocacy Organization which conducts community based activism and awareness actions through a network of Global/Regional Chapters, Project Teams, Annual Events, Media and Charity Work.</p>
     <!-- /tabs-->
   </div><!-- /welcome block 40%-->
   <div class="yui3-u-1-4 media"><!-- movies, radio and events block 40%-->

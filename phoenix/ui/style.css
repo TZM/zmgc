@@ -393,7 +393,7 @@ a.fav_link:hover {
 } 
 #inside-footer h1 {background:url(/ui/core/resources/phx-logo-60x69.png) top left no-repeat;width:60px;height:60px; }
 #inside-footer h1 a { width:60px;line-height:60px;display:block;text-indent:-5000px;text-decoration:none;border:none;background:none;}
-#inside-footer li {float:left;margin-top:5px;padding:0;}
+#inside-footer li {margin-top:5px;padding:0;}
 #inside-footer a {margin-left: 1em; margin-right: 1em; margin-right: 1em;text-decoration: none;}
 #inside-footer a:hover {text-decoration: underline;}
 
@@ -520,7 +520,6 @@ div#chat {
 
 div#template {
 	width:100%;
-	height:auto;
-	overflow:none;
+	overflow:auto;
 }
 @media print{*{text-shadow:none !important;} #surface{height:auto !important;} body{overflow:visible !important;} #header{display:none;} #notification{display:none !important;}

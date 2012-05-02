@@ -88,17 +88,6 @@
 <div id="footer">
 	<div id="inside-footer">
 			${upper_footer}
-		  <ul>
-		      <li><a href="/;about">About</a></li>
-		      <li><a href="/;more">More</a></li>
-		      <stl:block stl:if="not user">
-		      <li><a href="/;login_form">(not logged in)</a></li>
-		    </stl:block>
-		    <stl:block stl:if="user">
-		    <li><a href="${user/home}">
-		      ${user/title}</a></li>
-		    </stl:block>
-		  </ul>	
 	</div><!-- /inside-footer -->
 </div><!-- /footer -->
 </div> <!-- /surface-->
