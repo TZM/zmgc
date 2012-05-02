@@ -3,8 +3,14 @@
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <stl:block xmlns="http://www.w3.org/1999/xhtml"
   xmlns:stl="http://www.hforge.org/xml-namespaces/stl">
-  <div class="yui3-u-3-4 upper_footer">
-      <h4 id="tzm">Zeigeist Links</h4>
+<div class="yui3-g">
+	<div class="yui3-u-1-12">
+		<h1 title="{title}">
+      <a href="/" title="{title}">
+        striving for a better future since 2008</a>
+    </h1>
+	</div>
+  <div class="yui3-u-19-24">
       <ul class="footer_nav">
         <h4>Zeigeist</h4>
         <li>
@@ -49,7 +55,8 @@
         <li>
           <a href="#">Media</a>
         </li>
-      </ul>
-  </div><!-- /yui3-u-3-4 -->
-  <div id="worldmap" class="yui3-u-1-4"></div>
+      </ul>	<!-- /upper-footer-->
+  </div><!-- /yui3-u-17-24 -->
+  <div id="worldmap" class="yui3-u-1-8"></div>
+</div>
 </stl:block>

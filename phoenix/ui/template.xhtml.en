@@ -21,6 +21,7 @@
   <link rel="shortcut icon" href="${favicon_href}" type="${favicon_type}" />
 </head>
 <body>
+<div id="surface">
   <!-- Add YUI3 grids-->
   <div class="yui3-g" id="hd">
       <div class="yui3-u-1-12" id="logo"><!-- logo width: 4.1666%-->
@@ -64,41 +65,30 @@
 			</div> <!-- /yui3-g  search and user profile-->
 		</div>
   </div><!-- /yui3-g id="hd"-->
-	<!-- ${languages} -->
-	
-  <!-- Bread crumbs -->
+<!--${languages}
+   Bread crumbs -->
   <div>
       <label>${location}</label>
   </div><!-- /location-->
-
   <!-- /Bread crumbs -->
-  <div id="surface">
-	  <stl:block stl:if="message">
-	   <div id="message">
-	     ${message}
-	    </div>
-	  </stl:block>
-	  <!-- body -->
-	    <div class="yui-g">
-	    <!-- all other templates go within this block -->
-	      ${body}
-	    <!-- /all other templates go within this block -->
-	    </div>
-	  <!-- /body -->
-	</div><!-- /"surface"-->
-
+  <div id="page">
+  <stl:block stl:if="message">
+   <div id="message">
+     ${message}
+    </div>
+  </stl:block>
+  <!-- body -->
+    <div class="yui-g" id="template">
+    <!-- all other templates go within this block -->
+      ${body}
+    <!-- /all other templates go within this block -->
+    </div>
+  <!-- /body -->
+</div><!-- /YUI3 grids-->
 <div id="footer">
-	<div id="upper-footer" class="yui3-g"><!-- upper-footer -->
-		${upper_footer}
-	</div><!-- /upper-footer -->
-	<!--<div id="lower-footer">
+	<div id="inside-footer">
+			${upper_footer}
 		  <ul>
-		    <li class="space">
-		      <h1 title="${title}">
-		        <a href="/" title="${title}">
-		          striving for a better future since 2008</a>
-		        </h1>
-		      </li>
 		      <li><a href="/;about">About</a></li>
 		      <li><a href="/;more">More</a></li>
 		      <stl:block stl:if="not user">
@@ -108,13 +98,10 @@
 		    <li><a href="${user/home}">
 		      ${user/title}</a></li>
 		    </stl:block>
-		  </ul>
-	</div> /lower-footer -->
+		  </ul>	
+	</div><!-- /inside-footer -->
 </div><!-- /footer -->
-<!--[if !IE 7]>
-	<style type="text/css">
-		#wrap {display:table;height:100%}
-	</style>
-<![endif]-->
+</div> <!-- /surface-->
+
 </body>
 </html>

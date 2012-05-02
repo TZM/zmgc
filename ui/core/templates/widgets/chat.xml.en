@@ -49,6 +49,18 @@
       <li><a id="usersLink" href="#">uptime: <span id="uptime">?</span></a></li>
       <li><a id="usersLink" href="#">memory: <span id="rss">?</span>mb RSS</a></li>
     </ul>
+​
+		<script type="text/javascript">
+        $('#chat').hover(function() {
+				    $(this).animate({
+				        height: '300px'
+				    }, 300);
+				},function() {
+				    $(this).animate({
+				        height: '100px'
+				    }, 300);
+				});
+    </script>
     </stl:block>
 </stl:block>
 

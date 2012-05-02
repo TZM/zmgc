@@ -47,11 +47,11 @@
           </div> <!-- /box-holder-->
           <!-- /latest activities-->
     <!-- tabs-->
-    ${maintabs}
+    {maintabs}
     <!-- /tabs-->
   </div><!-- /welcome block 40%-->
   <div class="yui3-u-1-4 media"><!-- movies, radio and events block 40%-->
-    ${player}
+    {player}
     <div class="yui3-g">
       <div class="yui3-u-1-3" id="watch-related-container">
          <!--  <iframe width="300px"height="200" src="http://www.youtube.com/embed/QYLLFpNn4lM" frameborder="0"></iframe> -->
@@ -82,17 +82,15 @@
                <!-- /video-list-item -->
              </ul><!-- /watch-related .video-list-->
          </div><!-- /watch-related-container-->
-      <div class="yui3-u-2-3">
-        <img src="../../ui/icons/48x48/skin.png" border="0" />
-        
+      <div class="yui3-u-2-3"> 
         events table
       </div><!-- /yui3-u-2-3-->
     </div><!-- /yui3-g-->
   </div><!-- /movies, radio and events block 40%-->
   <div class="yui3-u-1-4 chat"><!-- right side bar 20%-->
-    <!-- START DYNAMIC CONTENT -->
+    <!-- START DYNAMIC CONTENT
     <iframe src="//www.facebook.com/plugins/likebox.php?href=https%3A%2F%2Fwww.facebook.com%2FTheZeitgeistMovement&amp;width=290&amp;height=290&amp;colorscheme=light&amp;show_faces=true&amp;border_color&amp;stream=false&amp;header=true&amp;appId=119920878043766" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:290px; height:290px;" allowTransparency="true"></iframe>
-    <!-- <script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script>
+     <script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script>
     <fb:like-box href="http://www.facebook.com/zeitgeist" width="300" connections="15"></fb:like-box> 
      END DYNAMIC CONTENT -->
     <div class="listings items">
