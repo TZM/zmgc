@@ -47,7 +47,7 @@
           </div> <!-- /box-holder-->
           <!-- /latest activities-->
     <!-- tabs-->
-    {maintabs}
+    ${maintabs}
     <!-- /tabs-->
   </div><!-- /welcome block 40%-->
   <div class="yui3-u-1-4 media"><!-- movies, radio and events block 40%-->
