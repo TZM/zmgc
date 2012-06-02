@@ -165,9 +165,6 @@ h1, h2 {
 }
 
 #menu ul li a {
-  -moz-border-radius: 0 0 4px 4px;
-  -webkit-border-radius: 0 0 4px 4px;
-  border-radius: 0 0 4px 4px;
   display: block;
   font-size: 1em;
   padding: 5px 15px;

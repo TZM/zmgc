@@ -3,60 +3,350 @@
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <stl:block xmlns="http://www.w3.org/1999/xhtml"
   xmlns:stl="http://www.hforge.org/xml-namespaces/stl">
-<div class="yui3-g">
-	<div class="yui3-u-1-12">
-		<h1 title="{title}">
-      <a href="/" title="{title}">
-        striving for a better future since 2008</a>
-    </h1>
-	</div>
-  <div class="yui3-u-19-24">
-      <ul class="footer_nav">
-        <h4>Zeigeist</h4>
-        <li>
-          <a href="/;about">About</a>
-        </li>
-        <li>
-          <a href="/blog">Blog</a>
-        </li>
-        <li>
-          <a href="/;contact">Contact &amp; Support</a>
-        </li>
-        <li>
-          <a href="/training">Training</a>
-        </li>
-        <li>
-          <a href="#">Site Status</a>
-        </li>
-      </ul>
-      <ul class="footer_nav">
-        <h4>Tools</h4>
-        <li>
-          <a href="/;create">Chapter Generator</a>
-        </li>
-        <li>
-          <a href="#">Activies Board</a>
-        </li>
-      </ul>
-      <ul class="footer_nav">
-        <h4>Documentation</h4>
-        <li>
-          <a href="#">Chapter Sites</a>
-        </li>
-        <li>
-          <a href="#">Developers</a>
-        </li>
-      </ul>
-      <ul class="footer_nav">
-        <h4>External Links</h4>
-        <li>
-          <a href="#">News</a>
-        </li>
-        <li>
-          <a href="#">Media</a>
-        </li>
-      </ul>	<!-- /upper-footer-->
-  </div><!-- /yui3-u-17-24 -->
-  <div id="worldmap" class="yui3-u-1-8"></div>
-</div>
+
+		<ul id="footer" class="footer_fullwidth"><!-- BEGIN FOOTER -->
+
+
+		    <li id="footer_home"><a href="/"><img src="/ui/core/resources/phx-logo-30x34.png" alt="Home" /></a></li>
+
+
+		    <li><a href="/" class="dropup">Large Content</a><!-- Begin First Menu Item -->
+
+
+		        <div class="footer_dropup drop12columns"><!-- Begin Item Container -->
+
+
+		            <div class="col_12">
+		                <h4>Awesome jQuery-Powered Footer !</h4>
+		            </div>
+
+		            <div class="col_6">
+		                <p>You can use any of the 6 included jQuery effects to show the content, it can be on mouse hover or on click, with 3 different transitions : fade, slide or toggle. There's also an option to show the footer when the page loads and hide it after a delay. This option can be disabled.</p>
+		                <p>On the right, there's a set of <a href="http://sixrevisions.com/freebies/icons/free-social-media-icons-for-designers-a-life-in-pixels/">social icons</a> showing a simple tooltip on mouse hover. You can add your owns and link to your social networks profiles if you wish.</p>
+		            </div>
+
+		            <div class="col_6">
+		                <p class="black_box">There is also a full set of typography examples included to help you using this footer. Many elements are styled and ready to be used like headers, lists, paragraphs with icons or borders, this dark box, tables and images ! All of these elements are styled in the CSS, you just have to use the corresponding class in your HTML and this footer comes with a lot of examples ready for the copy and paste if you're not familiar enough with HTML / CSS.</p>
+		            </div>
+
+		            <div class="clear"></div>
+
+		            <div class="col_2">
+
+		                <ul>
+		                    <li><a href="/">FreelanceSwitch</a></li>
+		                    <li><a href="/">Creattica</a></li>
+		                    <li><a href="/">WorkAwesome</a></li>
+		                    <li><a href="/">Mac Apps</a></li>
+		                    <li><a href="/">FreelanceSwitch</a></li>
+		                    <li><a href="/">Creattica</a></li>
+		                    <li><a href="/">WorkAwesome</a></li>
+		                    <li><a href="/">Web Apps</a></li>
+		                    <li><a href="/">NetTuts</a></li>
+		                    <li><a href="/">VectorTuts</a></li>
+		                    <li><a href="/">PsdTuts</a></li>
+		                    <li><a href="/">PhotoTuts</a></li>
+		                    <li><a href="/">ActiveTuts</a></li>
+		                    <li><a href="/">Design</a></li>
+		                </ul>   
+
+		            </div>
+
+		            <div class="col_2">
+
+		                <ul>
+		                    <li><a href="/">Mac Apps</a></li>
+		                    <li><a href="/">Web Apps</a></li>
+		                    <li><a href="/">ActiveTuts</a></li>
+		                    <li><a href="/">Design</a></li>
+		                    <li><a href="/">Logo</a></li>
+		                    <li><a href="/">NetTuts</a></li>
+		                    <li><a href="/">VectorTuts</a></li>
+		                    <li><a href="/">PsdTuts</a></li>
+		                    <li><a href="/">FreelanceSwitch</a></li>
+		                    <li><a href="/">PhotoTuts</a></li>
+		                    <li><a href="/">ActiveTuts</a></li>
+		                    <li><a href="/">Creattica</a></li>
+		                    <li><a href="/">WorkAwesome</a></li>
+		                    <li><a href="/">PhotoTuts</a></li>
+		                </ul>  
+
+		            </div>
+
+		            <div class="col_4">
+
+		                <h5>Texts with Icons</h5>
+
+		                <p class="calendar">This is a paragraph with a calendar icon. Curabitur lorem nulla, imperdiet.</p>
+		                <p class="note">This is a paragraph with a note icon. Praesent id nulla eu risus rhoncus.</p>
+		                <p class="archive">This is a paragraph with a archive icon. Ut pulvinar mauris at nunc.</p>
+		                <p class="search">This is a paragraph with a search icon. Nulla tincidunt, purus at luctus.</p>
+		                <p class="help">This is a paragraph with a help icon. Vestibulum venenatis diam sit amet.</p>
+
+		            </div>
+
+		            <div class="col_4">
+
+		                <h5>Other Examples</h5>
+
+		                <p class="delete">This is a paragraph with a delete icon. Quisque at metus a libero sodales.</p>
+		                <p class="favorite">This is a paragraph with a favorite icon. Donec tortor sem, venenatis. </p>
+		                <p class="lock">This is a paragraph with a lock icon. Vivamus eu felis lacus, in tincidunt.</p>
+		                <p class="briefcase">This is a paragraph with a briefcase icon. Cras sagittis, tortor at.</p>
+		                <p class="user">This is a paragraph with a user icon. Mauris quis augue lectus, eget congue.</p>
+
+		            </div>
+
+
+		        </div><!-- End Item Container -->
+
+
+		    </li><!-- End First Menu Item -->
+
+
+
+		    <li><a href="/" class="dropup">Columns</a><!-- Begin Second Menu Item -->
+
+
+		        <div class="footer_dropup drop12columns"><!-- Begin Item Container -->
+
+
+		            <div class="col_12">
+						<h3>Up to 12 columns !</h3>
+						<p>With this powerful grid, you can easily build your own footer and organize all your content into columns ! Once you've choosen the right container (see in the CSS the section number 2 - Drop-up Containers), use the different column sizes and add your stuff quickly !</p>
+		            </div>
+
+		            <div class="col_12">
+						<p class="black_box2">930px</p>
+		            </div>
+
+		            <div class="col_11">
+						<p class="black_box2">850px</p>
+		            </div>
+
+		            <div class="col_1">
+						<p class="black_box2">50px</p>
+		            </div>
+
+		            <div class="col_10">
+						<p class="black_box2">770px</p>
+		            </div>
+
+		            <div class="col_2">
+						<p class="black_box2">130px</p>
+		            </div>
+
+		            <div class="col_9">
+						<p class="black_box2">690px</p>
+		            </div>
+
+		            <div class="col_3">
+						<p class="black_box2">210px</p>
+		            </div>
+
+		            <div class="col_8">
+						<p class="black_box2">610px</p>
+		            </div>
+
+		            <div class="col_4">
+						<p class="black_box2">290px</p>
+		            </div>
+
+		            <div class="col_7">
+						<p class="black_box2">530px</p>
+		            </div>
+
+		            <div class="col_5">
+						<p class="black_box2">370px</p>
+		            </div>
+
+		            <div class="col_6">
+						<p class="black_box2">450px</p>
+		            </div>
+
+		            <div class="col_6">
+						<p class="black_box2">450px</p>
+		            </div>
+
+		            <div class="col_4">
+						<p class="black_box2">290px</p>
+		            </div>
+
+		            <div class="col_4">
+						<p class="black_box2">290px</p>
+		            </div>
+
+		            <div class="col_4">
+						<p class="black_box2">290px</p>
+		            </div>
+
+		            <div class="col_3">
+						<p class="black_box2">210px</p>
+		            </div>
+
+		            <div class="col_3">
+						<p class="black_box2">210px</p>
+		            </div>
+
+		            <div class="col_3">
+						<p class="black_box2">210px</p>
+		            </div>
+
+		            <div class="col_3">
+						<p class="black_box2">210px</p>
+		            </div>
+
+		            <div class="clear_push"></div>
+
+
+		        </div><!-- End Item Container -->
+
+
+		    </li><!-- End Second Menu Item -->
+
+
+
+		    <li><a href="/" class="dropup">Images</a><!-- Begin Third Menu Item -->
+
+
+		        <div class="footer_dropup drop6columns"><!-- Begin Item Container -->
+
+
+		            <div class="col_6">
+
+		                <h4>Sample paragraph with an image</h4>
+		                <img src="/ui/core/resources//asset01.jpg" class="imgshadow img_left" alt="" />
+		                <p>Aenean sagittis dictum purus, mollis consectetur ligula sodales sed. Mauris nec mauris sed mi tempor ornare eget iaculis. Sed condimentum faucibus turpis sed cursus. Ut pharetra bibendum lorem, sagittis mollis nisi eleifend nec.</p>
+		                <p>Nam placerat, nulla vel placerat adipiscing, arcu lorem tincidunt nibh, eget iaculis quam lectus aliquet enim. Nam nec est purus. Vestibulum nec lectus et quam tempor vulputate vitae eget risus. Vivamus id mauris quis odio hendrerit semper. Aliquam dapibus sem ac arcu bibendum.</p>
+		                <hr />
+		                <h4>Another paragraph with an image</h4>
+		                <img src="/ui/core/resources/asset02.jpg" class="imgshadow img_left" alt="" />
+		                <p>Nam placerat, nulla vel placerat adipiscing, arcu lorem tincidunt nibh, eget iaculis quam lectus aliquet enim. Vivamus id mauris quis odio hendrerit semper. Aliquam dapibus sem ac arcu bibendum.</p>
+		                <p>Aenean sagittis dictum purus, mollis consectetur ligula sodales sed. Mauris nec mauris sed mi tempor ornare eget iaculis quam lectus aliquet enim. Nam nec est purus.. Sed condimentum faucibus turpis sed cursus. Ut pharetra bibendum lorem, sagittis mollis nisi eleifend nec.</p>
+
+		            </div>
+
+
+		        </div><!-- End Item Container -->
+
+
+		    </li><!-- End Second Item -->
+
+
+
+		    <li><a href="/" class="dropup">Texts, Tables &amp; Lists</a><!-- Begin Fourth Menu Item -->
+
+
+		        <div class="footer_dropup drop8columns"><!-- Begin Item Container -->
+
+
+		            <div class="col_8">
+		                <h4>Additional Lists</h4>
+		            </div>
+
+		            <div class="col_2">
+
+		                <ol class="num">
+		                    <li><a href="/">ThemeForest</a></li>
+		                    <li><a href="/">GraphicRiver</a></li>
+		                    <li><a href="/">ActiveDen</a></li>
+		                    <li><a href="/">VideoHive</a></li>
+		                    <li><a href="/">3DOcean</a></li>
+		                </ol>   
+
+		            </div>
+
+		            <div class="col_2">
+
+		                <ol class="num2">
+		                    <li><a href="/">NetTuts</a></li>
+		                    <li><a href="/">VectorTuts</a></li>
+		                    <li><a href="/">PsdTuts</a></li>
+		                    <li><a href="/">PhotoTuts</a></li>
+		                    <li><a href="/">ActiveTuts</a></li>
+		                </ol>   
+
+		            </div>
+
+		            <div class="col_2">
+
+		                <ul class="list">
+		                    <li><a href="/">FreelanceSwitch</a></li>
+		                    <li><a href="/">Creattica</a></li>
+		                    <li><a href="/">WorkAwesome</a></li>
+		                    <li><a href="/">Mac Apps</a></li>
+		                    <li><a href="/">Web Apps</a></li>
+		                </ul>   
+
+		            </div>
+
+		            <div class="col_2">
+
+		                <ul class="list2">
+		                    <li><a href="/">Design</a></li>
+		                    <li><a href="/">Logo</a></li>
+		                    <li><a href="/">Flash</a></li>
+		                    <li><a href="/">Illustration</a></li>
+		                    <li><a href="/">More...</a></li>
+		                </ul>   
+
+		            </div>
+
+		            <div class="col_8">
+		            	<hr />
+		            </div>
+
+		            <div class="col_4">
+
+		                <p class="dark">Quisque elit est, ullamcorper ac hendrerit eget, porta id enim. Phasellus in velit velit.</p>
+		                <p class="brown">Ut ac turpis ipsum. Mauris leo nulla, vestibulum id bibendum nec, auctor eu quam.</p>
+		                <p class="yellow">Quisque elit est, ullamcorper ac hendrerit eget, porta id enim. Phasellus in velit velit.</p>
+		                <p class="red">Curabitur vulputate, massa sit amet mollis sodales, arcu quam scelerisque augue.</p>
+		                <p class="blue">Quisque varius, erat nec fermentum aliquam, erat urna venenatis orci ligula eget.</p>
+		                <p class="green">Vestibulum sed elit ut arcu. Donec leo dui, mollis ut volutpat et, suscipit a mauris.</p>
+
+		            </div>
+
+		            <div class="col_4">
+
+		                <h4>This is a dark table</h4>
+
+		                <p>Mauris nec mauris sed mi tempor ornare eget iaculis quam lectus aliquet enim. Nam nec est purus.. Sed condimentum faucibus turpis sed cursus. Ut pharetra bibendum lorem, sagittis mollis nisi eleifend nec.</p>
+
+		                <table id="table_dark">
+		                  <tr><th>Title 1</th><th>Title 2</th><th>Title 3</th><th>Title 4</th></tr>
+		                  <tr><td>Cell 1</td><td>Cell 2</td><td>Cell 3</td><td>Cell 4</td></tr>
+		                  <tr><td>Cell 1</td><td>Cell 2</td><td>Cell 3</td><td>Cell 4</td></tr>
+		                  <tr><td>Cell 1</td><td>Cell 2</td><td>Cell 3</td><td>Cell 4</td></tr>
+		                  <tr><td>Cell 1</td><td>Cell 2</td><td>Cell 3</td><td>Cell 4</td></tr>
+		                </table>
+
+		            </div>
+
+
+		        </div><!-- End Item Container -->
+
+
+		    </li><!-- End Fourth Item -->
+
+
+
+		    <li id="social"><!-- Begin Social Icons Item -->
+
+
+		        <ul><!-- Social Icons -->
+
+		            <!-- The span is the text appearing on hover, use the tooltip class in the link -->
+		            <li><a href="/" class="tooltip"><img src='/ui/core/resources/icons/twitter.png' alt="" class="footer_icon" /><span>Twitter</span></a></li>
+		            <li><a href="/" class="tooltip"><img src='/ui/core/resources/icons/rss.png' alt="" class="footer_icon" /><span>RSS</span></a></li>
+		            <li><a href="/" class="tooltip"><img src='/ui/core/resources/icons/flickr.png' alt="" class="footer_icon" /><span>Flickr</span></a></li>
+		            <li><a href="/" class="tooltip"><img src='/ui/core/resources/icons/facebook.png' alt="" class="footer_icon" /><span>Facebook</span></a></li>
+
+		        </ul><!-- End Social Icons -->
+
+
+		    </li><!-- End Social Icons Item -->
+
+
+		</ul><!-- END FOOTER -->
 </stl:block>

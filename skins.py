@@ -89,7 +89,7 @@ class Skin(BaseSkin):
     def get_scripts(self, context):
         scripts = [
             '/ui/core/js/jquery/jquery-1.6.2.min.js',
-			#'/ui/core/js/footer_plugins.js',
+			'/ui/core/js/footer_plugins.js',
             '/ui/core/js/javascript.js',
             #'/ui/core/js/raphaeljs/raphael-min.js',
             #'/ui/core/js/world.js'

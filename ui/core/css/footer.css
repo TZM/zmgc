@@ -51,7 +51,7 @@
 
 #footer li .dropup {
 	padding-right:40px;
-	background:url("../img/arrow.png") no-repeat right 15px;
+	background:url("/ui/core/resources/arrow.png") no-repeat right 15px;
 }
 
 #footer li .footer_dropup {
@@ -349,43 +349,43 @@
 }
 
 #footer .calendar {
-	background:url("../img/icons/calendar.png") no-repeat 0px 5px;
+	background:url("/ui/core/resources/icons/calendar.png") no-repeat 0px 5px;
 }
 
 #footer .note {
-	background:url("../img/icons/note.png") no-repeat 0px 5px;
+	background:url("/ui/core/resources/icons/note.png") no-repeat 0px 5px;
 }
 
 #footer .archive {
-	background:url("../img/icons/archive.png") no-repeat 0px 5px;
+	background:url("/ui/core/resources/icons/archive.png") no-repeat 0px 5px;
 }
 
 #footer .search {
-	background:url("../img/icons/search.png") no-repeat 0px 5px;
+	background:url("/ui/core/resources/icons/search.png") no-repeat 0px 5px;
 }
 
 #footer .help {
-	background:url("../img/icons/help.png") no-repeat 0px 5px;
+	background:url("/ui/core/resources/icons/help.png") no-repeat 0px 5px;
 }
 
 #footer .delete {
-	background:url("../img/icons/delete.png") no-repeat 0px 5px;
+	background:url("/ui/core/resources/icons/delete.png") no-repeat 0px 5px;
 }
 
 #footer .favorite {
-	background:url("../img/icons/favorite.png") no-repeat 0px 5px;
+	background:url("/ui/core/resources/icons/favorite.png") no-repeat 0px 5px;
 }
 
 #footer .lock {
-	background:url("../img/icons/lock.png") no-repeat 0px 5px;
+	background:url("/ui/core/resources/icons/lock.png") no-repeat 0px 5px;
 }
 
 #footer .briefcase {
-	background:url("../img/icons/briefcase.png") no-repeat 0px 5px;
+	background:url("/ui/core/resources/icons/briefcase.png") no-repeat 0px 5px;
 }
 
 #footer .user {
-	background:url("../img/icons/user.png") no-repeat 0px 5px;
+	background:url("/ui/core/resources/icons/user.png") no-repeat 0px 5px;
 }
 
 #footer .imgshadow {
@@ -514,7 +514,7 @@ a.tooltip span {
 	height:24px;
 	width:55px;
 	text-align:center;
-	background:url("../img/tooltip.png") no-repeat center top;
+	background:url("/ui/core/resources/tooltip.png") no-repeat center top;
 	position:absolute;
 	color:#ddd;
 	font-size:12px;
@@ -532,7 +532,7 @@ a#footer_trigger {
 	right:10px;
 	width:35px;
 	height:35px;
-	background:url("../img/footer_button_up.png") right no-repeat #121212;
+	background:url("/ui/core/resources/footer_button_up.png") right no-repeat #121212;
 	display:block;
 	-moz-border-radius:4px 4px 0px 0px;
 	    -webkit-border-radius:4px 4px 0px 0px;
@@ -546,7 +546,7 @@ a.trigger_fixed {
 }
 
 a#footer_trigger.trigger_active {
-	background:url("../img/footer_button_down.png") right no-repeat #121212;
+	background:url("/ui/core/resources/footer_button_down.png") right no-repeat #121212;
 }
 
 #footer li div.footer_dropup a {
