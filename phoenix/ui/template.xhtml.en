@@ -24,7 +24,7 @@
 <body>
 <div id="surface">
   <!-- Add YUI3 grids-->
-  <div class="yui3-g" id="hd">
+  <div class="yui3-g" id="hd" class="hd_fullwidth">
       <div class="yui3-u-1-12" id="logo"><!-- logo width: 4.1666%-->
         <h1 title="${title}">
           <a href="/" title="${title}">Zeitgeist Movement Global Connect</a>
@@ -66,13 +66,13 @@
 			</div> <!-- /yui3-g  search and user profile-->
 		</div>
   </div><!-- /yui3-g id="hd"-->
-<!--${languages}
-   Bread crumbs -->
-  <div>
-      <label>${location}</label>
-  </div><!-- /location-->
-  <!-- /Bread crumbs -->
   <div id="page">
+	<!--${languages}
+	   Bread crumbs -->
+	  <div>
+	      <label>${location}</label>
+	  </div><!-- /location-->
+	  <!-- /Bread crumbs -->
   <stl:block stl:if="message">
    <div id="message">
      ${message}
@@ -88,7 +88,7 @@
 </div><!-- /YUI3 grids-->
 <div id="footer" class="footer_fullwidth">
 	<div id="inside-footer">
-			{upper_footer}
+			${upper_footer}
 	</div><!-- /inside-footer -->
 </div><!-- /footer -->
 </div> <!-- /surface-->

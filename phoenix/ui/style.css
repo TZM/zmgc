@@ -97,7 +97,8 @@ h1, h2 {
  * HEADER
  * ***********************************************************************/
  #hd{
-	 background: rgb(14,14,14); /* Old browsers */
+	position:fixed;
+	background: rgb(14,14,14); /* Old browsers */
 	/* IE9 SVG, needs conditional override of 'filter' to 'none' */
 	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzBlMGUwZSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjU1JSIgc3RvcC1jb2xvcj0iIzdkN2U3ZCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgPC9saW5lYXJHcmFkaWVudD4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2dyYWQtdWNnZy1nZW5lcmF0ZWQpIiAvPgo8L3N2Zz4=);
 	background: -moz-linear-gradient(left,  rgba(14,14,14,1) 0%, rgba(125,126,125,1) 55%); /* FF3.6+ */
@@ -109,6 +110,14 @@ h1, h2 {
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0e0e0e', endColorstr='#7d7e7d',GradientType=1 ); /* IE6-8 */
 	}
 
+.hd_fullwidth {
+	width:100%;
+	margin:0;
+}
+
+#hd .yui3-u-11-12 {
+	position:fixed;
+}
 /**************************************************************************
 * LOGO
 * ***********************************************************************/
@@ -386,8 +395,8 @@ a.fav_link:hover {
 #inside-footer {
     font-size: 75%;
 } 
-#inside-footer h1 {background:url(/ui/core/resources/phx-logo-60x69.png) top left no-repeat;width:60px;height:60px; }
-#inside-footer h1 a { width:60px;line-height:60px;display:block;text-indent:-5000px;text-decoration:none;border:none;background:none;}
+#inside-footer h1 {background:url(/ui/core/resources/phx-logo-30x34.png) top left no-repeat;width:30px;height:30px; }
+#inside-footer h1 a { width:30px;line-height:30px;display:block;text-indent:-5000px;text-decoration:none;border:none;background:none;}
 #inside-footer li {margin-top:5px;padding:0;}
 #inside-footer a {margin-left: 1em; margin-right: 1em; margin-right: 1em;text-decoration: none;}
 #inside-footer a:hover {text-decoration: underline;}
