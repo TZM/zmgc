@@ -48,6 +48,14 @@
             <li><a href="#chapter-2"><span>Americas</span></a></li>
             <li><a href="#chapter-3"><span>Asia</span></a></li>
             <li><a href="#chapter-4"><span>Europe</span></a></li>
+            <li><a href="#chapter-1"><span>Africa</span></a></li>
+            <li><a href="#chapter-2"><span>Americas</span></a></li>
+            <li><a href="#chapter-3"><span>Asia</span></a></li>
+            <li><a href="#chapter-4"><span>Europe</span></a></li>
+            <li><a href="#chapter-1"><span>Africa</span></a></li>
+            <li><a href="#chapter-2"><span>Americas</span></a></li>
+            <li><a href="#chapter-3"><span>Asia</span></a></li>
+            <li><a href="#chapter-4"><span>Europe</span></a></li>
           </ul>
           <div id="chapter-1">
               Africa

@@ -19,6 +19,7 @@
   <script type="text/javascript" stl:repeat="script scripts" src="${script}" />
   <!-- Icon -->
   <link rel="shortcut icon" href="${favicon_href}" type="${favicon_type}" />
+
 </head>
 <body>
 <div id="surface">
@@ -85,9 +86,9 @@
     </div>
   <!-- /body -->
 </div><!-- /YUI3 grids-->
-<div id="footer">
+<div id="footer" class="footer_fullwidth">
 	<div id="inside-footer">
-			${upper_footer}
+			{upper_footer}
 	</div><!-- /inside-footer -->
 </div><!-- /footer -->
 </div> <!-- /surface-->
