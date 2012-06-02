@@ -517,5 +517,6 @@ div#template {
 	width:100%;
 	height:auto;
 	overflow:none;
+	padding-bottom:50px; /** adjust depending on the footer height plus 15px **/
 }
 @media print{*{text-shadow:none !important;} #surface{height:auto !important;} body{overflow:visible !important;} #header{display:none;} #notification{display:none !important;}

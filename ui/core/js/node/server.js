@@ -6,7 +6,7 @@ console.log("This server's process pid is: " + process.pid);
 
 
 // riak cluster
-var db = require('riak-js').getClient({host: "0.0.0.0", port: "8098" });
+// var db = require('riak-js').getClient({host: "0.0.0.0", port: "8098" });
 
 var nowjs = require("now");
 var everyone = nowjs.initialize(server);
