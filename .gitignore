@@ -17,4 +17,4 @@ locale/*.mo
 docs/*.png
 docs/*.pdf
 ui/core/js/node/messages
-
+ui/core/js/node/node_modules

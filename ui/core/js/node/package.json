@@ -1,0 +1,21 @@
+{
+  "author": "Norman Khine <norman@khine.net> (http://khine.net)",
+  "name": "chat-zmgc",
+  "description": "A module for the chat application for the ZMGC project",
+  "version": "0.0.0",
+  "homepage": "http://chat.zmgc.net",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/nkhine/chat.git"
+  },
+  "engines": {
+    "node": "~0.6.9"
+  },
+  "dependencies": {
+    "now": ">=0.8.0",
+    "validator": ">=0.3.9"
+
+  },
+  "devDependencies": {},
+  "optionalDependencies": {}
+}
