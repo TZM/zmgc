@@ -41,4 +41,5 @@ register_skin('js_calendar', get_abspath('ui/js_calendar'))
 register_skin('progressbar', get_abspath('ui/progressbar'))
 register_skin('tiny_mce', get_abspath('ui/tiny_mce'))
 register_skin('wiki', get_abspath('ui/wiki'))
+register_skin('data', get_abspath('ui/data'))
 
