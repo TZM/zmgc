@@ -51,7 +51,7 @@
     <!-- /tabs-->
   </div><!-- /welcome block 40%-->
   <div class="yui3-u-1-4 media"><!-- movies, radio and events block 40%-->
-    {player}
+    ${player}
     <div class="yui3-g">
       <div class="yui3-u-1-3" id="watch-related-container">
          <!--  <iframe width="300px"height="200" src="http://www.youtube.com/embed/QYLLFpNn4lM" frameborder="0"></iframe> -->

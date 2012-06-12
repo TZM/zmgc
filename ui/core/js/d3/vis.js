@@ -62,10 +62,10 @@ d3.json("/ui/data/world-countries.json", function(collection) {
       .text(function(d) { return d.properties.name; })
 			.style("stroke-width", 1.5 / k + "px");
 			
-	startAnimation();
-	d3.select('#animate').on('click', function () {
-	    if (done) startAnimation(); else stopAnimation();
-	  });
+	// startAnimation();
+	// d3.select('#animate').on('click', function () {
+	//     if (done) startAnimation(); else stopAnimation();
+	// });
 });
 
 d3.select(window)

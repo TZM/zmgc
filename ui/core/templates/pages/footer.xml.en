@@ -341,7 +341,7 @@
 		            <li><a href="/" class="tooltip"><img src='/ui/core/resources/icons/rss.png' alt="" class="footer_icon" /><span>RSS</span></a></li>
 		            <li><a href="/" class="tooltip"><img src='/ui/core/resources/icons/flickr.png' alt="" class="footer_icon" /><span>Flickr</span></a></li>
 		            <li><a href="/" class="tooltip"><img src='/ui/core/resources/icons/facebook.png' alt="" class="footer_icon" /><span>Facebook</span></a></li>
-
+								<li><a href="/" class="tooltip"><img src='/ui/core/resources/icons/youtube.png' alt="" class="footer_icon" /><span>You Tube</span></a></li>
 		        </ul><!-- End Social Icons -->
 
 
