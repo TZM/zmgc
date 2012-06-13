@@ -21,16 +21,7 @@ div.jp-video {
 	 * Eg. 1.25em = 1 / 0.8em
 	 */
 
-	font-size:1.25em; /* 1.25em for testing in site pages */ /* No parent CSS that can effect the size in the demos ZIP */
-
-	font-family:Verdana, Arial, sans-serif;
-	
 	color: #fff;
-	border-top:1px solid #554461;
-	border-left:1px solid #554461;
-	border-right:1px solid #180a1f;
-	border-bottom:1px solid #180a1f;
-	background-color:#3a2a45;
 	position:relative;
 }
 div.jp-audio {
@@ -80,7 +71,7 @@ div.jp-video-full div.jp-interface {
 div.jp-interface {
 	position: relative;
 	width:100%;
-	background-color:#3a2a45; /* Required for the full screen */
+	background-color:#000; /* Required for the full screen */
 }
 div.jp-interface-show {
 	position:absolute;

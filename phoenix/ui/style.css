@@ -533,4 +533,71 @@ div#viz {
 	z-index: 2;
 	bottom: 30px;
 }
+
+div.jp-video-360p {
+	width:640px;
+}
+div.jp-video-full {
+	/* Rules for IE6 (full-screen) */
+	width:320px;
+	height:270px;
+	/* Rules for IE7 (full-screen) - Otherwise the relative container causes other page items that are not position:static (default) to appear over the video/gui. */
+	position:static !important; position:relative
+}
+
+div.jp-video-full div.jp-jplayer {
+	top: 0;
+	left: 0;
+	position: fixed !important; position: relative; /* Rules for IE6 (full-screen) */
+	overflow: hidden;
+	z-index:1000;
+}
+
+div.jp-video-full div.jp-gui {
+	position: fixed !important; position: static; /* Rules for IE6 (full-screen) */
+	top: 0;
+	left: 0;
+	width:100%;
+	height:100%;
+	z-index:1000;
+}
+div.jp-video-full div.jp-interface {
+	position: absolute !important; position: relative; /* Rules for IE6 (full-screen) */
+	bottom: 0;
+	left: 0;
+	z-index:1000;
+}
+
+div.jp-interface {
+	position: relative;
+	width:100%;
+	background-color:#000; /* Required for the full screen */
+}
+
+/* @group current time and duration */
+
+.jp-current-time, .jp-duration {
+	width:70px;
+	font-size:.5em;
+	color: #8c7a99;
+}
+
+.jp-current-time {
+	float: left;
+}
+
+.jp-duration {
+	float: right;
+	text-align:right;
+}
+
+.jp-video .jp-current-time {
+	padding-left:20px;
+}
+
+.jp-video .jp-duration {
+	padding-right:20px;
+}
+
+/* @end */
 @media print{*{text-shadow:none !important;} #surface{height:auto !important;} body{overflow:visible !important;} #header{display:none;} #notification{display:none !important;}

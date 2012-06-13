@@ -59,8 +59,7 @@ d3.json("/ui/data/world-countries.json", function(collection) {
       .attr("d", clip);
 
   feature.append("svg:title")
-      .text(function(d) { return d.properties.name; })
-			.style("stroke-width", 1.5 / k + "px");
+      .text(function(d) { return d.properties.name; });
 			
 	// startAnimation();
 	// d3.select('#animate').on('click', function () {

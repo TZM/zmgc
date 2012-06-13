@@ -33,7 +33,7 @@ div.jp-audio, div.jp-video {
 }
 
 div.jp-type-playlist div.jp-playlist li.jp-playlist-current {
-    background-color: #682776;
+    background-color: #000;
     border-bottom: none;
     margin: 0 -20px;
     padding: 0 10px;

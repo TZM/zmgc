@@ -38,17 +38,17 @@ class View(STLView):
     title = MSG(u'Welcome')
     template = 'ui/phoenix/home.xml'
     styles = ['ui/phoenix/jquery/custom-theme/jquery-ui-1.8.20.custom.css',
-                '/ui/core/css/jPlayer/jplayer.pink.flag.css',
+                #'/ui/core/css/jPlayer/jplayer.pink.flag.css',
                 '/ui/core/css/jPlayer/zen.css',
-                '/ui/core/css/jPlayer/ui.css',
+                #'/ui/core/css/jPlayer/ui.css',
                 
                 ]
     scripts = ['ui/phoenix/jquery/jquery-ui-1.8.20.custom.min.js',
                 '/ui/core/js/jPlayer/jquery.jplayer.min.js',
                 '/ui/core/js/jPlayer/add-on/jplayer.playlist.min.js',
                 '/ui/core/js/jquery/add-on/jquery.rotate.js',
-                '/ui/core/js/tab.js',
-                '/ui/core/js/zplayer.js',
+                #'/ui/core/js/tab.js',
+                '/ui/core/js/player.js',
 				'/ui/core/js/d3/d3.v2.min.js',
                 ]
 
