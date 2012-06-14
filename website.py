@@ -38,7 +38,7 @@ from ikaaro.skins import UI, ui_path
 from ikaaro.text import CSS
 #from ikaaro.views_new import NewInstance
 from ikaaro.webpage import WebPage
-from ikaaro.website_views import AboutView, ContactForm, CreditsView
+from ikaaro.website_views import PoweredBy, ContactForm, CreditsView
 #from ikaaro.website_views import ForgottenPasswordForm, RegisterForm
 from ikaaro.website_views import NotFoundView, ForbiddenView
 from ikaaro.website import WebSite as BaseWebSite
