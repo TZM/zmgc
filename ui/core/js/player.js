@@ -74,24 +74,25 @@ $(document).ready(function(){
     }
 
     /// slide action for the control panel
-	$(".btn-slide").click(function(){
+    $(".btn-slide").click(function(){
 
-		if(flag_show % 2 == 0) {
-			$(".jp-interface").addClass("jp-interface-show");
-			$("#panel").css({ "display" : "block"});
-			$(".tabsBlock").css({ "margin-top" : "20px"});
-			flag_show++;
-			$("#tmp_show_flag").attr("value", flag_show);
-			return false;
-		}
-		else {
-			$(".jp-interface").removeClass("jp-interface-show");
-			$("#panel").css({ "display" : "none"});
-			$(".tabsBlock").css({ "margin-top" : "5px"});
-			flag_show++;
-			$("#tmp_show_flag").attr("value", flag_show);
-			return false;
-		}
+  		if(flag_show % 2 == 0) {
+  			$(".jp-interface").addClass("jp-interface-show");
+  			$("#panel").css({ "display" : "block"});
+  			$(".tabsBlock").css({ "margin-top" : "20px"});
+  			flag_show++;
+			console.log(flag_show);
+  			$("#tmp_show_flag").attr("value", flag_show);
+  			return false;
+  		}
+  		else {
+  			$(".jp-interface").removeClass("jp-interface-show");
+  			$("#panel").css({ "display" : "none"});
+  			$(".tabsBlock").css({ "margin-top" : "5px"});
+  			flag_show++;
+  			$("#tmp_show_flag").attr("value", flag_show);
+  			return false;
+  		}
 	});
 	$('.tabsBlock').tabs();
 	

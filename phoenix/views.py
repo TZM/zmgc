@@ -38,9 +38,9 @@ class View(STLView):
     title = MSG(u'Welcome')
     template = 'ui/phoenix/home.xml'
     styles = ['ui/phoenix/jquery/custom-theme/jquery-ui-1.8.20.custom.css',
-                #'/ui/core/css/jPlayer/jplayer.pink.flag.css',
+                '/ui/core/css/jPlayer/jplayer.pink.flag.css',
                 '/ui/core/css/jPlayer/zen.css',
-                #'/ui/core/css/jPlayer/ui.css',
+                '/ui/core/css/jPlayer/ui.css',
                 
                 ]
     scripts = ['ui/phoenix/jquery/jquery-ui-1.8.20.custom.min.js',

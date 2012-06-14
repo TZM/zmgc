@@ -16,35 +16,6 @@
 	display:none;
 }
 
-div.jp-audio, div.jp-video {
-    background-color: #3A2A45;
-    border:1px solid;
-    color: #3A2A45;
-}
-
-.jp-video .jp-playlist ul {
-    margin: 0 20px;
-}
-
-.jp-title li, .jp-playlist li {
-    font-size: 100%;
-    border-bottom: none;
-    border-top: 1px solid #FFFFFF;
-}
-
-div.jp-type-playlist div.jp-playlist li.jp-playlist-current {
-    background-color: #000;
-    border-bottom: none;
-    margin: 0 -20px;
-    padding: 0 10px;
-}
-.playinfor .exe_infor{
-    font-size: 88%;
-}
-
-.jp-title li, .jp-playlist li {
-    font-size: 88%;
-}
 .tabs {margin:0;padding:0;}
 
 .tabsBlock {margin-top:5px;}

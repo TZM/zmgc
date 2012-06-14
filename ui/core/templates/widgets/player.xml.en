@@ -5,6 +5,7 @@
 	xmlns:stl="http://www.hforge.org/xml-namespaces/stl">
 	<!-- player widget-->
 	<input id="tmp_duration" type="hidden" value="" />
+	<a href="#" class="btn-slide">Slide bar</a>
 	<div id="jquery_jplayer_1" class="jp-jplayer">
 		<img id="jp_poster_0" />
 	</div>
@@ -45,7 +46,6 @@
 
 				</div> <!-- /id="panel" -->
 			</div>
-			<a href="#" class="btn-slide">Slide bar</a>
 			<div class="tabsBlock">
 				<ul>
 					<li><a href="#tabs-1">Video</a></li>
