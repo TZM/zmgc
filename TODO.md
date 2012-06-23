@@ -22,7 +22,8 @@ The following list is just for this prototype, but the ideas can be applied usin
 	a. create a 'clone' of the document in how ever many languages that the original document needs to be translated in
 	b. each 'clone', will then be split into small sections, if the document is 1,000 words containing 25 paragraphs then it will be split in 5 paragraphs (~ 200 words per paragraph)
 	c. we will then have a form, which will contain:
-
+	
+	~~~
 	-----------------------
 	original 200 word text
 	-----------------------
@@ -32,6 +33,7 @@ The following list is just for this prototype, but the ideas can be applied usin
 	[input form for the translator to type into]
 
 	[button ... (Submit)]
+	~~~
 
 	Using this model, we can distribute the translation work to many members. And as we are using Git we can then automatically merge all the sections, back to the main translated document.
 
@@ -65,12 +67,14 @@ The following list is just for this prototype, but the ideas can be applied usin
 
 	Also create a new class so that we can pull the metadata values directly from the YouTube API, here is an example code:
 
+	~~~
 	import gdata.youtube
 	import gdata.youtube.service
 	yt_service = gdata.youtube.service.YouTubeService()
 	yt_service.ssl = True
 	yt_service.developer_key = '53cr3t'
 	yt_service.client_id = 'zeitgeist'
+	~~~
 
 	and see http://code.google.com/apis/youtube/1.0/developers_guide_python.html#RetrievingVideoEntry
 
@@ -81,37 +85,39 @@ The following list is just for this prototype, but the ideas can be applied usin
 17. User profile - make user's skills a prominent requirement so that you can then link these skills to the projects. for example a user adds a project, from the project description it will be possible to pull out a number of tags and then match this with a persons who's skills may fulfill the requirements for the project.
 an example script based on project data pulled from http://www.tzmnetwork.com/forums/topic/61/education-amp-art:
 
-    >>>  from nltk import pos_tag, word_tokenize
-    >>>  description = """Hello. \
-		I'm Irish but based in France. At the moment, I'm working to create a business/charity which incorporates a traditional montessori school and artists ateliers in the same building. Practical education should be an important part of the process for the Zeitgeist movement and the principles which I am working towards are very compatible with the Zeitgeist movements declared aspirations. \
-		There is a lot of discussion here but education is more than that. It hardwires the young person to think for themselves as opposed to adding untraditional thought patterns, in later years. It also creates a dynamic peer group. \
-		This school is for children aged 3-18 years. The artists will be adults. I'm hoping to be able to facilitate education for both groups using the principles of montessori education. Whether the adults can learn as much as the children is a question. The expectation and plan is that they can cross pollinate. The children's school (3-18 years) will involve education in the arts and science. Covering traditional topics, creative practices and environmental awareness and systems of living.\
-		    I'm looking for financial aid or guidance, to raise the finances required. This will be the second school in france, though radically different to the first. \
-		    My intention is to look to foundations in the USA, UK, Ireland and France. Asking foundations for aid is not something which I have any experience with, so if there is anyone here who has, I would appreciate any constructive advice you can offer.\
-		    The school / arts atelier and training centre, has a volume of 3000 metres square or 9000 square feet. It's in a slightly run down factory on the edge of Paris, in a poor area within ile de France and will need total refurbishment. \
-		    The first school was much smaller than this, being of 110 metres square and is a great success. This second one is obviously a much larger project. \
-		    I can send references to anyone interested in becoming involved. Feel free to email me. \
-		    best regards \
-		    Tom""""
-    >>> tagged_description = pos_tag(word_tokenize(description))
-    >>> default_tagger.tag(tagged_description)
-    [(('Hello.', 'NN'), 'NN'), (('I', 'PRP'), 'NN'), (("'m", 'VBP'), 'NN'), (('Irish', 'JJ'), 'NN'), (('but', 'CC'), 'NN'), (('based', 'VBN'), 'NN'), (('in', 'IN'), 'NN'), (('France.', 'NNP'), 'NN'), (('At', 'NNP'), 'NN'), (('the', 'DT'), 'NN'), (('moment', 'NN'), 'NN'), ((',', ','), 'NN'), (('I', 'PRP'), 'NN'), (("'m", 'VBP'), 'NN'), (('working', 'VBG'), 'NN'), (('to', 'TO'), 'NN'), (('create', 'VB'), 'NN'), (('a', 'DT'), 'NN'), (('business/charity', 'NN'), 'NN'), (('which', 'WDT'), 'NN'), (('incorporates', 'VBZ'), 'NN'), (('a', 'DT'), 'NN'), (('traditional', 'JJ'), 'NN'), (('montessori', 'NN'), 'NN'), (('school', 'NN'), 'NN'), (('and', 'CC'), 'NN'), (('artists', 'NNS'), 'NN'), (('ateliers', 'NNS'),
+	~~~
+	>>>  from nltk import pos_tag, word_tokenize
+	>>>  description = """Hello. \
+	I'm Irish but based in France. At the moment, I'm working to create a business/charity which incorporates a traditional montessori school and artists ateliers in the same building. Practical education should be an important part of the process for the Zeitgeist movement and the principles which I am working towards are very compatible with the Zeitgeist movements declared aspirations. \
+	There is a lot of discussion here but education is more than that. It hardwires the young person to think for themselves as opposed to adding untraditional thought patterns, in later years. It also creates a dynamic peer group. \
+	This school is for children aged 3-18 years. The artists will be adults. I'm hoping to be able to facilitate education for both groups using the principles of montessori education. Whether the adults can learn as much as the children is a question. The expectation and plan is that they can cross pollinate. The children's school (3-18 years) will involve education in the arts and science. Covering traditional topics, creative practices and environmental awareness and systems of living.\
+	I'm looking for financial aid or guidance, to raise the finances required. This will be the second school in france, though radically different to the first. \
+	My intention is to look to foundations in the USA, UK, Ireland and France. Asking foundations for aid is not something which I have any experience with, so if there is anyone here who has, I would appreciate any constructive advice you can offer.\
+	The school / arts atelier and training centre, has a volume of 3000 metres square or 9000 square feet. It's in a slightly run down factory on the edge of Paris, in a poor area within ile de France and will need total refurbishment. \
+	The first school was much smaller than this, being of 110 metres square and is a great success. This second one is obviously a much larger project. \
+	I can send references to anyone interested in becoming involved. Feel free to email me. \
+	best regards \
+	Tom""""
+	>>> tagged_description = pos_tag(word_tokenize(description))
+	>>> default_tagger.tag(tagged_description)
+	[(('Hello.', 'NN'), 'NN'), (('I', 'PRP'), 'NN'), (("'m", 'VBP'), 'NN'), (('Irish', 'JJ'), 'NN'), (('but', 'CC'), 'NN'), (('based', 'VBN'), 'NN'), (('in', 'IN'), 'NN'), (('France.', 'NNP'), 'NN'), (('At', 'NNP'), 'NN'), (('the', 'DT'), 'NN'), (('moment', 'NN'), 'NN'), ((',', ','), 'NN'), (('I', 'PRP'), 'NN'), (("'m", 'VBP'), 'NN'), (('working', 'VBG'), 'NN'), (('to', 'TO'), 'NN'), (('create', 'VB'), 'NN'), (('a', 'DT'), 'NN'), (('business/charity', 'NN'), 'NN'), (('which', 'WDT'), 'NN'), (('incorporates', 'VBZ'), 'NN'), (('a', 'DT'), 'NN'), (('traditional', 'JJ'), 'NN'), (('montessori', 'NN'), 'NN'), (('school', 'NN'), 'NN'), (('and', 'CC'), 'NN'), (('artists', 'NNS'), 'NN'), (('ateliers', 'NNS'),
 
-    >>> nltk.help.upenn_tagset('RB')
-    RB: adverb
-        occasionally unabatingly maddeningly adventurously professedly
-        stirringly prominently technologically magisterially predominately
-        swiftly fiscally pitilessly ...
-    >>> nltk.help.upenn_tagset('NN')
-    NN: noun, common, singular or mass
-        common-carrier cabbage knuckle-duster Casino afghan shed thermostat
-        investment slide humour falloff slick wind hyena override subhumanity
-        machinist ...
-    >>> nltk.help.upenn_tagset('VB')
-    VB: verb, base form
-        ask assemble assess assign assume atone attention avoid bake balkanize
-        bank begin behold believe bend benefit bevel beware bless boil bomb
-        boost brace break bring broil brush build ...
+	>>> nltk.help.upenn_tagset('RB')
+	RB: adverb
+	occasionally unabatingly maddeningly adventurously professedly
+	stirringly prominently technologically magisterially predominately
+	swiftly fiscally pitilessly ...
+	>>> nltk.help.upenn_tagset('NN')
+	NN: noun, common, singular or mass
+	common-carrier cabbage knuckle-duster Casino afghan shed thermostat
+	investment slide humour falloff slick wind hyena override subhumanity
+	machinist ...
+	>>> nltk.help.upenn_tagset('VB')
+	VB: verb, base form
+	ask assemble assess assign assume atone attention avoid bake balkanize
+	bank begin behold believe bend benefit bevel beware bless boil bomb
+	boost brace break bring broil brush build ...
+	~~~
         
 	Now that we have the 'description' broken down by verbs, nouns etc... we can match against user profile data and suggest to the user possible members who may be able to help with the project.
 
@@ -156,6 +162,7 @@ Also we need to utilise the local storage, html5.
 #Using nodejs within python
 
 `scraper.js`
+
     var jsdom = require('jsdom');
 
     var args = process.argv.slice(2),
@@ -173,7 +180,8 @@ Also we need to utilise the local storage, html5.
     });
 
 `foo.py`
-    import urllib2
+    
+	import urllib2
     import commands
 
     html = urllib2.urlopen('http://google.com').read();
