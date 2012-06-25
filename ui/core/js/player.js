@@ -14,7 +14,7 @@ $(document).ready(function(){
 	var webmv = new Array(3);
 	var poster = new Array(3);
 	var init_flag = 0; 
-	var flag_show = 0;
+	var show_controls = 0;
 
 
 	for(i=1; i<4; i++)
@@ -74,25 +74,23 @@ $(document).ready(function(){
     }
 
     /// slide action for the control panel
-    $(".btn-slide").click(function(){
-
-  		if(flag_show % 2 == 0) {
-  			$(".jp-interface").addClass("jp-interface-show");
-  			$("#panel").css({ "display" : "block"});
-  			$(".tabsBlock").css({ "margin-top" : "20px"});
-  			flag_show++;
-			console.log(flag_show);
-  			$("#tmp_show_flag").attr("value", flag_show);
-  			return false;
-  		}
-  		else {
-  			$(".jp-interface").removeClass("jp-interface-show");
-  			$("#panel").css({ "display" : "none"});
-  			$(".tabsBlock").css({ "margin-top" : "5px"});
-  			flag_show++;
-  			$("#tmp_show_flag").attr("value", flag_show);
-  			return false;
-  		}
+    $(".controls").click(function(){
+		console.log($(this).next());
+		$("#jp_controls_panel").slideToggle();
+  		/// if(show_controls % 2 === 0) {
+  		/// 	$("#jp_controls_panel").css({ "display" : "block"});
+  		/// 	$(".tabsBlock").css({ "margin-top" : "20px"});
+  		/// 	show_controls++;
+  		/// 	$("#tmp_show_controls").attr("value", show_controls);
+  		/// 	return false;
+  		/// }
+  		/// else {
+  		/// 	$("#jp_controls_panel").css({ "display" : "none"});
+  		/// 	$(".tabsBlock").css({ "margin-top" : "5px"});
+  		/// 	show_controls++;
+  		/// 	$("#tmp_show_controls").attr("value", show_controls);
+  		/// 	return false;
+  		/// }
 	});
 	$('.tabsBlock').tabs();
 	

@@ -26,7 +26,6 @@
         <li><a href="#forums"><span>Forums</span></a></li>
       </ul>
       <div id="actions">
-        {actions}
 				<ul>
 	        <li><a href="#actions"><span>Actions</span></a></li>
 	        <li><a href="#news"><span>News</span></a></li>
@@ -36,7 +35,32 @@
 	      </ul>
       </div>
       <div id="news">
-        {news}
+        <dl class="ListItem" onmouseover="this.className='ListItem_Hover';" onmouseout="this.className='ListItem';">  
+					<dt>
+						<a href="#">News Item Title</a>
+					</dt>
+					<dd>
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+					</dd>
+					<dd class="more">
+						<span>
+							<a href="#">More</a>
+						</span>
+					</dd>
+				</dl>
+				<dl class="ListItem" onmouseover="this.className='ListItem_Hover';" onmouseout="this.className='ListItem';">  
+					<dt>
+						<a href="#">News Item Title Two</a>
+					</dt>
+					<dd>
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+					</dd>
+					<dd class="more">
+						<span>
+							<a href="#">More</a>
+						</span>
+					</dd>
+				</dl>
       </div>
       <div id="events">
         {events}

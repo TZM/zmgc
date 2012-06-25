@@ -5,12 +5,13 @@
   xmlns:stl="http://www.hforge.org/xml-namespaces/stl">
 
 <div class="yui3-g"><!-- content -->
-  <div class="yui3-u-1-2"><!-- welcome block 40%-->
+  <div class="yui3-u-1-2" style="background-color: red; "><!-- welcome block 50%-->
     <div class="welcome">
       <h1>Welcome <stl:block stl:if="info">${info/title}</stl:block> to the Zeitgeist Movement portal!</h1>
-      <p>
-        Founded in 2008, The Zeitgeist Movement is a Sustainability Advocacy Organization which conducts community based activism and awareness actions through a network of Global/Regional Chapters, Project Teams, Annual Events, Media and Charity Work.</p>
-    </div> <!-- / welcome block 40%-->
+			<p>The Zeitgeist Movement Global Connect (ZMGC) aims to create an on-line eco-system within which the ideas of Resource Based Economy can be galvanise into actions that can be used in the real world.</p>
+			<p>It equips members with on-line tools, by providing the infrastructure necessary to easily exchange, analyse and disseminate information in a highly scalable and non-blocking manner using only Open Source software build by the community.</p>
+			<p>To get involved and find out more about the ZMGC please <a href="/;login" title="Join">join.</a></p> 
+    </div> <!-- / welcome -->
     <!-- latest activities-->
     <div class="box-holder">
       <div class="box">
@@ -21,7 +22,7 @@
                 <span>All the latest activities ...</span>
               </h3>
               <ul class="supports-list">
-                <li class="">
+                <li>
                   <img src="/ui/core/resources/ico-wrote-petition.gif" alt="wrote-petition" />                                    
                   <p>
                     <strong>Katia</strong> signed up to help with the Z-Day Festival: London</p>
@@ -47,13 +48,14 @@
           </div> <!-- /box-holder-->
           <!-- /latest activities-->
     <!-- tabs-->
-    ${maintabs}
+    	${maintabs}
     <!-- /tabs-->
   </div><!-- /welcome block 40%-->
-  <div class="yui3-u-1-4 media"><!-- movies, radio and events block 40%-->
-    ${player}
+  <div class="yui3-u-3-8 media" style="background-color: blue; "><!-- movies, radio and events block 40%-->
+	
+		{player}
     <div class="yui3-g">
-      <div class="yui3-u-1-3" id="watch-related-container">
+      <div class="yui3-u-2-3" id="watch-related-container">
          <!--  <iframe width="300px"height="200" src="http://www.youtube.com/embed/QYLLFpNn4lM" frameborder="0"></iframe> -->
              <ul id="watch-related" class="video-list">
                <!-- video-list-item -->
@@ -82,55 +84,25 @@
                <!-- /video-list-item -->
              </ul><!-- /watch-related .video-list-->
          </div><!-- /watch-related-container-->
-      <div class="yui3-u-2-3"> 
+      <div class="yui3-u-1-3"> 
         events table
       </div><!-- /yui3-u-2-3-->
     </div><!-- /yui3-g-->
   </div><!-- /movies, radio and events block 40%-->
-  <div class="yui3-u-1-4 chat"><!-- right side bar 20%-->
+  <div class="yui3-u-1-8 chat" style="background-color: yellow; "><!-- right side bar 20%-->
     <!-- START DYNAMIC CONTENT
     <iframe src="//www.facebook.com/plugins/likebox.php?href=https%3A%2F%2Fwww.facebook.com%2FTheZeitgeistMovement&amp;width=290&amp;height=290&amp;colorscheme=light&amp;show_faces=true&amp;border_color&amp;stream=false&amp;header=true&amp;appId=119920878043766" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:290px; height:290px;" allowTransparency="true"></iframe>
      <script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script>
     <fb:like-box href="http://www.facebook.com/zeitgeist" width="300" connections="15"></fb:like-box> 
      END DYNAMIC CONTENT -->
-    <div class="listings items">
-    <h3>Follow us on...</h3>
-    <a href="http://www.facebook.com/" target="_blank"><img src="/ui/core/resources/facebook.png" border="0" height="48" width="48" /></a>
-    <a href="http://twitter.com/Zeitgeist" target="_blank"><img src="/ui/core/resources/twitter.png" border="0" height="48" width="48" /></a>
-    <a href="http://feeds.feedburner.com/TheZeitgeistMovement" target="_blank"><img src="/ui/core/resources/rss_icon_48.jpg" border="0" height="48" width="48" /></a>
-    <a href="http://www.youtube.com/user/TZMOfficialChannel" target="_blank"><img src="/ui/core/resources/youtube.png" border="0" height="48" width="48" /></a> 
-    </div> <!-- END DYNAMIC CONTENT -->
-    <!-- I LIKE IT -->
-    <div class="thumb-rating">
-        <form action="you-know-you-like-it" method="post" class="disabled">
-            <span class="thumbs-up">
-                <input type="submit" name="lovinit" value="Like" class="allowMultiSubmit like-button" disabled="disabled" alt="Please log in to rate this product" /></span>
-            <span class="thumbs-down">
-                <input type="submit" name="hatedit" value="Ugh" class="allowMultiSubmit dislike-button" disabled="disabled" /></span>
-        </form>
-        <div class="like-summary">
-            <span class="total-thumbs-up">
-                <span class="tally-total">0</span> likes,
-            </span>
-            <span class="total-thumbs-down">
-                <span class="tally-total">0</span> dislikes
-            </span>
+		
+    
 
-        </div>
-        <div class="discreet login-to-rate">
-            <a href="/;login" class="link-overlay">Log in</a> to rate.
-        </div>
-    </div>
-    <div class="button">
-    <ul>
-        <li class="forum"><a href="/forum">Forum</a></li>
-    </ul>
-    </div>
-		<div id="viz"></div>
+		<!--<div id="viz"></div>
 		<div id="howto"></div>
-		<script src="/ui/core/js/d3/vis.js"></script>
-    <!-- /I LIKE IT -->
-    ${chat}
+		<script src="/ui/core/js/d3/vis.js"></script>-->
+
+    	{chat}
   </div><!-- /right side bar 20%-->
 </div><!-- /content -->
 </stl:block>
