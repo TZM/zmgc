@@ -72,7 +72,10 @@ h1, p {
  * PAGE
  * ***********************************************************************/
 #page {
-  padding: 35px 25px 0px 15px;
+	height:auto;
+	overflow:none;
+	/**padding-bottom:50px;  adjust depending on the footer height plus 15px **/
+  	padding: 35px 25px 50px 15px;
 }
 
 /**************************************************************************
@@ -511,17 +514,11 @@ div#chat {
 	overflow:auto;
 }
 
-div#template {
-	width:100%;
-	height:auto;
-	overflow:none;
-	padding-bottom:50px; /** adjust depending on the footer height plus 15px **/
-}
-
 div#viz {
 	position: fixed;
 	z-index: 2;
-	bottom: 30px;
+	bottom:30px;
+	right: 0px;
 }
 
 /* jPlayer */

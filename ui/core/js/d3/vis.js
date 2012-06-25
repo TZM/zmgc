@@ -1,7 +1,8 @@
+console.log($("#connect").outerWidth());
 var feature;
 
-var width = 297,
-    height = 235,
+var width = 277,
+    height = 215,
 		centered;
 
 var lat = 0.0, lon = 0.0;

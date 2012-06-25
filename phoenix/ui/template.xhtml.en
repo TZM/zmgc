@@ -19,25 +19,11 @@
   <script type="text/javascript" stl:repeat="script scripts" src="${script}" />
   <!-- Icon -->
   <link rel="shortcut icon" href="${favicon_href}" type="${favicon_type}" />
-	<script>
-	$(document).ready(function($){
-		$('#footer').stickyFooter({
-			dropup_speed_show : 300, // Time (in milliseconds) to show a drop down
-			dropup_speed_hide : 200, // Time (in milliseconds) to hide a drop down
-			dropup_speed_delay : 200, // Time (in milliseconds) before showing a drop down
-			footer_effect : 'hover_fade', // Drop down effect, choose between 'hover_fade', 'hover_slide', etc.
-			showhidefooter : 'show', // Footer can be hidden when the page loads
-			hide_speed : 1000, // Time to hide the footer (in milliseconds) if the 'showhidefooter' option is set to 'hide'
-			hide_delay : 2000 // Time before hiding the footer (in milliseconds) if the 'showhidefooter' option is set to 'hide'
-		});
-	});
-	</script>
-
 </head>
 <body>
 <div id="surface">
   <!-- Add YUI3 grids-->
-  <div class="yui3-g" id="hd" class="hd_fullwidth">
+  <div class="yui3-g hd_fullwidth" id="hd">
       <div class="yui3-u-1-12" id="logo"><!-- logo width: 4.1666%-->
         <h1 title="${title}">
           <a href="/" title="${title}">Zeitgeist Movement Global Connect</a>
@@ -79,7 +65,7 @@
 			</div> <!-- /yui3-g  search and user profile-->
 		</div>
   </div><!-- /yui3-g id="hd"-->
-  <div id="page">
+  <div class="yui3-u-1" id="page">
 	<!--${languages}
 	   Bread crumbs -->
 	  <div>
@@ -92,18 +78,19 @@
     </div>
   </stl:block>
   <!-- body -->
-    <div class="yui-g" id="template">
-    <!-- all other templates go within this block -->
+		<!-- all other templates go within this block -->
+    <div class="yui3-g">
       ${body}
-    <!-- /all other templates go within this block -->
     </div>
+		<!-- /all other templates go within this block -->
   <!-- /body -->
-</div><!-- /YUI3 grids-->
-<div>
-			${upper_footer}
-</div><!-- /footer -->
-<a id="footer_trigger" class="trigger_active" href="#"></a><!-- Trigger Button -->
-</div> <!-- /surface-->
+	</div>
+	<!-- /YUI3 grids-->
+	<div>
+		${upper_footer}
+	</div><!-- /footer -->
+	<a id="footer_trigger" class="trigger_active" href="#"></a><!-- Trigger Button -->
+</div><!-- /surface-->
 
 </body>
 </html>

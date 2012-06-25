@@ -4,105 +4,65 @@
 <stl:block xmlns="http://www.w3.org/1999/xhtml"
   xmlns:stl="http://www.hforge.org/xml-namespaces/stl">
 
-<div class="yui3-g"><!-- content -->
-  <div class="yui3-u-1-2" style="background-color: red; "><!-- welcome block 50%-->
-    <div class="welcome">
-      <h1>Welcome <stl:block stl:if="info">${info/title}</stl:block> to the Zeitgeist Movement portal!</h1>
+  <div class="yui3-u-1-2"><!-- welcome block 50%-->
+		<div class="welcome">
+			<h1>Welcome <stl:block stl:if="info">${info/title}</stl:block> to the Zeitgeist Movement portal!</h1>
 			<p>The Zeitgeist Movement Global Connect (ZMGC) aims to create an on-line eco-system within which the ideas of Resource Based Economy can be galvanise into actions that can be used in the real world.</p>
 			<p>It equips members with on-line tools, by providing the infrastructure necessary to easily exchange, analyse and disseminate information in a highly scalable and non-blocking manner using only Open Source software build by the community.</p>
-			<p>To get involved and find out more about the ZMGC please <a href="/;login" title="Join">join.</a></p> 
-    </div> <!-- / welcome -->
+			<p>To get involved and find out more about the ZMGC please <a href="/;login" title="Join">join.</a></p>
+		</div>
+		<!-- / welcome -->
     <!-- latest activities-->
-    <div class="box-holder">
-      <div class="box">
-        <div class="holder">
-          <div class="frame">
-            <div class="box-content">
-              <h3>
-                <span>All the latest activities ...</span>
-              </h3>
-              <ul class="supports-list">
-                <li>
-                  <img src="/ui/core/resources/ico-wrote-petition.gif" alt="wrote-petition" />                                    
-                  <p>
-                    <strong>Katia</strong> signed up to help with the Z-Day Festival: London</p>
-                    <a title="Sign up to help" href="#">Sign up to help</a>
-                  </li>
-                  <li class="">
-                    <img src="/ui/core/resources/ico-donate.gif" alt="wrote-petition" />                                    
-                    <p>
-                      <strong>Luisa</strong> donated 5 € towards the Occupy London Fund </p>
-                      <a title="Wish to donate..." href="#/">Wish to donate...</a>
-                    </li>
-                    <li class="last">
-                      <img src="/ui/core/resources/ico-wrote-petition.gif" alt="wrote-petition" />                                    
-                      <p>
-                        <strong>Patricia</strong> signed up to help with the Z-Day Festival: London</p>
-                        <a title="Sign up to help" href="#/">Sign up to help</a>
-                      </li>
-                    </ul>
-                  </div> <!-- /box-content-->
-                </div> <!-- /frame-->
-              </div> <!-- /holder-->
-            </div> <!-- /box-->
-          </div> <!-- /box-holder-->
-          <!-- /latest activities-->
+		<div class="box-holder">
+			<div class="box">
+				<div class="holder">
+					<div class="frame">
+						<div class="box-content">
+							<h3>
+								<span>All the latest activities ...</span>
+							</h3>
+							<ul class="supports-list">
+								<li>
+									<img src="/ui/core/resources/ico-wrote-petition.gif" alt="wrote-petition"/>
+									<p><strong>Katia</strong> signed up to help with the Z-Day Festival: London</p>
+									<a title="Sign up to help" href="#">Sign up to help</a>
+								</li>
+								<li class="supports-list">
+									<img src="/ui/core/resources/ico-donate.gif" alt="wrote-petition"/>
+									<p><strong>Luisa</strong> donated 5 &#x20AC; towards the Occupy London Fund </p>
+									<a title="Wish to donate..." href="#/">Wish to donate...</a>
+								</li>
+								<li class="last">
+									<img src="/ui/core/resources/ico-wrote-petition.gif" alt="wrote-petition"/>
+									<p><strong>Patricia</strong> signed up to help with the Z-Day Festival: London</p>
+									<a title="Sign up to help" href="#/">Sign up to help</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<!-- /frame-->
+				</div>
+				<!-- /holder-->
+			</div>
+			<!-- /box-->
+		</div>
+    <!-- /latest activities-->
     <!-- tabs-->
     	${maintabs}
     <!-- /tabs-->
-  </div><!-- /welcome block 40%-->
-  <div class="yui3-u-3-8 media" style="background-color: blue; "><!-- movies, radio and events block 40%-->
-	
-		{player}
-    <div class="yui3-g">
-      <div class="yui3-u-2-3" id="watch-related-container">
-         <!--  <iframe width="300px"height="200" src="http://www.youtube.com/embed/QYLLFpNn4lM" frameborder="0"></iframe> -->
-             <ul id="watch-related" class="video-list">
-               <!-- video-list-item -->
-               <li class="video-list-item">
-                 <a href="videos/video-item" class="video-list-item-link">
-                   <span class="ux-thumb-wrap contains-addto">
-                     <span class="video-thumb">
-                       <span class="clip">
-                         <img src="/ui/core/resources/jplayer-default1.jpg" alt="clip-title" />
-                         <span class="uix-button-content">
-                           <span class="addto-label">Add to</span>
-                         </span>
-                       </span><!-- /clip-->
-                       <span class="video-time">14:30</span>
-                       <button type="button" class="addto-button video-actions">
-                         <img class="uix-addto-button" src="/ui/core/resources/pixel.gif" />
-                       </button>
-                       <span dir="ltr" class="title" title="Video Title">Video Title</span>
-                       <span class="stat">
-                         by <span class="yt-user-name " dir="ltr">username</span>
-                       </span><!-- /stat-->
-                     </span><!-- /video-thumb-->
-                   </span><!-- /ux-thumb-wrap contains-addto-->
-                 </a>
-               </li>
-               <!-- /video-list-item -->
-             </ul><!-- /watch-related .video-list-->
-         </div><!-- /watch-related-container-->
-      <div class="yui3-u-1-3"> 
-        events table
-      </div><!-- /yui3-u-2-3-->
-    </div><!-- /yui3-g-->
-  </div><!-- /movies, radio and events block 40%-->
-  <div class="yui3-u-1-8 chat" style="background-color: yellow; "><!-- right side bar 20%-->
-    <!-- START DYNAMIC CONTENT
-    <iframe src="//www.facebook.com/plugins/likebox.php?href=https%3A%2F%2Fwww.facebook.com%2FTheZeitgeistMovement&amp;width=290&amp;height=290&amp;colorscheme=light&amp;show_faces=true&amp;border_color&amp;stream=false&amp;header=true&amp;appId=119920878043766" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:290px; height:290px;" allowTransparency="true"></iframe>
-     <script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script>
-    <fb:like-box href="http://www.facebook.com/zeitgeist" width="300" connections="15"></fb:like-box> 
-     END DYNAMIC CONTENT -->
-		
-    
-
-		<!--<div id="viz"></div>
-		<div id="howto"></div>
-		<script src="/ui/core/js/d3/vis.js"></script>-->
-
-    	{chat}
-  </div><!-- /right side bar 20%-->
-</div><!-- /content -->
+  </div><!-- /yui3-u-2-5-->
+	<div class="yui3-u-1-2"><!-- welcome block 50%-->
+		<div class="yui3-g">
+			<div class="yui3-u-2-3" id="media"><!-- welcome block 50%-->
+				${player}
+  		</div><!-- /movies, radio and events block 40%-->
+			<div class="yui3-u-1-3" id="connect"><!-- right side bar 20%-->
+			<div id="viz"></div>
+			<div id="howto"></div>
+			<script src="/ui/core/js/d3/vis.js"></script>
+    		{chat}
+  		</div><!-- /right side bar 20%-->
+		</div>
+	 </div><!-- /yui3-u-1-2-->
 </stl:block>
+

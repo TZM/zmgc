@@ -96,6 +96,17 @@ function startProgressBar()
     },
     1500);
 }
+$(document).ready(function($){
+	$('#footer').stickyFooter({
+		dropup_speed_show : 300, // Time (in milliseconds) to show a drop down
+		dropup_speed_hide : 200, // Time (in milliseconds) to hide a drop down
+		dropup_speed_delay : 200, // Time (in milliseconds) before showing a drop down
+		footer_effect : 'hover_fade', // Drop down effect, choose between 'hover_fade', 'hover_slide', etc.
+		showhidefooter : 'show', // Footer can be hidden when the page loads
+		hide_speed : 1000, // Time to hide the footer (in milliseconds) if the 'showhidefooter' option is set to 'hide'
+		hide_delay : 2000 // Time before hiding the footer (in milliseconds) if the 'showhidefooter' option is set to 'hide'
+	});
+});
 
 ///* Captcha reload */
 //function load_captcha(callback) {
