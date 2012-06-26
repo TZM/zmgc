@@ -54,12 +54,84 @@
 	<div class="yui3-u-1-2"><!-- welcome block 50%-->
 		<div class="yui3-g">
 			<div class="yui3-u-2-3" id="media"><!-- welcome block 50%-->
-				${player}
+				<div class="yui3-g">
+					<div class="yui3-u-4-5" id="player">
+						${player}
+					</div>
+					<div class="yui3-u-1-5" id="watch-related-container">
+						<ul id="watch-related" class="video-list">
+              <!-- video-list-item -->
+              <li class="video-list-item">
+                <a href="videos/video-item" class="video-list-item-link">
+                  <span class="ux-thumb-wrap contains-addto">
+                    <span class="video-thumb">
+                      <span class="clip">
+                        <img src="/ui/core/resources/jplayer-default1.jpg" alt="clip-title" />
+                        <span class="uix-button-content">
+                          <span class="addto-label">Add to</span>
+                        </span>
+                      </span><!-- /clip-->
+                      <span class="video-time">14:30</span>
+                      <button type="button" class="addto-button video-actions">
+                        <img class="uix-addto-button" src="/ui/core/resources/pixel.gif" />
+                      </button>
+                      <span dir="ltr" class="title" title="Video Title">Video Title</span>
+                      <span class="stat">
+                        by <span class="yt-user-name " dir="ltr">username</span>
+                      </span><!-- /stat-->
+                    </span><!-- /video-thumb-->
+                  </span><!-- /ux-thumb-wrap contains-addto-->
+                </a>
+              </li>
+              <!-- /video-list-item -->
+							<!-- video-list-item -->
+              <li class="video-list-item">
+                <a href="videos/video-item" class="video-list-item-link">
+                  <span class="ux-thumb-wrap contains-addto">
+                    <span class="video-thumb">
+                      <span class="clip">
+                        <img src="/ui/core/resources/jplayer-default1.jpg" alt="clip-title" />
+                        <span class="uix-button-content">
+                          <span class="addto-label">Add to</span>
+                        </span>
+                      </span><!-- /clip-->
+                      <span class="video-time">14:30</span>
+                      <button type="button" class="addto-button video-actions">
+                        <img class="uix-addto-button" src="/ui/core/resources/pixel.gif" />
+                      </button>
+                      <span dir="ltr" class="title" title="Video Title">Video Title</span>
+                      <span class="stat">
+                        by <span class="yt-user-name " dir="ltr">username</span>
+                      </span><!-- /stat-->
+                    </span><!-- /video-thumb-->
+                  </span><!-- /ux-thumb-wrap contains-addto-->
+                </a>
+              </li>
+              <!-- /video-list-item -->
+            </ul><!-- /watch-related .video-list-->
+					</div>
+				</div>
   		</div><!-- /movies, radio and events block 40%-->
 			<div class="yui3-u-1-3" id="connect"><!-- right side bar 20%-->
-			<div id="viz"></div>
-			<div id="howto"></div>
-			<script src="/ui/core/js/d3/vis.js"></script>
+				<!-- Accordion -->
+						<div id="accordion">
+							<div>
+								<h3><a href="#">Connecting</a></h3>
+								<div>Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.</div>
+							</div>
+							<div>
+								<h3><a href="#">Visualising</a></h3>
+								<div>Phasellus mattis tincidunt nibh.</div>
+							</div>
+							<div>
+								<h3><a href="#">Analysing</a></h3>
+								<div>Nam dui erat, auctor a, dignissim quis.</div>
+							</div>
+						</div>
+				
+				<div id="viz"></div>
+				<div id="howto"></div>
+				<script src="/ui/core/js/d3/vis.js"></script>
     		{chat}
   		</div><!-- /right side bar 20%-->
 		</div>

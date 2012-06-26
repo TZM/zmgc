@@ -4,67 +4,73 @@
 <stl:block xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:stl="http://www.hforge.org/xml-namespaces/stl">
 	<!-- player widget-->
-	<input id="tmp_duration" type="hidden" value="" />
-	<div id="jquery_jplayer_1" class="jp-jplayer">
-		<img id="jp_poster_0" />
-	</div>
-	<div id="jp_container_1" class="jp-video">
-		<div class="jp-type-playlist">
-			<div class="jp-gui jp-interface">
-				<div class="jp-progress">
-					<div class="jp-seek-bar">
-						<div class="jp-play-bar"></div>
-					</div>
-				</div>
-				<div id="jp_controls_panel" class="ui-widget" style="display: none; "><!-- /id="controls" -->
-					<div class="jp-current-time">00:05</div>
-					<div class="jp-duration">00:33</div>
-					<div class="jp-title">
-						<ul><li>Item Title</li></ul>
-					</div>
-					<div class="jp-controls-holder"> <!-- class="jp-controls-holder" -->						
-						<ul class="player-toolbar ui-widget ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all" style="opacity: 1; ">
-							<li class="ui-state-default ui-corner-all" title="Play">
-								<span class="ui-icon ui-icon-play"><a href="javascript:;" class="jp-play" tabindex="1" style="display: block;">play</a></span></li>
-							<li class="ui-state-default ui-corner-all" title="Prev">
-								<span class="ui-icon ui-icon-seek-prev"><a href="javascript:;" class="jp-previous" tabindex="1">previous</a></span></li>
-							<li class="ui-state-default ui-corner-all" title="Next">
-								<span class="ui-icon ui-icon-seek-next"><a href="javascript:;" class="jp-next" tabindex="1">next</a></span></li>
-							<li class="ui-state-default ui-corner-all" title="Shuffle/Random">
-								<span class="ui-icon ui-icon-shuffle"><a href="javascript:;" class="jp-shuffle" tabindex="1" title="shuffle" style="">shuffle</a></span></li>
-							<li class="ui-state-default ui-corner-all" title="Repeat playlist"><span class="ui-icon ui-icon-refresh"><a href="javascript:;" class="jp-repeat" tabindex="1" title="repeat" style="">repeat</a></span></li>
-							<li class="ui-state-default ui-corner-all" title="Mute"><span class="ui-icon ui-icon-volume-on"><a href="javascript:;" class="jp-mute" tabindex="1" title="mute">mute</a></span></li>
-						</ul>
-						
-						<div class="jp-volume-bar">
-							<div class="jp-volume-bar-value" style="width: 80%; "></div>
+	<div id="player" class="slide">
+		<div id="jquery_jplayer_1" class="jp-jplayer">
+			<img id="jp_poster_0" />
+		</div>
+	    <button class="non_button_active">slide it</button>
+	    <div class="inner" style="display: none; ">
+	    	
+				<div id="jp_container_1" class="jp-video">
+					<div class="jp-type-playlist">
+						<div class="jp-gui jp-interface">
+							<div class="jp-progress">
+								<div class="jp-seek-bar">
+									<div class="jp-play-bar"></div>
+								</div>
+							</div>
+							<div id="jp_controls_panel" class="ui-widget"><!-- /id="controls" -->
+								<div class="jp-current-time">00:05</div>
+								<div class="jp-duration">00:33</div>
+								<div class="jp-title">
+									<ul><li>Item Title</li></ul>
+								</div>
+								<div class="jp-controls-holder"> <!-- class="jp-controls-holder" -->						
+									<ul class="player-toolbar ui-widget ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all" style="opacity: 1; ">
+										<li class="ui-state-default ui-corner-all" title="Play">
+											<span class="ui-icon ui-icon-play"><a href="javascript:;" class="jp-play" tabindex="1" style="display: block;">play</a></span></li>
+										<li class="ui-state-default ui-corner-all" title="Prev">
+											<span class="ui-icon ui-icon-seek-prev"><a href="javascript:;" class="jp-previous" tabindex="1">previous</a></span></li>
+										<li class="ui-state-default ui-corner-all" title="Next">
+											<span class="ui-icon ui-icon-seek-next"><a href="javascript:;" class="jp-next" tabindex="1">next</a></span></li>
+										<li class="ui-state-default ui-corner-all" title="Shuffle/Random">
+											<span class="ui-icon ui-icon-shuffle"><a href="javascript:;" class="jp-shuffle" tabindex="1" title="shuffle" style="">shuffle</a></span></li>
+										<li class="ui-state-default ui-corner-all" title="Repeat playlist"><span class="ui-icon ui-icon-refresh"><a href="javascript:;" class="jp-repeat" tabindex="1" title="repeat" style="">repeat</a></span></li>
+										<li class="ui-state-default ui-corner-all" title="Mute"><span class="ui-icon ui-icon-volume-on"><a href="javascript:;" class="jp-mute" tabindex="1" title="mute">mute</a></span></li>
+									</ul>
+
+									<div class="jp-volume-bar">
+										<div class="jp-volume-bar-value" style="width: 80%; "></div>
+									</div>
+								</div> <!-- /class="jp-controls-holder" -->
+							</div> <!-- /id="jp_controls_panel" -->
 						</div>
-					</div> <!-- /class="jp-controls-holder" -->
-				</div> <!-- /id="jp_controls_panel" -->
-			</div>
-			<div class="tabsBlock" style="display: none; ">
-				<ul>
-					<li><a href="#tabs-1">Films</a></li>
-					<li><a href="#tabs-2">Audio</a></li>
-				</ul>
-				<div id="tabs-1" class="jp-playlist default" index="1">
-						<ul>
-							<li>
-								<a title="unselect" href="javascript:;" m4v="http://www.archive.org/download/Zeitgeist.Addendum/Zeitgeist.Addendum_512kb.mp4" ogv="http://www.archive.org/download/Zeitgeist.Addendum/Zeitgeist.Addendum.ogv" poster="http://www.archive.org/download/Zeitgeist.Addendum/Zeitgeist.Addendum.thumbs/Zeitgeist.Addendum_000060.jpg"
-									class="track">
-									Zeitgeist: Addendum (2008)</a>
-								</li>
-							</ul>
-				</div>
-				<div id="tabs-2" class="jp-playlist" index="2">
+						<div class="tabsBlock" style="display: none; ">
 							<ul>
-								<li><a title="unselect" href="javascript:;" mp="http://www.archive.org/download/TzmDevPhoenixMeeting12-04-2011/ts3_recording_11_12155E7A5.mp3" oga="http://www.archive.org/download/TzmDevPhoenixMeeting12-04-2011/ts3_recording_11_12155E7A5.ogg" poster="/ui/core/resources/jplayer-default0.jpg" class="track">TZM Dev Phoenix Meeting 12-04-2011</a></li>
+								<li><a href="#tabs-1">Films</a></li>
+								<li><a href="#tabs-2">Audio</a></li>
 							</ul>
-				</div>
-			</div><!-- tabsBlock -->
-		</div> <!-- jp-type-playlist -->
-	</div><!-- jp_container_1 -->
+							<div id="tabs-1" class="jp-playlist default" index="1">
+									<ul>
+										<li>
+											<a title="unselect" href="javascript:;" m4v="http://www.archive.org/download/Zeitgeist.Addendum/Zeitgeist.Addendum_512kb.mp4" ogv="http://www.archive.org/download/Zeitgeist.Addendum/Zeitgeist.Addendum.ogv" poster="http://www.archive.org/download/Zeitgeist.Addendum/Zeitgeist.Addendum.thumbs/Zeitgeist.Addendum_000060.jpg"
+												class="track">
+												Zeitgeist: Addendum (2008)</a>
+											</li>
+										</ul>
+							</div>
+							<div id="tabs-2" class="jp-playlist" index="2">
+										<ul>
+											<li><a title="unselect" href="javascript:;" mp="http://www.archive.org/download/TzmDevPhoenixMeeting12-04-2011/ts3_recording_11_12155E7A5.mp3" oga="http://www.archive.org/download/TzmDevPhoenixMeeting12-04-2011/ts3_recording_11_12155E7A5.ogg" poster="/ui/core/resources/jplayer-default0.jpg" class="track">TZM Dev Phoenix Meeting 12-04-2011</a></li>
+										</ul>
+							</div>
+						</div><!-- tabsBlock -->
+					</div> <!-- jp-type-playlist -->
+				</div><!-- jp_container_1 -->
+	
+	    </div>
+	</div>
+	<input id="tmp_duration" type="hidden" value="" />
 	<!-- /player widget-->
-	<button class="controls">Controls</button>
 </stl:block>
 

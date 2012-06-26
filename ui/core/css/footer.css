@@ -535,8 +535,8 @@ a#footer_trigger {
 	background:url("/ui/core/resources/footer_button_up.png") right no-repeat #121212;
 	display:block;
 	-moz-border-radius:4px 4px 0px 0px;
-	    -webkit-border-radius:4px 4px 0px 0px;
-	    border-radius:4px 4px 0px 0px;
+	-webkit-border-radius:4px 4px 0px 0px;
+	border-radius:4px 4px 0px 0px;
 }
 
 a.trigger_fixed {

@@ -523,9 +523,47 @@ div#viz {
 
 /* jPlayer */
 
-#jp_controls_panel {
-
+.slide {
+  position: relative;
+  overflow: hidden;
+  height: 220px;
+  width: 270px;
+  background-color: #ffc;
 }
+.slide .inner {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 270px;
+  height: 35px;
+}
+
+.slide button.non_button_active {
+	position: absolute;
+	z-index:2;
+	bottom:0px;
+	right:5px;
+	width:35px;
+	height:35px;
+	text-indent: -9999px;
+	background:url("/ui/core/resources/footer_button_up.png") right no-repeat #121212;
+	display:block;
+}
+
+.slide button.button_active {
+	background:url("/ui/core/resources/footer_button_down.png") right no-repeat #121212;
+}
+
+.js #slidebottom .inner { 
+  display: none;
+}
+
+
+
+#media .yui3-u-4-5 {
+	width: 275px;
+}
+
 .controls {
 	float: right;
 }
@@ -535,7 +573,6 @@ div#viz {
 	margin: .1em 0 0 0;
 }
 
-
 .player-toolbar li {
 cursor: pointer;
 float: left;
@@ -544,14 +581,33 @@ margin: 2px;
 padding: 4px 0;
 }
 
+div.jp-interface-show {
+position: absolute;
+top: -80px;
+right: 0px;
+}
+
 #jquery_jplayer_1 { 
-	box-orient: horizontal;
 	height: 270px;
-	background-color: rgb(0,0,0);
+	width: 220px;
+	background-color: #ffc;
+	position: relative;
+	overflow: hidden;
+}
+
+#jquery_jplayer_1 #jp_controls_panel {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 220px;
+	height: 36px;
+	padding: 6px;
+	background-color: #4c5;
+	color: #333;
 }
 
 div.jp-video-270p {
-	width:320px;
+	width:220px;
 }
 
 div.jp-video div.jp-video-play {
@@ -604,4 +660,8 @@ div.jp-video-play:hover a.jp-video-play-icon {
 }
 
 /* @end */
+
+#accordion .ui-accordion-header {font-size: 80%;}
+#accordion .ui-widget-content {font-size: 77%;}
+
 @media print{*{text-shadow:none !important;} #surface{height:auto !important;} body{overflow:visible !important;} #header{display:none;} #notification{display:none !important;}

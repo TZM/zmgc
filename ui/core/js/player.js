@@ -75,23 +75,14 @@ $(document).ready(function(){
 
     /// slide action for the control panel
     $(".controls").click(function(){
-		console.log($(this).next());
 		$("#jp_controls_panel").slideToggle();
-  		/// if(show_controls % 2 === 0) {
-  		/// 	$("#jp_controls_panel").css({ "display" : "block"});
-  		/// 	$(".tabsBlock").css({ "margin-top" : "20px"});
-  		/// 	show_controls++;
-  		/// 	$("#tmp_show_controls").attr("value", show_controls);
-  		/// 	return false;
-  		/// }
-  		/// else {
-  		/// 	$("#jp_controls_panel").css({ "display" : "none"});
-  		/// 	$(".tabsBlock").css({ "margin-top" : "5px"});
-  		/// 	show_controls++;
-  		/// 	$("#tmp_show_controls").attr("value", show_controls);
-  		/// 	return false;
-  		/// }
 	});
+	
+	$('#player button').click(function() {
+	    $(this).next().slideToggle();
+		$("#player button").toggleClass("button_active");
+	});
+	
 	$('.tabsBlock').tabs();
 	
 	// functions
