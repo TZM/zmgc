@@ -107,10 +107,7 @@ $(document).ready(function($){
 		hide_delay : 2000 // Time before hiding the footer (in milliseconds) if the 'showhidefooter' option is set to 'hide'
 	});
 });
-$(document).ready(function($){
-	// Accordion
-	$("#accordion").accordion({ header: "h3" });
-});
+
 ///* Captcha reload */
 //function load_captcha(callback) {
 //  // Gets image and audio URLs by Ajax call

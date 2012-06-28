@@ -79,9 +79,9 @@
   </stl:block>
   <!-- body -->
 		<!-- all other templates go within this block -->
-    <div class="yui3-g">
+    
       ${body}
-    </div>
+    
 		<!-- /all other templates go within this block -->
   <!-- /body -->
 	</div>
@@ -89,7 +89,7 @@
 	<div>
 		${upper_footer}
 	</div><!-- /footer -->
-	<a id="footer_trigger" class="trigger_active" href="#"></a><!-- Trigger Button -->
+	
 </div><!-- /surface-->
 
 </body>

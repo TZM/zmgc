@@ -228,13 +228,14 @@ window.Modernizr = function (a, b, c) {
             }
             if (e.showhidefooter == "hide") {
                 a(f).stop().delay(e.hide_delay).slideToggle(e.hide_speed);
-                a("#footer_trigger").toggleClass("trigger_active")
+                a("#footer_trigger").toggleClass("trigger_active");
             } else if (e.showhidefooter == "show") {
-                a(f).stop().hide().fadeIn(300)
+                a(f).stop().hide().fadeIn(300);
             }
             a("#footer_trigger").live("click", function () {
                 a(f).slideToggle(400);
                 a("#footer_trigger").toggleClass("trigger_active");
+				//$(this).parent().parent().find("div#viz").css("bottom", "0px");
                 return false
             })
         })

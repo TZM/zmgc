@@ -206,3 +206,21 @@ Also we need to utilise the local storage, html5.
 #Project.py
 
 A core project website has members
+
+
+#Freebase
+Access to data, the Open Source way.
+
+	from apiclient import discovery
+	from apiclient import model
+	import json
+
+	DEVELOPER_KEY = 'YOUR-KEY-GOES-HERE'
+
+	model.JsonModel.alt_param = ""
+	freebase = discovery.build('freebase', 'v1', developerKey=DEVELOPER_KEY)
+	query = [{'id': None, 'name': None, 'type': '/astronomy/planet'}]
+
+	response = json.loads(freebase.mqlread(query=json.dumps(query)).execute())
+	for planet in response['result']:
+		print planet['name']

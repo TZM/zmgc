@@ -517,45 +517,8 @@ div#chat {
 div#viz {
 	position: fixed;
 	z-index: 2;
-	bottom:30px;
+	bottom:50px;
 	right: 0px;
-}
-
-/* jPlayer */
-
-.slide {
-  position: relative;
-  overflow: hidden;
-  height: 220px;
-  width: 270px;
-  background-color: #ffc;
-}
-.slide .inner {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 270px;
-  height: 35px;
-}
-
-.slide button.non_button_active {
-	position: absolute;
-	z-index:2;
-	bottom:0px;
-	right:5px;
-	width:35px;
-	height:35px;
-	text-indent: -9999px;
-	background:url("/ui/core/resources/footer_button_up.png") right no-repeat #121212;
-	display:block;
-}
-
-.slide button.button_active {
-	background:url("/ui/core/resources/footer_button_down.png") right no-repeat #121212;
-}
-
-.js #slidebottom .inner { 
-  display: none;
 }
 
 
@@ -564,9 +527,6 @@ div#viz {
 	width: 275px;
 }
 
-.controls {
-	float: right;
-}
 
 .player-toolbar {
 	background: #111;
@@ -599,7 +559,7 @@ right: 0px;
 	position: absolute;
 	left: 0;
 	bottom: 0;
-	width: 220px;
+	width: 270px;
 	height: 36px;
 	padding: 6px;
 	background-color: #4c5;
@@ -607,7 +567,7 @@ right: 0px;
 }
 
 div.jp-video-270p {
-	width:220px;
+	width:270px;
 }
 
 div.jp-video div.jp-video-play {
@@ -637,7 +597,7 @@ div.jp-video-play:hover a.jp-video-play-icon {
 /* @group current time and duration */
 
 .jp-current-time, .jp-duration {
-	width:70px;
+	width:50px;
 	font-size:.5em;
 	color: #fff;
 }
@@ -652,16 +612,20 @@ div.jp-video-play:hover a.jp-video-play-icon {
 }
 
 .jp-video .jp-current-time {
-	padding-left:20px;
+	padding-left:10px;
 }
 
 .jp-video .jp-duration {
-	padding-right:20px;
+	padding-right:10px;
+}
+
+#watch-related-container {
+	font-size:.5em;
 }
 
 /* @end */
-
+#accordion {height: 100px;}
 #accordion .ui-accordion-header {font-size: 80%;}
-#accordion .ui-widget-content {font-size: 77%;}
+#accordion .ui-widget-content {font-size: 77%;height: 95px;}
 
 @media print{*{text-shadow:none !important;} #surface{height:auto !important;} body{overflow:visible !important;} #header{display:none;} #notification{display:none !important;}

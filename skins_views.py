@@ -53,7 +53,6 @@ class PlayerTemplate(CMSTemplate):
     """
     template = 'ui/core/templates/widgets/player.xml'
 
-#
 class FooterTemplate(CMSTemplate):
     """
         The footer template

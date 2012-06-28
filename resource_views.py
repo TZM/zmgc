@@ -416,3 +416,9 @@ class Messages_TableResource(OrderedTable):
 
     #view = SelectTable_View()
     #edit_record = SelectTable_EditRecord()
+
+class Map(STLView):
+	
+	access = True
+	title = MSG(u'Map')
+	template = 'ui/core/templates/pages/map.xml'

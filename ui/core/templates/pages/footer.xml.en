@@ -3,23 +3,21 @@
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <stl:block xmlns="http://www.w3.org/1999/xhtml"
   xmlns:stl="http://www.hforge.org/xml-namespaces/stl">
-
+		<div id="chat_div"></div>
 		<ul id="footer" class="footer_fullwidth"><!-- BEGIN FOOTER -->
 
 
 		    <li id="footer_home"><a href="/"><img src="/ui/core/resources/phx-logo-30x34.png" alt="Home" /></a></li>
 
-
-		    <li><a href="/" class="dropup">Large Content</a><!-- Begin First Menu Item -->
+		    <li><a href="/" class="dropup">Zeitgeist</a><!-- Begin First Menu Item -->
 
 
 		        <div class="footer_dropup drop12columns"><!-- Begin Item Container -->
 
 
 		            <div class="col_12">
-		                <h4>Awesome jQuery-Powered Footer !</h4>
+		                <h4>The Zeitgeist Movement!</h4>
 		            </div>
-
 		            <div class="col_6">
 		                <p>You can use any of the 6 included jQuery effects to show the content, it can be on mouse hover or on click, with 3 different transitions : fade, slide or toggle. There's also an option to show the footer when the page loads and hide it after a delay. This option can be disabled.</p>
 		                <p>On the right, there's a set of <a href="http://sixrevisions.com/freebies/icons/free-social-media-icons-for-designers-a-life-in-pixels/">social icons</a> showing a simple tooltip on mouse hover. You can add your owns and link to your social networks profiles if you wish.</p>
@@ -105,7 +103,7 @@
 
 
 
-		    <li><a href="/" class="dropup">Columns</a><!-- Begin Second Menu Item -->
+		    <li><a href="/" class="dropup">Tools</a><!-- Begin Second Menu Item -->
 
 
 		        <div class="footer_dropup drop12columns"><!-- Begin Item Container -->
@@ -206,7 +204,7 @@
 
 
 
-		    <li><a href="/" class="dropup">Images</a><!-- Begin Third Menu Item -->
+		    <li><a href="/" class="dropup">Documentations</a><!-- Begin Third Menu Item -->
 
 
 		        <div class="footer_dropup drop6columns"><!-- Begin Item Container -->
@@ -234,7 +232,7 @@
 
 
 
-		    <li><a href="/" class="dropup">Texts, Tables &amp; Lists</a><!-- Begin Fourth Menu Item -->
+		    <li><a href="/" class="dropup">F.A.Q</a><!-- Begin Fourth Menu Item -->
 
 
 		        <div class="footer_dropup drop8columns"><!-- Begin Item Container -->
@@ -322,31 +320,32 @@
 		                </table>
 
 		            </div>
-
-
 		        </div><!-- End Item Container -->
-
-
 		    </li><!-- End Fourth Item -->
-
-
-
 		    <li id="social"><!-- Begin Social Icons Item -->
-
-
 		        <ul><!-- Social Icons -->
-
 		            <!-- The span is the text appearing on hover, use the tooltip class in the link -->
 		            <li><a href="/" class="tooltip"><img src='/ui/core/resources/icons/twitter.png' alt="" class="footer_icon" /><span>Twitter</span></a></li>
 		            <li><a href="/" class="tooltip"><img src='/ui/core/resources/icons/rss.png' alt="" class="footer_icon" /><span>RSS</span></a></li>
 		            <li><a href="/" class="tooltip"><img src='/ui/core/resources/icons/flickr.png' alt="" class="footer_icon" /><span>Flickr</span></a></li>
 		            <li><a href="/" class="tooltip"><img src='/ui/core/resources/icons/facebook.png' alt="" class="footer_icon" /><span>Facebook</span></a></li>
 								<li><a href="/" class="tooltip"><img src='/ui/core/resources/icons/youtube.png' alt="" class="footer_icon" /><span>You Tube</span></a></li>
+								<!-- End Social Icons -->
+								<!-- Notifications -->
+								<li id="notifications">
+										<a title="notifications" href="/notifications" class="alert">
+												<span class="notification_icon"></span>
+												<span class="count" id="notification_count_icon" style="display: none; "></span>
+										</a>
+								</li>
+								<li id="chat">
+										<a title="chat" href="/chat" class="alert">
+												<span class="chat_icon"></span>
+												<span class="count" id="chat_count_icon" style="display: none; "></span>
+										</a>
+								</li>
 		        </ul><!-- End Social Icons -->
-
-
 		    </li><!-- End Social Icons Item -->
-
-
 		</ul><!-- END FOOTER -->
+		<a id="footer_trigger" class="trigger_active" href="#"></a><!-- Trigger Button -->
 </stl:block>

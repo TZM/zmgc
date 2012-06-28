@@ -28,7 +28,7 @@ from tzm.website import WebSite
  
 # Import from here
 from views import View, ChapterGenerator, More
-from tzm.resource_views import Captcha
+from tzm.resource_views import Captcha, Map
 
 
 class Phoenix(WebSite):
@@ -75,6 +75,7 @@ class Phoenix(WebSite):
     captcha = Captcha()
     create = ChapterGenerator()
     more = More()
+    maps = Map()
     #site_search = Search_View()
 
 #Register
