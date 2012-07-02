@@ -50,7 +50,6 @@ ZMGC.prototype.createHTTPServer = function() {
 			
       var location = url.parse(request.url, true),
           params = (location.query || request.headers);
-      
       if (location.pathname == '/config.json' && request.method == "GET") {
         response.writeHead(200, {
           'Content-Type': 'application/x-javascript'
@@ -71,9 +70,9 @@ ZMGC.prototype.createHTTPServer = function() {
 				origin = /\/(.*)\.gif/.exec(request.url);
 				console.log(__dirname);
 				if (origin) {
-					//var ip = "xx.xx.xx.xx"
-					var ip = request.connection.remoteAddress;
-					//console.log(ip);
+					// var ip = "xxx.xxx.xxx.xxx"
+					var ip = request.headers['x-real-ip'];
+					console.log(ip);
 					city = new City("../../../../data/GeoLiteCity.dat");
 					city.lookup(ip, function(err, location) {
 							obj = {
