@@ -95,13 +95,12 @@ We want to run our instance within a virtual environment
     server {
             server_name  zmgc.aqoon.local;
             # All R-ead URI's point to 19080 instance
-            location /
-                    {
-                    proxy_pass http://127.0.0.1:19080;
-                    proxy_set_header        Host            $host;
-                    proxy_set_header        X-Real-IP       $remote_addr;
-                    proxy_set_header        X-Forwarded-For $proxy_add_x_forwarded_for;
-                    }
+            location / {
+				proxy_pass http://127.0.0.1:19080;
+				proxy_set_header        Host            $host;
+				proxy_set_header        X-Real-IP       $remote_addr;
+				proxy_set_header        X-Forwarded-For $proxy_add_x_forwarded_for;
+			}
 			# If we want to cluster
             # All W-rite point to 18080 instance
             # TODO get a list of all actions
@@ -111,6 +110,13 @@ We want to run our instance within a virtual environment
             #         proxy_set_header        X-Real-IP       $remote_addr;
             #         proxy_set_header        X-Forwarded-For $proxy_add_x_forwarded_for;
             #         }
+			# Adding the nodejs proxy
+			location ~* "(/stat/1.gif|/faye|/config.json|/stat)" {
+				proxy_pass http://127.0.0.1:29080;
+				proxy_set_header        Host            $host;
+				proxy_set_header        X-Real-IP       $remote_addr;
+				proxy_set_header        X-Forwarded-For $proxy_add_x_forwarded_for;
+			}
 
 ##APACHE
 

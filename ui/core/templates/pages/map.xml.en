@@ -3,7 +3,9 @@
           "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <stl:block xmlns="http://www.w3.org/1999/xhtml"
   xmlns:stl="http://www.hforge.org/xml-namespaces/stl">
-
+	<script type="text/javascript" src="/faye.js"></script>
+	<script type="text/javascript" src="/ui/core/js/raphaeljs/raphael-min.js"></script>
+	<script type="text/javascript" src="/ui/core/js/node/public/client.js"></script>
 <div class="yui3-g"><!-- content -->
   <div class="yui3-u-3-5"><!-- form block 60%-->
     <div id="map"></div>

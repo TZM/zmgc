@@ -224,3 +224,10 @@ Access to data, the Open Source way.
 	response = json.loads(freebase.mqlread(query=json.dumps(query)).execute())
 	for planet in response['result']:
 		print planet['name']
+		
+#Home Page
+
+##Globe
+When a logged in user adds content, the home page 'globe' will rotate and centre on the lat/lon position, which is worked out from the user's IP address or the location the user has chosen to use within their preferences and we animate a specific colour 'circle' depending on what the user has added.
+We then use the jQuery 'Transfer Effect' from this point to the 'div' where the new item's Title and Short Description are displayed in real time.
+
