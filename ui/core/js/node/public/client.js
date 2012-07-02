@@ -34,9 +34,6 @@ function LiveStatsClient() {
         mapCanvasHeight = width * (369.0 / 567.0);    
     self.map.setSize(width, mapCanvasHeight);
 	console.log(window.location.hostname);
-    $('#map').css({
-      'margin-top': (windowHeight - mapCanvasHeight) / 2.0
-    });
   }
 
   this.drawMap = function () {
@@ -79,7 +76,7 @@ function LiveStatsClient() {
   this.drawMarker = function (message) {
     var latitude = message.latitude,
         longitude = message.longitude,
-        text = message.title,
+        text = message.title, //Fixme, this is the user's name
         city = message.city,
         x, y;
 
@@ -88,18 +85,18 @@ function LiveStatsClient() {
     y = mapCoords.y;
 
     var person = self.map.path(personPath);
-	console.log(person);
-    person.scale(0.01, 0.01);
+    person.scale(0.06, 0.06);
     person.translate(-255, -255); // Reset location to 0,0
     person.translate(x, y);
+	console.log(x, y);
     person.attr({
-      fill: '#fff',
+      fill: 'red',
       stroke: 'transparent'
     });
 
     var title = self.map.text(x, y + 11, text);
     title.attr({
-      fill: 'white',
+      fill: 'red',
       "font-size": 12,
       "font-family": "'Helvetica Neue', 'Helvetica', sans-serif",
       'font-weight': 'bold'
@@ -113,14 +110,14 @@ function LiveStatsClient() {
 
     var hoverFunc = function () {
       person.attr({
-        fill: 'white'
+        fill: 'red'
       });
-      $(title.node).fadeIn('fast');
-      $(subtitle.node).fadeIn('fast');
+      $(title.node).fadeIn('slow');
+      $(subtitle.node).fadeIn('slow');
     };
     var hideFunc = function () {
       person.attr({
-        fill: '#ff9'
+        fill: 'red'
       });
       $(title.node).fadeOut('slow');
       $(subtitle.node).fadeOut('slow');
@@ -128,7 +125,7 @@ function LiveStatsClient() {
     $(person.node).hover(hoverFunc, hideFunc);
 
     person.animate({
-      scale: '0.02, 0.02'
+      scale: '0.09, 0.09'
     }, 2000, 'elastic', function () {
       $(title.node).fadeOut(5000);
       $(subtitle.node).fadeOut(5000);

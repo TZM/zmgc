@@ -108,6 +108,7 @@
 						<div class="yui3-u-1" id="townhall">
 								{town-hall-meetings}
 								{chat}
+								<img src="/stat/1.gif" />
 						</div>
 					</div>	
 				</div>
