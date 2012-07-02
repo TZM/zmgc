@@ -29,11 +29,11 @@ function LiveStatsClient() {
   };
 
   this.viewDidResize = function () {
-    var width = $('.yui3-u-3-5').width(),
+    var width = $('.map').width(),
         windowHeight = $(window).height(),
-        mapCanvasHeight = width * (369.0 / 567.0);    
+        mapCanvasHeight = (width * (369.0 / 567.0) - 100);    
     self.map.setSize(width, mapCanvasHeight);
-	console.log(window.location.hostname);
+	console.log(width);
   }
 
   this.drawMap = function () {
