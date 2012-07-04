@@ -70,8 +70,9 @@ ZMGC.prototype.createHTTPServer = function() {
 				origin = /\/(.*)\.gif/.exec(request.url);
 				console.log(__dirname);
 				if (origin) {
-					var ip = "128.121.50.133";
-					//var ip = request.headers['x-real-ip'];
+					//var ip = "128.121.50.133";
+					var ip = request.headers['x-real-ip'];
+					console.log(ip);
 					city = new City("../../../../data/GeoLiteCity.dat");
 					city.lookup(ip, function(err, location) {
 							obj = {
@@ -82,6 +83,7 @@ ZMGC.prototype.createHTTPServer = function() {
 								, timestamp: time
 							}
 							self.bayeux.getClient().publish('/stat', obj);
+							console.log(obj);
 							// write to riak cluster
 							//db.save('users', ip, obj, { index: {timestamp: time} });
 							//console.log('was saved in the riak cluster');
