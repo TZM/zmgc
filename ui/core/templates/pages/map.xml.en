@@ -7,8 +7,7 @@
 	<script type="text/javascript" src="/ui/core/js/raphaeljs/raphael-min.js"></script>
 	<script type="text/javascript" src="/ui/core/js/node/public/client.js"></script>
 <div class="yui3-g"><!-- content -->
-  <div class="yui3-u-4-5 map"><!-- form block 60%-->
-    <div id="map"></div>
+  <div class="yui3-u-4-5" id="map"><!-- form block 60%-->
   </div><!-- /form block 60%-->
   
   <div class="yui3-u-1-5"><!-- help 40%-->
