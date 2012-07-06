@@ -87,10 +87,9 @@ function ZmgcClient() {
     y = mapCoords.y;
 
     var person = self.map.path(personPath);
-    person.scale(0.03, 0.03);
-	person.translate(0, 0); // Reset location to 0,0
+	person.translate(-255, -255); // Reset location to 0,0
     person.translate(x, y);
-	console.log(x, y);
+	person.scale(0.03, 0.03);
     person.attr({
       fill: 'red',
       stroke: 'transparent'

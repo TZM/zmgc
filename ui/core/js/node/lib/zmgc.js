@@ -70,9 +70,7 @@ ZMGC.prototype.createHTTPServer = function() {
 				origin = /\/(.*)\.gif/.exec(request.url);
 				console.log(__dirname);
 				if (origin) {
-					//var ip = "128.121.50.133";
 					var ip = request.headers['x-real-ip'];
-					console.log(ip);
 					city = new City("../../../../data/GeoLiteCity.dat");
 					city.lookup(ip, function(err, location) {
 							obj = {
