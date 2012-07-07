@@ -69,15 +69,11 @@ ZMGC.prototype.createHTTPServer = function() {
 		    	});
 				origin = /\/(.*)\.gif/.exec(request.url);
 				if (origin) {
-					var ip_address = (request.headers['x-real-ip']);
-					if (ip_address !== "127.0.0.1") {
-						var ip = request.headers['x-real-ip'];
-						console.log(ip);	
+					var ip = request.headers['x-real-ip'];
+					if (ip === null || ip === "127.0.0.1") {
+					    ip = "173.194.41.100";
 					}
-					else {
-						var ip = "173.194.41.100";
-						console.log(ip);
-					}
+					console.log(ip);
 					city = new City("../../../../data/GeoLiteCity.dat");
 					city.lookup(ip, function(err, location) {
 							obj = {
