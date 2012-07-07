@@ -1,16 +1,20 @@
 {
   "author": "Norman Khine <norman@khine.net> (http://khine.net)",
-  "name": "chat-zmgc",
-  "description": "A module for the chat application for the ZMGC project",
-  "version": "0.0.0",
-  "homepage": "http://chat.zmgc.net",
+  "name": "parallax",
+  "description": "Node.js application for the ZMGC project used to handle all 'realtime' events. The event is in my eye, but I am also the event!",
+  "version": "0.0.1-1",
+  "homepage": "http://parallax.zmgc.net",
   "repository": {
     "type": "git",
-    "url": "git://github.com/nkhine/chat.git"
+    "url": "git://github.com/nkhine/parallax.git"
   },
-  "engines": {
+	"subdomain": "parallax",
+	"engines": {
     "node": "~0.6.9"
   },
+	"scripts": {
+		"start": "server.js"
+	},
   "dependencies": {
 		"d3": ">=2.9.2",
     "now": ">=0.8.0",

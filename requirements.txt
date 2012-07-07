@@ -1,0 +1,17 @@
+http://effbot.org/media/downloads/Imaging-1.1.7.tar.gz
+dnspython>=1.10.0
+docutils>=0.8
+-e git+https://github.com/numpy/numpy.git@v1.6.2#egg=numpy
+-e git+https://github.com/matplotlib/matplotlib.git@v1.1.1-rc2#egg=matplotlib
+nose>=1.1.2
+python-dateutil>=1.5
+python-magic>=0.4.1
+pytz>=2012c
+reportlab>=2.5
+wsgiref>=0.1.2
+xlrd>=0.7.1
+-e git://github.com/libgit2/pygit2.git#egg=pygit2
+-e git://github.com/hforge/itools.git@0.62.9#egg=itools
+-e git://github.com/hforge/ikaaro.git@0.62.9#egg=ikaaro
+-e git://github.com/hforge/wiki.git#egg=wiki
+-e git://github.com/nkhine/phoenix.git#egg=tzm
