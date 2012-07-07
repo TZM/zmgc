@@ -12,8 +12,9 @@
     "node": "~0.6.9"
   },
   "dependencies": {
+		"d3": ">=2.9.2",
     "now": ">=0.8.0",
-		"faye": "0.8.0",
+		"faye": "0.8.2",
     "node-static": "0.5.9",
     "geoip": "git://github.com/toots/GeoIP.git",
     "validator": ">=0.3.9"
