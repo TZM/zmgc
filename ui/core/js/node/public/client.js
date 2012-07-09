@@ -27,6 +27,11 @@ function ZmgcClient() {
 
 	this.drawMap = function () {
 		var data;
+		var points = [];
+		  for (var lon = -180; lon < 180; lon += 10) {
+		    for (var lat = -90; lat < 90; lat += 10) { points.push([lon, lat]); }
+		  }
+		console.log(points);
 		// Most parts of D3 don't know anything about SVG—only DOM.
 		self.map = d3.geo.equirectangular().scale(width);
 		self.path = d3.geo.path().projection(self.map);
@@ -36,6 +41,7 @@ function ZmgcClient() {
 			.attr("viewBox", "0 0 " + width + " " + mapCanvasHeight);
 		
 		self.countries = self.svg.append('svg:g').attr('id', 'countries');
+		
 		// Load data from .json file
 		d3.json("/ui/data/world-countries.json", function(json) {
 			self.countries.selectAll("path")	// select all the current path nodes
@@ -49,6 +55,11 @@ function ZmgcClient() {
 			.on("mouseout", function(d) {
 				d3.select(this).style("fill","#000000");})
 		});
+		drawGrid = self.countries.selectAll("path")
+			.data(points).enter()
+		    .append('svg:circle')
+			.style("fill", "steelblue")
+		    .attr("r", 1.5);
 		
 		//fisheye = d3.fisheye();
 		//self.svg.on("mousemove", function() {
@@ -62,8 +73,8 @@ function ZmgcClient() {
 	this.geoCoordsToMapCoords = function (latitude, longitude) {
 		latitude = parseFloat(latitude);
 		longitude = parseFloat(longitude);
-
-		var mapWidth = width,
+		console.log($('#countries').width())
+		var mapWidth = $('#countries').width(),
 			mapHeight = mapCanvasHeight,
 			x, y, mapOffsetX, mapOffsetY;
 
@@ -95,8 +106,8 @@ function ZmgcClient() {
 			x = mapCoords.x;
 			y = mapCoords.y;
         
-		console.log(x,y);
-		self.countries.append('svg:circle')
+		console.log(d3.geo.bounds(self.svg));
+		self.svg.append('svg:circle')
 			.attr("r", 5)
 			.style("fill", "steelblue")
 			.attr("cx", x)
