@@ -422,3 +422,10 @@ class Map(STLView):
 	access = True
 	title = MSG(u'Map')
 	template = 'ui/core/templates/pages/map.xml'
+	
+	scripts = ['/faye.js',
+		'/ui/core/js/d3/d3.v2.min.js',
+		'/ui/core/js/raphaeljs/raphael-min.js',
+		'/ui/core/js/node/public/fisheye.js',
+		'/ui/core/js/node/public/client.js'
+	]

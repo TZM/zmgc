@@ -1,4 +1,4 @@
-console.log($("#connect").outerWidth());
+
 var feature;
 
 var width = 277,
@@ -49,23 +49,23 @@ svg.append("rect")
 		.attr("pointer-events", "all");
 
 d3.json("/ui/data/world-countries.json", function(collection) {
-  feature = svg.selectAll("path")
-      .data(collection.features)
-      .enter().append("svg:path")
-			.on("mouseover", function(d) { d3.select(this).style("fill",
-			"#6C0"); })
-			.on("mouseout", function(d) { d3.select(this).style("fill",
-			"#000000"); })
-			.on("click", click)
-      .attr("d", clip);
+	feature = svg.selectAll("path")
+	.data(collection.features)
+	.enter().append("svg:path")
+	.on("mouseover", function(d) {
+		d3.select(this).style("fill","#6C0");})
+	.on("mouseout", function(d) {
+		d3.select(this).style("fill","#000000");})
+	.on("click", click)
+	.attr("d", clip);
 
-  feature.append("svg:title")
-      .text(function(d) { return d.properties.name; });
-			
+	feature.append("svg:title")
+	.text(function(d) { return d.properties.name; });
+
 	// startAnimation();
 	// d3.select('#animate').on('click', function () {
-	//     if (done) startAnimation(); else stopAnimation();
-	// });
+		//     if (done) startAnimation(); else stopAnimation();
+		// });
 });
 
 d3.select(window)

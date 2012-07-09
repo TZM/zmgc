@@ -88,3 +88,8 @@
 	height: 20px;
 	background-color: #FFFFFF;
 }
+
+#map {
+	width:90%;
+	height:80%;
+}
