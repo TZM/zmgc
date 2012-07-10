@@ -1,5 +1,5 @@
 function ZmgcClient() {
-	var personPath = "M255.968,166.154c34.206,0,61.936-27.727,61.936-61.934c0-34.208-27.729-61.936-61.936-61.936s-61.936,27.728-61.936,61.936 C194.032,138.428,221.762,166.154,255.968,166.154z M339.435,194.188c-13.082-13.088-28.625-20.924-84.83-20.924 c-56.214,0-71.38,8.505-83.796,20.924c-12.422,12.416-8.23,144.883-8.23,144.883l27.485-65.304l17.28,194.554l49.856-99.57 l46.521,99.57l16.456-194.554l27.487,65.304C347.664,339.07,352.521,207.271,339.435,194.188z";
+	var personPath = 'M255.968,166.154c34.206,0,61.936-27.727,61.936-61.934c0-34.208-27.729-61.936-61.936-61.936s-61.936,27.728-61.936,61.936 C194.032,138.428,221.762,166.154,255.968,166.154z M339.435,194.188c-13.082-13.088-28.625-20.924-84.83-20.924 c-56.214,0-71.38,8.505-83.796,20.924c-12.422,12.416-8.23,144.883-8.23,144.883l27.485-65.304l17.28,194.554l49.856-99.57 l46.521,99.57l16.456-194.554l27.487,65.304C347.664,339.07,352.521,207.271,339.435,194.188z';
 	if (! (this instanceof arguments.callee)) {
 		return new arguments.callee(arguments);
 	}
@@ -13,13 +13,13 @@ function ZmgcClient() {
 	};
 
 	this.setupBayeuxHandlers = function() {
-		$.getJSON("/config.json", function (config) {
-			self.client = new Faye.Client("http://" + window.location.hostname + ':' + config.port + '/faye', {
+		$.getJSON('/config.json', function (config) {
+			self.client = new Faye.Client('http://' + window.location.hostname + ':' + config.port + '/faye', {
 				timeout: 120
 			});
 
 			self.client.subscribe('/stat', function (message) {
-				// console.log("MESSAGE", message);
+				// console.log('MESSAGE', message);
 				self.drawMarker(message);
 			});
 		});
@@ -27,103 +27,66 @@ function ZmgcClient() {
 
 	this.drawMap = function () {
 		var data;
-		var points = [];
-		  for (var lon = -180; lon < 180; lon += 10) {
-		    for (var lat = -90; lat < 90; lat += 10) { points.push([lon, lat]); }
-		  }
-		console.log(points);
+
 		// Most parts of D3 don't know anything about SVG—only DOM.
 		self.map = d3.geo.equirectangular().scale(width);
-		self.path = d3.geo.path().projection(self.map);
+		self.projection = d3.geo.path().projection(self.map);
 		self.svg = d3.select('#map').append('svg:svg')
-			.attr("width", "100%")
-			.attr("height", "100%")
-			.attr("viewBox", "0 0 " + width + " " + mapCanvasHeight);
+			.attr('width', '100%')
+			.attr('height', '100%')
+			.attr('viewBox', '0 0 ' + width + ' ' + mapCanvasHeight);
 		
 		self.countries = self.svg.append('svg:g').attr('id', 'countries');
-		
+
 		// Load data from .json file
-		d3.json("/ui/data/world-countries.json", function(json) {
-			self.countries.selectAll("path")	// select all the current path nodes
+		d3.json('/ui/data/world-countries.json', function(json) {
+			self.countries.selectAll('path')	// select all the current path nodes
 			.data(json.features)				// bind these to the features array in json
-			.enter().append("path")				// if not enough elements create a new path
-			.attr("d", self.path)				// transform the supplied jason geo path to svg
-			.on("mouseover", function(d) {
-				d3.select(this).style("fill","#6C0")
-					.append("svg:title")
+			.enter().append('path')				// if not enough elements create a new path
+			.attr('d', self.projection)				// transform the supplied jason geo path to svg
+			.on('mouseover', function(d) {
+				d3.select(this).style('fill','#6C0')
+					.append('svg:title')
 				    .text(d.properties.name);})
-			.on("mouseout", function(d) {
-				d3.select(this).style("fill","#000000");})
+			.on('mouseout', function(d) {
+				d3.select(this).style('fill','#000000');})
 		});
-		drawGrid = self.countries.selectAll("path")
-			.data(points).enter()
-		    .append('svg:circle')
-			.style("fill", "steelblue")
-		    .attr("r", 1.5);
 		
 		//fisheye = d3.fisheye();
-		//self.svg.on("mousemove", function() {
+		//self.svg.on('mousemove', function() {
 		//  fisheye.center(d3.mouse(this));
 		//	console.log(self.countries);
 		//	
-		  //self.svg.attr("d", function(d) { return line(d.map(fisheye)); });
+		  //self.svg.attr('d', function(d) { return line(d.map(fisheye)); });
 		//});
 	}
 
-	this.geoCoordsToMapCoords = function (latitude, longitude) {
-		latitude = parseFloat(latitude);
-		longitude = parseFloat(longitude);
-		console.log($('#countries').width())
-		var mapWidth = $('#countries').width(),
-			mapHeight = mapCanvasHeight,
-			x, y, mapOffsetX, mapOffsetY;
-
-		x = (mapWidth * (180 + longitude) / 360) % mapWidth;
-
-		latitude = latitude * Math.PI / 180;
-		y = Math.log(Math.tan((latitude / 2) + (Math.PI / 4)));
-		y = (mapHeight / 2) - (mapWidth * y / (2 * Math.PI));
-
-		mapOffsetX = mapWidth * 0.026;
-		mapOffsetY = mapHeight * 0.141;
-
-		return {
-			x: (x - mapOffsetX) * 0.97,
-			y: (y + mapOffsetY + 15),
-			xRaw: x,
-			yRaw: y
-		};
-	}
-
 	this.drawMarker = function (message) {
-		var latitude = message.latitude,
-			longitude = message.longitude,
+		var longitude = message.longitude,
+			latitude = message.latitude,
 			text = message.title,
-			city = message.city,
-			x, y;
+			city = message.city;
 
-		var mapCoords = this.geoCoordsToMapCoords(latitude, longitude);
-			x = mapCoords.x;
-			y = mapCoords.y;
-        
-		console.log(d3.geo.bounds(self.svg));
+		var coordinates = self.map([longitude, latitude]);
+			console.log(coordinates);
+			x = coordinates[0];
+			y = coordinates[1];
+
 		self.svg.append('svg:circle')
-			.attr("r", 5)
-			.style("fill", "steelblue")
-			.attr("cx", x)
-			.attr("cy", y);
-			console.log(x, y);
+			.attr('r', 5)
+			.style('fill', 'steelblue')
+			.attr('cx', x)
+			.attr('cy', y);
 
-        	//map.append('svg:circle')
-			//    .attr("transform", function(d) { 
-			//        return "translate(" + projection(d.coordinates) + ")"; 
-			//    })
-			//    .attr('r', 5);
-		//var mapCoords = this.geoCoordsToMapCoords(latitude, longitude);
-		//	x = mapCoords.x;
-		//	y = mapCoords.y;
-        //
-		//var person = self.map.path(personPath);
+		//self.svg.append('svg:circle')
+		//    .attr("transform", function() {
+		//		console.log(coordinates);
+		//        return "translate(" + self.projection(coordinates) + ")"; 
+		//    })
+		//	.style('fill', 'steelblue')
+		//    .attr('r', 5);
+		//var person = self.path(personPath);
+		//	console.log(person, 'person');
 		//	person.translate(-255, -255); // Reset location to 0,0
 		//	person.translate(x, y);
 		//	person.scale(0.03, 0.03);
@@ -132,18 +95,18 @@ function ZmgcClient() {
 		//		stroke: 'transparent'
 		//	});
         //
-		//var title = self.map.text(x, y + 11, text);
+		//var title = self.svg.text(x, y + 11, text);
 		//title.attr({
 		//	fill: 'red',
-		//	"font-size": 10,
-		//	"font-family": "'Helvetica Neue', 'Helvetica', sans-serif",
+		//	'font-size': 10,
+		//	'font-family': ''Helvetica Neue', 'Helvetica', sans-serif',
 		//	'font-weight': 'bold'
 		//});
 		//var subtitle = self.map.text(x, y + 21, city);
 		//subtitle.attr({
 		//	fill: '#999',
-		//	"font-size": 7,
-		//	"font-family": "'Helvetica Neue', 'Helvetica', sans-serif"
+		//	'font-size': 7,
+		//	'font-family': ''Helvetica Neue', 'Helvetica', sans-serif'
 		//});
         //
 		//var hoverFunc = function () {

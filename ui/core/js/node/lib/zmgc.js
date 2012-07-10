@@ -77,10 +77,10 @@ ZMGC.prototype.createHTTPServer = function() {
 					city.lookup(ip, function(err, location) {
 							obj = {
 								city: location.city
-	            				, latitude: location.latitude
-	            				, longitude: location.longitude
-	            				, ip: ip
-								, timestamp: time
+	            				,longitude: location.longitude
+								,latitude: location.latitude
+	            				,ip: ip
+								,timestamp: time
 							}
 							self.bayeux.getClient().publish('/stat', obj);
 							console.log(obj);
