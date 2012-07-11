@@ -95,24 +95,27 @@ function ZmgcClient() {
 		//	});
 				
 		self.svg.append("svg:circle")
-				.attr("r", 5)
-			    .attr("transform", function() { return "translate(" + x + "," + y + ")"; })
-				.attr("class", "member")
-				.style("fill", "steelblue")
-				.on("mouseover", function(){
-					  d3.select(this).transition()
-					      .attr("r", 15)
-					})
-				.on("mouseout", function() {
-						//this.parentNode.appendChild(this);
-						  d3.select(this).transition()
-						      .attr("r", 5)
-					});
+			.attr("r", 5)
+		    .attr("transform", function() { return "translate(" + x + "," + y + ")"; })
+			.attr("class", "member")
+			.style("fill", "steelblue")
+			.on("mouseover", function(){
+				d3.select(this).transition()
+					.attr("r", 20)
+					.style("fill", "red")	
+				})
+			.on("mouseout", function() {
+				//this.parentNode.appendChild(this);
+				d3.select(this).transition()
+					.attr("r", 5)
+					.style("fill", "steelblue")
+				});
 		self.svg.append("svg:text")
-			.attr("x", x - 10)
-			.attr("dy", y + 10)
-			.style("fill", "red")
-			.text(function(d) { return city; });
+			.text(function(d) { return city; })
+			.attr("x", x)
+			.attr("dy", y + 20)
+			.attr('text-anchor', 'middle')
+			.attr("class", "city");
 
 		//var hoverFunc = function () {
 		//	person.attr({fill:"#ff9"});

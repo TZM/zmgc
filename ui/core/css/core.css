@@ -93,3 +93,8 @@
 	width:90%;
 	height:80%;
 }
+
+svg .city {
+	font-size: 88%;
+	fill: #6C0;
+}
