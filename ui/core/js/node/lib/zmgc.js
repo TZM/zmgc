@@ -71,7 +71,7 @@ ZMGC.prototype.createHTTPServer = function() {
 				if (origin) {
 					var ip = request.headers['x-real-ip'];
 					if (ip === null || ip === "127.0.0.1") {
-					    ip = "173.194.41.100";
+					    ip = "82.246.239.187";
 					}
 					city = new City("../../../../data/GeoLiteCity.dat");
 					city.lookup(ip, function(err, location) {
