@@ -1,5 +1,5 @@
 function ZmgcClient() {
-	var personPath = "M255.968,166.154c34.206,0,61.936-27.727,61.936-61.934c0-34.208-27.729-61.936-61.936-61.936s-61.936,27.728-61.936,61.936 C194.032,138.428,221.762,166.154,255.968,166.154z M339.435,194.188c-13.082-13.088-28.625-20.924-84.83-20.924 c-56.214,0-71.38,8.505-83.796,20.924c-12.422,12.416-8.23,144.883-8.23,144.883l27.485-65.304l17.28,194.554l49.856-99.57 l46.521,99.57l16.456-194.554l27.487,65.304C347.664,339.07,352.521,207.271,339.435,194.188z";
+	var personPath = "m 1.4194515,-160.64247 c 33.5874165,0 60.8159465,-25.97005 60.8159465,-58.00952 0,-32.0404 -27.22755,-58.0114 -60.8159465,-58.0114 -33.5883965,0 -60.8159415,25.971 -60.8159415,58.0114 0,32.0404 27.228527,58.00952 60.8159415,58.00952 z m 81.9575765,26.25762 C 70.531608,-146.64352 55.269688,-153.983 0.08110256,-153.983 c -55.19742156,0 -70.08915856,7.96609 -82.28062656,19.59815 -12.197359,11.62926 -8.081167,135.7024419 -8.081167,135.7024419 L -63.292733,-59.848397 -46.325227,122.37766 2.6291765,29.116913 48.308878,122.37766 64.467298,-59.848397 91.457218,1.3175919 c 0,-8e-4 4.76917,-123.4484419 -8.08019,-135.7024419 z";
 	if (! (this instanceof arguments.callee)) {
 		return new arguments.callee(arguments);
 	}
@@ -227,33 +227,27 @@ function ZmgcClient() {
 		var coordinates = self.map([longitude, latitude]);
 			x = coordinates[0];
 			y = coordinates[1];
-		
-		self.member = self.svg.append("svg:g")
-			.attr("transform", function() {
-				 return "translate(" + x + "," + y + ")"; });
-			
-		self.member.append("svg:path")
-		//self.member.append("svg:circle")
+	
+		self.svg.append("svg:path")
 			.attr("d", personPath)
-			.attr("transform","scale(0.07)")
-			//.attr("r", 5)
+			.attr("transform", "translate(" + x + "," + y + ")scale(0.035)")
 			.attr("class", "member")
 			.style("fill", "steelblue")
 			.on("mouseover", function(){
 				d3.select(this).transition()
-					//.attr("r", 20)
-					.style("fill", "red")	
+					.style("fill", "red")
+					.attr("transform", "translate(" + x + "," + y + ")scale(0.07)")
 				})
 			.on("mouseout", function() {
 				d3.select(this).transition()
-					//.attr("r", 5)
 					.style("fill", "steelblue")
+					.attr("transform", "translate(" + x + "," + y + ")scale(0.035)")
 				});
 				
 		self.svg.append("svg:text")
 			.text(function(d) { return city; })
 			.attr("x", x)
-			.attr("dy", y + 20)
+			.attr("dy", y + 12)
 			.attr('text-anchor', 'middle')
 			.attr("class", "city")
 			.transition().delay(4000)
