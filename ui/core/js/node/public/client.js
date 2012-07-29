@@ -230,7 +230,6 @@ function ZmgcClient() {
 		var coordinates = self.map([longitude, latitude]);
 			x = coordinates[0];
 			y = coordinates[1];
-	
 		self.svg.append("svg:path")
 			.attr("d", personPath)
 			.attr("transform", "translate(" + x + "," + y + ")scale(0.035)")
