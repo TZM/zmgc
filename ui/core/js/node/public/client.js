@@ -14,6 +14,7 @@ function ZmgcClient() {
 		if ($('#map').length > 0) {
 			console.log('we have a map id');
 			self.drawMap();
+			self.loadMembers();
 		}
 	};
 
@@ -27,7 +28,6 @@ function ZmgcClient() {
 			});
 
 			self.client.subscribe("/stat", function (message) {
-				// console.log("MESSAGE", message);
 				self.drawMarker(message);
 			});
 		});
@@ -174,9 +174,6 @@ function ZmgcClient() {
 		function clip(d) {
 		  return path(circle.clip(d));
 		}
-		
-		// Initialise
-		//this.init();
 	}
 	
 	
@@ -216,6 +213,12 @@ function ZmgcClient() {
 		//	
 		  //self.svg.attr("d", function(d) { return line(d.map(fisheye)); });
 		//});
+	}
+
+	this.loadMembers = function () {
+		// Load data from .json file on page refresh
+		var data;
+		console.log('we load members from db...')
 	}
 
 	this.drawMarker = function (message) {
