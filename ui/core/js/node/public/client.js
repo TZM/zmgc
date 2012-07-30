@@ -230,47 +230,50 @@ function ZmgcClient() {
 		var coordinates = self.map([longitude, latitude]);
 			x = coordinates[0];
 			y = coordinates[1];
-		self.svg.append("svg:path")
-			.attr("d", personPath)
-			.attr("transform", "translate(" + x + "," + y + ")scale(0.035)")
-			.attr("class", "member")
-			.style("fill", "steelblue")
-			.on("mouseover", function(){
-				d3.select(this).transition()
-					.style("fill", "red")
-					.attr("transform", "translate(" + x + "," + y + ")scale(0.07)")
-				})
-			.on("mouseout", function() {
-				d3.select(this).transition()
-					.style("fill", "steelblue")
-					.attr("transform", "translate(" + x + "," + y + ")scale(0.035)")
-				});
-				
-		self.svg.append("svg:text")
-			.text(function(d) { return city; })
-			.attr("x", x)
-			.attr("dy", y + 12)
-			.attr('text-anchor', 'middle')
-			.attr("class", "city")
-			.transition().delay(4000)
+
+		var member = self.svg.append("svg:path");
+		member.attr("d", personPath)
+		member.attr("transform", "translate(" + x + "," + y + ")scale(0.035)")
+		member.style("fill", "steelblue")
+		member.attr("class", "member")
+		member.on("mouseover", function(){
+			d3.select(this).transition()
+				.style("fill", "red")
+				.attr("transform", "translate(" + x + "," + y + ")scale(0.07)")
+			})
+		member.on("mouseout", function() {
+			d3.select(this).transition()
+				.style("fill", "steelblue")
+				.attr("transform", "translate(" + x + "," + y + ")scale(0.035)")
+			});
+		
+		$(member.node).hover(console.log('hover'));
+		
+		var cityName = self.svg.append("svg:text");
+			cityName.text(function(d) { return city; })
+			cityName.attr("x", x)
+			cityName.attr("dy", y + 12)
+			cityName.attr('text-anchor', 'middle')
+			cityName.attr("class", "city")
+			cityName.transition().delay(4000)
 			 .style("opacity", "0");
 
 		//var hoverFunc = function () {
-		//	person.attr({fill:"#ff9"});
-		//	$(title.node).fadeIn("fast");
-		//	$(subtitle.node).fadeIn("fast");
+		//	member.attr({fill:"#ff9"});
+		//	$(cityName.node).fadeIn("fast");
+		//	//$(subtitle.node).fadeIn("fast");
 		//};
 		//var hideFunc = function () {
-		//	person.attr({fill:"red"});
-		//	$(title.node).fadeOut("slow");
-		//	$(subtitle.node).fadeOut("slow");
+		//	member.attr({fill:"red"});
+		//	$(cityName.node).fadeOut("slow");
+		//	//$(subtitle.node).fadeOut("slow");
 		//};
 		//
-		//$(person.node).hover(hoverFunc, hideFunc);
-        //
-		//person.animate(2000, "elastic", function () {
-		//	$(title.node).fadeOut(5000);
-		//	$(subtitle.node).fadeOut(5000);
+		//$(member.node).hover(hoverFunc, hideFunc);
+
+		//member.animate(2000, "elastic", function () {
+		//	$(cityName.node).fadeOut(5000);
+		//	//$(subtitle.node).fadeOut(5000);
 		//});
 	}
 	this.enlargeMarker = function mouseover(d) {
