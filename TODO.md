@@ -157,7 +157,43 @@ into a riak cluster see http://riakjs.org/:
 
 current [chat.zmgc.net](chat.zmgc.net) uses MangoDB see [https://github.com/nkhine/chat](https://github.com/nkhine/chat) for the code - this will be merged into the Phoenix project as a widget.
     
-Also we need to utilise the local storage, html5. 
+Also we need to utilise the local storage, html5.
+
+#Google Fusion Table
+
+Utilise Google Fusion Table to pull data into the application, here is an example on how to connect to a Google Fusion Table that lists the URL's for both the International and Regional chapters.
+
+We can then link this into the Z-Tabzilla widget https://github.com/TZM/Z-Tabzilla and also within the http://zmgc.net/;maps page where we can have a filter to display National and/or Regional Chapters.
+
+An idea would also be to have more then one overlay, so for example, the user can switch to a Google Map rather then the existing D3.js map, although in the spirit of the project we ought to break away from depending on commercially oriented service providers.
+ 
+	>>> import csv
+	>>> import urllib2, urllib
+
+	>>> request_url = 'https://www.google.com/fusiontables/api/query' 
+
+	>>> query = 'SELECT * FROM 3027809 LIMIT 10' # 3027809 is the table Id, which you can get from File -> About this table
+	>>> url = "%s?%s" % (request_url, urllib.urlencode({'sql': query}))
+	>>> serv_req = urllib2.Request(url=url)
+	>>> serv_resp = urllib2.urlopen(serv_req)
+	>>> reader = csv.DictReader(serv_resp)
+	>>> for row in reader:
+	...     print row
+	... 
+	{'Name': 'Portugal', 'Contact': 'info@zeitgeistportugal.org', 'Link': 'http://www.zeitgeistportugal.org/', 'Location': 'Portugal', 'Type': 'Country', 'Icon': '1'}
+	{'Name': 'Porto', 'Contact': 'porto@zeitgeistportugal.org', 'Link': 'http://porto.zeitgeistportugal.org', 'Location': 'Porto, Portugal', 'Type': 'Region', 'Icon': '2'}
+	{'Name': 'Lisboa', 'Contact': 'lisboa@zeitgeistportugal.org', 'Link': 'http://lisboa.zeitgeistportugal.org', 'Location': 'Lisbon, Portugal', 'Type': 'Region', 'Icon': '2'}
+	{'Name': '\xd0\x91\xd1\x8a\xd0\xbb\xd0\xb3\xd0\xb0\xd1\x80\xd0\xb8\xd1\x8f', 'Contact': 'zgeistbg@gmail.com', 'Link': 'http://thezeitgeistmovement.bg/', 'Location': 'Bulgaria', 'Type': 'Country', 'Icon': '1'}
+	{'Name': 'Colombia', 'Contact': 'zeitgeistcolombia@gmail.com', 'Link': 'http://www.zeitgeistcolombia.com/', 'Location': 'Colombia', 'Type': 'Country', 'Icon': '1'}
+	{'Name': 'Spain', 'Contact': 'info@movimientozeitgeist.org', 'Link': 'http://movimientozeitgeist.org/', 'Location': 'Spain', 'Type': 'Country', 'Icon': '1'}
+	{'Name': 'Belgium', 'Contact': 'info@thezeitgeistmovement.be', 'Link': 'http://www.thezeitgeistmovement.be/', 'Location': 'Belgium', 'Type': 'Country', 'Icon': '1'}
+	{'Name': 'Argentina', 'Contact': 'comunicacion@zeitgeistargentina.com', 'Link': 'http://www.zeitgeistargentina.com', 'Location': 'Argentina', 'Type': 'Country', 'Icon': '1'}
+	{'Name': 'Mexico', 'Contact': 'contacto@zeitgeist.com.mx', 'Link': 'http://www.zeitgeist.com.mx', 'Location': 'Mexico', 'Type': 'Country', 'Icon': '1'}
+	{'Name': 'Denmark', 'Contact': 'info@thezeitgeistmovement.dk', 'Link': 'http://thezeitgeistmovement.dk/', 'Location': 'Denmark', 'Type': 'Country', 'Icon': '1'}
+
+Here is the python API if we want to be able to write to this as well.
+
+	☺  svn checkout http://fusion-tables-client-python.googlecode.com/svn/trunk/ fusion-tables-client-python-read-only
 
 #Using nodejs within python
 
