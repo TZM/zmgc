@@ -51,17 +51,17 @@ The following list is just for this prototype, but the ideas can be applied usin
  
 12. set workflow for images, where the raw file (.psd, .gimp etc...) is uploaded, and other artists can localize this. 
 
-13. Search - create the autofill so that http://localhost:8080/;search?text=''&output=json so in my class if the output is json this can then be pushed into the autofill, otherwise on submit, we just return the results on the page.
+13. Search - create the autofill so that [http://localhost:8080/;search?text=''&output=json](http://localhost:8080/;search?text=''&output=json) so in my class if the output is json this can then be pushed into the autofill, otherwise on submit, we just return the results on the page.
 
 14. for mass server processing create an army of clustered hardware and launch this using boto and ec2, each chapter co-ordinator should setup a AWS account and setup a user, who can use the resources. Then if we have 10 chapters with AWS accounts, we can launch 200 micro-instances to distribute the work load. so the overall cost will be much lower, then having one big instance or using the existing server to do the heavy work.
 
 15. Video and Audio streaming - custom jPlayer widget, to link files uploaded or linked in the user's profile page/playlist use, see the http://code.google.com/apis/youtube/2.0/reference.html#youtube_data_api_tag_media:content
 
-	here is the example for TZMOfficialChannel http://gdata.youtube.com/feeds/api/users/TZMOfficialChannel/uploads?v=2&alt=jsonc 
+	here is the example for TZMOfficialChannel [http://gdata.youtube.com/feeds/api/users/TZMOfficialChannel/uploads?v=2&alt=jsonc](http://gdata.youtube.com/feeds/api/users/TZMOfficialChannel/uploads?v=2&alt=jsonc) 
 
-	also see this: http://code.google.com/apis/youtube/articles/view_youtube_jsonc_responses.html
+	also see this: [http://code.google.com/apis/youtube/articles/view_youtube_jsonc_responses.html](http://code.google.com/apis/youtube/articles/view_youtube_jsonc_responses.html)
 
-	also look at the http://icant.co.uk/easy-youtube/ perhaps it can be integrated.
+	also look at the [http://icant.co.uk/easy-youtube/](http://icant.co.uk/easy-youtube/) perhaps it can be integrated.
 
 	Using jPlayer it is not possible (well i have not found a way yet) to stream the YouTube video, I will have to hack the zPlayer module and create a template so that if the user adds a link to a video such as YouTube/Vimeo this is correctly displayed in the zPlayer.
 
@@ -76,14 +76,14 @@ The following list is just for this prototype, but the ideas can be applied usin
 	yt_service.client_id = 'zeitgeist'
 	~~~
 
-	and see http://code.google.com/apis/youtube/1.0/developers_guide_python.html#RetrievingVideoEntry
+	and see [http://code.google.com/apis/youtube/1.0/developers_guide_python.html#RetrievingVideoEntry](http://code.google.com/apis/youtube/1.0/developers_guide_python.html#RetrievingVideoEntry)
 
 16. pipes.yahoo.com - to aggregate the content from different sites not on the Phoenix.
 
-	example: http://pipes.yahoo.com/pipes/pipe.run?_id=26ca074a13d28a8ad64e154a76244d43&_callback=eYTp.getFeed&_render=json&s=TZMOfficialChannel
+	example: [http://pipes.yahoo.com/pipes/pipe.run?_id=26ca074a13d28a8ad64e154a76244d43&_callback=eYTp.getFeed&_render=json&s=TZMOfficialChannel](http://pipes.yahoo.com/pipes/pipe.run?_id=26ca074a13d28a8ad64e154a76244d43&_callback=eYTp.getFeed&_render=json&s=TZMOfficialChannel)
 
 17. User profile - make user's skills a prominent requirement so that you can then link these skills to the projects. for example a user adds a project, from the project description it will be possible to pull out a number of tags and then match this with a persons who's skills may fulfill the requirements for the project.
-an example script based on project data pulled from http://www.tzmnetwork.com/forums/topic/61/education-amp-art:
+an example script based on project data pulled from [http://www.tzmnetwork.com/forums/topic/61/education-amp-art](http://www.tzmnetwork.com/forums/topic/61/education-amp-art):
 
 	~~~
 	>>>  from nltk import pos_tag, word_tokenize
@@ -121,7 +121,7 @@ an example script based on project data pulled from http://www.tzmnetwork.com/fo
         
 	Now that we have the 'description' broken down by verbs, nouns etc... we can match against user profile data and suggest to the user possible members who may be able to help with the project.
 
-	Obviously we can go deeper using the NLTK library and analyze the project description more accurately, but this is a further study, for more information see, Chapter 7: http://nltk.googlecode.com/svn/trunk/doc/book/ch07.html
+	Obviously we can go deeper using the NLTK library and analyze the project description more accurately, but this is a further study, for more information see, Chapter 7: [http://nltk.googlecode.com/svn/trunk/doc/book/ch07.html](http://nltk.googlecode.com/svn/trunk/doc/book/ch07.html)
 
 
 #Storage
@@ -163,7 +163,7 @@ Also we need to utilise the local storage, html5.
 
 Utilise Google Fusion Table to pull data into the application, here is an example on how to connect to a Google Fusion Table that lists the URL's for both the International and Regional chapters.
 
-We can then link this into the Z-Tabzilla widget https://github.com/TZM/Z-Tabzilla and also within the http://zmgc.net/;maps page where we can have a filter to display National and/or Regional Chapters.
+We can then link this into the Z-Tabzilla widget [https://github.com/TZM/Z-Tabzilla](https://github.com/TZM/Z-Tabzilla) and also within the [http://zmgc.net/;maps](http://zmgc.net/;maps) page where we can have a filter to display National and/or Regional Chapters.
 
 An idea would also be to have more then one overlay, so for example, the user can switch to a Google Map rather then the existing D3.js map, although in the spirit of the project we ought to break away from depending on commercially oriented service providers.
  
@@ -194,6 +194,25 @@ An idea would also be to have more then one overlay, so for example, the user ca
 Here is the python API if we want to be able to write to this as well.
 
 	☺  svn checkout http://fusion-tables-client-python.googlecode.com/svn/trunk/ fusion-tables-client-python-read-only
+
+You can also return the JSON directly into the javascript
+
+	☺  curl https://www.google.com/fusiontables/api/query?sql=SELECT%20*%20FROM%203027809&jsonCallback=foo                                                                          ""
+	[1] 4031
+	☺  Type,Name,Link,Contact,Location,Icon                                                                                                                                         ""
+	Country,Portugal,http://www.zeitgeistportugal.org/,info@zeitgeistportugal.org,Portugal,1
+	Region,Porto,http://porto.zeitgeistportugal.org,porto@zeitgeistportugal.org,"Porto, Portugal",2
+	Region,Lisboa,http://lisboa.zeitgeistportugal.org,lisboa@zeitgeistportugal.org,"Lisbon, Portugal",2
+	Country,България,http://thezeitgeistmovement.bg/,zgeistbg@gmail.com,Bulgaria,1
+	Country,Colombia,http://www.zeitgeistcolombia.com/,zeitgeistcolombia@gmail.com,Colombia,1
+	Country,Spain,http://movimientozeitgeist.org/,info@movimientozeitgeist.org,Spain,1
+	Country,Belgium,http://www.thezeitgeistmovement.be/,info@thezeitgeistmovement.be,Belgium,1
+	Country,Argentina,http://www.zeitgeistargentina.com,comunicacion@zeitgeistargentina.com,Argentina,1
+	Country,Mexico,http://www.zeitgeist.com.mx,contacto@zeitgeist.com.mx,Mexico,1
+	Country,Denmark,http://thezeitgeistmovement.dk/,info@thezeitgeistmovement.dk,Denmark,1
+	...
+
+[API Documentation](https://developers.google.com/fusiontables/docs/developers_reference)
 
 #Using nodejs within python
 
