@@ -123,7 +123,6 @@ an example script based on project data pulled from [http://www.tzmnetwork.com/f
 
 	Obviously we can go deeper using the NLTK library and analyze the project description more accurately, but this is a further study, for more information see, Chapter 7: [http://nltk.googlecode.com/svn/trunk/doc/book/ch07.html](http://nltk.googlecode.com/svn/trunk/doc/book/ch07.html)
 
-
 #Storage
 
 Create storage for the messages, so that when the page is refreshed or when the user has logged in, there is a list of all the messages that have been sent.
@@ -214,6 +213,57 @@ You can also return the JSON directly into the javascript
 
 [API Documentation](https://developers.google.com/fusiontables/docs/developers_reference)
 
+We can also use Javascript directly, like:
+
+	    > var geoCodes = { "type": "FeatureCollection","features": [{ "type": "Feature","geometry": {"type": "Point", "coordinates": [-122.4211908, 37.7564513]},"properties": { "id": "2950648771574984913", "accuracyInMeters": 80, "timeStamp": 1309323032, "reverseGeocode": "San Francisco, CA, USA", "photoUrl": "https://www.google.com/latitude/apps/badge/api?type=photo&photo=uuRL2jABAAA.9fWeRzNpS-tdX0cqHxxclg.7zdBNW-Rb634EIkOgyO8sw", "photoWidth": 96, "photoHeight": 96, "placardUrl": "https://www.google.com/latitude/apps/badge/api?type=photo_placard&photo=uuRL2jABAAA.9fWeRzNpS-tdX0cqHxxclg.7zdBNW-Rb634EIkOgyO8sw&moving=true&stale=true&lod=1&format=png", "placardWidth": 56, "placardHeight": 59}}]};
+
+	    > console.log(geoCodes.features);
+	    [ Object
+	      geometry: Object
+	      properties: Object
+	      type: "Feature"
+	      __proto__: Object
+
+then to go into the features Object, you can do this:
+
+	     > var features = geoCodes.features;
+	     > for(var i = arr.length - 1; i >= 0; --i) { var o = arr[i]; var geometry = o.geometry; var properties = o.properties; console.log(geometry, properties);};
+
+	     > geometry
+	      Object
+	      coordinates: Array[2]
+	      type: "Point"
+	      __proto__: Object
+
+	     > 	properties
+			Object
+			accuracyInMeters: 80
+			id: "2950648771574984913"
+			photoHeight: 96
+			photoUrl: "https://www.google.com/latitude/apps/badge/api?type=photo&photo=uuRL2jABAAA.9fWeRzNpS-tdX0cqHxxclg.7zdBNW-Rb634EIkOgyO8sw"
+			photoWidth: 96
+			placardHeight: 59
+			placardUrl: "https://www.google.com/latitude/apps/badge/api?type=photo_placard&photo=uuRL2jABAAA.9fWeRzNpS-tdX0cqHxxclg.7zdBNW-Rb634EIkOgyO8sw&moving=true&stale=true&lod=1&format=png"
+			placardWidth: 56
+			reverseGeocode: "San Francisco, CA, USA"
+			timeStamp: 1309323032
+			__proto__: Object
+
+	     > console.log(geometry.coordinates[0]);
+	       -122.4211908
+
+#GeoCoding
+
+Once we have the data, we can now Geocode it, using GeoPy:
+
+	>>> from geopy import geocoders
+	>>> g = geocoders.Google('_API_KEY')
+	>>> chapters = g.geocode("Porto, Portugal", exactly_one=False) 
+	>>> print chapters
+	[(u'Oporto, Portugal', (41.1650559, -8.602816)), (u'Francisco de S\xe1 Carneiro Airport (OPO), 4470-558, Portugal', (41.2411264, -8.6802374))]
+	>>> print chapters[0]
+	(u'Oporto, Portugal', (41.1650559, -8.602816))
+	
 #Using nodejs within python
 
 `scraper.js`
