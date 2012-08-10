@@ -123,6 +123,14 @@ an example script based on project data pulled from [http://www.tzmnetwork.com/f
 
 	Obviously we can go deeper using the NLTK library and analyze the project description more accurately, but this is a further study, for more information see, Chapter 7: [http://nltk.googlecode.com/svn/trunk/doc/book/ch07.html](http://nltk.googlecode.com/svn/trunk/doc/book/ch07.html)
 
+#Video
+ZSight is an application level, highly programmable, interactive video service framework for building social interaction and collaboration around video content that acknowledges the increasing popularity of video as an integral part of communication and social networking applications. It provides a rich end-user experience in an environment powered by metadata communicated alongside the video, where the video content and expression thereof can be highly integrated. 
+These notions include 'surfacing' of ideas and information 'buried' in the video somewhere within the content and directly expose these through the concept of timeline based tagging, blogging, chat and commentary that relate to segments of the video. Such dynamic tagging and commentary can drive the visual experience to the next level, bringing up time dependent contextually related information and allowing users to rapidly find video material meeting their needs. 
+Shared comments can be captured on meetings, presentations and lectures that are recorded and further discussed, searched and edited to drive the overall value of the video content higher. The programmability of the framework will allow new value propositions to be created through different ratings, alternative context filtering etc., where the video is central and key to a whole new experience. The framework will build upon existing Open Source video platforms. See [https://trello.com/card/html5-chat-webapp/4f26b33d0e3dc6af1ce1c851/20](https://trello.com/card/html5-chat-webapp/4f26b33d0e3dc6af1ce1c851/20)
+
+
+Another goal is to surface information buried in previous meeting recordings by making it accessible from a collaborative point of view, as well as from an information mining aspect. It will enable users to upload recorded meeting video and/or audio, automatically create transcriptions and attach metadata such as micro tags and comments. Tags and comments are identified along the meeting timeline highlighting items and segments of interest. The metadata can be edited and improved upon through collaboration. Metadata is used to facilitate searching for segments of interest, as well as collaboration and discussion.
+
 #Storage
 
 Create storage for the messages, so that when the page is refreshed or when the user has logged in, there is a list of all the messages that have been sent.
@@ -362,4 +370,3 @@ Access to data, the Open Source way.
 ##Globe
 When a logged in user adds content, the home page 'globe' will rotate and centre on the lat/lon position, which is worked out from the user's IP address or the location the user has chosen to use within their preferences and we animate a specific colour 'circle' depending on what the user has added.
 We then use the jQuery 'Transfer Effect' from this point to the 'div' where the new item's Title and Short Description are displayed in real time.
-
