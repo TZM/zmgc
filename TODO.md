@@ -165,6 +165,8 @@ Utilise Google Fusion Table to pull data into the application, here is an exampl
 We can then link this into the Z-Tabzilla widget [https://github.com/TZM/Z-Tabzilla](https://github.com/TZM/Z-Tabzilla) and also within the [http://zmgc.net/;maps](http://zmgc.net/;maps) page where we can have a filter to display National and/or Regional Chapters.
 
 An idea would also be to have more then one overlay, so for example, the user can switch to a Google Map rather then the existing D3.js map, although in the spirit of the project we ought to break away from depending on commercially oriented service providers.
+
+It is hoped that we can provide Data Connectors to most file types and feed this data into a visual engine such as D3.js, so that if data in one part of the network changes this is reflected on all parts of the network.
  
 	>>> import csv
 	>>> import urllib2, urllib
@@ -227,7 +229,12 @@ We can also use Javascript directly, like:
 then to go into the features Object, you can do this:
 
 	     > var features = geoCodes.features;
-	     > for(var i = arr.length - 1; i >= 0; --i) { var o = arr[i]; var geometry = o.geometry; var properties = o.properties; console.log(geometry, properties);};
+	     > for(var i = arr.length - 1; i >= 0; --i) { 
+			var o = arr[i]; 
+			var geometry = o.geometry;
+			var properties = o.properties; 
+			console.log(geometry, properties);
+		};
 
 	     > geometry
 	      Object
@@ -252,6 +259,26 @@ then to go into the features Object, you can do this:
 	     > console.log(geometry.coordinates[0]);
 	       -122.4211908
 
+JSON
+
+	> $.getJSON(target_url + '&jsonCallback=?', function(json) { 
+	   console.log(json.table.cols);
+	   var row, feature, atts = {}, features = [];
+	   var cols = json.table.cols; // column names
+	   for(var i = 0; i < json.table.rows.length; i++) {
+	     row = json.table.rows[i];
+	     atts = {};
+	     for (var j = 0; j < row.length; j++) {
+	         if (typeof row[j] === "object") {
+	           console.log((row[j]));
+	         } else {
+	           atts[cols[j]] = row[j];
+	         }
+	     }
+	    console.log(json.table.rows[i]);
+	   }
+	 });
+	
 #GeoCoding
 
 Once we have the data, we can now Geocode it, using GeoPy:
