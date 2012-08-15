@@ -1,8 +1,8 @@
 var http = require('http'),
 	util  = require('util'),
 	static = require('node-static'),
-	faye = require('faye'),
 	url = require('url'),
+	nowjs = require('now'),
 	City = require('geoip').City;
 
 function ZMGC(options) {
@@ -16,26 +16,14 @@ function ZMGC(options) {
 	self.init();
 };
 
+var everyone;
 ZMGC.prototype.init = function() {
 	var self = this;
 
-	self.bayeux = self.createBayeuxServer();
 	self.httpServer = self.createHTTPServer();
-
-	self.bayeux.attach(self.httpServer);
+	everyone = nowjs.initialize(self.httpServer);
 	self.httpServer.listen(self.settings.port);
 	console.log('Server started on PORT: ' + self.settings.port);
-};
-
-ZMGC.prototype.createBayeuxServer = function() {
-	var self = this;
-
-	var bayeux = new faye.NodeAdapter({
-		mount: '/faye',
-		timeout: 45
-	});
-
-	return bayeux;
 };
 
 ZMGC.prototype.createHTTPServer = function() {
@@ -72,21 +60,30 @@ ZMGC.prototype.createHTTPServer = function() {
 					if (ip === null || ip === "127.0.0.1") {
 						ip = "82.246.239.187";
 					}
-					city = new City('../../../../data/GeoLiteCity.dat');
+					city = new City('/home/andumitru/freelancer/phoenix/data/GeoLiteCity.dat');
 					city.lookup(ip, function(err, location) {
-						obj = {
-							city: location.city
-							,longitude: location.longitude
-							,latitude: location.latitude
-							,ip: ip
-							,timestamp: time
+						var obj;
+						console.log( err );
+						if ( !err && location ) {
+							obj = {
+								city: location.city
+								,longitude: location.longitude
+								,latitude: location.latitude
+								,ip: ip
+								,timestamp: time
+							};
+						} else { 
+							obj ={ 
+								city: 'Bexleyheath',
+								longitude: 0.15000000596046448,
+								latitude: 51.45000076293945,
+								ip: '86.173.61.119',
+								timestamp: 1343054092459 
+							};
 						}
-						self.bayeux.getClient().publish('/stat', obj);
-						console.log(obj);
-						self.bayeux.bind('handshake', function(clientId) {
-							console.log('clientId', clientId);
-							// event listener logic
-						});
+
+						console.log(everyone);
+						everyone.now.receiveLocation(obj);
 						// write to riak cluster
 						//db.save('users', ip, obj, { index: {timestamp: time} });
 						//console.log('was saved in the riak cluster');
