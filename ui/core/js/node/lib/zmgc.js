@@ -2,8 +2,8 @@ var http = require('http'),
 	util  = require('util'),
 	static = require('node-static'),
 	url = require('url'),
-	nowjs = require('now'),
-	City = require('geoip').City;
+	nowjs = require('now');
+	City = require('geoip-static').City;
 
 function ZMGC(options) {
 	if (! (this instanceof arguments.callee)) {
@@ -81,7 +81,7 @@ ZMGC.prototype.createHTTPServer = function() {
 								timestamp: 1343054092459 
 							};
 						}
-
+						console.log(obj);
 						console.log(everyone);
 						everyone.now.receiveLocation(obj);
 						// write to riak cluster

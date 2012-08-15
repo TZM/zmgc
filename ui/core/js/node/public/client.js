@@ -222,7 +222,6 @@ function ZmgcClient() {
 			y = coordinates[1];
 
 		var member = self.svg.append("svg:path");
-		console.log('we add member to map');
 		member.attr("d", personPath)
 		member.attr("transform", "translate(" + x + "," + y + ")scale(0.035)")
 		member.style("fill", "steelblue")
