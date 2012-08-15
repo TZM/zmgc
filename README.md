@@ -111,7 +111,7 @@ We want to run our instance within a virtual environment
             #         proxy_set_header        X-Forwarded-For $proxy_add_x_forwarded_for;
             #         }
 			# Adding the nodejs proxy
-			location ~* "(/stat/1.gif|/faye|/config.json|/stat)" {
+			location ~* "(/config.json|/nowjs/now.js|socket.io|/stat/1.gif)" {
 				proxy_pass http://127.0.0.1:29080;
 				proxy_set_header        Host            $host;
 				proxy_set_header        X-Real-IP       $remote_addr;

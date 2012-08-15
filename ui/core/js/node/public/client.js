@@ -70,7 +70,7 @@ function ZmgcClient() {
 					  })
 				.attr("pointer-events", "all");
 
-		d3.json("/world-countries.json", function(collection) {
+		d3.json("/ui/data/world-countries.json", function(collection) {
 			feature = svg.selectAll("path")
 			.data(collection.features)
 			.enter().append("svg:path")
@@ -183,7 +183,7 @@ function ZmgcClient() {
 		self.countries = self.svg.append("svg:g").attr("id", "countries");
 		
 		// Load data from .json file
-		d3.json("/world-countries.json", function(json) {
+		d3.json("/ui/data/world-countries.json", function(json) {
 			self.countries.selectAll("path")	// select all the current path nodes
 			.data(json.features)				// bind these to the features array in json
 			.enter().append("path")				// if not enough elements create a new path
@@ -222,6 +222,7 @@ function ZmgcClient() {
 			y = coordinates[1];
 
 		var member = self.svg.append("svg:path");
+		console.log('we add member to map');
 		member.attr("d", personPath)
 		member.attr("transform", "translate(" + x + "," + y + ")scale(0.035)")
 		member.style("fill", "steelblue")
