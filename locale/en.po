@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2009-07-21 07:07+GMT\n"
+"POT-Creation-Date: 2012-08-20 14:08+GMT\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -15,849 +15,3619 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../ui/zeitgeist/template.xhtml.en:58
-msgctxt "table cell"
-msgid "${body}"
+#: ../datatypes.py:306
+msgid "24 hour reception"
 msgstr ""
 
-#: ../ui/expert-travel/template.xhtml.en:106
-msgctxt "div"
-msgid "${body}"
+#: ../messages.py:24
+msgid "A chapter with this name is already in the database!"
 msgstr ""
 
-#: ../ui/core/templates/widgets/languages.xml.en:11
-msgctxt "link"
-msgid "${lang/value}"
+#: ../messages.py:27
+msgid "A project with this name is already in the database!"
 msgstr ""
 
-#: ../ui/expert-travel/template.xhtml.en:130
-msgctxt "body"
-msgid "${languages}"
+#: ../datatypes.py:437
+msgid "Activity"
 msgstr ""
 
-#: ../ui/zeitgeist/template.xhtml.en:30
-msgctxt "div"
-msgid "${languages}"
+#: ../ui/core/templates/forms/edit_business.xml.en:50
+msgid "Add additional business"
 msgstr ""
 
-#: ../ui/zeitgeist/template.xhtml.en:49
-msgctxt "body"
-msgid "${location}"
+#: ../ui/core/templates/forms/edit_industry.xml.en:41
+msgid "Add additional industry"
 msgstr ""
 
-#: ../ui/zeitgeist/template.xhtml.en:61
-msgctxt "table cell"
-msgid "${menu}"
+#: ../ui/core/templates/pages/address.xml.en:6
+msgid "Address Page ${address}"
 msgstr ""
 
-#: ../ui/zeitgeist/template.xhtml.en:54 ../ui/expert-travel/template.xhtml.en:105
-msgctxt "div"
-msgid "${message}"
+#: ../chapter/chapter.py:39
+msgid "Adds a core chapter website."
 msgstr ""
 
-#: ../ui/zeitgeist/template.xhtml.en:53
-msgctxt "heading"
-msgid "${page_title}"
+#: ../project/project.py:39
+msgid "Adds a core project website."
 msgstr ""
 
-#: ../ui/expert-travel/home.xml.en:24
-msgctxt "div"
-msgid "${tabs}"
+#: ../phoenix/phoenix.py:38
+msgid "Adds the core phoenix directory website."
 msgstr ""
 
-#: ../ui/zeitgeist/template.xhtml.en:7 ../ui/expert-travel/template.xhtml.en:7
-msgctxt "title"
-msgid "${title}"
+#: ../datatypes.py:360
+msgid "Adults Only"
 msgstr ""
 
-#: ../ui/expert-travel/template.xhtml.en:125
-msgctxt "link"
-msgid "${user/info/title}"
+#: ../control_panel.py:33
+msgid "Advanced"
 msgstr ""
 
-#: ../ui/expert-travel/template.xhtml.en:121
-msgctxt "link"
-msgid "(not logged in)"
+#: ../datatypes.py:449
+msgid "Adventure"
 msgstr ""
 
-#: ../ui/expert-travel/template.xhtml.en:113
-msgctxt "title attribute"
-msgid ".tarvel member since 2005"
-msgstr ""
-
-#: ../ui/expert-travel/template.xhtml.en:115
-msgctxt "link"
-msgid ".tarvel member since 2005"
-msgstr ""
-
-#: ../ui/zeitgeist/template.xhtml.en:43
-msgctxt "link"
-msgid "<g id='12'>Search</g>  <g id='13'>Contact</g>"
-msgstr ""
-
-#: ../ui/zeitgeist/template.xhtml.en:69
-msgctxt "link"
-msgid "<g id='16'>About</g>  <g id='17'>Credits</g>  <g id='18'>License</g>"
-msgstr ""
-
-#: ../ui/zeitgeist/template.xhtml.en:33
-msgctxt "link"
-msgid "<g id='7'>Log in</g>  <g id='8'>Register</g>"
-msgstr ""
-
-#: ../ui/zeitgeist/template.xhtml.en:38
-msgctxt "link"
-msgid ""
-"<g id='9'>Add content</g>  <g id='10'>My Profile</g>  <g id='11'>Log out</g>"
-msgstr ""
-
-#: ../root.py:35
-msgid "Abakuc Application Server"
-msgstr ""
-
-#: ../ui/expert-travel/template.xhtml.en:30
-msgctxt "link"
-msgid "Abakuc Expert.Travel"
-msgstr ""
-
-#: ../ui/expert-travel/template.xhtml.en:29
-#: ../ui/expert-travel/template.xhtml.en:30
-#: ../ui/expert-travel/template.xhtml.en:114
-msgctxt "title attribute"
-msgid "Abakuc Expert.Travel"
-msgstr ""
-
-#: ../ui/expert-travel/template.xhtml.en:117
-msgctxt "link"
-msgid "About"
-msgstr ""
-
-#: ../access.py:160
-msgid "Active"
-msgstr ""
-
-#: ../access.py:222
-msgid "Add New Member"
-msgstr ""
-
-#: ../website.py:41
-msgid "Adds the core Abakuc website."
-msgstr ""
-
-#: ../access.py:374
-msgid "Admin"
-msgstr ""
-
-#: ../ui/expert-travel/template.xhtml.en:67
-msgctxt "link"
-msgid "Advanced search"
-msgstr ""
-
-#: ../datatypes.py:12 ../datatypes.py:23
+#: ../datatypes.py:126
+#: ../datatypes.py:137
 msgid "Africa"
 msgstr ""
 
-#: ../datatypes.py:44
+#: ../datatypes.py:361
+msgid "Agricultural"
+msgstr ""
+
+#: ../datatypes.py:227
 msgid "Airlines"
 msgstr ""
 
-#: ../access.py:73
-msgid "All Fields"
+#: ../datatypes.py:268
+msgid "Airport"
 msgstr ""
 
-#: ../datatypes.py:13 ../datatypes.py:24
+#: ../datatypes.py:467
+msgid "Airport Hotel Reservations"
+msgstr ""
+
+#: ../datatypes.py:295
+msgid "All Inclusive"
+msgstr ""
+
+#: ../datatypes.py:365
+msgid "All inclusive"
+msgstr ""
+
+#: ../datatypes.py:460
+msgid "American Sports"
+msgstr ""
+
+#: ../datatypes.py:127
+#: ../datatypes.py:138
 msgid "Americas"
 msgstr ""
 
-#: ../ui/expert-travel/home.xml.en:9
-msgctxt "paragraph"
-msgid "An on-line directory of the UK Travel market covers:"
+#: ../messages.py:37
+msgid "An address with this name already exists in the database!"
 msgstr ""
 
-#: ../datatypes.py:14 ../datatypes.py:25
+#: ../resource_views.py:168
+msgid "An email has been sent to you, to finish the registration process follow the instructions detailed in it."
+msgstr ""
+
+#: ../datatypes.py:473
+msgid "Animal Watching"
+msgstr ""
+
+#: ../datatypes.py:483
+msgid "Archaeology"
+msgstr ""
+
+#: ../datatypes.py:494
+msgid "Archery"
+msgstr ""
+
+#: ../datatypes.py:504
+msgid "Architecture"
+msgstr ""
+
+#: ../datatypes.py:511
+msgid "Art & Craft"
+msgstr ""
+
+#: ../datatypes.py:128
+#: ../datatypes.py:139
 msgid "Asia"
 msgstr ""
 
-#: ../datatypes.py:69
-msgid "Assistant Manager"
+#: ../datatypes.py:307
+msgid "Babysitting service"
 msgstr ""
 
-#: ../utils.py:72
-msgid "Basque"
+#: ../datatypes.py:385
+msgid "Backpacking"
 msgstr ""
 
-#: ../access.py:376 ../expert/expert_travel.py:26 ../company/company.py:25
-msgid "Branch Manager"
+#: ../datatypes.py:443
+msgid "Ballooning"
 msgstr ""
 
-#: ../access.py:377 ../expert/expert_travel.py:27 ../company/company.py:26
-msgid "Branch Member"
+#: ../forums/forums.py:33
+msgid "Base view for the forums"
 msgstr ""
 
-#: ../access.py:57
-msgid "Browse Members"
-msgstr ""
-
-#: ../datatypes.py:45
-msgid "Business Travel"
-msgstr ""
-
-#: ../datatypes.py:46
-msgid "Call Centre/Telesales"
-msgstr ""
-
-#: ../datatypes.py:47
-msgid "Car Hire"
+#: ../datatypes.py:399
+msgid "Basketball"
 msgstr ""
 
 #: ../utils.py:73
-msgid "Catalan"
+msgid "Basque"
 msgstr ""
 
-#: ../root.py:59 ../company/company.py:49
-msgid "Companies"
+#: ../datatypes.py:416
+msgid "Battlefield Tours"
 msgstr ""
 
-#: ../company/company.py:50
-msgid "Companies folder."
+#: ../datatypes.py:269
+msgid "Beach"
 msgstr ""
 
-#: ../company/company.py:19
-msgid "Company"
+#: ../datatypes.py:298
+msgid "Bed & Breakfast"
 msgstr ""
 
-#: ../company/company.py:20
-msgid "Company website root."
+#: ../datatypes.py:391
+msgid "Beer Festivals"
 msgstr ""
 
-#: ../ui/expert-travel/template.xhtml.en:118
-msgctxt "link"
-msgid "Conditions"
+#: ../datatypes.py:419
+msgid "Botany/Naturalist"
 msgstr ""
 
-#: ../datatypes.py:48
-msgid "Conference/Incentives/Events"
+#: ../datatypes.py:270
+msgid "Boutique"
 msgstr ""
 
-#: ../ui/expert-travel/template.xhtml.en:54
-msgctxt "link"
-msgid "Contact"
+#: ../datatypes.py:436
+msgid "Bowling (Ten-Pin)"
 msgstr ""
 
-#: ../root.py:73
-msgid "Countries"
+#: ../datatypes.py:429
+msgid "Bowls (Crown & Greens)"
 msgstr ""
 
-#: ../datatypes.py:49
-msgid "Cruises"
+#: ../datatypes.py:377
+msgid "Boxing"
 msgstr ""
 
-#: ../datatypes.py:36
-msgid "Deluxe"
+#: ../datatypes.py:440
+msgid "Bridge"
 msgstr ""
 
-#: ../root.py:64
-msgid "Destinations Guide"
+#: ../datatypes.py:148
+msgid "Building Trade"
 msgstr ""
 
-#: ../root.py:67
-msgid ""
-"Destinations guide, part of the Abakuc Application Server information system."
+#: ../datatypes.py:438
+msgid "Bungee Jumping"
 msgstr ""
 
-#: ../user_views.py:25
-msgid "Email"
+#: ../control_panel.py:144
+msgid "Business Sector"
+msgstr ""
+
+#: ../datatypes.py:228
+msgid "Business Travel"
+msgstr ""
+
+#: ../control_panel.py:225
+msgid "Business Type"
+msgstr ""
+
+#: ../datatypes.py:308
+msgid "Business centre"
+msgstr ""
+
+#: ../datatypes.py:229
+msgid "Call Centre/Telesales"
+msgstr ""
+
+#: ../datatypes.py:445
+msgid "Camper/Motorhome"
+msgstr ""
+
+#: ../datatypes.py:342
+msgid "Camping Holiday"
+msgstr ""
+
+#: ../datatypes.py:446
+msgid "Camping/Caravan"
+msgstr ""
+
+#: ../datatypes.py:447
+msgid "Canal/River Cruises"
+msgstr ""
+
+#: ../datatypes.py:448
+msgid "Canoeing"
+msgstr ""
+
+#: ../datatypes.py:230
+msgid "Car Hire"
 msgstr ""
 
 #: ../utils.py:74
-msgid "English"
+msgid "Catalan"
 msgstr ""
 
-#: ../datatypes.py:15 ../datatypes.py:26
-msgid "Europe"
+#: ../user_views.py:194
+msgid "Chapter"
 msgstr ""
 
-#: ../datatypes.py:35
-msgid "Executive"
+#: ../chapter/views.py:75
+msgid "Chapter Name"
 msgstr ""
 
-#: ../datatypes.py:50
-msgid "Executive/Management"
+#: ../chapter/views.py:173
+msgid "Chapter Search Form"
 msgstr ""
 
-#: ../root.py:49 ../expert/expert_travel.py:19
-msgid "Expert Travel"
+#: ../chapter/views.py:76
+msgid "Chapter URL Address"
 msgstr ""
 
-#: ../root.py:60
-msgid "Expert.Travel companies folder"
+#: ../chapter/views.py:174
+msgid "Chapter search page."
 msgstr ""
 
-#: ../root.py:74
-msgid "Expert.Travel countries folder"
+#: ../chapter/chapter.py:38
+msgid "Chapter virtual site"
 msgstr ""
 
-#: ../root.py:99
-msgid ""
-"Expert.Travel folder containing river objects, to be listed in the "
-"riverguides."
+#: ../user.py:92
+msgid "Chapter {site_name} has been created."
 msgstr ""
 
-#: ../root.py:86
-msgid ""
-"Expert.Travel folder containing training applications based on business "
-"function."
+#: ../chapter/views.py:247
+#: ../root.py:174
+msgid "Chapters"
 msgstr ""
 
-#: ../datatypes.py:37
-msgid "Family"
+#: ../chapter/chapter.py:77
+msgid "Chapters container."
 msgstr ""
 
-#: ../access.py:76 ../access.py:131
-msgid "First Name"
+#: ../root.py:175
+#: ../chapter/chapter.py:76
+msgid "Chapters folder"
 msgstr ""
 
-#: ../user_views.py:27
-msgid "Firstname"
+#: ../datatypes.py:309
+msgid "Child Activities"
 msgstr ""
 
-#: ../datatypes.py:51
-msgid "Foreign Exchange"
+#: ../datatypes.py:442
+msgid "Children's Holiday Club"
 msgstr ""
 
-#: ../ui/zeitgeist/tabs.xml.en:18
-msgctxt "span"
-msgid "Forum"
+#: ../datatypes.py:450
+msgid "Christmas/New Year"
 msgstr ""
 
-#: ../ui/expert-travel/template.xhtml.en:37
-msgctxt "link"
-msgid "Forum"
+#: ../datatypes.py:451
+msgid "Church/Cathedral"
+msgstr ""
+
+#: ../datatypes.py:452
+msgid "City Tours"
+msgstr ""
+
+#: ../datatypes.py:453
+msgid "Coach"
+msgstr ""
+
+#: ../datatypes.py:343
+msgid "Coach holiday"
+msgstr ""
+
+#: ../control_panel.py:220
+#: ../control_panel.py:301
+msgid "Company has been added to the business sector."
+msgstr ""
+
+#: ../control_panel.py:206
+#: ../control_panel.py:287
+msgid "Company has been removed from the business sector.."
+msgstr ""
+
+#: ../datatypes.py:231
+msgid "Conference/Incentives/Events"
+msgstr ""
+
+#: ../control_panel.py:51
+msgid "Control Panel"
+msgstr ""
+
+#: ../datatypes.py:454
+msgid "Cook/Gastronomic"
+msgstr ""
+
+#: ../datatypes.py:461
+msgid "Corporate"
+msgstr ""
+
+#: ../buttons.py:30
+msgid "Country"
+msgstr ""
+
+#: ../datatypes.py:441
+msgid "Country Retreats"
+msgstr ""
+
+#: ../chapter/views.py:77
+msgid "Country/Region/County"
+msgstr ""
+
+#: ../datatypes.py:271
+msgid "Countryside"
+msgstr ""
+
+#: ../phoenix/views.py:78
+msgid "Create your chapter"
+msgstr ""
+
+#: ../datatypes.py:455
+msgid "Cricket"
+msgstr ""
+
+#: ../datatypes.py:344
+#: ../datatypes.py:456
+msgid "Cruise"
+msgstr ""
+
+#: ../datatypes.py:232
+msgid "Cruises"
+msgstr ""
+
+#: ../datatypes.py:459
+msgid "Crusader/Castle Tours"
+msgstr ""
+
+#: ../datatypes.py:457
+msgid "Cultural"
+msgstr ""
+
+#: ../datatypes.py:345
+msgid "Cultural/historical/heritage"
+msgstr ""
+
+#: ../datatypes.py:310
+msgid "Currency exchange facilities"
+msgstr ""
+
+#: ../datatypes.py:458
+msgid "Cycling"
+msgstr ""
+
+#: ../datatypes.py:464
+msgid "Dancing"
+msgstr ""
+
+#: ../datatypes.py:468
+msgid "Day Trips"
+msgstr ""
+
+#: ../control_panel.py:226
+msgid "Define the Company's Business Type."
+msgstr ""
+
+#: ../control_panel.py:145
+msgid "Define the Company's BusinessSector."
+msgstr ""
+
+#: ../control_panel.py:58
+msgid "Define the site's' industry."
+msgstr ""
+
+#: ../datatypes.py:332
+msgid "Deluxe"
+msgstr ""
+
+#: ../datatypes.py:272
+msgid "Design"
+msgstr ""
+
+#: ../datatypes.py:369
+msgid "Dialysis "
+msgstr ""
+
+#: ../datatypes.py:469
+msgid "Disabled"
+msgstr ""
+
+#: ../datatypes.py:470
+msgid "Diving"
+msgstr ""
+
+#: ../datatypes.py:471
+msgid "Drama Tours"
+msgstr ""
+
+#: ../datatypes.py:472
+msgid "Dream Machines"
+msgstr ""
+
+#: ../datatypes.py:521
+msgid "EUR"
+msgstr ""
+
+#: ../datatypes.py:444
+msgid "Eco Tours"
+msgstr ""
+
+#: ../user_views.py:48
+msgid "Edit Account"
+msgstr ""
+
+#: ../user_views.py:49
+msgid "Edit your name and email address."
+msgstr ""
+
+#: ../datatypes.py:477
+msgid "Educational"
 msgstr ""
 
 #: ../utils.py:75
-msgid "French"
+msgid "English"
+msgstr ""
+
+#: ../datatypes.py:480
+msgid "Escorted Tours"
+msgstr ""
+
+#: ../datatypes.py:129
+#: ../datatypes.py:140
+msgid "Europe"
+msgstr ""
+
+#: ../datatypes.py:331
+msgid "Executive"
+msgstr ""
+
+#: ../datatypes.py:233
+msgid "Executive/Management"
+msgstr ""
+
+#: ../datatypes.py:311
+msgid "Exercise room "
+msgstr ""
+
+#: ../datatypes.py:479
+msgid "Exhibitions"
+msgstr ""
+
+#: ../datatypes.py:478
+msgid "Expeditions"
+msgstr ""
+
+#: ../datatypes.py:312
+msgid "Express check-in & check-out"
+msgstr ""
+
+#: ../datatypes.py:495
+msgid "Extreme Sports"
+msgstr ""
+
+#: ../datatypes.py:333
+msgid "Family"
+msgstr ""
+
+#: ../datatypes.py:273
+msgid "Family-friendly"
+msgstr ""
+
+#: ../datatypes.py:486
+msgid "Festivals/Carnivals"
+msgstr ""
+
+#: ../datatypes.py:487
+msgid "Fishing"
+msgstr ""
+
+#: ../datatypes.py:488
+msgid "Fishing (Deep Sea)"
+msgstr ""
+
+#: ../datatypes.py:289
+msgid "Five stars"
+msgstr ""
+
+#: ../datatypes.py:290
+msgid "Five stars - Deluxe"
+msgstr ""
+
+#: ../datatypes.py:346
+msgid "Flight only"
+msgstr ""
+
+#: ../datatypes.py:489
+msgid "Floral/Gardening"
+msgstr ""
+
+#: ../datatypes.py:492
+msgid "Fly-Drive"
+msgstr ""
+
+#: ../datatypes.py:490
+msgid "Football (Playing)"
+msgstr ""
+
+#: ../datatypes.py:491
+msgid "Football (Watching)"
+msgstr ""
+
+#: ../datatypes.py:234
+msgid "Foreign Exchange"
+msgstr ""
+
+#: ../datatypes.py:288
+msgid "Four stars"
 msgstr ""
 
 #: ../utils.py:76
-msgid "German"
+msgid "French"
 msgstr ""
 
-#: ../access.py:224
-msgid "Grant access to a new user."
+#: ../datatypes.py:296
+msgid "Full Board"
 msgstr ""
 
-#: ../access.py:379
-msgid "Guest"
+#: ../datatypes.py:522
+msgid "GBP"
 msgstr ""
 
-#: ../ui/expert-travel/template.xhtml.en:53
-msgctxt "link"
-msgid "Help"
+#: ../datatypes.py:466
+msgid "Gay"
 msgstr ""
 
-#: ../ui/expert-travel/template.xhtml.en:34
-msgctxt "link"
-msgid "Home"
-msgstr ""
-
-#: ../datatypes.py:52
-msgid "Hotel/Leisure"
+#: ../datatypes.py:364
+msgid "General"
 msgstr ""
 
 #: ../utils.py:77
-msgid "Hungarian"
+msgid "German"
 msgstr ""
 
-#: ../datatypes.py:61
-msgid "IT"
+#: ../datatypes.py:499
+msgid "Ghost Hunting/Hauntings"
 msgstr ""
 
-#: ../ui/expert-travel/home.xml.en:19
-msgctxt "paragraph"
-msgid "If your entry is incorrect please login or re-register."
+#: ../datatypes.py:274
+msgid "Golf"
+msgstr ""
+
+#: ../datatypes.py:498
+msgid "Golf (Playing)"
+msgstr ""
+
+#: ../datatypes.py:500
+msgid "Golf (Watching)"
+msgstr ""
+
+#: ../datatypes.py:347
+msgid "Golfing holiday"
+msgstr ""
+
+#: ../datatypes.py:439
+msgid "Groups"
+msgstr ""
+
+#: ../datatypes.py:297
+msgid "Half Board"
+msgstr ""
+
+#: ../datatypes.py:503
+msgid "Health/Spa/Fitness"
+msgstr ""
+
+#: ../datatypes.py:275
+msgid "Historic"
+msgstr ""
+
+#: ../datatypes.py:505
+msgid "Historical/Heritage"
+msgstr ""
+
+#: ../datatypes.py:507
+msgid "Hockey"
+msgstr ""
+
+#: ../datatypes.py:368
+msgid "Holistic"
+msgstr ""
+
+#: ../datatypes.py:509
+msgid "Horse Racing"
+msgstr ""
+
+#: ../datatypes.py:508
+msgid "Horse Riding"
+msgstr ""
+
+#: ../datatypes.py:313
+msgid "Hot Tub"
+msgstr ""
+
+#: ../datatypes.py:235
+msgid "Hotel/Leisure"
 msgstr ""
 
 #: ../utils.py:78
-msgid "Italian"
+msgid "Hungarian"
+msgstr ""
+
+#: ../datatypes.py:244
+msgid "IT"
+msgstr ""
+
+#: ../datatypes.py:314
+msgid "In-room dining"
+msgstr ""
+
+#: ../datatypes.py:510
+msgid "Incentive"
+msgstr ""
+
+#: ../datatypes.py:315
+msgid "Indoor swimming pool"
+msgstr ""
+
+#: ../control_panel.py:57
+msgid "Industry"
+msgstr ""
+
+#: ../control_panel.py:139
+msgid "Industry added."
+msgstr ""
+
+#: ../datatypes.py:512
+msgid "Island Hopping"
 msgstr ""
 
 #: ../utils.py:79
-msgid "Japanese"
-msgstr ""
-
-#: ../user_views.py:26
-msgid "Job Function"
-msgstr ""
-
-#: ../ui/expert-travel/template.xhtml.en:36
-msgctxt "link"
-msgid "Jobs"
-msgstr ""
-
-#: ../ui/zeitgeist/tabs.xml.en:15
-msgctxt "span"
-msgid "Jobs"
-msgstr ""
-
-#: ../access.py:75 ../access.py:132
-msgid "Last Name"
-msgstr ""
-
-#: ../user_views.py:28
-msgid "Lastname"
-msgstr ""
-
-#: ../website.py:170
-msgid "License"
-msgstr ""
-
-#: ../ui/expert-travel/home.xml.en:17
-msgctxt "paragraph"
-msgid ""
-"Listing within this site is <g id='2'>FREE of Charge</g>, should you find "
-"that your company is not listed, please go to <g id='3'><g "
-"id='4'>'Register'</g></g> and register."
-msgstr ""
-
-#: ../ui/expert-travel/template.xhtml.en:44
-msgctxt "link"
-msgid "Log in"
-msgstr ""
-
-#: ../ui/expert-travel/template.xhtml.en:51
-msgctxt "link"
-msgid "Log out"
-msgstr ""
-
-#: ../access.py:74 ../access.py:130
-msgid "Login"
-msgstr ""
-
-#: ../ui/expert-travel/home.xml.en:31
-msgctxt "span"
-msgid "Login"
-msgstr ""
-
-#: ../ui/expert-travel/home.xml.en:36
-msgctxt "span"
-msgid "Manage"
-msgstr ""
-
-#: ../datatypes.py:68
-msgid "Manager"
-msgstr ""
-
-#: ../datatypes.py:71
-msgid "Managing Director"
-msgstr ""
-
-#: ../datatypes.py:75
-msgid "Marketing Assistant"
-msgstr ""
-
-#: ../datatypes.py:73
-msgid "Marketing Director"
-msgstr ""
-
-#: ../datatypes.py:74
-msgid "Marketing Manager"
-msgstr ""
-
-#: ../ui/zeitgeist/tabs.xml.en:16
-msgctxt "span"
-msgid "Marketplace"
-msgstr ""
-
-#: ../access.py:380
-msgid "Member"
-msgstr ""
-
-#: ../access.py:177
-msgid "Members deleted."
-msgstr ""
-
-#: ../user_views.py:30
-msgid "Mobile"
-msgstr ""
-
-#: ../ui/expert-travel/template.xhtml.en:119
-msgctxt "link"
-msgid "More"
-msgstr ""
-
-#: ../ui/expert-travel/template.xhtml.en:38
-msgctxt "link"
-msgid "More »"
-msgstr ""
-
-#: ../ui/expert-travel/home.xml.en:35
-msgctxt "span"
-msgid "My Profile"
-msgstr ""
-
-#: ../ui/expert-travel/template.xhtml.en:50
-msgctxt "link"
-msgid "My profile"
-msgstr ""
-
-#: ../ui/zeitgeist/tabs.xml.en:14
-msgctxt "span"
-msgid "News"
-msgstr ""
-
-#: ../ui/expert-travel/template.xhtml.en:35
-msgctxt "link"
-msgid "News"
-msgstr ""
-
-#: ../datatypes.py:16 ../datatypes.py:27
-msgid "Oceania"
-msgstr ""
-
-#: ../root.py:36 ../root.py:52
-msgid ""
-"One back-office to bring them all and in the darkness bind them, in an "
-"anarchically scalable information system."
-msgstr ""
-
-#: ../datatypes.py:53 ../datatypes.py:79
-msgid "Other"
-msgstr ""
-
-#: ../datatypes.py:59
-msgid "Overseas"
-msgstr ""
-
-#: ../datatypes.py:67
-msgid "Owner/Director"
-msgstr ""
-
-#: ../access.py:378 ../expert/expert_travel.py:28 ../company/company.py:27
-msgid "Partner"
-msgstr ""
-
-#: ../user_views.py:29
-msgid "Phone number"
+msgid "Italian"
 msgstr ""
 
 #: ../utils.py:80
-msgid "Portuguese"
+msgid "Japanese"
 msgstr ""
 
-#: ../datatypes.py:38
-msgid "Presidential"
+#: ../user_views.py:60
+msgid "Job Function"
 msgstr ""
 
-#: ../datatypes.py:76
-msgid "Product Manager"
+#: ../datatypes.py:513
+msgid "Language Tours"
 msgstr ""
 
-#: ../datatypes.py:54
-msgid "Rail"
+#: ../datatypes.py:316
+msgid "Laundry & dry cleaning service"
 msgstr ""
 
-#: ../ui/expert-travel/template.xhtml.en:46
-msgctxt "link"
-msgid "Register"
+#: ../datatypes.py:474
+msgid "Long Stay/Duration"
 msgstr ""
 
-#: ../ui/expert-travel/home.xml.en:32
-msgctxt "span"
-msgid "Registration"
+#: ../datatypes.py:317
+msgid "Luggage storage"
 msgstr ""
 
-#: ../access.py:159
-msgid "Resend Confirmation"
+#: ../resource_views.py:423
+msgid "Map"
 msgstr ""
 
-#: ../datatypes.py:77
-msgid "Reservation Staff"
+#: ../datatypes.py:434
+msgid "Martial Arts"
 msgstr ""
 
-#: ../datatypes.py:60
-msgid "Reservations/Ticketing"
+#: ../datatypes.py:362
+msgid "Military History"
 msgstr ""
 
-#: ../datatypes.py:55
-msgid "Retail"
+#: ../user_views.py:59
+msgid "Mobile"
 msgstr ""
 
-#: ../access.py:381
-msgid "Reviewer"
+#: ../phoenix/views.py:103
+msgid "More"
 msgstr ""
 
-#: ../root.py:91
-msgid "River Guides"
+#: ../datatypes.py:370
+msgid "Motor Racing"
 msgstr ""
 
-#: ../root.py:94
-msgid "River guides, part of the Abakuc Application Server information system."
+#: ../datatypes.py:371
+msgid "Motoring (Self Drive)"
 msgstr ""
 
-#: ../root.py:98
-msgid "Rivers Folder"
+#: ../datatypes.py:372
+msgid "Mountaineering"
 msgstr ""
 
-#: ../access.py:133
-msgid "Role"
+#: ../datatypes.py:375
+msgid "Murder Mystery"
 msgstr ""
 
-#: ../access.py:215
-msgid "Role updated."
+#: ../datatypes.py:475
+msgid "Music (Classical)"
 msgstr ""
 
-#: ../datatypes.py:72
-msgid "Sales Director"
+#: ../datatypes.py:376
+msgid "Music (Jazz)"
 msgstr ""
 
-#: ../datatypes.py:62
-msgid "Sales/Marketing"
+#: ../datatypes.py:373
+msgid "Music (Opera)"
 msgstr ""
 
-#: ../ui/expert-travel/template.xhtml.en:58
-msgctxt "title attribute"
-msgid "Search this site…"
+#: ../datatypes.py:374
+msgid "Music (Rock & Pop)"
 msgstr ""
 
-#: ../access.py:59
-msgid "See the users and their roles."
+#: ../datatypes.py:379
+msgid "Naturist"
 msgstr ""
 
-#: ../website.py:40
-msgid "Site Root"
+#: ../datatypes.py:378
+msgid "Netball"
+msgstr ""
+
+#: ../datatypes.py:380
+msgid "Nostalgia"
+msgstr ""
+
+#: ../datatypes.py:130
+#: ../datatypes.py:141
+msgid "Oceania"
+msgstr ""
+
+#: ../datatypes.py:381
+msgid "Older Generation"
+msgstr ""
+
+#: ../datatypes.py:382
+msgid "Olympics (Summer)"
+msgstr ""
+
+#: ../datatypes.py:383
+msgid "Olympics (Winter)"
+msgstr ""
+
+#: ../root.py:131
+#: ../root.py:161
+msgid "One back-office to bring them all and in the darkness bind them, in an anarchically scalable information system."
+msgstr ""
+
+#: ../datatypes.py:285
+msgid "One star"
+msgstr ""
+
+#: ../user_views.py:185
+msgid "Operation successful! Welcome. Please setup your chapter details."
+msgstr ""
+
+#: ../datatypes.py:407
+msgid "Ornithology"
+msgstr ""
+
+#: ../datatypes.py:236
+msgid "Other"
+msgstr ""
+
+#: ../datatypes.py:476
+msgid "Out of the Ordinary"
+msgstr ""
+
+#: ../datatypes.py:386
+msgid "Outdoor Pursuits"
+msgstr ""
+
+#: ../datatypes.py:318
+msgid "Outdoor swimming pool"
+msgstr ""
+
+#: ../datatypes.py:242
+msgid "Overseas"
+msgstr ""
+
+#: ../datatypes.py:387
+msgid "Paragliding"
+msgstr ""
+
+#: ../datatypes.py:384
+msgid "Paralympics"
+msgstr ""
+
+#: ../datatypes.py:388
+msgid "Parasailing"
+msgstr ""
+
+#: ../datatypes.py:319
+#: ../datatypes.py:463
+msgid "Parking"
+msgstr ""
+
+#: ../datatypes.py:320
+msgid "Pet Friendly"
+msgstr ""
+
+#: ../phoenix/phoenix.py:37
+msgid "Phoenix Site"
+msgstr ""
+
+#: ../user_views.py:58
+msgid "Phone number"
+msgstr ""
+
+#: ../datatypes.py:389
+msgid "Photography"
+msgstr ""
+
+#: ../messages.py:40
+msgid "Please choose your region!"
+msgstr ""
+
+#: ../datatypes.py:390
+msgid "Polo"
 msgstr ""
 
 #: ../utils.py:81
+msgid "Portuguese"
+msgstr ""
+
+#: ../datatypes.py:334
+msgid "Presidential"
+msgstr ""
+
+#: ../project/views.py:48
+msgid "Project Name"
+msgstr ""
+
+#: ../project/views.py:49
+msgid "Project URL Address"
+msgstr ""
+
+#: ../project/project.py:38
+msgid "Project virtual site"
+msgstr ""
+
+#: ../root.py:178
+msgid "Projects"
+msgstr ""
+
+#: ../project/project.py:78
+msgid "Projects container."
+msgstr ""
+
+#: ../root.py:179
+#: ../project/project.py:77
+msgid "Projects folder"
+msgstr ""
+
+#: ../project/views.py:108
+msgid "Projects view page"
+msgstr ""
+
+#: ../datatypes.py:237
+msgid "Rail"
+msgstr ""
+
+#: ../datatypes.py:393
+msgid "Rail/Railways"
+msgstr ""
+
+#: ../datatypes.py:392
+msgid "Ranch Holidays"
+msgstr ""
+
+#: ../buttons.py:36
+msgid "Region"
+msgstr ""
+
+#: ../datatypes.py:348
+msgid "Relax at a resort in a warm climate"
+msgstr ""
+
+#: ../datatypes.py:394
+msgid "Religious/Pilgrimages"
+msgstr ""
+
+#: ../datatypes.py:243
+msgid "Reservations/Ticketing"
+msgstr ""
+
+#: ../datatypes.py:321
+msgid "Restaurant & bar"
+msgstr ""
+
+#: ../datatypes.py:238
+msgid "Retail"
+msgstr ""
+
+#: ../datatypes.py:276
+#: ../datatypes.py:397
+msgid "Romantic"
+msgstr ""
+
+#: ../datatypes.py:300
+msgid "Room Only"
+msgstr ""
+
+#: ../datatypes.py:398
+msgid "Round the World"
+msgstr ""
+
+#: ../datatypes.py:395
+msgid "Rugby (Playing)"
+msgstr ""
+
+#: ../datatypes.py:396
+msgid "Rugby (Watching)"
+msgstr ""
+
+#: ../datatypes.py:400
+msgid "Safari/Wildlife"
+msgstr ""
+
+#: ../datatypes.py:401
+msgid "Sailing/Boating/Yachting"
+msgstr ""
+
+#: ../datatypes.py:245
+msgid "Sales/Marketing"
+msgstr ""
+
+#: ../datatypes.py:349
+msgid "School Holiday Breaks"
+msgstr ""
+
+#: ../datatypes.py:402
+msgid "School Tours"
+msgstr ""
+
+#: ../datatypes.py:409
+msgid "Scrabble"
+msgstr ""
+
+#: ../resource_views.py:381
+msgid "Select Table"
+msgstr ""
+
+#: ../datatypes.py:299
+msgid "Self Catering"
+msgstr ""
+
+#: ../datatypes.py:277
+msgid "Self-catering"
+msgstr ""
+
+#: ../datatypes.py:403
+msgid "Shooting"
+msgstr ""
+
+#: ../datatypes.py:485
+msgid "Shopping/Markets"
+msgstr ""
+
+#: ../datatypes.py:350
+msgid "Short/City Break"
+msgstr ""
+
+#: ../datatypes.py:497
+msgid "Short/Weekend Breaks"
+msgstr ""
+
+#: ../datatypes.py:432
+msgid "Single Parents"
+msgstr ""
+
+#: ../datatypes.py:404
+msgid "Singles"
+msgstr ""
+
+#: ../datatypes.py:278
+msgid "Ski"
+msgstr ""
+
+#: ../datatypes.py:351
+msgid "Ski/ Winter sports"
+msgstr ""
+
+#: ../datatypes.py:405
+msgid "Skiing"
+msgstr ""
+
+#: ../datatypes.py:406
+msgid "Snowboarding"
+msgstr ""
+
+#: ../datatypes.py:279
+msgid "Spa Hotel "
+msgstr ""
+
+#: ../datatypes.py:481
+msgid "Space Travel"
+msgstr ""
+
+#: ../utils.py:82
 msgid "Spanish"
 msgstr ""
 
-#: ../datatypes.py:34
+#: ../datatypes.py:506
+msgid "Special Needs"
+msgstr ""
+
+#: ../datatypes.py:366
+msgid "Spiritual"
+msgstr ""
+
+#: ../datatypes.py:433
+msgid "Sports - General"
+msgstr ""
+
+#: ../datatypes.py:408
+msgid "Squash"
+msgstr ""
+
+#: ../datatypes.py:493
+msgid "Stag & Hen Dos"
+msgstr ""
+
+#: ../datatypes.py:330
 msgid "Standard"
 msgstr ""
 
-#: ../access.py:134
-msgid "State"
-msgstr ""
-
-#: ../datatypes.py:63 ../datatypes.py:78
+#: ../datatypes.py:246
 msgid "Student"
 msgstr ""
 
-#: ../datatypes.py:56
+#: ../datatypes.py:239
 msgid "Support Staff"
 msgstr ""
 
-#: ../datatypes.py:57
+#: ../datatypes.py:410
+msgid "Tailor-Made"
+msgstr ""
+
+#: ../datatypes.py:240
 msgid "Temporary"
 msgstr ""
 
-#: ../ui/expert-travel/template.xhtml.en:118
-msgctxt "link"
-msgid "Terms &amp;"
+#: ../datatypes.py:411
+msgid "Tennis (Playing)"
 msgstr ""
 
-#: ../access.py:280
-msgid "The user is already here."
+#: ../datatypes.py:412
+msgid "Tennis (Watching)"
 msgstr ""
 
-#: ../expert/expert_travel.py:20
-msgid "This is a news item"
+#: ../datatypes.py:435
+msgid "The Arts"
 msgstr ""
 
-#: ../datatypes.py:58
+#: ../control_panel.py:188
+msgid "The default business sector has been changed."
+msgstr ""
+
+#: ../control_panel.py:269
+msgid "The default business type has been changed."
+msgstr ""
+
+#: ../control_panel.py:108
+msgid "The default industry has been changed."
+msgstr ""
+
+#: ../resource_views.py:209
+msgid "The email or the password is incorrect."
+msgstr ""
+
+#: ../user_views.py:121
+msgid "The email supplied is invalid, your account has not been changed!"
+msgstr ""
+
+#: ../resource_views.py:178
+msgid "The given username is not an email address."
+msgstr ""
+
+#: ../datatypes.py:413
+msgid "Theme Park"
+msgstr ""
+
+#: ../datatypes.py:352
+msgid "Theme park based holiday"
+msgstr ""
+
+#: ../user_views.py:101
+msgid "There is another user with the email \"{email}\", please try again."
+msgstr ""
+
+#: ../messages.py:30
+msgid "There is no chapter with this name on the database, please first create a chapter!"
+msgstr ""
+
+#: ../user.py:93
+msgid "This email confirms that your chapter {site_name} has been created.\n\nPlease visit the documentation link. {site_uri}docs/chapter\nWe have created a domain URL for you {zgc_uri} in addition to your own URL {chapter_uri}\nPhoenix Team"
+msgstr ""
+
+#: ../datatypes.py:287
+msgid "Three stars"
+msgstr ""
+
+#: ../datatypes.py:482
+msgid "Titanic Trips"
+msgstr ""
+
+#: ../datatypes.py:241
 msgid "Tour Operations"
 msgstr ""
 
-#: ../ui/zeitgeist/tabs.xml.en:17
-msgctxt "span"
-msgid "Training"
+#: ../datatypes.py:414
+msgid "Trade Fairs"
 msgstr ""
 
-#: ../root.py:85
-msgid "Training Folder"
+#: ../datatypes.py:465
+msgid "Transport To & From Airports"
 msgstr ""
 
-#: ../access.py:375 ../expert/expert_travel.py:25
-msgid "Training Manager"
+#: ../datatypes.py:149
+msgid "Travel & Hospitality"
 msgstr ""
 
-#: ../datatypes.py:70
-msgid "Travel Consultant"
+#: ../datatypes.py:415
+msgid "Trekking"
 msgstr ""
 
-#: ../root.py:78
-msgid "Travel University"
+#: ../datatypes.py:286
+msgid "Two stars"
 msgstr ""
 
-#: ../root.py:81
-msgid ""
-"Travel University, part of the Abakuc Application Server information system."
+#: ../datatypes.py:523
+msgid "USD"
 msgstr ""
 
-#: ../datatypes.py:84
+#: ../datatypes.py:251
 msgid "Under £15K"
 msgstr ""
 
-#: ../access.py:129
-msgid "User ID"
+#: ../datatypes.py:484
+msgid "Underwater Caves"
 msgstr ""
 
-#: ../access.py:292
-msgid "User added."
+#: ../datatypes.py:417
+msgid "Upmarket"
 msgstr ""
 
-#: ../website_views.py:16
+#: ../user_views.py:195
+msgid "User's chapter page."
+msgstr ""
+
+#: ../datatypes.py:363
+msgid "Various"
+msgstr ""
+
+#: ../datatypes.py:353
+msgid "Villa Holidays"
+msgstr ""
+
+#: ../datatypes.py:496
+msgid "Villa Rentals"
+msgstr ""
+
+#: ../datatypes.py:425
+msgid "Vineyard/Wine Tasting"
+msgstr ""
+
+#: ../datatypes.py:462
+msgid "Visa Service"
+msgstr ""
+
+#: ../datatypes.py:418
+msgid "Volleyball"
+msgstr ""
+
+#: ../datatypes.py:501
+msgid "Voluntary"
+msgstr ""
+
+#: ../datatypes.py:354
+msgid "Walking/ Rambling"
+msgstr ""
+
+#: ../datatypes.py:420
+msgid "Walking/Rambling"
+msgstr ""
+
+#: ../datatypes.py:421
+msgid "Watersports"
+msgstr ""
+
+#: ../datatypes.py:422
+msgid "Weddings Abroad"
+msgstr ""
+
+#: ../chapter/views.py:205
+#: ../phoenix/views.py:38
+#: ../project/views.py:93
 msgid "Welcome"
 msgstr ""
 
-#: ../ui/expert-travel/home.xml.en:7
-msgctxt "heading"
-msgid ""
-"Welcome <g id='1'>${info/title}</g> to the UK.Expert.Travel on-line portal!"
+#: ../resource_views.py:225
+msgid "Welcome to the Phoenix Project!"
 msgstr ""
 
-#: ../access.py:208
-msgid "You cannot degrade your own role."
+#: ../datatypes.py:367
+msgid "Wellness"
 msgstr ""
 
-#: ../access.py:170
-msgid "You cannot remove yourself."
+#: ../datatypes.py:431
+msgid "Whale/Dolphin Watching"
 msgstr ""
 
-#: ../ui/expert-travel/home.xml.en:10
-msgctxt "paragraph"
-msgid "air travel;"
+#: ../datatypes.py:322
+msgid "Wheelchair accessible rooms "
 msgstr ""
 
-#: ../ui/expert-travel/home.xml.en:10
-msgctxt "paragraph"
-msgid "land and sea travel;"
+#: ../datatypes.py:423
+msgid "White Water Rafting"
 msgstr ""
 
-#: ../ui/expert-travel/template.xhtml.en:93
-msgctxt "label"
-msgid "location » ${location}"
+#: ../datatypes.py:424
+msgid "Windsurfing"
 msgstr ""
 
-#: ../ui/expert-travel/home.xml.en:11
-msgctxt "paragraph"
-msgid "national tourist offices;"
+#: ../datatypes.py:426
+msgid "Winter Sports"
 msgstr ""
 
-#: ../ui/expert-travel/home.xml.en:11
-msgctxt "paragraph"
-msgid "tour operators;"
+#: ../datatypes.py:323
+msgid "Wireless internet"
 msgstr ""
 
-#: ../ui/expert-travel/home.xml.en:11
-msgctxt "paragraph"
-msgid ""
-"travel agents and provides travel professionals and site visitors with "
-"comprehensive and up to date contact information about the UK travel "
-"industry."
+#: ../datatypes.py:324
+msgid "With Spa"
 msgstr ""
 
-#: ../ui/expert-travel/home.xml.en:10
-msgctxt "paragraph"
-msgid "travel trade information;"
+#: ../datatypes.py:502
+msgid "Working Holidays"
 msgstr ""
 
-#: ../ui/expert-travel/home.xml.en:9
-msgctxt "paragraph"
-msgid "travel trade services;"
+#: ../messages.py:34
+msgid "You are already an Administrator for a chapter,     you will need to manually allocate this role to     to someone else!"
 msgstr ""
 
-#: ../ui/expert-travel/home.xml.en:52
+#: ../control_panel.py:198
+#: ../control_panel.py:279
+msgid "You can not remove the default business sector that the company belongs to."
+msgstr ""
+
+#: ../control_panel.py:118
+msgid "You can not remove the default industry."
+msgstr ""
+
+#: ../resource_views.py:196
+msgid "You don't have an account, contact the site admin."
+msgstr ""
+
+#: ../user_views.py:92
+msgid "You mistyped your actual password, your account is not changed."
+msgstr ""
+
+#: ../control_panel.py:97
+msgid "You must select one and only one industry."
+msgstr ""
+
+#: ../resource_views.py:188
+msgid "You typed an incorrect captcha string."
+msgstr ""
+
+#: ../datatypes.py:430
+msgid "Young Persons"
+msgstr ""
+
+#: ../datatypes.py:428
+msgid "Young Persons (18-30)"
+msgstr ""
+
+#: ../datatypes.py:427
+msgid "Young Persons - Summer Camps"
+msgstr ""
+
+#: ../messages.py:43
+msgid "Your chapter site has been created and you will receive an email with further details."
+msgstr ""
+
+#: ../root.py:167
+msgid "ZMGC Blog"
+msgstr ""
+
+#: ../root.py:168
+msgid "ZMGC Calendar"
+msgstr ""
+
+#: ../root.py:169
+msgid "ZMGC Forums"
+msgstr ""
+
+#: ../root.py:170
+msgid "ZMGC Issue Tracker"
+msgstr ""
+
+#: ../root.py:171
+msgid "ZMGC Wiki"
+msgstr ""
+
+#: ../root.py:130
+msgid "Zeitgeist Application Server"
+msgstr ""
+
+#: ../resource_views.py:136
+msgid "Zeitgeist Global Connect Login"
+msgstr ""
+
+#: ../root.py:157
+msgid "Zeitgeist Movement Global Connect"
+msgstr ""
+
+#: ../control_panel.py:126
+msgid "industry removed."
+msgstr ""
+
+#: ../datatypes.py:261
+msgid "£100K+"
+msgstr ""
+
+#: ../datatypes.py:252
+msgid "£15K-£20K"
+msgstr ""
+
+#: ../datatypes.py:253
+msgid "£20K-£25K"
+msgstr ""
+
+#: ../datatypes.py:254
+msgid "£25K-£30K"
+msgstr ""
+
+#: ../datatypes.py:255
+msgid "£30K-£35K"
+msgstr ""
+
+#: ../datatypes.py:256
+msgid "£35K-£40K"
+msgstr ""
+
+#: ../datatypes.py:257
+msgid "£40K-£45K"
+msgstr ""
+
+#: ../datatypes.py:258
+msgid "£45K-£50K"
+msgstr ""
+
+#: ../datatypes.py:259
+msgid "£50K-£70K"
+msgstr ""
+
+#: ../datatypes.py:260
+msgid "£70K-£100K"
+msgstr ""
+
+#: ../utils.py:94
+msgid "…"
+msgstr ""
+
+#: ../project/ui/template.xhtml.en:24
+msgctxt "body"
+msgid "This is the project template."
+msgstr ""
+
+#: ../ui/core/templates/forms/edit_business.xml.en:42
+#: ../ui/core/templates/forms/edit_industry.xml.en:33
+msgctxt "button"
+msgid "<g id='2'>Change default</g>  <g id='3'>Remove</g>"
+msgstr ""
+
+#: ../ui/core/templates/forms/edit_industry.xml.en:50
+#: ../chapter/ui/new_instance.xml.en:52
+msgctxt "button"
+msgid "Add"
+msgstr ""
+
+#: ../ui/core/templates/forms/edit_business.xml.en:59
+msgctxt "button"
+msgid "Add business"
+msgstr ""
+
+#: ../ui/core/templates/pages/company.xml.en:18
+msgctxt "button"
+msgid "Change company"
+msgstr ""
+
+#: ../ui/core/templates/forms/login.xml.en:81
+msgctxt "button"
+msgid "Continue"
+msgstr ""
+
+#: ../ui/core/templates/forms/import.xml.en:8
+msgctxt "button"
+msgid "Import"
+msgstr ""
+
+#: ../chapter/ui/template.xhtml.en:78
+#: ../ui/core/templates/forms/company_search.xml.en:9
+#: ../phoenix/ui/template.xhtml.en:59
+#: ../ui/core/templates/pages/company.xml.en:29
+msgctxt "button"
+msgid "Search"
+msgstr ""
+
+#: ../ui/core/templates/pages/company.xml.en:100
+msgctxt "button"
+msgid "Select"
+msgstr ""
+
+#: ../ui/wiki/importodt.xml.en:139
+msgctxt "button"
+msgid "Upload"
+msgstr ""
+
+#: ../ui/core/templates/widgets/player.xml.en:11
+msgctxt "button"
+msgid "slide it"
+msgstr ""
+
+#: ../ui/core/templates/forms/login.xml.en:77
+msgctxt "dd"
+msgid "Check this box if you don't have a password or you forgot it."
+msgstr ""
+
+#: ../ui/core/templates/pages/company.xml.en:15
+msgctxt "dd"
+msgid "Check this box if you want to switch another company."
+msgstr ""
+
+#: ../ui/core/templates/widgets/tabs.xml.en:43
+#: ../ui/core/templates/widgets/tabs.xml.en:56
+msgctxt "dd"
+msgid "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+msgstr ""
+
+#: ../ui/core/templates/widgets/tabs.xml.en:56
+msgctxt "dd"
+msgid "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+msgstr ""
+
+#: ../ui/core/templates/widgets/player.xml.en:23
 msgctxt "div"
-msgid "{company}"
+msgid "00:05"
 msgstr ""
 
-#: ../ui/zeitgeist/tabs.xml.en:33
+#: ../ui/core/templates/widgets/player.xml.en:24
 msgctxt "div"
-msgid "{forum}"
+msgid "00:33"
 msgstr ""
 
-#: ../ui/zeitgeist/tabs.xml.en:24
+#: ../project/ui/projects.xml.en:13
 msgctxt "div"
-msgid "{jobs}"
+msgid "40%"
 msgstr ""
 
-#: ../ui/expert-travel/home.xml.en:41
+#: ../project/ui/projects.xml.en:9
 msgctxt "div"
-msgid "{login}"
+msgid "60%"
 msgstr ""
 
-#: ../ui/zeitgeist/tabs.xml.en:21
+#: ../ui/core/templates/widgets/tabs.xml.en:85
 msgctxt "div"
-msgid "{news}"
+msgid "Africa"
 msgstr ""
 
-#: ../ui/zeitgeist/tabs.xml.en:27
+#: ../ui/core/templates/widgets/tabs.xml.en:88
 msgctxt "div"
-msgid "{products}"
+msgid "Americas"
 msgstr ""
 
-#: ../ui/expert-travel/home.xml.en:49
+#: ../ui/core/templates/widgets/tabs.xml.en:91
 msgctxt "div"
-msgid "{profile}"
+msgid "Asia"
 msgstr ""
 
-#: ../ui/expert-travel/home.xml.en:44
+#: ../ui/core/templates/widgets/tabs.xml.en:94
 msgctxt "div"
-msgid "{register}"
+msgid "Europe"
 msgstr ""
 
-#: ../ui/zeitgeist/tabs.xml.en:30
+#: ../phoenix/ui/home.xml.en:122
+#: ../phoenix/ui/home.xml.en:122
+#: ../phoenix/ui/home.xml.en:122
+#: ../phoenix/ui/home.xml.en:122
+#: ../phoenix/ui/home.xml.en:122
 msgctxt "div"
-msgid "{training}"
+msgid "Lorem ipsum dolor sit amet."
 msgstr ""
 
+#: ../phoenix/ui/home.xml.en:122
+#: ../phoenix/ui/home.xml.en:122
+msgctxt "div"
+msgid "Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet."
+msgstr ""
+
+#: ../phoenix/ui/home.xml.en:130
+msgctxt "div"
+msgid "Nam dui erat, auctor a, dignissim quis."
+msgstr ""
+
+#: ../phoenix/ui/home.xml.en:126
+msgctxt "div"
+msgid "Phasellus mattis tincidunt nibh."
+msgstr ""
+
+#: ../ui/core/templates/widgets/sitemenu.xml.en:9
+msgctxt "div"
+msgid "[ <g id='1'>  <g id='2'>${menu/label}</g>  <g id='3'>|</g>  </g> ]"
+msgstr ""
+
+#: ../ui/core/templates/widgets/location.xml.en:10
+msgctxt "div"
+msgid "location » <g id='1'><g id='2'>${item/short_name}</g><g id='3'>/</g></g>"
+msgstr ""
+
+#: ../phoenix/ui/more.xml.en:13
+msgctxt "div"
+msgid "put external links here"
+msgstr ""
+
+#: ../phoenix/ui/more.xml.en:9
+msgctxt "div"
+msgid "put links to other resources here"
+msgstr ""
+
+#: ../ui/core/templates/widgets/tabs.xml.en:66
+msgctxt "div"
+msgid "{events}"
+msgstr ""
+
+#: ../ui/core/templates/widgets/tabs.xml.en:99
+msgctxt "div"
+msgid "{forums}"
+msgstr ""
+
+#: ../phoenix/ui/home.xml.en:109
+msgctxt "div"
+msgid "{town-hall-meetings} {chat}"
+msgstr ""
+
+#: ../chapter/ui/template.xhtml.en:33
+#: ../chapter/ui/template.xhtml.en:45
 #: ../ui/core/templates/widgets/languages.xml.en:8
 msgctxt "div"
 msgid " "
 msgstr ""
 
-#: ../datatypes.py:94
-msgid "£100K+"
+#: ../chapter/ui/new_instance.xml.en:20
+msgctxt "dt"
+msgid "Choose the ${class_title} type"
 msgstr ""
 
-#: ../datatypes.py:85
-msgid "£15K-£20K"
+#: ../phoenix/ui/home.xml.en:37
+msgctxt "emphasis"
+msgid "<g id='10'>Patricia</g> signed up to help with the Z-Day Festival:"
 msgstr ""
 
-#: ../datatypes.py:86
-msgid "£20K-£25K"
+#: ../phoenix/ui/home.xml.en:27
+msgctxt "emphasis"
+msgid "<g id='4'>Katia</g> signed up to help with the Z-Day Festival:"
 msgstr ""
 
-#: ../datatypes.py:87
-msgid "£25K-£30K"
+#: ../phoenix/ui/home.xml.en:32
+msgctxt "emphasis"
+msgid "<g id='7'>Luisa</g> donated 5 € towards the Occupy London Fund"
 msgstr ""
 
-#: ../datatypes.py:88
-msgid "£30K-£35K"
+#: ../ui/wiki/help_odt.xml.en:31
+msgctxt "emphasis"
+msgid "The original document is not modified in any way."
 msgstr ""
 
-#: ../datatypes.py:89
-msgid "£35K-£40K"
+#: ../ui/core/templates/pages/footer.xml.en:242
+msgctxt "heading"
+msgid "Additional Lists"
 msgstr ""
 
-#: ../datatypes.py:90
-msgid "£40K-£45K"
+#: ../ui/core/templates/pages/footer.xml.en:220
+msgctxt "heading"
+msgid "Another paragraph with an image"
 msgstr ""
 
-#: ../datatypes.py:91
-msgid "£45K-£50K"
+#: ../ui/wiki/importodt.xml.en:43
+msgctxt "heading"
+msgid "Browse and insert an ODT from the workspace"
 msgstr ""
 
-#: ../datatypes.py:92
-msgid "£50K-£70K"
+#: ../phoenix/ui/chapter-generator.xml.en:22
+msgctxt "heading"
+msgid "Current modules"
 msgstr ""
 
-#: ../datatypes.py:93
-msgid "£70K-£100K"
+#: ../ui/wiki/help_odt.xml.en:42
+msgctxt "heading"
+msgid "Definition Lists"
 msgstr ""
 
-#: ../utils.py:93
-msgid "…"
+#: ../ui/wiki/importodt.xml.en:96
+msgctxt "heading"
+msgid "Document metadata:"
+msgstr ""
+
+#: ../ui/wiki/help_odt.xml.en:47
+msgctxt "heading"
+msgid "Generating a book"
+msgstr ""
+
+#: ../ui/wiki/help_odt.xml.en:5
+msgctxt "heading"
+msgid "Help on ODT Export"
+msgstr ""
+
+#: ../phoenix/ui/chapter-generator.xml.en:13
+msgctxt "heading"
+msgid "Hi, ${name}, you can now create your chapter site"
+msgstr ""
+
+#: ../chapter/ui/chapters.xml.en:19
+msgctxt "heading"
+msgid "How can i join one?"
+msgstr ""
+
+#: ../chapter/ui/chapters.xml.en:24
+msgctxt "heading"
+msgid "How can i start one?"
+msgstr ""
+
+#: ../ui/wiki/help_odt.xml.en:38
+msgctxt "heading"
+msgid "Links"
+msgstr ""
+
+#: ../ui/core/templates/pages/footer.xml.en:88
+msgctxt "heading"
+msgid "Other Examples"
+msgstr ""
+
+#: ../ui/wiki/help_odt.xml.en:16
+msgctxt "heading"
+msgid "Prerequisites"
+msgstr ""
+
+#: ../ui/core/templates/pages/footer.xml.en:215
+msgctxt "heading"
+msgid "Sample paragraph with an image"
+msgstr ""
+
+#: ../ui/core/templates/widgets/chat.xml.en:32
+msgctxt "heading"
+msgid "Simple Chat"
+msgstr ""
+
+#: ../ui/wiki/help_odt.xml.en:26
+msgctxt "heading"
+msgid "Template"
+msgstr ""
+
+#: ../ui/core/templates/pages/footer.xml.en:76
+msgctxt "heading"
+msgid "Texts with Icons"
+msgstr ""
+
+#: ../ui/core/templates/pages/footer.xml.en:19
+msgctxt "heading"
+msgid "The Zeitgeist Movement!"
+msgstr ""
+
+#: ../ui/core/templates/pages/footer.xml.en:310
+msgctxt "heading"
+msgid "This is a dark table"
+msgstr ""
+
+#: ../ui/core/templates/pages/footer.xml.en:113
+msgctxt "heading"
+msgid "Up to 12 columns !"
+msgstr ""
+
+#: ../ui/wiki/importodt.xml.en:89
+msgctxt "heading"
+msgid "Upload an ODT to import it:"
+msgstr ""
+
+#: ../ui/wiki/help_odt.xml.en:22
+msgctxt "heading"
+msgid "Usage"
+msgstr ""
+
+#: ../phoenix/ui/home.xml.en:9
+msgctxt "heading"
+msgid "Welcome"
+msgstr ""
+
+#: ../project/ui/home.xml.en:7
+msgctxt "heading"
+msgid "Welcome <g id='1'>${info/title}</g> project's home page'"
+msgstr ""
+
+#: ../chapter/ui/home.xml.en:7
+msgctxt "heading"
+msgid "Welcome <g id='1'>${info/title}</g> to the <g id='2'><g id='3'>${chapter_title}</g></g> part of the Zeitgeist portal!"
+msgstr ""
+
+#: ../chapter/ui/chapters.xml.en:9
+msgctxt "heading"
+msgid "What is a Chapter?"
+msgstr ""
+
+#: ../chapter/ui/chapters.xml.en:14
+msgctxt "heading"
+msgid "Why are they so important?"
+msgstr ""
+
+#: ../chapter/ui/chapters.xml.en:6
+msgctxt "heading"
+msgid "Zeitgeist Movement Chapters"
+msgstr ""
+
+#: ../phoenix/ui/home.xml.en:9
+msgctxt "heading"
+msgid "to the Zeitgeist Movement portal!"
+msgstr ""
+
+#: ../ui/core/templates/widgets/captcha.xml.en:13
+#: ../ui/core/templates/widgets/captcha.xml.en:16
+msgctxt "img[alt]"
+msgid "HTML5 Audio"
+msgstr ""
+
+#: ../ui/core/templates/pages/footer.xml.en:10
+msgctxt "img[alt]"
+msgid "Home"
+msgstr ""
+
+#: ../ui/core/templates/forms/login.xml.en:53
+#: ../ui/core/templates/widgets/captcha.xml.en:8
+msgctxt "img[alt]"
+msgid "captcha"
+msgstr ""
+
+#: ../phoenix/ui/home.xml.en:69
+#: ../phoenix/ui/home.xml.en:90
+msgctxt "img[alt]"
+msgid "clip-title"
+msgstr ""
+
+#: ../ui/core/templates/widgets/chat.xml.en:14
+msgctxt "img[alt]"
+msgid "name"
+msgstr ""
+
+#: ../phoenix/ui/home.xml.en:26
+#: ../phoenix/ui/home.xml.en:31
+#: ../phoenix/ui/home.xml.en:36
+msgctxt "img[alt]"
+msgid "wrote-petition"
+msgstr ""
+
+#: ../ui/tiny_mce/rte.xml.en:54
+msgctxt "label"
+msgid "<g id='1'>${language}</g>  <g id='2'>${value}</g>"
+msgstr ""
+
+#: ../ui/core/templates/forms/login.xml.en:27
+msgctxt "label"
+msgid "<g id='1'>E-mail Address</g>  <g id='2'>* </g>  <x id='3'/><g id='4'>${username/error} <x id='5'/></g>"
+msgstr ""
+
+#: ../ui/core/templates/forms/login.xml.en:45
+msgctxt "label"
+msgid "<g id='11'>Captcha</g>  <g id='12'>${password/error}</g>"
+msgstr ""
+
+#: ../ui/wiki/edit.xml.en:197
+msgctxt "label"
+msgid "<g id='46'>${widget/title}</g>  <g id='47'>*</g>  <g id='48'>(?)</g>"
+msgstr ""
+
+#: ../ui/core/templates/forms/login.xml.en:37
+msgctxt "label"
+msgid "<g id='7'>Password</g>  <g id='8'>${password/error}</g>"
+msgstr ""
+
+#: ../ui/core/templates/pages/company.xml.en:12
+msgctxt "label"
+msgid "Change Company"
+msgstr ""
+
+#: ../ui/wiki/importodt.xml.en:107
+msgctxt "label"
+msgid "Comments:"
+msgstr ""
+
+#: ../chapter/ui/new_instance.xml.en:36
+#: ../chapter/ui/new_instance.xml.en:43
+msgctxt "label"
+msgid "Industry Type"
+msgstr ""
+
+#: ../ui/wiki/importodt.xml.en:111
+msgctxt "label"
+msgid "Keywords:"
+msgstr ""
+
+#: ../ui/wiki/importodt.xml.en:117
+msgctxt "label"
+msgid "Language:"
+msgstr ""
+
+#: ../ui/wiki/importodt.xml.en:47
+msgctxt "label"
+msgid "Location:"
+msgstr ""
+
+#: ../ui/wiki/importodt.xml.en:125
+msgctxt "label"
+msgid "Max heading level to split:"
+msgstr ""
+
+#: ../chapter/ui/new_instance.xml.en:15
+msgctxt "label"
+msgid "Name"
+msgstr ""
+
+#: ../ui/core/templates/forms/login.xml.en:61
+#: ../ui/core/templates/widgets/captcha.xml.en:24
+msgctxt "label"
+msgid "Please type in the word from the image above:"
+msgstr ""
+
+#: ../ui/core/templates/forms/login.xml.en:74
+msgctxt "label"
+msgid "Register/Reset Password"
+msgstr ""
+
+#: ../ui/wiki/edit.xml.en:165
+msgctxt "label"
+msgid "Saved!"
+msgstr ""
+
+#: ../ui/wiki/importodt.xml.en:103
+msgctxt "label"
+msgid "Subject:"
+msgstr ""
+
+#: ../chapter/ui/new_instance.xml.en:11
+msgctxt "label"
+msgid "Title"
+msgstr ""
+
+#: ../ui/wiki/importodt.xml.en:99
+msgctxt "label"
+msgid "Title:"
+msgstr ""
+
+#: ../chapter/ui/new_instance.xml.en:30
+msgctxt "label"
+msgid "Vhosts"
+msgstr ""
+
+#: ../chapter/ui/new_instance.xml.en:9
+msgctxt "legend"
+msgid "Add Company XXX ${class_title}"
+msgstr ""
+
+#: ../ui/core/templates/forms/edit_business.xml.en:52
+msgctxt "legend"
+msgid "Add additional business"
+msgstr ""
+
+#: ../ui/core/templates/forms/edit_industry.xml.en:43
+msgctxt "legend"
+msgid "Add additional industry"
+msgstr ""
+
+#: ../ui/core/templates/forms/edit_business.xml.en:9
+msgctxt "legend"
+msgid "Edit the active business"
+msgstr ""
+
+#: ../ui/core/templates/forms/edit_industry.xml.en:9
+msgctxt "legend"
+msgid "Edit the active industry"
+msgstr ""
+
+#: ../ui/core/templates/forms/login.xml.en:25
+msgctxt "legend"
+msgid "Sign in to Zeitgeist Global Connect"
+msgstr ""
+
+#: ../phoenix/ui/chapter-generator.xml.en:43
+msgctxt "li"
+msgid "(This is optional)"
+msgstr ""
+
+#: ../ui/wiki/help_odt.xml.en:77
+msgctxt "li"
+msgid "Any other content in this page will be ignored."
+msgstr ""
+
+#: ../ui/wiki/help_odt.xml.en:74
+msgctxt "li"
+msgid "Cover titles are treated as main title and subtitle."
+msgstr ""
+
+#: ../ui/core/templates/widgets/chat.xml.en:37
+msgctxt "li"
+msgid "Fix me, if there are no users!"
+msgstr ""
+
+#: ../phoenix/ui/chapter-generator.xml.en:26
+msgctxt "li"
+msgid "In the mean time you also get a sub-domain automatically created for you, such as http://chapter.zmgc.net"
+msgstr ""
+
+#: ../ui/wiki/help_odt.xml.en:18
+msgctxt "li"
+msgid "Install <g id='7'>lpOD</g> on the server."
+msgstr ""
+
+#: ../ui/core/templates/widgets/player.xml.en:26
+msgctxt "li"
+msgid "Item Title"
+msgstr ""
+
+#: ../ui/wiki/help_odt.xml.en:76
+msgctxt "li"
+msgid "Links to included pages will be turned into internal anchors."
+msgstr ""
+
+#: ../ui/wiki/help_odt.xml.en:73
+msgctxt "li"
+msgid "Optional book title is a link to the cover page."
+msgstr ""
+
+#: ../ui/wiki/help_odt.xml.en:75
+msgctxt "li"
+msgid "Pages listed as a subitem will see their title level incremented."
+msgstr ""
+
+#: ../phoenix/ui/chapter-generator.xml.en:42
+msgctxt "li"
+msgid "This again will be listed in the global Actions list, thus increasing the Issue/Action awareness."
+msgstr ""
+
+#: ../phoenix/ui/chapter-generator.xml.en:40
+msgctxt "li"
+msgid "ability for chapter members to post projects and/or items that needs the collaboration of other ether global or local chapter members."
+msgstr ""
+
+#: ../phoenix/ui/chapter-generator.xml.en:34
+msgctxt "li"
+msgid "ability for your chapter members to add blog entries or content"
+msgstr ""
+
+#: ../phoenix/ui/chapter-generator.xml.en:37
+msgctxt "li"
+msgid "ability to add events and manage event subscriptions."
+msgstr ""
+
+#: ../phoenix/ui/chapter-generator.xml.en:25
+msgctxt "li"
+msgid "simply point this to our load balancer IP, if you need help to set this up, get in touch with us."
+msgstr ""
+
+#: ../phoenix/ui/chapter-generator.xml.en:30
+msgctxt "li"
+msgid "you will get a full featured forum where posts are also linked back to the global http://zmgc.net/forum"
+msgstr ""
+
+#: ../chapter/ui/template.xhtml.en:114
+msgctxt "link"
+msgid "(not logged in)"
+msgstr ""
+
+#: ../ui/core/templates/pages/footer.xml.en:252
+msgctxt "link"
+msgid "3DOcean"
+msgstr ""
+
+#: ../ui/core/templates/widgets/chat.xml.en:48
+msgctxt "link"
+msgid "5 users"
+msgstr ""
+
+#: ../ui/wiki/importodt.xml.en:49
+msgctxt "link"
+msgid "<g id='10'>${x/short_title}</g> /"
+msgstr ""
+
+#: ../ui/core/templates/widgets/browse_batch.xml.en:20
+msgctxt "link"
+msgid "<g id='2'>${page/number}</g>  <g id='3'>…</g>"
+msgstr ""
+
+#: ../ui/wiki/importodt.xml.en:28
+msgctxt "link"
+msgid "<g id='4'>Browse</g>  <g id='5'>External Link</g>  <g id='6'>Insert</g>  <g id='7'>Upload</g>"
+msgstr ""
+
+#: ../ui/core/templates/widgets/location.xml.en:17
+msgctxt "link"
+msgid "<g id='5'>${menu/label}</g>  <g id='6'>|</g>"
+msgstr ""
+
+#: ../chapter/ui/template.xhtml.en:111
+msgctxt "link"
+msgid "About"
+msgstr ""
+
+#: ../ui/core/templates/pages/footer.xml.en:250
+msgctxt "link"
+msgid "ActiveDen"
+msgstr ""
+
+#: ../ui/core/templates/pages/footer.xml.en:47
+#: ../ui/core/templates/pages/footer.xml.en:58
+#: ../ui/core/templates/pages/footer.xml.en:66
+#: ../ui/core/templates/pages/footer.xml.en:264
+msgctxt "link"
+msgid "ActiveTuts"
+msgstr ""
+
+#: ../ui/core/templates/widgets/player.xml.en:58
+msgctxt "link"
+msgid "Addendum (2008)"
+msgstr ""
+
+#: ../chapter/ui/template.xhtml.en:72
+#: ../phoenix/ui/template.xhtml.en:54
+msgctxt "link"
+msgid "Advanced Search"
+msgstr ""
+
+#: ../phoenix/ui/home.xml.en:129
+msgctxt "link"
+msgid "Analysing"
+msgstr ""
+
+#: ../ui/core/templates/widgets/player.xml.en:51
+msgctxt "link"
+msgid "Audio"
+msgstr ""
+
+#: ../chapter/ui/template.xhtml.en:38
+#: ../phoenix/ui/template.xhtml.en:38
+msgctxt "link"
+msgid "Calendar"
+msgstr ""
+
+#: ../phoenix/ui/home.xml.en:121
+msgctxt "link"
+msgid "Connecting"
+msgstr ""
+
+#: ../chapter/ui/template.xhtml.en:64
+#: ../phoenix/ui/template.xhtml.en:52
+msgctxt "link"
+msgid "Contact"
+msgstr ""
+
+#: ../ui/core/templates/pages/footer.xml.en:36
+#: ../ui/core/templates/pages/footer.xml.en:40
+#: ../ui/core/templates/pages/footer.xml.en:67
+#: ../ui/core/templates/pages/footer.xml.en:273
+msgctxt "link"
+msgid "Creattica"
+msgstr ""
+
+#: ../ui/wiki/help_odt.xml.en:12
+msgctxt "link"
+msgid "Definition Lists"
+msgstr ""
+
+#: ../ui/core/templates/pages/footer.xml.en:48
+#: ../ui/core/templates/pages/footer.xml.en:59
+#: ../ui/core/templates/pages/footer.xml.en:284
+msgctxt "link"
+msgid "Design"
+msgstr ""
+
+#: ../ui/core/templates/pages/footer.xml.en:207
+msgctxt "link"
+msgid "Documentations"
+msgstr ""
+
+#: ../ui/core/templates/pages/footer.xml.en:235
+msgctxt "link"
+msgid "F.A.Q"
+msgstr ""
+
+#: ../ui/core/templates/widgets/player.xml.en:50
+msgctxt "link"
+msgid "Films"
+msgstr ""
+
+#: ../ui/core/templates/pages/footer.xml.en:286
+msgctxt "link"
+msgid "Flash"
+msgstr ""
+
+#: ../ui/wiki/edit.xml.en:93
+msgctxt "link"
+msgid "Format"
+msgstr ""
+
+#: ../chapter/ui/template.xhtml.en:37
+#: ../phoenix/ui/template.xhtml.en:39
+msgctxt "link"
+msgid "Forums"
+msgstr ""
+
+#: ../ui/core/templates/pages/footer.xml.en:35
+#: ../ui/core/templates/pages/footer.xml.en:39
+#: ../ui/core/templates/pages/footer.xml.en:64
+#: ../ui/core/templates/pages/footer.xml.en:272
+msgctxt "link"
+msgid "FreelanceSwitch"
+msgstr ""
+
+#: ../ui/wiki/help_odt.xml.en:13
+msgctxt "link"
+msgid "Generating a book"
+msgstr ""
+
+#: ../ui/core/templates/pages/footer.xml.en:249
+msgctxt "link"
+msgid "GraphicRiver"
+msgstr ""
+
+#: ../chapter/ui/template.xhtml.en:65
+#: ../phoenix/ui/template.xhtml.en:53
+msgctxt "link"
+msgid "Help"
+msgstr ""
+
+#: ../ui/core/templates/pages/footer.xml.en:287
+msgctxt "link"
+msgid "Illustration"
+msgstr ""
+
+#: ../ui/wiki/help_odt.xml.en:11
+msgctxt "link"
+msgid "Links"
+msgstr ""
+
+#: ../chapter/ui/template.xhtml.en:58
+msgctxt "link"
+msgid "Log in"
+msgstr ""
+
+#: ../chapter/ui/template.xhtml.en:62
+#: ../phoenix/ui/template.xhtml.en:50
+msgctxt "link"
+msgid "Log out"
+msgstr ""
+
+#: ../phoenix/ui/template.xhtml.en:46
+msgctxt "link"
+msgid "Login"
+msgstr ""
+
+#: ../ui/core/templates/pages/footer.xml.en:60
+#: ../ui/core/templates/pages/footer.xml.en:285
+msgctxt "link"
+msgid "Logo"
+msgstr ""
+
+#: ../ui/core/templates/pages/footer.xml.en:38
+#: ../ui/core/templates/pages/footer.xml.en:56
+#: ../ui/core/templates/pages/footer.xml.en:275
+msgctxt "link"
+msgid "Mac Apps"
+msgstr ""
+
+#: ../phoenix/ui/template.xhtml.en:37
+msgctxt "link"
+msgid "Map"
+msgstr ""
+
+#: ../chapter/ui/template.xhtml.en:112
+#: ../ui/core/templates/widgets/tabs.xml.en:47
+#: ../ui/core/templates/widgets/tabs.xml.en:60
+msgctxt "link"
+msgid "More"
+msgstr ""
+
+#: ../ui/core/templates/pages/footer.xml.en:288
+msgctxt "link"
+msgid "More..."
+msgstr ""
+
+#: ../chapter/ui/template.xhtml.en:36
+#: ../phoenix/ui/template.xhtml.en:40
+msgctxt "link"
+msgid "More »"
+msgstr ""
+
+#: ../chapter/ui/template.xhtml.en:61
+#: ../phoenix/ui/template.xhtml.en:49
+msgctxt "link"
+msgid "My profile"
+msgstr ""
+
+#: ../ui/core/templates/pages/footer.xml.en:43
+#: ../ui/core/templates/pages/footer.xml.en:61
+#: ../ui/core/templates/pages/footer.xml.en:260
+msgctxt "link"
+msgid "NetTuts"
+msgstr ""
+
+#: ../chapter/ui/template.xhtml.en:40
+msgctxt "link"
+msgid "News"
+msgstr ""
+
+#: ../ui/core/templates/widgets/tabs.xml.en:40
+msgctxt "link"
+msgid "News Item Title"
+msgstr ""
+
+#: ../ui/core/templates/widgets/tabs.xml.en:53
+msgctxt "link"
+msgid "News Item Title Two"
+msgstr ""
+
+#: ../ui/core/templates/widgets/browse_batch.xml.en:25
+msgctxt "link"
+msgid "Next »"
+msgstr ""
+
+#: ../ui/core/templates/pages/footer.xml.en:46
+#: ../ui/core/templates/pages/footer.xml.en:65
+#: ../ui/core/templates/pages/footer.xml.en:69
+#: ../ui/core/templates/pages/footer.xml.en:263
+msgctxt "link"
+msgid "PhotoTuts"
+msgstr ""
+
+#: ../ui/wiki/help_odt.xml.en:8
+msgctxt "link"
+msgid "Prerequisites"
+msgstr ""
+
+#: ../chapter/ui/template.xhtml.en:39
+#: ../phoenix/ui/template.xhtml.en:36
+msgctxt "link"
+msgid "Projects"
+msgstr ""
+
+#: ../ui/core/templates/pages/footer.xml.en:45
+#: ../ui/core/templates/pages/footer.xml.en:63
+#: ../ui/core/templates/pages/footer.xml.en:262
+msgctxt "link"
+msgid "PsdTuts"
+msgstr ""
+
+#: ../phoenix/ui/home.xml.en:28
+#: ../phoenix/ui/home.xml.en:38
+msgctxt "link"
+msgid "Sign up to help"
+msgstr ""
+
+#: ../ui/core/templates/widgets/player.xml.en:64
+msgctxt "link"
+msgid "TZM Dev Phoenix Meeting 12-04-2011"
+msgstr ""
+
+#: ../ui/wiki/help_odt.xml.en:10
+msgctxt "link"
+msgid "Template"
+msgstr ""
+
+#: ../ui/core/templates/pages/footer.xml.en:248
+msgctxt "link"
+msgid "ThemeForest"
+msgstr ""
+
+#: ../ui/core/templates/pages/footer.xml.en:106
+msgctxt "link"
+msgid "Tools"
+msgstr ""
+
+#: ../ui/wiki/help_odt.xml.en:9
+msgctxt "link"
+msgid "Usage"
+msgstr ""
+
+#: ../ui/core/templates/pages/footer.xml.en:44
+#: ../ui/core/templates/pages/footer.xml.en:62
+#: ../ui/core/templates/pages/footer.xml.en:261
+msgctxt "link"
+msgid "VectorTuts"
+msgstr ""
+
+#: ../ui/core/templates/pages/footer.xml.en:251
+msgctxt "link"
+msgid "VideoHive"
+msgstr ""
+
+#: ../phoenix/ui/home.xml.en:125
+msgctxt "link"
+msgid "Visualising"
+msgstr ""
+
+#: ../ui/core/templates/pages/footer.xml.en:42
+#: ../ui/core/templates/pages/footer.xml.en:57
+#: ../ui/core/templates/pages/footer.xml.en:276
+msgctxt "link"
+msgid "Web Apps"
+msgstr ""
+
+#: ../phoenix/ui/home.xml.en:33
+msgctxt "link"
+msgid "Wish to donate..."
+msgstr ""
+
+#: ../ui/core/templates/pages/footer.xml.en:37
+#: ../ui/core/templates/pages/footer.xml.en:41
+#: ../ui/core/templates/pages/footer.xml.en:68
+#: ../ui/core/templates/pages/footer.xml.en:274
+msgctxt "link"
+msgid "WorkAwesome"
+msgstr ""
+
+#: ../ui/core/templates/pages/footer.xml.en:12
+msgctxt "link"
+msgid "Zeitgeist"
+msgstr ""
+
+#: ../phoenix/ui/template.xhtml.en:29
+msgctxt "link"
+msgid "Zeitgeist Movement Global Connect"
+msgstr ""
+
+#: ../ui/core/templates/widgets/player.xml.en:58
+msgctxt "link"
+msgid "Zeitgeist:"
+msgstr ""
+
+#: ../ui/core/templates/widgets/chat.xml.en:50
+msgctxt "link"
+msgid "memory:"
+msgstr ""
+
+#: ../ui/core/templates/widgets/player.xml.en:39
+msgctxt "link"
+msgid "mute"
+msgstr ""
+
+#: ../ui/core/templates/widgets/player.xml.en:35
+msgctxt "link"
+msgid "next"
+msgstr ""
+
+#: ../ui/core/templates/widgets/player.xml.en:31
+msgctxt "link"
+msgid "play"
+msgstr ""
+
+#: ../ui/core/templates/widgets/player.xml.en:33
+msgctxt "link"
+msgid "previous"
+msgstr ""
+
+#: ../ui/core/templates/widgets/player.xml.en:38
+msgctxt "link"
+msgid "repeat"
+msgstr ""
+
+#: ../ui/core/templates/widgets/player.xml.en:37
+msgctxt "link"
+msgid "shuffle"
+msgstr ""
+
+#: ../chapter/ui/template.xhtml.en:108
+msgctxt "link"
+msgid "striving for a better future since 2008"
+msgstr ""
+
+#: ../ui/core/templates/widgets/chat.xml.en:49
+msgctxt "link"
+msgid "uptime:"
+msgstr ""
+
+#: ../ui/core/templates/widgets/browse_batch.xml.en:17
+msgctxt "link"
+msgid "« Previous"
+msgstr ""
+
+#: ../ui/tiny_mce/rte.xml.en:48
+msgctxt "noscript"
+msgid "(Javascript is deactivated or missing:"
+msgstr ""
+
+#: ../ui/tiny_mce/rte.xml.en:48
+msgctxt "noscript"
+msgid "the Rich Text Editor is unavailable.)"
+msgstr ""
+
+#: ../ui/wiki/importodt.xml.en:128
+msgctxt "option"
+msgid "1"
+msgstr ""
+
+#: ../ui/wiki/importodt.xml.en:129
+msgctxt "option"
+msgid "2"
+msgstr ""
+
+#: ../ui/wiki/importodt.xml.en:130
+msgctxt "option"
+msgid "3"
+msgstr ""
+
+#: ../ui/wiki/importodt.xml.en:131
+msgctxt "option"
+msgid "4"
+msgstr ""
+
+#: ../ui/wiki/importodt.xml.en:132
+msgctxt "option"
+msgid "5"
+msgstr ""
+
+#: ../ui/core/templates/forms/edit_business.xml.en:55
+msgctxt "option"
+msgid "Choose a business"
+msgstr ""
+
+#: ../ui/core/templates/forms/edit_industry.xml.en:46
+#: ../chapter/ui/new_instance.xml.en:46
+msgctxt "option"
+msgid "Choose an industry"
+msgstr ""
+
+#: ../ui/core/templates/widgets/regionselect.xml.en:22
+msgctxt "option"
+msgid "France"
+msgstr ""
+
+#: ../ui/core/templates/widgets/regionselect.xml.en:18
+msgctxt "option"
+msgid "South East"
+msgstr ""
+
+#: ../ui/core/templates/widgets/regionselect.xml.en:20
+msgctxt "option"
+msgid "South West"
+msgstr ""
+
+#: ../ui/core/templates/widgets/regionselect.xml.en:16
+msgctxt "option"
+msgid "United Kingdom"
+msgstr ""
+
+#: ../ui/core/templates/pages/company.xml.en:93
+msgctxt "paragraph"
+msgid "${n_found} ${n_found_msg} found."
+msgstr ""
+
+#: ../chapter/ui/chapters.xml.en:21
+msgctxt "paragraph"
+msgid "(Note:"
+msgstr ""
+
+#: ../ui/core/templates/pages/footer.xml.en:134
+msgctxt "paragraph"
+msgid "130px"
+msgstr ""
+
+#: ../ui/core/templates/pages/footer.xml.en:142
+#: ../ui/core/templates/pages/footer.xml.en:182
+#: ../ui/core/templates/pages/footer.xml.en:186
+#: ../ui/core/templates/pages/footer.xml.en:190
+#: ../ui/core/templates/pages/footer.xml.en:194
+msgctxt "paragraph"
+msgid "210px"
+msgstr ""
+
+#: ../ui/core/templates/pages/footer.xml.en:150
+#: ../ui/core/templates/pages/footer.xml.en:170
+#: ../ui/core/templates/pages/footer.xml.en:174
+#: ../ui/core/templates/pages/footer.xml.en:178
+msgctxt "paragraph"
+msgid "290px"
+msgstr ""
+
+#: ../ui/core/templates/pages/footer.xml.en:158
+msgctxt "paragraph"
+msgid "370px"
+msgstr ""
+
+#: ../ui/core/templates/pages/footer.xml.en:162
+#: ../ui/core/templates/pages/footer.xml.en:166
+msgctxt "paragraph"
+msgid "450px"
+msgstr ""
+
+#: ../ui/core/templates/pages/footer.xml.en:126
+msgctxt "paragraph"
+msgid "50px"
+msgstr ""
+
+#: ../ui/core/templates/pages/footer.xml.en:154
+msgctxt "paragraph"
+msgid "530px"
+msgstr ""
+
+#: ../ui/core/templates/pages/footer.xml.en:146
+msgctxt "paragraph"
+msgid "610px"
+msgstr ""
+
+#: ../ui/core/templates/pages/footer.xml.en:138
+msgctxt "paragraph"
+msgid "690px"
+msgstr ""
+
+#: ../ui/core/templates/pages/footer.xml.en:130
+msgctxt "paragraph"
+msgid "770px"
+msgstr ""
+
+#: ../ui/core/templates/pages/footer.xml.en:122
+msgctxt "paragraph"
+msgid "850px"
+msgstr ""
+
+#: ../ui/core/templates/pages/footer.xml.en:118
+msgctxt "paragraph"
+msgid "930px"
+msgstr ""
+
+#: ../chapter/ui/chapters.xml.en:10
+msgctxt "paragraph"
+msgid "A chapter is defined as a self motivated group of active members of the Zeitgeist Movement in a particular region that serves and functions as an accurate representation of the Movement in their respective region."
+msgstr ""
+
+#: ../ui/wiki/help_odt.xml.en:29
+msgctxt "paragraph"
+msgid "A template is simply an ODT file that is emptied from its previous content and filled with the new content."
+msgstr ""
+
+#: ../ui/core/templates/pages/footer.xml.en:217
+#: ../ui/core/templates/pages/footer.xml.en:223
+msgctxt "paragraph"
+msgid "Aenean sagittis dictum purus, mollis consectetur ligula sodales sed."
+msgstr ""
+
+#: ../chapter/ui/chapters.xml.en:25
+msgctxt "paragraph"
+msgid "After this you will receive an email with further instructions and information as well as the Chapters Guide."
+msgstr ""
+
+#: ../ui/core/templates/pages/footer.xml.en:218
+#: ../ui/core/templates/pages/footer.xml.en:222
+msgctxt "paragraph"
+msgid "Aliquam dapibus sem ac arcu bibendum."
+msgstr ""
+
+#: ../ui/core/templates/pages/footer.xml.en:27
+msgctxt "paragraph"
+msgid "All of these elements are styled in the CSS, you just have to use the corresponding class in your HTML and this footer comes with a lot of examples ready for the copy and paste if you're not familiar enough with HTML / CSS."
+msgstr ""
+
+#: ../ui/core/templates/pages/company.xml.en:8
+msgctxt "paragraph"
+msgid "As the user has an Address"
+msgstr ""
+
+#: ../chapter/ui/chapters.xml.en:21
+msgctxt "paragraph"
+msgid "Before you join a local chapter, make sure you also joined the global mailing list and your country chapter)"
+msgstr ""
+
+#: ../chapter/ui/chapters.xml.en:16
+msgctxt "paragraph"
+msgid "Chapters are important because they bring the movement to people's neighbourhoods showing them that this is \"real\", this local presence is crucial as they positively affect the cultural environment by promoting education and critical thought."
+msgstr ""
+
+#: ../ui/wiki/help_odt.xml.en:35
+msgctxt "paragraph"
+msgid "Click here to <g id='10'>upload an ODT</g>."
+msgstr ""
+
+#: ../ui/core/templates/pages/footer.xml.en:93
+msgctxt "paragraph"
+msgid "Cras sagittis, tortor at."
+msgstr ""
+
+#: ../ui/core/templates/pages/footer.xml.en:78
+msgctxt "paragraph"
+msgid "Curabitur lorem nulla, imperdiet."
+msgstr ""
+
+#: ../ui/core/templates/pages/footer.xml.en:302
+msgctxt "paragraph"
+msgid "Curabitur vulputate, massa sit amet mollis sodales, arcu quam scelerisque augue."
+msgstr ""
+
+#: ../ui/wiki/help_odt.xml.en:45
+msgctxt "paragraph"
+msgid "Default styles are created if they don't exist."
+msgstr ""
+
+#: ../ui/wiki/help_odt.xml.en:43
+msgctxt "paragraph"
+msgid "Definition lists are converted to styles paragraphs."
+msgstr ""
+
+#: ../ui/core/templates/pages/footer.xml.en:304
+msgctxt "paragraph"
+msgid "Donec leo dui, mollis ut volutpat et, suscipit a mauris."
+msgstr ""
+
+#: ../ui/core/templates/pages/footer.xml.en:91
+msgctxt "paragraph"
+msgid "Donec tortor sem, venenatis."
+msgstr ""
+
+#: ../ui/wiki/help_odt.xml.en:39
+msgctxt "paragraph"
+msgid "Existing URLs remain untouched."
+msgstr ""
+
+#: ../chapter/ui/chapters.xml.en:20
+msgctxt "paragraph"
+msgid "If not, then you should consider starting one."
+msgstr ""
+
+#: ../phoenix/ui/home.xml.en:11
+msgctxt "paragraph"
+msgid "It equips members with on-line tools, by providing the infrastructure necessary to easily exchange, analyse and disseminate information in a highly scalable and non-blocking manner using only Open Source software build by the community."
+msgstr ""
+
+#: ../chapter/ui/chapters.xml.en:11
+msgctxt "paragraph"
+msgid "It is also part of a global chapter structure for information purposes and larger order activism."
+msgstr ""
+
+#: ../ui/wiki/help_odt.xml.en:39
+msgctxt "paragraph"
+msgid "Links will be expanded to a URL and point to this website."
+msgstr ""
+
+#: ../phoenix/ui/home.xml.en:27
+#: ../phoenix/ui/home.xml.en:37
+msgctxt "paragraph"
+msgid "London"
+msgstr ""
+
+#: ../ui/core/templates/pages/footer.xml.en:27
+msgctxt "paragraph"
+msgid "Many elements are styled and ready to be used like headers, lists, paragraphs with icons or borders, this dark box, tables and images !"
+msgstr ""
+
+#: ../ui/core/templates/pages/footer.xml.en:300
+msgctxt "paragraph"
+msgid "Mauris leo nulla, vestibulum id bibendum nec, auctor eu quam."
+msgstr ""
+
+#: ../ui/core/templates/pages/footer.xml.en:223
+#: ../ui/core/templates/pages/footer.xml.en:312
+msgctxt "paragraph"
+msgid "Mauris nec mauris sed mi tempor ornare eget iaculis quam lectus aliquet enim."
+msgstr ""
+
+#: ../ui/core/templates/pages/footer.xml.en:217
+msgctxt "paragraph"
+msgid "Mauris nec mauris sed mi tempor ornare eget iaculis."
+msgstr ""
+
+#: ../ui/core/templates/pages/footer.xml.en:94
+msgctxt "paragraph"
+msgid "Mauris quis augue lectus, eget congue."
+msgstr ""
+
+#: ../ui/core/templates/pages/footer.xml.en:218
+msgctxt "paragraph"
+msgid "Nam nec est purus."
+msgstr ""
+
+#: ../ui/core/templates/pages/footer.xml.en:223
+#: ../ui/core/templates/pages/footer.xml.en:312
+msgctxt "paragraph"
+msgid "Nam nec est purus.."
+msgstr ""
+
+#: ../ui/core/templates/pages/footer.xml.en:218
+#: ../ui/core/templates/pages/footer.xml.en:222
+msgctxt "paragraph"
+msgid "Nam placerat, nulla vel placerat adipiscing, arcu lorem tincidunt nibh, eget iaculis quam lectus aliquet enim."
+msgstr ""
+
+#: ../ui/core/templates/pages/footer.xml.en:81
+msgctxt "paragraph"
+msgid "Nulla tincidunt, purus at luctus."
+msgstr ""
+
+#: ../ui/wiki/help_odt.xml.en:23
+msgctxt "paragraph"
+msgid "On any page, click on the <g id='8'>To ODT</g> tab to acccess this feature."
+msgstr ""
+
+#: ../ui/core/templates/pages/footer.xml.en:23
+msgctxt "paragraph"
+msgid "On the right, there's a set of <g id='5'>social icons</g> showing a simple tooltip on mouse hover."
+msgstr ""
+
+#: ../ui/core/templates/pages/footer.xml.en:114
+msgctxt "paragraph"
+msgid "Once you've choosen the right container (see in the CSS the section number 2 - Drop-up Containers), use the different column sizes and add your stuff quickly !"
+msgstr ""
+
+#: ../phoenix/ui/chapter-generator.xml.en:10
+msgctxt "paragraph"
+msgid "Only members can create chapters."
+msgstr ""
+
+#: ../ui/core/templates/pages/footer.xml.en:299
+#: ../ui/core/templates/pages/footer.xml.en:301
+msgctxt "paragraph"
+msgid "Phasellus in velit velit."
+msgstr ""
+
+#: ../ui/core/templates/pages/company.xml.en:24
+msgctxt "paragraph"
+msgid "Please first search whether your company information is already in the database."
+msgstr ""
+
+#: ../phoenix/ui/chapter-generator.xml.en:10
+msgctxt "paragraph"
+msgid "Please log in"
+msgstr ""
+
+#: ../ui/core/templates/pages/footer.xml.en:79
+msgctxt "paragraph"
+msgid "Praesent id nulla eu risus rhoncus."
+msgstr ""
+
+#: ../ui/core/templates/pages/footer.xml.en:90
+msgctxt "paragraph"
+msgid "Quisque at metus a libero sodales."
+msgstr ""
+
+#: ../ui/core/templates/pages/footer.xml.en:299
+#: ../ui/core/templates/pages/footer.xml.en:301
+msgctxt "paragraph"
+msgid "Quisque elit est, ullamcorper ac hendrerit eget, porta id enim."
+msgstr ""
+
+#: ../ui/core/templates/pages/footer.xml.en:303
+msgctxt "paragraph"
+msgid "Quisque varius, erat nec fermentum aliquam, erat urna venenatis orci ligula eget."
+msgstr ""
+
+#: ../ui/core/templates/pages/footer.xml.en:217
+#: ../ui/core/templates/pages/footer.xml.en:223
+#: ../ui/core/templates/pages/footer.xml.en:312
+msgctxt "paragraph"
+msgid "Sed condimentum faucibus turpis sed cursus."
+msgstr ""
+
+#: ../ui/core/templates/pages/company.xml.en:93
+msgctxt "paragraph"
+msgid "Select one:"
+msgstr ""
+
+#: ../ui/core/templates/pages/company.xml.en:9
+msgctxt "paragraph"
+msgid "Show the Company Name and address"
+msgstr ""
+
+#: ../ui/wiki/help_odt.xml.en:30
+msgctxt "paragraph"
+msgid "Styles, headers and footers are preserved."
+msgstr ""
+
+#: ../phoenix/ui/chapter-generator.xml.en:19
+msgctxt "paragraph"
+msgid "The Zeitgeist Global Connect is made up of individual chapter sites where each chapter site has a full blown web platform that members of the chapter can configure, manage and extend to suit the chapters local needs."
+msgstr ""
+
+#: ../phoenix/ui/home.xml.en:10
+msgctxt "paragraph"
+msgid "The Zeitgeist Movement Global Connect (ZMGC) aims to create an on-line eco-system within which the ideas of Resource Based Economy can be galvanise into actions that can be used in the real world."
+msgstr ""
+
+#: ../chapter/ui/chapters.xml.en:15
+msgctxt "paragraph"
+msgid "The Zeitgeist Movement has an organized structure built upon chapters to facilitate collective activism in an organized manner as well as the flow of information relating to a vast range of members."
+msgstr ""
+
+#: ../ui/wiki/help_odt.xml.en:71
+msgctxt "paragraph"
+msgid "The book has some nice behaviour:"
+msgstr ""
+
+#: ../chapter/ui/chapters.xml.en:11
+msgctxt "paragraph"
+msgid "The function of a chapter is to create and sustain a work-oriented environment from which activism can then be performed in accordance with the understandings supported by the movement."
+msgstr ""
+
+#: ../ui/wiki/help_odt.xml.en:43
+msgctxt "paragraph"
+msgid "The term style is named \"Definition List Term\" and the definition style is named \"Definition List Definition\"."
+msgstr ""
+
+#: ../ui/core/templates/pages/footer.xml.en:27
+msgctxt "paragraph"
+msgid "There is also a full set of typography examples included to help you using this footer."
+msgstr ""
+
+#: ../ui/core/templates/pages/footer.xml.en:22
+msgctxt "paragraph"
+msgid "There's also an option to show the footer when the page loads and hide it after a delay."
+msgstr ""
+
+#: ../ui/core/templates/pages/footer.xml.en:80
+msgctxt "paragraph"
+msgid "This is a paragraph with a archive icon."
+msgstr ""
+
+#: ../ui/core/templates/pages/footer.xml.en:93
+msgctxt "paragraph"
+msgid "This is a paragraph with a briefcase icon."
+msgstr ""
+
+#: ../ui/core/templates/pages/footer.xml.en:78
+msgctxt "paragraph"
+msgid "This is a paragraph with a calendar icon."
+msgstr ""
+
+#: ../ui/core/templates/pages/footer.xml.en:90
+msgctxt "paragraph"
+msgid "This is a paragraph with a delete icon."
+msgstr ""
+
+#: ../ui/core/templates/pages/footer.xml.en:91
+msgctxt "paragraph"
+msgid "This is a paragraph with a favorite icon."
+msgstr ""
+
+#: ../ui/core/templates/pages/footer.xml.en:82
+msgctxt "paragraph"
+msgid "This is a paragraph with a help icon."
+msgstr ""
+
+#: ../ui/core/templates/pages/footer.xml.en:92
+msgctxt "paragraph"
+msgid "This is a paragraph with a lock icon."
+msgstr ""
+
+#: ../ui/core/templates/pages/footer.xml.en:79
+msgctxt "paragraph"
+msgid "This is a paragraph with a note icon."
+msgstr ""
+
+#: ../ui/core/templates/pages/footer.xml.en:81
+msgctxt "paragraph"
+msgid "This is a paragraph with a search icon."
+msgstr ""
+
+#: ../ui/core/templates/pages/footer.xml.en:94
+msgctxt "paragraph"
+msgid "This is a paragraph with a user icon."
+msgstr ""
+
+#: ../project/ui/home.xml.en:9
+msgctxt "paragraph"
+msgid "This is the description"
+msgstr ""
+
+#: ../ui/core/templates/pages/footer.xml.en:22
+msgctxt "paragraph"
+msgid "This option can be disabled."
+msgstr ""
+
+#: ../phoenix/ui/home.xml.en:12
+msgctxt "paragraph"
+msgid "To get involved and find out more about the ZMGC please <g id='1'>join.</g>"
+msgstr ""
+
+#: ../chapter/ui/chapters.xml.en:20
+msgctxt "paragraph"
+msgid "To join a chapter simply check the table above and see if your local area is represented there, if yes just click on the link provided and join."
+msgstr ""
+
+#: ../chapter/ui/chapters.xml.en:25
+msgctxt "paragraph"
+msgid "To start one, first you must let us know of such intentions by emailing \" chapters@thezeitgeistmovement.com\"."
+msgstr ""
+
+#: ../chapter/ui/new_instance.xml.en:32
+msgctxt "paragraph"
+msgid "Type the hostnames this website will apply to, each one in a different line."
+msgstr ""
+
+#: ../ui/core/templates/forms/company_search.xml.en:7
+#: ../ui/core/templates/pages/company.xml.en:27
+msgctxt "paragraph"
+msgid "Type the name of your company:"
+msgstr ""
+
+#: ../ui/core/templates/pages/footer.xml.en:300
+msgctxt "paragraph"
+msgid "Ut ac turpis ipsum."
+msgstr ""
+
+#: ../ui/core/templates/pages/footer.xml.en:217
+#: ../ui/core/templates/pages/footer.xml.en:223
+#: ../ui/core/templates/pages/footer.xml.en:312
+msgctxt "paragraph"
+msgid "Ut pharetra bibendum lorem, sagittis mollis nisi eleifend nec."
+msgstr ""
+
+#: ../ui/core/templates/pages/footer.xml.en:80
+msgctxt "paragraph"
+msgid "Ut pulvinar mauris at nunc."
+msgstr ""
+
+#: ../ui/core/templates/pages/footer.xml.en:218
+msgctxt "paragraph"
+msgid "Vestibulum nec lectus et quam tempor vulputate vitae eget risus."
+msgstr ""
+
+#: ../ui/core/templates/pages/footer.xml.en:304
+msgctxt "paragraph"
+msgid "Vestibulum sed elit ut arcu."
+msgstr ""
+
+#: ../ui/core/templates/pages/footer.xml.en:82
+msgctxt "paragraph"
+msgid "Vestibulum venenatis diam sit amet."
+msgstr ""
+
+#: ../ui/core/templates/pages/footer.xml.en:92
+msgctxt "paragraph"
+msgid "Vivamus eu felis lacus, in tincidunt."
+msgstr ""
+
+#: ../ui/core/templates/pages/footer.xml.en:218
+#: ../ui/core/templates/pages/footer.xml.en:222
+msgctxt "paragraph"
+msgid "Vivamus id mauris quis odio hendrerit semper."
+msgstr ""
+
+#: ../ui/core/templates/pages/company.xml.en:8
+msgctxt "paragraph"
+msgid "We DON'T display the search form."
+msgstr ""
+
+#: ../ui/core/templates/pages/footer.xml.en:114
+msgctxt "paragraph"
+msgid "With this powerful grid, you can easily build your own footer and organize all your content into columns !"
+msgstr ""
+
+#: ../ui/core/templates/pages/footer.xml.en:23
+msgctxt "paragraph"
+msgid "You can add your owns and link to your social networks profiles if you wish."
+msgstr ""
+
+#: ../ui/wiki/help_odt.xml.en:27
+msgctxt "paragraph"
+msgid "You can choose a template to write the exported document in."
+msgstr ""
+
+#: ../ui/wiki/help_odt.xml.en:34
+msgctxt "paragraph"
+msgid "You can choose an ODT file on your disk or select an ODT previously uploaded into the wiki."
+msgstr ""
+
+#: ../ui/wiki/help_odt.xml.en:48
+msgctxt "paragraph"
+msgid "You can export several wiki pages into a single ODT."
+msgstr ""
+
+#: ../ui/core/templates/pages/footer.xml.en:22
+msgctxt "paragraph"
+msgid "You can use any of the 6 included jQuery effects to show the content, it can be on mouse hover or on click, with 3 different transitions :"
+msgstr ""
+
+#: ../ui/wiki/help_odt.xml.en:48
+msgctxt "paragraph"
+msgid "You need to create a new page with a structure like this:"
+msgstr ""
+
+#: ../chapter/ui/home.xml.en:11
+msgctxt "paragraph"
+msgid "anonomous use"
+msgstr ""
+
+#: ../ui/core/templates/pages/footer.xml.en:22
+msgctxt "paragraph"
+msgid "fade, slide or toggle."
+msgstr ""
+
+#: ../ui/wiki/help_odt.xml.en:52
+msgctxt "pre"
+msgid ".."
+msgstr ""
+
+#: ../ui/wiki/help_odt.xml.en:53
+msgctxt "pre"
+msgid "3\n   :template:"
+msgstr ""
+
+#: ../ui/wiki/help_odt.xml.en:57
+msgctxt "pre"
+msgid ":comments:"
+msgstr ""
+
+#: ../ui/wiki/help_odt.xml.en:62
+msgctxt "pre"
+msgid ":filename:"
+msgstr ""
+
+#: ../ui/wiki/help_odt.xml.en:60
+msgctxt "pre"
+msgid ":language:"
+msgstr ""
+
+#: ../ui/wiki/help_odt.xml.en:59
+msgctxt "pre"
+msgid ":subject:"
+msgstr ""
+
+#: ../ui/wiki/help_odt.xml.en:57
+msgctxt "pre"
+msgid "Comments..."
+msgstr ""
+
+#: ../ui/wiki/help_odt.xml.en:61
+msgctxt "pre"
+msgid "Keyword1, Keyword2..."
+msgstr ""
+
+#: ../ui/wiki/help_odt.xml.en:58
+msgctxt "pre"
+msgid "On multiple lines..."
+msgstr ""
+
+#: ../ui/wiki/help_odt.xml.en:59
+msgctxt "pre"
+msgid "Subject..."
+msgstr ""
+
+#: ../ui/wiki/help_odt.xml.en:56
+msgctxt "pre"
+msgid "Title..."
+msgstr ""
+
+#: ../ui/wiki/help_odt.xml.en:52
+msgctxt "pre"
+msgid "`cover-page`_\n   :toc-depth:"
+msgstr ""
+
+#: ../ui/wiki/help_odt.xml.en:52
+msgctxt "pre"
+msgid "book::"
+msgstr ""
+
+#: ../ui/wiki/help_odt.xml.en:60
+msgctxt "pre"
+msgid "fr-FR\n   :keywords:"
+msgstr ""
+
+#: ../ui/wiki/help_odt.xml.en:55
+msgctxt "pre"
+msgid "no\n   :title:"
+msgstr ""
+
+#: ../ui/wiki/help_odt.xml.en:62
+msgctxt "pre"
+msgid "output.odt\n\n   - `a-page`_\n   - `another-page`_\n      - `a-subpage`_\n      - `another-subpage`_\n   - `a-last-page`_"
+msgstr ""
+
+#: ../ui/wiki/help_odt.xml.en:54
+msgctxt "pre"
+msgid "template-name\n   :ignore-missing-pages:"
+msgstr ""
+
+#: ../phoenix/ui/home.xml.en:68
+msgctxt "span"
+msgid "<g id='16'>  <x id='17'/>  <g id='18'>  <g id='19'>Add to</g>  </g>  </g><x id='20'/>  <g id='21'>14:30</g>  <g id='22'>Video Title</g>  <g id='23'> by <g id='24'>username</g>  </g>"
+msgstr ""
+
+#: ../phoenix/ui/home.xml.en:89
+msgctxt "span"
+msgid "<g id='31'>  <x id='32'/>  <g id='33'>  <g id='34'>Add to</g>  </g>  </g><x id='35'/>  <g id='36'>14:30</g>  <g id='37'>Video Title</g>  <g id='38'> by <g id='39'>username</g>  </g>"
+msgstr ""
+
+#: ../ui/core/templates/widgets/chat.xml.en:50
+msgctxt "span"
+msgid "<g id='7'>?</g>mb RSS"
+msgstr ""
+
+#: ../ui/core/templates/widgets/chat.xml.en:49
+msgctxt "span"
+msgid "?"
+msgstr ""
+
+#: ../ui/core/templates/widgets/tabs.xml.en:22
+#: ../ui/core/templates/widgets/tabs.xml.en:30
+msgctxt "span"
+msgid "Actions"
+msgstr ""
+
+#: ../ui/core/templates/widgets/tabs.xml.en:71
+#: ../ui/core/templates/widgets/tabs.xml.en:75
+#: ../ui/core/templates/widgets/tabs.xml.en:79
+msgctxt "span"
+msgid "Africa"
+msgstr ""
+
+#: ../phoenix/ui/home.xml.en:22
+msgctxt "span"
+msgid "All the latest activities ..."
+msgstr ""
+
+#: ../ui/core/templates/widgets/tabs.xml.en:72
+#: ../ui/core/templates/widgets/tabs.xml.en:76
+#: ../ui/core/templates/widgets/tabs.xml.en:80
+msgctxt "span"
+msgid "Americas"
+msgstr ""
+
+#: ../ui/core/templates/widgets/tabs.xml.en:73
+#: ../ui/core/templates/widgets/tabs.xml.en:77
+#: ../ui/core/templates/widgets/tabs.xml.en:81
+msgctxt "span"
+msgid "Asia"
+msgstr ""
+
+#: ../ui/core/templates/widgets/tabs.xml.en:25
+#: ../ui/core/templates/widgets/tabs.xml.en:33
+msgctxt "span"
+msgid "Chapters"
+msgstr ""
+
+#: ../ui/core/templates/widgets/tabs.xml.en:74
+#: ../ui/core/templates/widgets/tabs.xml.en:78
+#: ../ui/core/templates/widgets/tabs.xml.en:82
+msgctxt "span"
+msgid "Europe"
+msgstr ""
+
+#: ../ui/core/templates/widgets/tabs.xml.en:24
+#: ../ui/core/templates/widgets/tabs.xml.en:32
+msgctxt "span"
+msgid "Events"
+msgstr ""
+
+#: ../ui/core/templates/pages/footer.xml.en:331
+msgctxt "span"
+msgid "Facebook"
+msgstr ""
+
+#: ../ui/core/templates/pages/footer.xml.en:330
+msgctxt "span"
+msgid "Flickr"
+msgstr ""
+
+#: ../ui/wiki/edit.xml.en:232
+msgctxt "span"
+msgid "Format"
+msgstr ""
+
+#: ../ui/core/templates/widgets/tabs.xml.en:26
+#: ../ui/core/templates/widgets/tabs.xml.en:34
+msgctxt "span"
+msgid "Forums"
+msgstr ""
+
+#: ../ui/wiki/edit.xml.en:249
+msgctxt "span"
+msgid "Heading 1"
+msgstr ""
+
+#: ../ui/wiki/edit.xml.en:257
+msgctxt "span"
+msgid "Heading 2"
+msgstr ""
+
+#: ../ui/wiki/edit.xml.en:265
+msgctxt "span"
+msgid "Heading 3"
+msgstr ""
+
+#: ../ui/core/templates/widgets/tabs.xml.en:23
+#: ../ui/core/templates/widgets/tabs.xml.en:31
+msgctxt "span"
+msgid "News"
+msgstr ""
+
+#: ../ui/wiki/edit.xml.en:241
+msgctxt "span"
+msgid "Preformatted"
+msgstr ""
+
+#: ../ui/core/templates/pages/footer.xml.en:329
+msgctxt "span"
+msgid "RSS"
+msgstr ""
+
+#: ../ui/core/templates/pages/footer.xml.en:328
+msgctxt "span"
+msgid "Twitter"
+msgstr ""
+
+#: ../ui/core/templates/pages/footer.xml.en:332
+msgctxt "span"
+msgid "You Tube"
+msgstr ""
+
+#: ../ui/wiki/importodt.xml.en:56
+msgctxt "table cell"
+msgid "Browse Content"
+msgstr ""
+
+#: ../ui/core/templates/pages/footer.xml.en:316
+#: ../ui/core/templates/pages/footer.xml.en:317
+#: ../ui/core/templates/pages/footer.xml.en:318
+#: ../ui/core/templates/pages/footer.xml.en:319
+msgctxt "table cell"
+msgid "Cell 1"
+msgstr ""
+
+#: ../ui/core/templates/pages/footer.xml.en:316
+#: ../ui/core/templates/pages/footer.xml.en:317
+#: ../ui/core/templates/pages/footer.xml.en:318
+#: ../ui/core/templates/pages/footer.xml.en:319
+msgctxt "table cell"
+msgid "Cell 2"
+msgstr ""
+
+#: ../ui/core/templates/pages/footer.xml.en:316
+#: ../ui/core/templates/pages/footer.xml.en:317
+#: ../ui/core/templates/pages/footer.xml.en:318
+#: ../ui/core/templates/pages/footer.xml.en:319
+msgctxt "table cell"
+msgid "Cell 3"
+msgstr ""
+
+#: ../ui/core/templates/pages/footer.xml.en:316
+#: ../ui/core/templates/pages/footer.xml.en:317
+#: ../ui/core/templates/pages/footer.xml.en:318
+#: ../ui/core/templates/pages/footer.xml.en:319
+msgctxt "table cell"
+msgid "Cell 4"
+msgstr ""
+
+#: ../ui/core/templates/forms/edit_industry.xml.en:15
+msgctxt "table cell"
+msgid "Code"
+msgstr ""
+
+#: ../ui/core/templates/forms/edit_business.xml.en:25
+#: ../ui/core/templates/forms/edit_industry.xml.en:14
+msgctxt "table cell"
+msgid "Default"
+msgstr ""
+
+#: ../ui/core/templates/forms/edit_business.xml.en:26
+#: ../ui/core/templates/forms/edit_industry.xml.en:16
+msgctxt "table cell"
+msgid "Name"
+msgstr ""
+
+#: ../ui/wiki/importodt.xml.en:57
+msgctxt "table cell"
+msgid "Select ODT"
+msgstr ""
+
+#: ../ui/core/templates/pages/footer.xml.en:315
+msgctxt "table cell"
+msgid "Title 1"
+msgstr ""
+
+#: ../ui/core/templates/pages/footer.xml.en:315
+msgctxt "table cell"
+msgid "Title 2"
+msgstr ""
+
+#: ../ui/core/templates/pages/footer.xml.en:315
+msgctxt "table cell"
+msgid "Title 3"
+msgstr ""
+
+#: ../ui/core/templates/pages/footer.xml.en:315
+msgctxt "table cell"
+msgid "Title 4"
+msgstr ""
+
+#: ../ui/core/templates/forms/edit_business.xml.en:32
+#: ../ui/core/templates/forms/edit_industry.xml.en:22
+msgctxt "table cell"
+msgid "Yes"
+msgstr ""
+
+#: ../ui/core/templates/forms/edit_business.xml.en:22
+msgctxt "table[summary]"
+msgid "Business settings"
+msgstr ""
+
+#: ../ui/core/templates/forms/edit_industry.xml.en:11
+msgctxt "table[summary]"
+msgid "Industry settings"
+msgstr ""
+
+#: ../project/ui/template.xhtml.en:7
+msgctxt "title"
+msgid "${title} - Project site"
+msgstr ""
+
+#: ../ui/wiki/importodt.xml.en:7
+msgctxt "title"
+msgid "Import ODT"
+msgstr ""
+
+#: ../chapter/ui/template.xhtml.en:72
+#: ../phoenix/ui/template.xhtml.en:54
+msgctxt "title attribute"
+msgid "Advanced Search"
+msgstr ""
+
+#: ../ui/wiki/edit.xml.en:24
+msgctxt "title attribute"
+msgid "Bold"
+msgstr ""
+
+#: ../phoenix/ui/template.xhtml.en:52
+msgctxt "title attribute"
+msgid "Contact"
+msgstr ""
+
+#: ../ui/wiki/edit.xml.en:232
+msgctxt "title attribute"
+msgid "Format"
+msgstr ""
+
+#: ../ui/wiki/edit.xml.en:249
+msgctxt "title attribute"
+msgid "Heading 1"
+msgstr ""
+
+#: ../ui/wiki/edit.xml.en:257
+msgctxt "title attribute"
+msgid "Heading 2"
+msgstr ""
+
+#: ../ui/wiki/edit.xml.en:265
+msgctxt "title attribute"
+msgid "Heading 3"
+msgstr ""
+
+#: ../ui/wiki/edit.xml.en:134
+#: ../phoenix/ui/template.xhtml.en:53
+msgctxt "title attribute"
+msgid "Help"
+msgstr ""
+
+#: ../ui/wiki/edit.xml.en:145
+msgctxt "title attribute"
+msgid "Import ODT"
+msgstr ""
+
+#: ../ui/wiki/edit.xml.en:65
+msgctxt "title attribute"
+msgid "Insert image"
+msgstr ""
+
+#: ../ui/wiki/edit.xml.en:58
+msgctxt "title attribute"
+msgid "Insert link"
+msgstr ""
+
+#: ../ui/wiki/edit.xml.en:75
+msgctxt "title attribute"
+msgid "Insert table"
+msgstr ""
+
+#: ../ui/wiki/edit.xml.en:31
+msgctxt "title attribute"
+msgid "Italic"
+msgstr ""
+
+#: ../phoenix/ui/home.xml.en:12
+msgctxt "title attribute"
+msgid "Join"
+msgstr ""
+
+#: ../ui/wiki/edit.xml.en:126
+msgctxt "title attribute"
+msgid "Large Edit Text"
+msgstr ""
+
+#: ../phoenix/ui/template.xhtml.en:46
+msgctxt "title attribute"
+msgid "Login"
+msgstr ""
+
+#: ../phoenix/ui/template.xhtml.en:50
+msgctxt "title attribute"
+msgid "Logout"
+msgstr ""
+
+#: ../ui/wiki/edit.xml.en:118
+msgctxt "title attribute"
+msgid "Medium Edit Text"
+msgstr ""
+
+#: ../ui/core/templates/widgets/player.xml.en:39
+msgctxt "title attribute"
+msgid "Mute"
+msgstr ""
+
+#: ../ui/core/templates/widgets/player.xml.en:34
+msgctxt "title attribute"
+msgid "Next"
+msgstr ""
+
+#: ../ui/core/templates/widgets/browse_batch.xml.en:25
+msgctxt "title attribute"
+msgid "Next »"
+msgstr ""
+
+#: ../ui/wiki/edit.xml.en:48
+msgctxt "title attribute"
+msgid "Ordered list"
+msgstr ""
+
+#: ../ui/core/templates/widgets/player.xml.en:30
+msgctxt "title attribute"
+msgid "Play"
+msgstr ""
+
+#: ../ui/wiki/edit.xml.en:240
+msgctxt "title attribute"
+msgid "Preformatted"
+msgstr ""
+
+#: ../ui/core/templates/widgets/player.xml.en:32
+msgctxt "title attribute"
+msgid "Prev"
+msgstr ""
+
+#: ../ui/core/templates/widgets/player.xml.en:38
+msgctxt "title attribute"
+msgid "Repeat playlist"
+msgstr ""
+
+#: ../ui/wiki/edit.xml.en:160
+msgctxt "title attribute"
+msgid "Save"
+msgstr ""
+
+#: ../ui/core/templates/widgets/player.xml.en:36
+msgctxt "title attribute"
+msgid "Shuffle/Random"
+msgstr ""
+
+#: ../phoenix/ui/home.xml.en:28
+#: ../phoenix/ui/home.xml.en:38
+msgctxt "title attribute"
+msgid "Sign up to help"
+msgstr ""
+
+#: ../ui/wiki/edit.xml.en:110
+msgctxt "title attribute"
+msgid "Small Edit Text"
+msgstr ""
+
+#: ../ui/wiki/edit.xml.en:198
+#: ../ui/core/templates/forms/login.xml.en:28
+msgctxt "title attribute"
+msgid "This field is required"
+msgstr ""
+
+#: ../ui/wiki/edit.xml.en:152
+msgctxt "title attribute"
+msgid "Toggle fullscreen mode"
+msgstr ""
+
+#: ../ui/wiki/edit.xml.en:41
+msgctxt "title attribute"
+msgid "Unordered list"
+msgstr ""
+
+#: ../phoenix/ui/home.xml.en:75
+#: ../phoenix/ui/home.xml.en:96
+msgctxt "title attribute"
+msgid "Video Title"
+msgstr ""
+
+#: ../phoenix/ui/home.xml.en:33
+msgctxt "title attribute"
+msgid "Wish to donate..."
+msgstr ""
+
+#: ../ui/core/templates/forms/login.xml.en:53
+#: ../ui/core/templates/widgets/captcha.xml.en:8
+msgctxt "title attribute"
+msgid "captcha"
+msgstr ""
+
+#: ../ui/core/templates/pages/footer.xml.en:342
+msgctxt "title attribute"
+msgid "chat"
+msgstr ""
+
+#: ../ui/core/templates/widgets/player.xml.en:39
+msgctxt "title attribute"
+msgid "mute"
+msgstr ""
+
+#: ../ui/core/templates/pages/footer.xml.en:336
+msgctxt "title attribute"
+msgid "notifications"
+msgstr ""
+
+#: ../ui/core/templates/widgets/player.xml.en:38
+msgctxt "title attribute"
+msgid "repeat"
+msgstr ""
+
+#: ../ui/core/templates/widgets/player.xml.en:37
+msgctxt "title attribute"
+msgid "shuffle"
+msgstr ""
+
+#: ../ui/core/templates/widgets/player.xml.en:56
+#: ../ui/core/templates/widgets/player.xml.en:64
+msgctxt "title attribute"
+msgid "unselect"
+msgstr ""
+
+#: ../ui/core/templates/widgets/browse_batch.xml.en:16
+msgctxt "title attribute"
+msgid "« Previous"
+msgstr ""
+
+#: ../phoenix/ui/chapter-generator.xml.en:25
+msgctxt "u"
+msgid "<g id='1'><g id='2'>Your own URL</g></g>:"
+msgstr ""
+
+#: ../phoenix/ui/chapter-generator.xml.en:30
+msgctxt "u"
+msgid "<g id='3'><g id='4'>Forum</g></g>:"
+msgstr ""
+
+#: ../phoenix/ui/chapter-generator.xml.en:34
+msgctxt "u"
+msgid "<g id='5'><g id='6'>Blog</g></g>:"
+msgstr ""
+
+#: ../phoenix/ui/chapter-generator.xml.en:37
+msgctxt "u"
+msgid "<g id='7'><g id='8'>Calendar</g></g>:"
+msgstr ""
+
+#: ../phoenix/ui/chapter-generator.xml.en:40
+msgctxt "u"
+msgid "<g id='9'><g id='10'>Issue/Actions Tracker</g></g>:"
 msgstr ""
