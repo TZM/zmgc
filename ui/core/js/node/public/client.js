@@ -8,7 +8,7 @@ function ZmgcClient() {
 	this.init = function() {
 		now.receiveLocation = function(message) {
 			self.drawMarker(message);
-		}
+		};
 		if ($('#viz').length > 0) {
 			console.log('we have a VIZ id');
 			self.drawGlobe();
@@ -207,7 +207,19 @@ function ZmgcClient() {
 
 	this.loadMembers = function () {
 		// Load data from .json file on page refresh
-		var data;
+		var data = [{ city: 'Centreville',
+				longitude: -77.46070098876953,
+				latitude: 38.81589889526367,
+				ip: '72.196.192.58',
+				timestamp: 1342997755637 },
+			{ city: 'Leeds',
+				longitude: -1.583299994468689,
+				latitude: 53.79999923706055,
+				ip: '86.160.103.204',
+				timestamp: 1343029940099 }];
+			for ( var i in data ) { 
+				this.drawMarker( data[i] ) ;
+			}
 		console.log('we load members from db...')
 	}
 
