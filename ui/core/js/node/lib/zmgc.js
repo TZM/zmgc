@@ -33,10 +33,11 @@ ZMGC.prototype.createHTTPServer = function() {
 		var file = new static.Server('./public', {
 			cache: false
 		});
-		
-		request.addListener('end', function() {
-			var location = url.parse(request.url, true),
-			params = (location.query || request.headers);
+
+		function onEnd() {
+			/* if new connection identify user */
+			var location = url.parse(request.url, true);
+			//params = (location.query || request.headers);
 			if (location.pathname == '/config.json' && request.method == "GET") {
 				response.writeHead(200, {
 					'Content-Type': 'application/x-javascript'
@@ -48,9 +49,6 @@ ZMGC.prototype.createHTTPServer = function() {
 			} else if (location.pathname == '/stat/1.gif' && request.method == 'GET') {
 				var time = +new Date();
 				var origin;
-				//db.enableIndex('users');
-				//var results = db.search('users', { timestamp: [1330536456424,1330593323542] });
-				//console.log(results);
 				response.writeHead(200, {
 					'Content-Type': 'image/gif'
 				});
@@ -60,6 +58,7 @@ ZMGC.prototype.createHTTPServer = function() {
 					if (ip === null || ip === "127.0.0.1") {
 						ip = "82.246.239.187";
 					}
+					//city = new City('/home/andumitru/freelancer/phoenix/data/GeoLiteCity.dat');
 					city = new City('../../../../data/GeoLiteCity.dat');
 					city.lookup(ip, function(err, location) {
 						var obj;
@@ -84,18 +83,25 @@ ZMGC.prototype.createHTTPServer = function() {
 						console.log(obj);
 						console.log(everyone);
 						everyone.now.receiveLocation(obj);
-						// write to riak cluster
-						//db.save('users', ip, obj, { index: {timestamp: time} });
-						//console.log('was saved in the riak cluster');
 					});
-					//console.log(origin[1], request.connection.remoteAddress, request.headers['user-agent']);
-
 				}
 				response.end("OK");
 			} else {
 				file.serve(request, response);
+				/*
+						var	obj ={ 
+								city: 'Bexleyheath',
+								longitude: 0.15000000596046448,
+								latitude: 51.45000076293945,
+								ip: '86.173.61.119',
+								timestamp: 1343054092459 
+							};
+						everyone.now.receiveLocation(obj);
+						*/
 			}
-		});
+		}
+		
+		request.on('end', onEnd);
 	});
 	return server;
 };
