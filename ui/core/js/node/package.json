@@ -20,6 +20,7 @@
 		"now": ">=0.8.0",
 		"node-static": "0.5.9",
 		"geoip": "0.4.6",
+		"express" : "*",
 		"validator": ">=0.3.9"
 	},
 	"devDependencies": {},

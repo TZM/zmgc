@@ -1,78 +1,42 @@
-process.addListener('uncaughtException', function (err, stack) {
-  console.log('------------------------');
-  console.log('Exception: ' + err);
-  console.log(err.stack);
-  console.log('------------------------');
+
+/**
+ * Module dependencies.
+ */
+
+var express = require('express')
+  , routes = require('./routes')
+	, util  = require('util')
+  , user = require('./routes/user')
+  , http = require('http')
+	, url = require('url')
+	, nowjs = require('now')
+	, City = require('geoip').City
+  , path = require('path');
+
+var app = express();
+
+app.configure(function(){
+  app.set('port', process.env.PORT || 3000);
+  app.set('views', __dirname + '/views');
+  app.set('view engine', 'jade');
+  app.use(express.favicon());
+  app.use(express.logger('dev'));
+  app.use(express.bodyParser());
+  app.use(express.methodOverride());
+  app.use(app.router);
+  app.use(express.static(path.join(__dirname, 'public')));
+});
+app.locals.pretty = true;
+
+app.configure('development', function(){
+  app.use(express.errorHandler());
 });
 
-var ZMGC = require('./lib/zmgc');
+app.get('/', routes.index);
+app.get('/users', user.list);
 
-new ZMGC({
-  port: 29080,
+var server = http.createServer(app);
+var everyone = nowjs.initialize( server );
+server.listen(app.get('port'), function(){
+  console.log("Express server listening on port " + app.get('port'));
 });
-
-
-//var server = require('http').createServer(function(req, res){
-//  res.end(html);
-//});
-//server.listen(29080);
-//console.log("This server's process pid is: " + process.pid);
-//
-//// riak cluster
-//// var db = require('riak-js').getClient({host: "0.0.0.0", port: "8098" });
-//
-//var nowjs = require("now");
-//var everyone = nowjs.initialize(server);
-//var MESSAGE_BACKLOG = 200,
-//    SESSION_TIMEOUT = 60 * 1000;
-//
-//var check = require('validator').check,
-//    sanitize = require('validator').sanitize
-//
-//var sys = require('sys'),
-//  	fs = require('fs'),
-//	util  = require('util'),
-//    spawn = require('child_process').spawn,
-//  	file = __dirname + '/' + "messages",
-//	faye = require('faye'),
-//	url = require('url'),
-//	City = require('geoip-static').City,
-//	static = require('node-static');
-//
-//spawn('touch' + file);
-//
-//function updateRSS () {
-//  var bytes = parseInt(rss);
-//  if (bytes) {
-//    var megabytes = bytes / (1024*1024);
-//    megabytes = Math.round(megabytes*10)/10;
-//    $("#rss").text(megabytes.toString());
-//  }
-//}
-//
-//var mem = process.memoryUsage();
-//var rss;
-//
-//setInterval(function () {
-//  mem = process.memoryUsage();
-//}, 10*1000);
-//
-//var messages = [];
-//var rss = updateRSS();
-//
-//everyone.now.distributeMessage = function(message){
-//    var messagetime = (new Date()).getTime();
-//    // var mem = process.memoryUsage();
-//    console.log(mem.rss);
-//    console.log('User '+this.now.name+' added message ' +message + messagetime + ' ' + mem + ' mem: ' + rss);
-//    var str = sanitize(message).xss();
-//    everyone.now.receiveMessage(this.now.name, str, messagetime);
-//    messages.push([this.now.name, str, messagetime]);
-//    var message = {user_id: this.now.name, message: str, timestamp: messagetime};
-//    console.log(message);
-//    // we write the messages to the filesystem or feed it into the database
-//	
-//    fs.open(file, 'a+', 0666, function(err, fd) {
-//        if (!err) fs.write(fd, JSON.stringify(message) + '\n', null, 'utf8');
-//        })
-//};
