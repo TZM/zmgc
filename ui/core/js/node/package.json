@@ -10,14 +10,14 @@
 	},
 	"subdomain": "parallax",
 	"engines": {
-		"node": " >=0.8.0"
+		"node": " >=0.8.14"
 	},
 	"scripts": {
 		"start": "server.js"
 	},
 	"dependencies": {
 		"d3": ">=2.9.2",
-		"now": ">=0.8.0",
+		"now": "https://github.com/nkhine/now/tarball/master",
 		"node-static": "0.5.9",
 		"geoip": "0.4.6",
 		"express" : "*",
