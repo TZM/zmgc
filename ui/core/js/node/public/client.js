@@ -5,7 +5,7 @@ function ZmgcClient() {
 	}
 	var self = this;
 	
-	this.init = function() {
+	this.init = function( initialLocation ) {
 		now.receiveLocation = function(message) {
 			self.drawMarker(message);
 		};
@@ -17,6 +17,9 @@ function ZmgcClient() {
 			console.log('we have a map id');
 			self.drawMap();
 			self.loadMembers();
+		}
+		if ( initialLocation ) { 
+			self.drawMarker( initialLocation );
 		}
 	};
 
@@ -207,19 +210,19 @@ function ZmgcClient() {
 
 	this.loadMembers = function () {
 		// Load data from .json file on page refresh
-		var data = [{ city: 'Centreville',
-				longitude: -77.46070098876953,
-				latitude: 38.81589889526367,
-				ip: '72.196.192.58',
-				timestamp: 1342997755637 },
-			{ city: 'Leeds',
-				longitude: -1.583299994468689,
-				latitude: 53.79999923706055,
-				ip: '86.160.103.204',
-				timestamp: 1343029940099 }];
-			for ( var i in data ) { 
-				this.drawMarker( data[i] ) ;
-			}
+		//var data = [{ city: 'Centreville',
+		//		longitude: -77.46070098876953,
+		//		latitude: 38.81589889526367,
+		//		ip: '72.196.192.58',
+		//		timestamp: 1342997755637 },
+		//	{ city: 'Leeds',
+		//		longitude: -1.583299994468689,
+		//		latitude: 53.79999923706055,
+		//		ip: '86.160.103.204',
+		//		timestamp: 1343029940099 }];
+		//	for ( var i in data ) { 
+		//		this.drawMarker( data[i] ) ;
+		//	}
 		console.log('we load members from db...')
 	}
 
@@ -290,11 +293,5 @@ function ZmgcClient() {
 	      //.remove();
 	}
 	// Initialise
-	this.init();
 };
 
-var ZmgcClient;
-
-jQuery(function() {
-  ZmgcClient = new ZmgcClient();
-});
