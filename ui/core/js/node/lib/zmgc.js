@@ -2,8 +2,9 @@ var http = require('http'),
 	util  = require('util'),
 	static = require('node-static'),
 	url = require('url'),
-	nowjs = require('now');
-	City = require('geoip-static').City;
+	nowjs = require('now'),
+	express = require( 'express' ),
+	City = require('geoip').City;
 
 function ZMGC(options) {
 	if (! (this instanceof arguments.callee)) {
@@ -30,10 +31,10 @@ ZMGC.prototype.createHTTPServer = function() {
 	var self = this;
 
 	var server = http.createServer(function(request, response) {
+		var remoteIp = request.connection.remoteAddress;
 		var file = new static.Server('./public', {
 			cache: false
 		});
-
 		function onEnd() {
 			/* if new connection identify user */
 			var location = url.parse(request.url, true);
@@ -72,6 +73,7 @@ ZMGC.prototype.createHTTPServer = function() {
 								,timestamp: time
 							};
 						} else { 
+							console.log( 'server fake location' );
 							obj ={ 
 								city: 'Bexleyheath',
 								longitude: 0.15000000596046448,

@@ -1,0 +1,23 @@
+link(rel="stylesheet",type="text/css", href="http://yui.yahooapis.com/3.5.1/build/cssreset/cssreset-min.css")
+link(rel="stylesheet",type="text/css", href="http://yui.yahooapis.com/3.5.1/build/cssgrids/grids-min.css")
+
+#first.yiu3-g
+  #second.yui3-u-4-5
+    #map
+  #third.yui3-u-1-5
+
+script( type="text/javascript", src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.7.2/jquery.min.js")
+script( type="text/javascript", src="http://cdnjs.cloudflare.com/ajax/libs/d3/2.8.1/d3.v2.min.js")
+script( type="text/javascript", src="nowjs/now.js")
+script( type="text/javascript", src="client.js")
+script
+  var client = null;
+  jQuery(function() {
+    client = new ZmgcClient();
+    client.init({ 
+        city:  "#{loc.city}",
+        longitude: #{loc.longitude},
+        latitude: #{loc.latitude}
+     });
+   });
+
