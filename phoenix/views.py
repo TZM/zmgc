@@ -50,6 +50,7 @@ class View(STLView):
                 #'/ui/core/js/jquery/add-on/jquery.rotate.js',
                 '/ui/core/js/player.js',
 				'/ui/core/js/d3/d3.v2.min.js',
+				'/nowjs/now.js',
                 ]
 
     def get_namespace(self, resource, context):

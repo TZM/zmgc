@@ -12,4 +12,17 @@
     
   </div><!-- /help 40%-->
 </div><!-- /content -->
+
+<script language="javascript">
+var client = null;
+jQuery(function() {
+  client = new ZmgcClient();
+  console.log('here');
+  client.init({ 
+      city:  "#{loc.city}",
+      longitude: #{loc.longitude},
+      latitude: #{loc.latitude}
+   });
+ });
+ </script>
 </stl:block>

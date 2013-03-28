@@ -364,6 +364,37 @@ Access to data, the Open Source way.
 	response = json.loads(freebase.mqlread(query=json.dumps(query)).execute())
 	for planet in response['result']:
 		print planet['name']
+
+
+#Video and Audio Widget
+[http://nkhine.github.com/zPlayer/](http://nkhine.github.com/zPlayer/) - this has a 3 tabs - 'Video', 'Audio' , 'Both' where the data comes from the 'ul' list
+
+[https://github.com/nkhine/zPlayer/blob/gh-pages/index.html#L219](https://github.com/nkhine/zPlayer/blob/gh-pages/index.html#L219)
+
+Need to extend the player so that it works with youtube videos, so that we have a custom jPlayer widget, to link to a
+playlist, see the [https://developers.google.com/youtube/2.0/reference#youtube_data_api_tag_media:content](https://developers.google.com/youtube/2.0/reference#youtube_data_api_tag_media:content)
+
+Here is the example for TZMOfficialChannel [http://gdata.youtube.com/feeds/api/users/TZMOfficialChannel/uploads?v=2&alt=jsonc](http://gdata.youtube.com/feeds/api/users/TZMOfficialChannel/uploads?v=2&alt=jsonc)
+
+Using jPlayer it is not possible (well i have not found a way yet) to stream the YouTube video, although [http://www.jplayer.org/latest/jPlayer-tester/](http://www.jplayer.org/latest/jPlayer-tester/) there is an option 'FLV Test from YouTube'
+
+Read data from 3 different files for each of the tab lists, based on:
+
+* tab-1, 'Global' will pull the playlist from global-media.json file (http://gdata.youtube.com/feeds/api/users/TZMOfficialChannel/uploads?v=2&alt=jsonc)
+ 
+* tab-2, 'Regional' will pull the playlist from regional-media.json file (http://gdata.youtube.com/feeds/api/users/ZeitgeistMovementUK/uploads?v=2&alt=jsonc)
+
+* tab-3, 'Local' will pull the playlist local-media.json file (this will contain links to different video/audio suppliers and formats)
+
+
+the idea behind this will be so that when the zplayer widget is installed on the users' website it will be able to pull data from all these data sources.
+
+each tab should list the first 5 items and be combined withhttp://msjolund.github.com/autobrowse/ so that you get a scroller that loads the next items.
+
+here is an example:
+[http://www.briskelderlaw.com/VideoVault/examples/player-multiple-playlists.html?iframe=true&width=720&height=100%](http://www.briskelderlaw.com/VideoVault/examples/player-multiple-playlists.html?iframe=true&width=720&height=100%) of a youtube player with a playlist using jquery where the categories in our case will be the TABS.
+
+Not all sources would come from YouTube, so the javascript code will need to take care of this and load the correct player depending on the content.
 		
 #Home Page
 
